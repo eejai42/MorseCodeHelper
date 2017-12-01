@@ -8,19 +8,19 @@ using CoreLibrary.Extensions;
 
 namespace MorseCodeHelper.Lib.DataClasses
 {                            
-    public partial class Signal
+    public partial class Customer
     {
         private void InitPoco()
         {
             
-            this.SignalId = Guid.NewGuid();
+            this.CustomerId = Guid.NewGuid();
             
 
         }
 
         
-        [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "SignalId")]
-        public Guid SignalId { get; set; }
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "CustomerId")]
+        public Guid CustomerId { get; set; }
     
         [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "Name")]
         public String Name { get; set; }
@@ -28,26 +28,23 @@ namespace MorseCodeHelper.Lib.DataClasses
         [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "Description")]
         public String Description { get; set; }
     
-        [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "SequenceId")]
-        public Nullable<Guid> SequenceId { get; set; }
-    
 
         
 
         
 
-        private static string CreateSignalWhere(IEnumerable<Signal> signals)
+        private static string CreateCustomerWhere(IEnumerable<Customer> customers)
         {
-            if (!signals.Any()) return "1=1";
+            if (!customers.Any()) return "1=1";
             else 
             {
-                var idList = signals.Select(selectSignal => String.Format("'{0}'", selectSignal.SignalId));
+                var idList = customers.Select(selectCustomer => String.Format("'{0}'", selectCustomer.CustomerId));
                 var csIdList = String.Join(",", idList);
-                return String.Format("SignalId in ({0})", csIdList);
+                return String.Format("CustomerId in ({0})", csIdList);
             }
         }
         
-        public static void CheckExpand(SqlDataManager sdm, IEnumerable<Signal> signals, string expandString)
+        public static void CheckExpand(SqlDataManager sdm, IEnumerable<Customer> customers, string expandString)
         {
             
         }

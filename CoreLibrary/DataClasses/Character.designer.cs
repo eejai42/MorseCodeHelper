@@ -15,15 +15,7 @@ namespace MorseCodeHelper.Lib.DataClasses
             
             this.CharacterId = Guid.NewGuid();
             
-                this.Punctuations = new BindingList<Punctuation>();
-            
-                this.Symbols = new BindingList<Symbol>();
-            
-                this.Numerals = new BindingList<Numeral>();
-            
-                this.Silences = new BindingList<Silence>();
-            
-                this.Spaces = new BindingList<Space>();
+                this.Sequences = new BindingList<Sequence>();
             
 
         }
@@ -38,28 +30,31 @@ namespace MorseCodeHelper.Lib.DataClasses
         [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "Description")]
         public String Description { get; set; }
     
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "Symbol")]
+        public String Symbol { get; set; }
+    
         [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "AlphabetId")]
         public Nullable<Guid> AlphabetId { get; set; }
     
 
         
-        [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "Punctuations")]
-        public BindingList<Punctuation> Punctuations { get; set; }
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "Sequences")]
+        public BindingList<Sequence> Sequences { get; set; }
             
         /// <summary>
-        /// Check to see if there are any related Punctuations, and load them if requested
+        /// Check to see if there are any related Sequences, and load them if requested
         /// </summary>
-        public static void CheckExpandPunctuations(SqlDataManager sdm, IEnumerable<Character> characters, string expandString)
+        public static void CheckExpandSequences(SqlDataManager sdm, IEnumerable<Character> characters, string expandString)
         {
             var charactersWhere = CreateCharacterWhere(characters);
             expandString = expandString.SafeToString();
 
-            if (String.Equals(expandString, "all", StringComparison.OrdinalIgnoreCase) || expandString.IndexOf("punctuations", StringComparison.OrdinalIgnoreCase) >= 0)
+            if (String.Equals(expandString, "all", StringComparison.OrdinalIgnoreCase) || expandString.IndexOf("sequences", StringComparison.OrdinalIgnoreCase) >= 0)
             {
-                var childPunctuations = sdm.GetAllPunctuations<Punctuation>(charactersWhere);
+                var childSequences = sdm.GetAllSequences<Sequence>(charactersWhere);
 
                 characters.ToList()
-                        .ForEach(feCharacter => feCharacter.LoadPunctuations(childPunctuations));
+                        .ForEach(feCharacter => feCharacter.LoadSequences(childSequences));
             }
 
         }
@@ -69,153 +64,13 @@ namespace MorseCodeHelper.Lib.DataClasses
 
         
         /// <summary>
-        /// Find the related Punctuations (from the list provided) and attach them locally to the Punctuations list.
+        /// Find the related Sequences (from the list provided) and attach them locally to the Sequences list.
         /// </summary>
-        public void LoadPunctuations(IEnumerable<Punctuation> punctuations)
+        public void LoadSequences(IEnumerable<Sequence> sequences)
         {
-            punctuations.Where(wherePunctuation => wherePunctuation.CharacterId == this.CharacterId)
+            sequences.Where(whereSequence => whereSequence.CharacterId == this.CharacterId)
                     .ToList()
-                    .ForEach(fePunctuation => this.Punctuations.Add(fePunctuation));
-        }
-        
-        [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "Symbols")]
-        public BindingList<Symbol> Symbols { get; set; }
-            
-        /// <summary>
-        /// Check to see if there are any related Symbols, and load them if requested
-        /// </summary>
-        public static void CheckExpandSymbols(SqlDataManager sdm, IEnumerable<Character> characters, string expandString)
-        {
-            var charactersWhere = CreateCharacterWhere(characters);
-            expandString = expandString.SafeToString();
-
-            if (String.Equals(expandString, "all", StringComparison.OrdinalIgnoreCase) || expandString.IndexOf("symbols", StringComparison.OrdinalIgnoreCase) >= 0)
-            {
-                var childSymbols = sdm.GetAllSymbols<Symbol>(charactersWhere);
-
-                characters.ToList()
-                        .ForEach(feCharacter => feCharacter.LoadSymbols(childSymbols));
-            }
-
-        }
-
-
-        
-
-        
-        /// <summary>
-        /// Find the related Symbols (from the list provided) and attach them locally to the Symbols list.
-        /// </summary>
-        public void LoadSymbols(IEnumerable<Symbol> symbols)
-        {
-            symbols.Where(whereSymbol => whereSymbol.CharacterId == this.CharacterId)
-                    .ToList()
-                    .ForEach(feSymbol => this.Symbols.Add(feSymbol));
-        }
-        
-        [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "Numerals")]
-        public BindingList<Numeral> Numerals { get; set; }
-            
-        /// <summary>
-        /// Check to see if there are any related Numerals, and load them if requested
-        /// </summary>
-        public static void CheckExpandNumerals(SqlDataManager sdm, IEnumerable<Character> characters, string expandString)
-        {
-            var charactersWhere = CreateCharacterWhere(characters);
-            expandString = expandString.SafeToString();
-
-            if (String.Equals(expandString, "all", StringComparison.OrdinalIgnoreCase) || expandString.IndexOf("numerals", StringComparison.OrdinalIgnoreCase) >= 0)
-            {
-                var childNumerals = sdm.GetAllNumerals<Numeral>(charactersWhere);
-
-                characters.ToList()
-                        .ForEach(feCharacter => feCharacter.LoadNumerals(childNumerals));
-            }
-
-        }
-
-
-        
-
-        
-        /// <summary>
-        /// Find the related Numerals (from the list provided) and attach them locally to the Numerals list.
-        /// </summary>
-        public void LoadNumerals(IEnumerable<Numeral> numerals)
-        {
-            numerals.Where(whereNumeral => whereNumeral.CharacterId == this.CharacterId)
-                    .ToList()
-                    .ForEach(feNumeral => this.Numerals.Add(feNumeral));
-        }
-        
-        [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "Silences")]
-        public BindingList<Silence> Silences { get; set; }
-            
-        /// <summary>
-        /// Check to see if there are any related Silences, and load them if requested
-        /// </summary>
-        public static void CheckExpandSilences(SqlDataManager sdm, IEnumerable<Character> characters, string expandString)
-        {
-            var charactersWhere = CreateCharacterWhere(characters);
-            expandString = expandString.SafeToString();
-
-            if (String.Equals(expandString, "all", StringComparison.OrdinalIgnoreCase) || expandString.IndexOf("silences", StringComparison.OrdinalIgnoreCase) >= 0)
-            {
-                var childSilences = sdm.GetAllSilences<Silence>(charactersWhere);
-
-                characters.ToList()
-                        .ForEach(feCharacter => feCharacter.LoadSilences(childSilences));
-            }
-
-        }
-
-
-        
-
-        
-        /// <summary>
-        /// Find the related Silences (from the list provided) and attach them locally to the Silences list.
-        /// </summary>
-        public void LoadSilences(IEnumerable<Silence> silences)
-        {
-            silences.Where(whereSilence => whereSilence.CharacterId == this.CharacterId)
-                    .ToList()
-                    .ForEach(feSilence => this.Silences.Add(feSilence));
-        }
-        
-        [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "Spaces")]
-        public BindingList<Space> Spaces { get; set; }
-            
-        /// <summary>
-        /// Check to see if there are any related Spaces, and load them if requested
-        /// </summary>
-        public static void CheckExpandSpaces(SqlDataManager sdm, IEnumerable<Character> characters, string expandString)
-        {
-            var charactersWhere = CreateCharacterWhere(characters);
-            expandString = expandString.SafeToString();
-
-            if (String.Equals(expandString, "all", StringComparison.OrdinalIgnoreCase) || expandString.IndexOf("spaces", StringComparison.OrdinalIgnoreCase) >= 0)
-            {
-                var childSpaces = sdm.GetAllSpaces<Space>(charactersWhere);
-
-                characters.ToList()
-                        .ForEach(feCharacter => feCharacter.LoadSpaces(childSpaces));
-            }
-
-        }
-
-
-        
-
-        
-        /// <summary>
-        /// Find the related Spaces (from the list provided) and attach them locally to the Spaces list.
-        /// </summary>
-        public void LoadSpaces(IEnumerable<Space> spaces)
-        {
-            spaces.Where(whereSpace => whereSpace.CharacterId == this.CharacterId)
-                    .ToList()
-                    .ForEach(feSpace => this.Spaces.Add(feSpace));
+                    .ForEach(feSequence => this.Sequences.Add(feSequence));
         }
         
 
@@ -236,15 +91,7 @@ namespace MorseCodeHelper.Lib.DataClasses
         {
             
             
-            CheckExpandPunctuations(sdm, characters, expandString);
-            
-            CheckExpandSymbols(sdm, characters, expandString);
-            
-            CheckExpandNumerals(sdm, characters, expandString);
-            
-            CheckExpandSilences(sdm, characters, expandString);
-            
-            CheckExpandSpaces(sdm, characters, expandString);
+            CheckExpandSequences(sdm, characters, expandString);
         }
         
     }

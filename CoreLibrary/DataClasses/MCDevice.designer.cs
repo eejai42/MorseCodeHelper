@@ -15,8 +15,6 @@ namespace MorseCodeHelper.Lib.DataClasses
             
             this.MCDeviceId = Guid.NewGuid();
             
-                this.Signals = new BindingList<Signal>();
-            
                 this.Lights = new BindingList<Light>();
             
                 this.Repeaters = new BindingList<Repeater>();
@@ -35,41 +33,6 @@ namespace MorseCodeHelper.Lib.DataClasses
         public String Description { get; set; }
     
 
-        
-        [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "Signals")]
-        public BindingList<Signal> Signals { get; set; }
-            
-        /// <summary>
-        /// Check to see if there are any related Signals, and load them if requested
-        /// </summary>
-        public static void CheckExpandSignals(SqlDataManager sdm, IEnumerable<MCDevice> mCDevices, string expandString)
-        {
-            var mCDevicesWhere = CreateMCDeviceWhere(mCDevices);
-            expandString = expandString.SafeToString();
-
-            if (String.Equals(expandString, "all", StringComparison.OrdinalIgnoreCase) || expandString.IndexOf("signals", StringComparison.OrdinalIgnoreCase) >= 0)
-            {
-                var childSignals = sdm.GetAllSignals<Signal>(mCDevicesWhere);
-
-                mCDevices.ToList()
-                        .ForEach(feMCDevice => feMCDevice.LoadSignals(childSignals));
-            }
-
-        }
-
-
-        
-
-        
-        /// <summary>
-        /// Find the related Signals (from the list provided) and attach them locally to the Signals list.
-        /// </summary>
-        public void LoadSignals(IEnumerable<Signal> signals)
-        {
-            signals.Where(whereSignal => whereSignal.MCDeviceId == this.MCDeviceId)
-                    .ToList()
-                    .ForEach(feSignal => this.Signals.Add(feSignal));
-        }
         
         [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "Lights")]
         public BindingList<Light> Lights { get; set; }
@@ -158,8 +121,6 @@ namespace MorseCodeHelper.Lib.DataClasses
         public static void CheckExpand(SqlDataManager sdm, IEnumerable<MCDevice> mCDevices, string expandString)
         {
             
-            
-            CheckExpandSignals(sdm, mCDevices, expandString);
             
             CheckExpandLights(sdm, mCDevices, expandString);
             

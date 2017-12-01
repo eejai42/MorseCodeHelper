@@ -4,13 +4,21 @@
 
 Each Morse code symbol represents either a text character (letter or numeral) or a prosign and is represented by a unique sequence of dots and dashes. The dot duration is the basic unit of time measurement in code transmission. The duration of a dash is three times the duration of a dot. Each dot or dash is followed by a short silence, equal to the dot duration. The letters of a word are separated by a space equal to three dots (one dash), and the words are separated by a space equal to seven dots.[1] To increase the speed of the communication, the code was designed so that the length of each character in Morse is approximately inverse to its frequency of occurrence in English. Thus the most common letter in English, the letter "E", has the shortest code, a single dot.
 
-Morse code is used by some amateur radio operators, although knowledge of and proficiency with it is no longer required for licensing in most countries. Pilots and air traffic controllers usually need only a cursory understanding. Aeronautical navigational aids, such as VORs and NDBs, constantly identify in Morse code. Compared to voice, Morse code is less sensitive to poor signal conditions, yet still comprehensible to humans without a decoding device. Morse is, therefore, a useful alternative to synthesized speech for sending automated data to skilled listeners on voice channels. Many amateur radio repeaters, for example, identify with Morse, even though they are used for voice communications.</InputText>
+Morse code is used by some amateur radio operators, although knowledge of and proficiency with it is no longer required for licensing in most countries. Pilots and air traffic controllers usually need only a cursory understanding. Aeronautical navigational aids, such as VORs and NDBs, constantly identify in Morse code. Compared to voice, Morse code is less sensitive to poor signal conditions, yet still comprehensible to humans without a decoding device. Morse is, therefore, a useful alternative to synthesized speech for sending automated data to skilled listeners on voice channels. Many amateur radio repeaters, for example, identify with Morse, even though they are used for voice communications.
+
+A TelegraphStation allows Customers to send and receive Telegraphs.  Each telegraph is made up of multiple Sentences.  Each sentence has many words.  
+
+Each Alphabet is composed of many Characters, and ecah Character is represented by a sequence of tones and silences or Signals.</InputText>
   <Lines>
     <string>Morse code is a method of transmitting text information as a series of on-off tones, lights, or clicks that can be directly understood by a skilled listener or observer without special equipment. It is named for Samuel F. B. Morse, an inventor of the telegraph. The International Morse Code[1] encodes the ISO basic Latin alphabet, some extra Latin letters, the Arabic numerals and a small set of punctuation and procedural signals (prosigns) as standardized sequences of short and long signals called "dots" and "dashes",[1] or "dits" and "dahs", as in amateur radio practice. Because many non-English natural languages use more than the 26 Roman letters, extensions to the Morse alphabet exist for those languages.</string>
     <string></string>
     <string>Each Morse code symbol represents either a text character (letter or numeral) or a prosign and is represented by a unique sequence of dots and dashes. The dot duration is the basic unit of time measurement in code transmission. The duration of a dash is three times the duration of a dot. Each dot or dash is followed by a short silence, equal to the dot duration. The letters of a word are separated by a space equal to three dots (one dash), and the words are separated by a space equal to seven dots.[1] To increase the speed of the communication, the code was designed so that the length of each character in Morse is approximately inverse to its frequency of occurrence in English. Thus the most common letter in English, the letter "E", has the shortest code, a single dot.</string>
     <string></string>
-    <string>Morse code is used by some amateur radio operators, although knowledge of and proficiency with it is no longer required for licensing in most countries. Pilots and air traffic controllers usually need only a cursory understanding. Aeronautical navigational aids, such as VORs and NDBs, constantly identify in Morse code. Compared to voice, Morse code is less sensitive to poor signal conditions, yet still comprehensible to humans without a decoding device. Morse is, therefore, a useful alternative to synthesized speech for sending automated data to skilled listeners on voice channels. Many amateur radio repeaters, for example, identify with Morse, even though they are used for voice communications.</string>
+    <string>Morse code is used by some amateur radio operators, although knowledge of and proficiency with it is no longer required for licensing in most countries. Pilots and air traffic controllers usually need only a cursory understanding. Aeronautical navigational aids, such as VORs and NDBs, constantly identify in Morse code. Compared to voice, Morse code is less sensitive to poor signal conditions, yet still comprehensible to humans without a decoding device. Morse is, therefore, a useful alternative to synthesized speech for sending automated data to skilled listeners on voice channels. Many amateur radio repeaters, for example, identify with Morse, even though they are used for voice communications.</string>
+    <string></string>
+    <string>A TelegraphStation allows Customers to send and receive Telegraphs.  Each telegraph is made up of multiple Sentences.  Each sentence has many words.  </string>
+    <string></string>
+    <string>Each Alphabet is composed of many Characters, and ecah Character is represented by a sequence of tones and silences or Signals.</string>
   </Lines>
   <Words>
     <Word>
@@ -22,7 +30,18 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
       <PluralText>,</PluralText>
       <Sequence>13</Sequence>
       <PartOfSpeech>,</PartOfSpeech>
-      <Count>25</Count>
+      <Count>26</Count>
+    </Word>
+    <Word>
+      <Text>.</Text>
+      <LowerText>.</LowerText>
+      <ProperText>.</ProperText>
+      <IsSingular>false</IsSingular>
+      <SingularText>.</SingularText>
+      <PluralText>.</PluralText>
+      <Sequence>29</Sequence>
+      <PartOfSpeech>.</PartOfSpeech>
+      <Count>22</Count>
     </Word>
     <Word>
       <Text>the</Text>
@@ -44,18 +63,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
       <PluralText>A</PluralText>
       <Sequence>3</Sequence>
       <PartOfSpeech>DT</PartOfSpeech>
-      <Count>18</Count>
-    </Word>
-    <Word>
-      <Text>.</Text>
-      <LowerText>.</LowerText>
-      <ProperText>.</ProperText>
-      <IsSingular>false</IsSingular>
-      <SingularText>.</SingularText>
-      <PluralText>.</PluralText>
-      <Sequence>29</Sequence>
-      <PartOfSpeech>.</PartOfSpeech>
-      <Count>18</Count>
+      <Count>20</Count>
     </Word>
     <Word>
       <Text>of</Text>
@@ -66,18 +74,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
       <PluralText>Ofs</PluralText>
       <Sequence>5</Sequence>
       <PartOfSpeech>IN</PartOfSpeech>
-      <Count>15</Count>
-    </Word>
-    <Word>
-      <Text>Morse</Text>
-      <LowerText>morse</LowerText>
-      <ProperText>Morse</ProperText>
-      <IsSingular>true</IsSingular>
-      <SingularText>Morse</SingularText>
-      <PluralText>Morses</PluralText>
-      <Sequence>0</Sequence>
-      <PartOfSpeech>NNP</PartOfSpeech>
-      <Count>12</Count>
+      <Count>18</Count>
     </Word>
     <Word>
       <Text>is</Text>
@@ -88,7 +85,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
       <PluralText>Ises</PluralText>
       <Sequence>2</Sequence>
       <PartOfSpeech>VBZ</PartOfSpeech>
-      <Count>12</Count>
+      <Count>15</Count>
     </Word>
     <Word>
       <Text>and</Text>
@@ -99,7 +96,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
       <PluralText>Ands</PluralText>
       <Sequence>54</Sequence>
       <PartOfSpeech>CC</PartOfSpeech>
-      <Count>12</Count>
+      <Count>15</Count>
     </Word>
     <Word>
       <Text>to</Text>
@@ -110,6 +107,17 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
       <PluralText>Toes</PluralText>
       <Sequence>89</Sequence>
       <PartOfSpeech>TO</PartOfSpeech>
+      <Count>13</Count>
+    </Word>
+    <Word>
+      <Text>Morse</Text>
+      <LowerText>morse</LowerText>
+      <ProperText>Morse</ProperText>
+      <IsSingular>true</IsSingular>
+      <SingularText>Morse</SingularText>
+      <PluralText>Morses</PluralText>
+      <Sequence>0</Sequence>
+      <PartOfSpeech>NNP</PartOfSpeech>
       <Count>12</Count>
     </Word>
     <Word>
@@ -124,6 +132,28 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
       <Count>10</Count>
     </Word>
     <Word>
+      <Text>or</Text>
+      <LowerText>or</LowerText>
+      <ProperText>Or</ProperText>
+      <IsSingular>true</IsSingular>
+      <SingularText>Or</SingularText>
+      <PluralText>Ors</PluralText>
+      <Sequence>15</Sequence>
+      <PartOfSpeech>CC</PartOfSpeech>
+      <Count>8</Count>
+    </Word>
+    <Word>
+      <Text>by</Text>
+      <LowerText>by</LowerText>
+      <ProperText>By</ProperText>
+      <IsSingular>true</IsSingular>
+      <SingularText>By</SingularText>
+      <PluralText>Bies</PluralText>
+      <Sequence>22</Sequence>
+      <PartOfSpeech>IN</PartOfSpeech>
+      <Count>8</Count>
+    </Word>
+    <Word>
       <Text>in</Text>
       <LowerText>in</LowerText>
       <ProperText>In</ProperText>
@@ -135,28 +165,6 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
       <Count>8</Count>
     </Word>
     <Word>
-      <Text>or</Text>
-      <LowerText>or</LowerText>
-      <ProperText>Or</ProperText>
-      <IsSingular>true</IsSingular>
-      <SingularText>Or</SingularText>
-      <PluralText>Ors</PluralText>
-      <Sequence>15</Sequence>
-      <PartOfSpeech>CC</PartOfSpeech>
-      <Count>7</Count>
-    </Word>
-    <Word>
-      <Text>by</Text>
-      <LowerText>by</LowerText>
-      <ProperText>By</ProperText>
-      <IsSingular>true</IsSingular>
-      <SingularText>By</SingularText>
-      <PluralText>Bies</PluralText>
-      <Sequence>22</Sequence>
-      <PartOfSpeech>IN</PartOfSpeech>
-      <Count>7</Count>
-    </Word>
-    <Word>
       <Text>for</Text>
       <LowerText>for</LowerText>
       <ProperText>For</ProperText>
@@ -165,6 +173,17 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
       <PluralText>Fors</PluralText>
       <Sequence>32</Sequence>
       <PartOfSpeech>IN</PartOfSpeech>
+      <Count>7</Count>
+    </Word>
+    <Word>
+      <Text>Each</Text>
+      <LowerText>each</LowerText>
+      <ProperText>Each</ProperText>
+      <IsSingular>false</IsSingular>
+      <SingularText>Each</SingularText>
+      <PluralText>Each</PluralText>
+      <Sequence>92</Sequence>
+      <PartOfSpeech>DT</PartOfSpeech>
       <Count>7</Count>
     </Word>
     <Word>
@@ -223,6 +242,17 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
       <Count>5</Count>
     </Word>
     <Word>
+      <Text>many</Text>
+      <LowerText>many</LowerText>
+      <ProperText>Many</ProperText>
+      <IsSingular>true</IsSingular>
+      <SingularText>Many</SingularText>
+      <PluralText>Manies</PluralText>
+      <Sequence>79</Sequence>
+      <PartOfSpeech>JJ</PartOfSpeech>
+      <Count>5</Count>
+    </Word>
+    <Word>
       <Text>duration</Text>
       <LowerText>duration</LowerText>
       <ProperText>Duration</ProperText>
@@ -267,6 +297,17 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
       <Count>4</Count>
     </Word>
     <Word>
+      <Text>alphabet</Text>
+      <LowerText>alphabet</LowerText>
+      <ProperText>Alphabet</ProperText>
+      <IsSingular>true</IsSingular>
+      <SingularText>Alphabet</SingularText>
+      <PluralText>Alphabets</PluralText>
+      <Sequence>48</Sequence>
+      <PartOfSpeech>NN</PartOfSpeech>
+      <Count>4</Count>
+    </Word>
+    <Word>
       <Text>letters</Text>
       <LowerText>letters</LowerText>
       <ProperText>Letters</ProperText>
@@ -274,6 +315,17 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
       <SingularText>Letter</SingularText>
       <PluralText>Letters</PluralText>
       <Sequence>51</Sequence>
+      <PartOfSpeech>NNS</PartOfSpeech>
+      <Count>4</Count>
+    </Word>
+    <Word>
+      <Text>signals</Text>
+      <LowerText>signals</LowerText>
+      <ProperText>Signals</ProperText>
+      <IsSingular>false</IsSingular>
+      <SingularText>Signal</SingularText>
+      <PluralText>Signals</PluralText>
+      <Sequence>59</Sequence>
       <PartOfSpeech>NNS</PartOfSpeech>
       <Count>4</Count>
     </Word>
@@ -322,14 +374,14 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
       <Count>4</Count>
     </Word>
     <Word>
-      <Text>Each</Text>
-      <LowerText>each</LowerText>
-      <ProperText>Each</ProperText>
-      <IsSingular>false</IsSingular>
-      <SingularText>Each</SingularText>
-      <PluralText>Each</PluralText>
-      <Sequence>92</Sequence>
-      <PartOfSpeech>DT</PartOfSpeech>
+      <Text>character</Text>
+      <LowerText>character</LowerText>
+      <ProperText>Character</ProperText>
+      <IsSingular>true</IsSingular>
+      <SingularText>Character</SingularText>
+      <PluralText>Characters</PluralText>
+      <Sequence>96</Sequence>
+      <PartOfSpeech>NN</PartOfSpeech>
       <Count>4</Count>
     </Word>
     <Word>
@@ -399,6 +451,17 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
       <Count>3</Count>
     </Word>
     <Word>
+      <Text>tones</Text>
+      <LowerText>tones</LowerText>
+      <ProperText>Tones</ProperText>
+      <IsSingular>false</IsSingular>
+      <SingularText>Tone</SingularText>
+      <PluralText>Tones</PluralText>
+      <Sequence>12</Sequence>
+      <PartOfSpeech>NNS</PartOfSpeech>
+      <Count>3</Count>
+    </Word>
+    <Word>
       <Text>that</Text>
       <LowerText>that</LowerText>
       <ProperText>That</ProperText>
@@ -443,6 +506,17 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
       <Count>3</Count>
     </Word>
     <Word>
+      <Text>telegraph</Text>
+      <LowerText>telegraph</LowerText>
+      <ProperText>Telegraph</ProperText>
+      <IsSingular>true</IsSingular>
+      <SingularText>Telegraph</SingularText>
+      <PluralText>Telegraphs</PluralText>
+      <Sequence>39</Sequence>
+      <PartOfSpeech>NN</PartOfSpeech>
+      <Count>3</Count>
+    </Word>
+    <Word>
       <Text>basic</Text>
       <LowerText>basic</LowerText>
       <ProperText>Basic</ProperText>
@@ -465,17 +539,6 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
       <Count>3</Count>
     </Word>
     <Word>
-      <Text>alphabet</Text>
-      <LowerText>alphabet</LowerText>
-      <ProperText>Alphabet</ProperText>
-      <IsSingular>true</IsSingular>
-      <SingularText>Alphabet</SingularText>
-      <PluralText>Alphabets</PluralText>
-      <Sequence>48</Sequence>
-      <PartOfSpeech>NN</PartOfSpeech>
-      <Count>3</Count>
-    </Word>
-    <Word>
       <Text>some</Text>
       <LowerText>some</LowerText>
       <ProperText>Some</ProperText>
@@ -484,17 +547,6 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
       <PluralText>Some</PluralText>
       <Sequence>49</Sequence>
       <PartOfSpeech>DT</PartOfSpeech>
-      <Count>3</Count>
-    </Word>
-    <Word>
-      <Text>signals</Text>
-      <LowerText>signals</LowerText>
-      <ProperText>Signals</ProperText>
-      <IsSingular>false</IsSingular>
-      <SingularText>Signal</SingularText>
-      <PluralText>Signals</PluralText>
-      <Sequence>59</Sequence>
-      <PartOfSpeech>NNS</PartOfSpeech>
       <Count>3</Count>
     </Word>
     <Word>
@@ -520,17 +572,6 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
       <Count>3</Count>
     </Word>
     <Word>
-      <Text>many</Text>
-      <LowerText>many</LowerText>
-      <ProperText>Many</ProperText>
-      <IsSingular>true</IsSingular>
-      <SingularText>Many</SingularText>
-      <PluralText>Manies</PluralText>
-      <Sequence>79</Sequence>
-      <PartOfSpeech>JJ</PartOfSpeech>
-      <Count>3</Count>
-    </Word>
-    <Word>
       <Text>languages</Text>
       <LowerText>languages</LowerText>
       <ProperText>Languages</ProperText>
@@ -542,13 +583,24 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
       <Count>3</Count>
     </Word>
     <Word>
-      <Text>character</Text>
-      <LowerText>character</LowerText>
-      <ProperText>Character</ProperText>
+      <Text>represented</Text>
+      <LowerText>represented</LowerText>
+      <ProperText>Represented</ProperText>
       <IsSingular>true</IsSingular>
-      <SingularText>Character</SingularText>
-      <PluralText>Characters</PluralText>
-      <Sequence>96</Sequence>
+      <SingularText>Represented</SingularText>
+      <PluralText>Representeds</PluralText>
+      <Sequence>100</Sequence>
+      <PartOfSpeech>VBN</PartOfSpeech>
+      <Count>3</Count>
+    </Word>
+    <Word>
+      <Text>sequence</Text>
+      <LowerText>sequence</LowerText>
+      <ProperText>Sequence</ProperText>
+      <IsSingular>true</IsSingular>
+      <SingularText>Sequence</SingularText>
+      <PluralText>Sequences</PluralText>
+      <Sequence>102</Sequence>
       <PartOfSpeech>NN</PartOfSpeech>
       <Count>3</Count>
     </Word>
@@ -586,6 +638,17 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
       <Count>3</Count>
     </Word>
     <Word>
+      <Text>words</Text>
+      <LowerText>words</LowerText>
+      <ProperText>Words</ProperText>
+      <IsSingular>false</IsSingular>
+      <SingularText>Word</SingularText>
+      <PluralText>Words</PluralText>
+      <Sequence>120</Sequence>
+      <PartOfSpeech>NNS</PartOfSpeech>
+      <Count>3</Count>
+    </Word>
+    <Word>
       <Text>English</Text>
       <LowerText>english</LowerText>
       <ProperText>English</ProperText>
@@ -605,6 +668,17 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
       <PluralText>Most</PluralText>
       <Sequence>136</Sequence>
       <PartOfSpeech>RBS</PartOfSpeech>
+      <Count>3</Count>
+    </Word>
+    <Word>
+      <Text>has</Text>
+      <LowerText>has</LowerText>
+      <ProperText>Has</ProperText>
+      <IsSingular>true</IsSingular>
+      <SingularText>Has</SingularText>
+      <PluralText>Hases</PluralText>
+      <Sequence>139</Sequence>
+      <PartOfSpeech>VBZ</PartOfSpeech>
       <Count>3</Count>
     </Word>
     <Word>
@@ -693,17 +767,6 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
       <PluralText>On-off</PluralText>
       <Sequence>11</Sequence>
       <PartOfSpeech>JJ</PartOfSpeech>
-      <Count>2</Count>
-    </Word>
-    <Word>
-      <Text>tones</Text>
-      <LowerText>tones</LowerText>
-      <ProperText>Tones</ProperText>
-      <IsSingular>false</IsSingular>
-      <SingularText>Tone</SingularText>
-      <PluralText>Tones</PluralText>
-      <Sequence>12</Sequence>
-      <PartOfSpeech>NNS</PartOfSpeech>
       <Count>2</Count>
     </Word>
     <Word>
@@ -879,17 +942,6 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
       <SingularText>Inventor</SingularText>
       <PluralText>Inventors</PluralText>
       <Sequence>37</Sequence>
-      <PartOfSpeech>NN</PartOfSpeech>
-      <Count>2</Count>
-    </Word>
-    <Word>
-      <Text>telegraph</Text>
-      <LowerText>telegraph</LowerText>
-      <ProperText>Telegraph</ProperText>
-      <IsSingular>true</IsSingular>
-      <SingularText>Telegraph</SingularText>
-      <PluralText>Telegraphs</PluralText>
-      <Sequence>39</Sequence>
       <PartOfSpeech>NN</PartOfSpeech>
       <Count>2</Count>
     </Word>
@@ -1268,17 +1320,6 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
       <Count>2</Count>
     </Word>
     <Word>
-      <Text>represented</Text>
-      <LowerText>represented</LowerText>
-      <ProperText>Represented</ProperText>
-      <IsSingular>true</IsSingular>
-      <SingularText>Represented</SingularText>
-      <PluralText>Representeds</PluralText>
-      <Sequence>100</Sequence>
-      <PartOfSpeech>VBN</PartOfSpeech>
-      <Count>2</Count>
-    </Word>
-    <Word>
       <Text>unique</Text>
       <LowerText>unique</LowerText>
       <ProperText>Unique</ProperText>
@@ -1287,17 +1328,6 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
       <PluralText>Uniques</PluralText>
       <Sequence>101</Sequence>
       <PartOfSpeech>JJ</PartOfSpeech>
-      <Count>2</Count>
-    </Word>
-    <Word>
-      <Text>sequence</Text>
-      <LowerText>sequence</LowerText>
-      <ProperText>Sequence</ProperText>
-      <IsSingular>true</IsSingular>
-      <SingularText>Sequence</SingularText>
-      <PluralText>Sequences</PluralText>
-      <Sequence>102</Sequence>
-      <PartOfSpeech>NN</PartOfSpeech>
       <Count>2</Count>
     </Word>
     <Word>
@@ -1397,17 +1427,6 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
       <PluralText>One</PluralText>
       <Sequence>119</Sequence>
       <PartOfSpeech>CD</PartOfSpeech>
-      <Count>2</Count>
-    </Word>
-    <Word>
-      <Text>words</Text>
-      <LowerText>words</LowerText>
-      <ProperText>Words</ProperText>
-      <IsSingular>false</IsSingular>
-      <SingularText>Word</SingularText>
-      <PluralText>Words</PluralText>
-      <Sequence>120</Sequence>
-      <PartOfSpeech>NNS</PartOfSpeech>
       <Count>2</Count>
     </Word>
     <Word>
@@ -1584,17 +1603,6 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
       <PluralText>E</PluralText>
       <Sequence>138</Sequence>
       <PartOfSpeech>NN</PartOfSpeech>
-      <Count>2</Count>
-    </Word>
-    <Word>
-      <Text>has</Text>
-      <LowerText>has</LowerText>
-      <ProperText>Has</ProperText>
-      <IsSingular>true</IsSingular>
-      <SingularText>Has</SingularText>
-      <PluralText>Hases</PluralText>
-      <Sequence>139</Sequence>
-      <PartOfSpeech>VBZ</PartOfSpeech>
       <Count>2</Count>
     </Word>
     <Word>
@@ -2213,6 +2221,171 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
       <PartOfSpeech>NNS</PartOfSpeech>
       <Count>2</Count>
     </Word>
+    <Word>
+      <Text>TelegraphStation</Text>
+      <LowerText>telegraphstation</LowerText>
+      <ProperText>TelegraphStation</ProperText>
+      <IsSingular>true</IsSingular>
+      <SingularText>TelegraphStation</SingularText>
+      <PluralText>TelegraphStations</PluralText>
+      <Sequence>200</Sequence>
+      <PartOfSpeech>NN</PartOfSpeech>
+      <Count>2</Count>
+    </Word>
+    <Word>
+      <Text>allows</Text>
+      <LowerText>allows</LowerText>
+      <ProperText>Allows</ProperText>
+      <IsSingular>false</IsSingular>
+      <SingularText>Allow</SingularText>
+      <PluralText>Allows</PluralText>
+      <Sequence>201</Sequence>
+      <PartOfSpeech>VBZ</PartOfSpeech>
+      <Count>2</Count>
+    </Word>
+    <Word>
+      <Text>Customers</Text>
+      <LowerText>customers</LowerText>
+      <ProperText>Customers</ProperText>
+      <IsSingular>false</IsSingular>
+      <SingularText>Customer</SingularText>
+      <PluralText>Customers</PluralText>
+      <Sequence>202</Sequence>
+      <PartOfSpeech>NNS</PartOfSpeech>
+      <Count>2</Count>
+    </Word>
+    <Word>
+      <Text>send</Text>
+      <LowerText>send</LowerText>
+      <ProperText>Send</ProperText>
+      <IsSingular>true</IsSingular>
+      <SingularText>Send</SingularText>
+      <PluralText>Sends</PluralText>
+      <Sequence>203</Sequence>
+      <PartOfSpeech>VB</PartOfSpeech>
+      <Count>2</Count>
+    </Word>
+    <Word>
+      <Text>receive</Text>
+      <LowerText>receive</LowerText>
+      <ProperText>Receive</ProperText>
+      <IsSingular>true</IsSingular>
+      <SingularText>Receive</SingularText>
+      <PluralText>Receives</PluralText>
+      <Sequence>204</Sequence>
+      <PartOfSpeech>VB</PartOfSpeech>
+      <Count>2</Count>
+    </Word>
+    <Word>
+      <Text>Telegraphs</Text>
+      <LowerText>telegraphs</LowerText>
+      <ProperText>Telegraphs</ProperText>
+      <IsSingular>false</IsSingular>
+      <SingularText>Telegraph</SingularText>
+      <PluralText>Telegraphs</PluralText>
+      <Sequence>205</Sequence>
+      <PartOfSpeech>NNPS</PartOfSpeech>
+      <Count>2</Count>
+    </Word>
+    <Word>
+      <Text>made</Text>
+      <LowerText>made</LowerText>
+      <ProperText>Made</ProperText>
+      <IsSingular>true</IsSingular>
+      <SingularText>Made</SingularText>
+      <PluralText>Mades</PluralText>
+      <Sequence>206</Sequence>
+      <PartOfSpeech>VBN</PartOfSpeech>
+      <Count>2</Count>
+    </Word>
+    <Word>
+      <Text>up</Text>
+      <LowerText>up</LowerText>
+      <ProperText>Up</ProperText>
+      <IsSingular>true</IsSingular>
+      <SingularText>Up</SingularText>
+      <PluralText>Ups</PluralText>
+      <Sequence>207</Sequence>
+      <PartOfSpeech>RP</PartOfSpeech>
+      <Count>2</Count>
+    </Word>
+    <Word>
+      <Text>multiple</Text>
+      <LowerText>multiple</LowerText>
+      <ProperText>Multiple</ProperText>
+      <IsSingular>true</IsSingular>
+      <SingularText>Multiple</SingularText>
+      <PluralText>Multiples</PluralText>
+      <Sequence>208</Sequence>
+      <PartOfSpeech>JJ</PartOfSpeech>
+      <Count>2</Count>
+    </Word>
+    <Word>
+      <Text>Sentences</Text>
+      <LowerText>sentences</LowerText>
+      <ProperText>Sentences</ProperText>
+      <IsSingular>false</IsSingular>
+      <SingularText>Sentence</SingularText>
+      <PluralText>Sentences</PluralText>
+      <Sequence>209</Sequence>
+      <PartOfSpeech>NNS</PartOfSpeech>
+      <Count>2</Count>
+    </Word>
+    <Word>
+      <Text>sentence</Text>
+      <LowerText>sentence</LowerText>
+      <ProperText>Sentence</ProperText>
+      <IsSingular>true</IsSingular>
+      <SingularText>Sentence</SingularText>
+      <PluralText>Sentences</PluralText>
+      <Sequence>210</Sequence>
+      <PartOfSpeech>NN</PartOfSpeech>
+      <Count>2</Count>
+    </Word>
+    <Word>
+      <Text>composed</Text>
+      <LowerText>composed</LowerText>
+      <ProperText>Composed</ProperText>
+      <IsSingular>true</IsSingular>
+      <SingularText>Composed</SingularText>
+      <PluralText>Composeds</PluralText>
+      <Sequence>211</Sequence>
+      <PartOfSpeech>VBN</PartOfSpeech>
+      <Count>2</Count>
+    </Word>
+    <Word>
+      <Text>Characters</Text>
+      <LowerText>characters</LowerText>
+      <ProperText>Characters</ProperText>
+      <IsSingular>false</IsSingular>
+      <SingularText>Character</SingularText>
+      <PluralText>Characters</PluralText>
+      <Sequence>212</Sequence>
+      <PartOfSpeech>NNS</PartOfSpeech>
+      <Count>2</Count>
+    </Word>
+    <Word>
+      <Text>ecah</Text>
+      <LowerText>ecah</LowerText>
+      <ProperText>Ecah</ProperText>
+      <IsSingular>true</IsSingular>
+      <SingularText>Ecah</SingularText>
+      <PluralText>Ecahs</PluralText>
+      <Sequence>213</Sequence>
+      <PartOfSpeech>JJ</PartOfSpeech>
+      <Count>2</Count>
+    </Word>
+    <Word>
+      <Text>silences</Text>
+      <LowerText>silences</LowerText>
+      <ProperText>Silences</ProperText>
+      <IsSingular>false</IsSingular>
+      <SingularText>Silence</SingularText>
+      <PluralText>Silences</PluralText>
+      <Sequence>214</Sequence>
+      <PartOfSpeech>NNS</PartOfSpeech>
+      <Count>2</Count>
+    </Word>
   </Words>
   <PartsOfSpeech>
     <PartOfSpeech>
@@ -2421,7 +2594,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Telegraphs</PluralText>
           <Sequence>39</Sequence>
           <PartOfSpeech>NN</PartOfSpeech>
-          <Count>2</Count>
+          <Count>3</Count>
         </Word>
         <Word>
           <Text>ISO</Text>
@@ -2443,7 +2616,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Alphabets</PluralText>
           <Sequence>48</Sequence>
           <PartOfSpeech>NN</PartOfSpeech>
-          <Count>3</Count>
+          <Count>4</Count>
         </Word>
         <Word>
           <Text>set</Text>
@@ -2509,7 +2682,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Characters</PluralText>
           <Sequence>96</Sequence>
           <PartOfSpeech>NN</PartOfSpeech>
-          <Count>3</Count>
+          <Count>4</Count>
         </Word>
         <Word>
           <Text>letter</Text>
@@ -2553,7 +2726,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Sequences</PluralText>
           <Sequence>102</Sequence>
           <PartOfSpeech>NN</PartOfSpeech>
-          <Count>2</Count>
+          <Count>3</Count>
         </Word>
         <Word>
           <Text>dot</Text>
@@ -2874,6 +3047,28 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PartOfSpeech>NN</PartOfSpeech>
           <Count>2</Count>
         </Word>
+        <Word>
+          <Text>TelegraphStation</Text>
+          <LowerText>telegraphstation</LowerText>
+          <ProperText>TelegraphStation</ProperText>
+          <IsSingular>true</IsSingular>
+          <SingularText>TelegraphStation</SingularText>
+          <PluralText>TelegraphStations</PluralText>
+          <Sequence>200</Sequence>
+          <PartOfSpeech>NN</PartOfSpeech>
+          <Count>2</Count>
+        </Word>
+        <Word>
+          <Text>sentence</Text>
+          <LowerText>sentence</LowerText>
+          <ProperText>Sentence</ProperText>
+          <IsSingular>true</IsSingular>
+          <SingularText>Sentence</SingularText>
+          <PluralText>Sentences</PluralText>
+          <Sequence>210</Sequence>
+          <PartOfSpeech>NN</PartOfSpeech>
+          <Count>2</Count>
+        </Word>
       </Words>
     </PartOfSpeech>
     <PartOfSpeech>
@@ -2889,7 +3084,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Ises</PluralText>
           <Sequence>2</Sequence>
           <PartOfSpeech>VBZ</PartOfSpeech>
-          <Count>12</Count>
+          <Count>15</Count>
         </Word>
         <Word>
           <Text>encodes</Text>
@@ -2933,6 +3128,17 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Hases</PluralText>
           <Sequence>139</Sequence>
           <PartOfSpeech>VBZ</PartOfSpeech>
+          <Count>3</Count>
+        </Word>
+        <Word>
+          <Text>allows</Text>
+          <LowerText>allows</LowerText>
+          <ProperText>Allows</ProperText>
+          <IsSingular>false</IsSingular>
+          <SingularText>Allow</SingularText>
+          <PluralText>Allows</PluralText>
+          <Sequence>201</Sequence>
+          <PartOfSpeech>VBZ</PartOfSpeech>
           <Count>2</Count>
         </Word>
       </Words>
@@ -2950,7 +3156,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>A</PluralText>
           <Sequence>3</Sequence>
           <PartOfSpeech>DT</PartOfSpeech>
-          <Count>18</Count>
+          <Count>20</Count>
         </Word>
         <Word>
           <Text>an</Text>
@@ -3005,7 +3211,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Each</PluralText>
           <Sequence>92</Sequence>
           <PartOfSpeech>DT</PartOfSpeech>
-          <Count>4</Count>
+          <Count>7</Count>
         </Word>
       </Words>
     </PartOfSpeech>
@@ -3022,7 +3228,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Ofs</PluralText>
           <Sequence>5</Sequence>
           <PartOfSpeech>IN</PartOfSpeech>
-          <Count>15</Count>
+          <Count>18</Count>
         </Word>
         <Word>
           <Text>as</Text>
@@ -3044,7 +3250,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Bies</PluralText>
           <Sequence>22</Sequence>
           <PartOfSpeech>IN</PartOfSpeech>
-          <Count>7</Count>
+          <Count>8</Count>
         </Word>
         <Word>
           <Text>without</Text>
@@ -3331,7 +3537,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Manies</PluralText>
           <Sequence>79</Sequence>
           <PartOfSpeech>JJ</PartOfSpeech>
-          <Count>3</Count>
+          <Count>5</Count>
         </Word>
         <Word>
           <Text>non-English</Text>
@@ -3487,6 +3693,28 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PartOfSpeech>JJ</PartOfSpeech>
           <Count>2</Count>
         </Word>
+        <Word>
+          <Text>multiple</Text>
+          <LowerText>multiple</LowerText>
+          <ProperText>Multiple</ProperText>
+          <IsSingular>true</IsSingular>
+          <SingularText>Multiple</SingularText>
+          <PluralText>Multiples</PluralText>
+          <Sequence>208</Sequence>
+          <PartOfSpeech>JJ</PartOfSpeech>
+          <Count>2</Count>
+        </Word>
+        <Word>
+          <Text>ecah</Text>
+          <LowerText>ecah</LowerText>
+          <ProperText>Ecah</ProperText>
+          <IsSingular>true</IsSingular>
+          <SingularText>Ecah</SingularText>
+          <PluralText>Ecahs</PluralText>
+          <Sequence>213</Sequence>
+          <PartOfSpeech>JJ</PartOfSpeech>
+          <Count>2</Count>
+        </Word>
       </Words>
     </PartOfSpeech>
     <PartOfSpeech>
@@ -3502,7 +3730,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Tones</PluralText>
           <Sequence>12</Sequence>
           <PartOfSpeech>NNS</PartOfSpeech>
-          <Count>2</Count>
+          <Count>3</Count>
         </Word>
         <Word>
           <Text>lights</Text>
@@ -3557,7 +3785,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Signals</PluralText>
           <Sequence>59</Sequence>
           <PartOfSpeech>NNS</PartOfSpeech>
-          <Count>3</Count>
+          <Count>4</Count>
         </Word>
         <Word>
           <Text>prosigns</Text>
@@ -3645,7 +3873,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Words</PluralText>
           <Sequence>120</Sequence>
           <PartOfSpeech>NNS</PartOfSpeech>
-          <Count>2</Count>
+          <Count>3</Count>
         </Word>
         <Word>
           <Text>operators</Text>
@@ -3801,6 +4029,50 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PartOfSpeech>NNS</PartOfSpeech>
           <Count>2</Count>
         </Word>
+        <Word>
+          <Text>Customers</Text>
+          <LowerText>customers</LowerText>
+          <ProperText>Customers</ProperText>
+          <IsSingular>false</IsSingular>
+          <SingularText>Customer</SingularText>
+          <PluralText>Customers</PluralText>
+          <Sequence>202</Sequence>
+          <PartOfSpeech>NNS</PartOfSpeech>
+          <Count>2</Count>
+        </Word>
+        <Word>
+          <Text>Sentences</Text>
+          <LowerText>sentences</LowerText>
+          <ProperText>Sentences</ProperText>
+          <IsSingular>false</IsSingular>
+          <SingularText>Sentence</SingularText>
+          <PluralText>Sentences</PluralText>
+          <Sequence>209</Sequence>
+          <PartOfSpeech>NNS</PartOfSpeech>
+          <Count>2</Count>
+        </Word>
+        <Word>
+          <Text>Characters</Text>
+          <LowerText>characters</LowerText>
+          <ProperText>Characters</ProperText>
+          <IsSingular>false</IsSingular>
+          <SingularText>Character</SingularText>
+          <PluralText>Characters</PluralText>
+          <Sequence>212</Sequence>
+          <PartOfSpeech>NNS</PartOfSpeech>
+          <Count>2</Count>
+        </Word>
+        <Word>
+          <Text>silences</Text>
+          <LowerText>silences</LowerText>
+          <ProperText>Silences</ProperText>
+          <IsSingular>false</IsSingular>
+          <SingularText>Silence</SingularText>
+          <PluralText>Silences</PluralText>
+          <Sequence>214</Sequence>
+          <PartOfSpeech>NNS</PartOfSpeech>
+          <Count>2</Count>
+        </Word>
       </Words>
     </PartOfSpeech>
     <PartOfSpeech>
@@ -3816,7 +4088,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>,</PluralText>
           <Sequence>13</Sequence>
           <PartOfSpeech>,</PartOfSpeech>
-          <Count>25</Count>
+          <Count>26</Count>
         </Word>
       </Words>
     </PartOfSpeech>
@@ -3833,7 +4105,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Ors</PluralText>
           <Sequence>15</Sequence>
           <PartOfSpeech>CC</PartOfSpeech>
-          <Count>7</Count>
+          <Count>8</Count>
         </Word>
         <Word>
           <Text>and</Text>
@@ -3844,7 +4116,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Ands</PluralText>
           <Sequence>54</Sequence>
           <PartOfSpeech>CC</PartOfSpeech>
-          <Count>12</Count>
+          <Count>15</Count>
         </Word>
         <Word>
           <Text>either</Text>
@@ -3929,6 +4201,28 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <Sequence>169</Sequence>
           <PartOfSpeech>VB</PartOfSpeech>
           <Count>3</Count>
+        </Word>
+        <Word>
+          <Text>send</Text>
+          <LowerText>send</LowerText>
+          <ProperText>Send</ProperText>
+          <IsSingular>true</IsSingular>
+          <SingularText>Send</SingularText>
+          <PluralText>Sends</PluralText>
+          <Sequence>203</Sequence>
+          <PartOfSpeech>VB</PartOfSpeech>
+          <Count>2</Count>
+        </Word>
+        <Word>
+          <Text>receive</Text>
+          <LowerText>receive</LowerText>
+          <ProperText>Receive</ProperText>
+          <IsSingular>true</IsSingular>
+          <SingularText>Receive</SingularText>
+          <PluralText>Receives</PluralText>
+          <Sequence>204</Sequence>
+          <PartOfSpeech>VB</PartOfSpeech>
+          <Count>2</Count>
         </Word>
       </Words>
     </PartOfSpeech>
@@ -4127,7 +4421,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Representeds</PluralText>
           <Sequence>100</Sequence>
           <PartOfSpeech>VBN</PartOfSpeech>
-          <Count>2</Count>
+          <Count>3</Count>
         </Word>
         <Word>
           <Text>followed</Text>
@@ -4217,6 +4511,28 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PartOfSpeech>VBN</PartOfSpeech>
           <Count>2</Count>
         </Word>
+        <Word>
+          <Text>made</Text>
+          <LowerText>made</LowerText>
+          <ProperText>Made</ProperText>
+          <IsSingular>true</IsSingular>
+          <SingularText>Made</SingularText>
+          <PluralText>Mades</PluralText>
+          <Sequence>206</Sequence>
+          <PartOfSpeech>VBN</PartOfSpeech>
+          <Count>2</Count>
+        </Word>
+        <Word>
+          <Text>composed</Text>
+          <LowerText>composed</LowerText>
+          <ProperText>Composed</ProperText>
+          <IsSingular>true</IsSingular>
+          <SingularText>Composed</SingularText>
+          <PluralText>Composeds</PluralText>
+          <Sequence>211</Sequence>
+          <PartOfSpeech>VBN</PartOfSpeech>
+          <Count>2</Count>
+        </Word>
       </Words>
     </PartOfSpeech>
     <PartOfSpeech>
@@ -4232,7 +4548,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>.</PluralText>
           <Sequence>29</Sequence>
           <PartOfSpeech>.</PartOfSpeech>
-          <Count>18</Count>
+          <Count>22</Count>
         </Word>
       </Words>
     </PartOfSpeech>
@@ -4512,7 +4828,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Toes</PluralText>
           <Sequence>89</Sequence>
           <PartOfSpeech>TO</PartOfSpeech>
-          <Count>12</Count>
+          <Count>13</Count>
         </Word>
       </Words>
     </PartOfSpeech>
@@ -4601,6 +4917,40 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
         </Word>
       </Words>
     </PartOfSpeech>
+    <PartOfSpeech>
+      <Code>NNPS</Code>
+      <WordCount>0</WordCount>
+      <Words>
+        <Word>
+          <Text>Telegraphs</Text>
+          <LowerText>telegraphs</LowerText>
+          <ProperText>Telegraphs</ProperText>
+          <IsSingular>false</IsSingular>
+          <SingularText>Telegraph</SingularText>
+          <PluralText>Telegraphs</PluralText>
+          <Sequence>205</Sequence>
+          <PartOfSpeech>NNPS</PartOfSpeech>
+          <Count>2</Count>
+        </Word>
+      </Words>
+    </PartOfSpeech>
+    <PartOfSpeech>
+      <Code>RP</Code>
+      <WordCount>0</WordCount>
+      <Words>
+        <Word>
+          <Text>up</Text>
+          <LowerText>up</LowerText>
+          <ProperText>Up</ProperText>
+          <IsSingular>true</IsSingular>
+          <SingularText>Up</SingularText>
+          <PluralText>Ups</PluralText>
+          <Sequence>207</Sequence>
+          <PartOfSpeech>RP</PartOfSpeech>
+          <Count>2</Count>
+        </Word>
+      </Words>
+    </PartOfSpeech>
   </PartsOfSpeech>
   <Sentences>
     <Sentence>
@@ -4637,7 +4987,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Ises</PluralText>
           <Sequence>2</Sequence>
           <PartOfSpeech>VBZ</PartOfSpeech>
-          <Count>12</Count>
+          <Count>15</Count>
         </Word>
         <Word>
           <Text>a</Text>
@@ -4648,7 +4998,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>A</PluralText>
           <Sequence>3</Sequence>
           <PartOfSpeech>DT</PartOfSpeech>
-          <Count>18</Count>
+          <Count>20</Count>
         </Word>
         <Word>
           <Text>method</Text>
@@ -4670,7 +5020,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Ofs</PluralText>
           <Sequence>5</Sequence>
           <PartOfSpeech>IN</PartOfSpeech>
-          <Count>15</Count>
+          <Count>18</Count>
         </Word>
         <Word>
           <Text>transmitting</Text>
@@ -4725,7 +5075,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>A</PluralText>
           <Sequence>3</Sequence>
           <PartOfSpeech>DT</PartOfSpeech>
-          <Count>18</Count>
+          <Count>20</Count>
         </Word>
         <Word>
           <Text>series</Text>
@@ -4747,7 +5097,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Ofs</PluralText>
           <Sequence>5</Sequence>
           <PartOfSpeech>IN</PartOfSpeech>
-          <Count>15</Count>
+          <Count>18</Count>
         </Word>
         <Word>
           <Text>on-off</Text>
@@ -4769,7 +5119,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Tones</PluralText>
           <Sequence>12</Sequence>
           <PartOfSpeech>NNS</PartOfSpeech>
-          <Count>2</Count>
+          <Count>3</Count>
         </Word>
         <Word>
           <Text>,</Text>
@@ -4780,7 +5130,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>,</PluralText>
           <Sequence>13</Sequence>
           <PartOfSpeech>,</PartOfSpeech>
-          <Count>25</Count>
+          <Count>26</Count>
         </Word>
         <Word>
           <Text>lights</Text>
@@ -4802,7 +5152,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>,</PluralText>
           <Sequence>13</Sequence>
           <PartOfSpeech>,</PartOfSpeech>
-          <Count>25</Count>
+          <Count>26</Count>
         </Word>
         <Word>
           <Text>or</Text>
@@ -4813,7 +5163,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Ors</PluralText>
           <Sequence>15</Sequence>
           <PartOfSpeech>CC</PartOfSpeech>
-          <Count>7</Count>
+          <Count>8</Count>
         </Word>
         <Word>
           <Text>clicks</Text>
@@ -4890,7 +5240,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Bies</PluralText>
           <Sequence>22</Sequence>
           <PartOfSpeech>IN</PartOfSpeech>
-          <Count>7</Count>
+          <Count>8</Count>
         </Word>
         <Word>
           <Text>a</Text>
@@ -4901,7 +5251,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>A</PluralText>
           <Sequence>3</Sequence>
           <PartOfSpeech>DT</PartOfSpeech>
-          <Count>18</Count>
+          <Count>20</Count>
         </Word>
         <Word>
           <Text>skilled</Text>
@@ -4934,7 +5284,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Ors</PluralText>
           <Sequence>15</Sequence>
           <PartOfSpeech>CC</PartOfSpeech>
-          <Count>7</Count>
+          <Count>8</Count>
         </Word>
         <Word>
           <Text>observer</Text>
@@ -4989,7 +5339,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>.</PluralText>
           <Sequence>29</Sequence>
           <PartOfSpeech>.</PartOfSpeech>
-          <Count>18</Count>
+          <Count>22</Count>
         </Word>
       </Words>
     </Sentence>
@@ -5016,7 +5366,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Ises</PluralText>
           <Sequence>2</Sequence>
           <PartOfSpeech>VBZ</PartOfSpeech>
-          <Count>12</Count>
+          <Count>15</Count>
         </Word>
         <Word>
           <Text>named</Text>
@@ -5093,7 +5443,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>,</PluralText>
           <Sequence>13</Sequence>
           <PartOfSpeech>,</PartOfSpeech>
-          <Count>25</Count>
+          <Count>26</Count>
         </Word>
         <Word>
           <Text>an</Text>
@@ -5126,7 +5476,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Ofs</PluralText>
           <Sequence>5</Sequence>
           <PartOfSpeech>IN</PartOfSpeech>
-          <Count>15</Count>
+          <Count>18</Count>
         </Word>
         <Word>
           <Text>the</Text>
@@ -5148,7 +5498,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Telegraphs</PluralText>
           <Sequence>39</Sequence>
           <PartOfSpeech>NN</PartOfSpeech>
-          <Count>2</Count>
+          <Count>3</Count>
         </Word>
         <Word>
           <Text>.</Text>
@@ -5159,7 +5509,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>.</PluralText>
           <Sequence>29</Sequence>
           <PartOfSpeech>.</PartOfSpeech>
-          <Count>18</Count>
+          <Count>22</Count>
         </Word>
       </Words>
     </Sentence>
@@ -5307,7 +5657,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Alphabets</PluralText>
           <Sequence>48</Sequence>
           <PartOfSpeech>NN</PartOfSpeech>
-          <Count>3</Count>
+          <Count>4</Count>
         </Word>
         <Word>
           <Text>,</Text>
@@ -5318,7 +5668,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>,</PluralText>
           <Sequence>13</Sequence>
           <PartOfSpeech>,</PartOfSpeech>
-          <Count>25</Count>
+          <Count>26</Count>
         </Word>
         <Word>
           <Text>some</Text>
@@ -5373,7 +5723,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>,</PluralText>
           <Sequence>13</Sequence>
           <PartOfSpeech>,</PartOfSpeech>
-          <Count>25</Count>
+          <Count>26</Count>
         </Word>
         <Word>
           <Text>the</Text>
@@ -5417,7 +5767,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Ands</PluralText>
           <Sequence>54</Sequence>
           <PartOfSpeech>CC</PartOfSpeech>
-          <Count>12</Count>
+          <Count>15</Count>
         </Word>
         <Word>
           <Text>a</Text>
@@ -5428,7 +5778,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>A</PluralText>
           <Sequence>3</Sequence>
           <PartOfSpeech>DT</PartOfSpeech>
-          <Count>18</Count>
+          <Count>20</Count>
         </Word>
         <Word>
           <Text>small</Text>
@@ -5461,7 +5811,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Ofs</PluralText>
           <Sequence>5</Sequence>
           <PartOfSpeech>IN</PartOfSpeech>
-          <Count>15</Count>
+          <Count>18</Count>
         </Word>
         <Word>
           <Text>punctuation</Text>
@@ -5483,7 +5833,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Ands</PluralText>
           <Sequence>54</Sequence>
           <PartOfSpeech>CC</PartOfSpeech>
-          <Count>12</Count>
+          <Count>15</Count>
         </Word>
         <Word>
           <Text>procedural</Text>
@@ -5505,7 +5855,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Signals</PluralText>
           <Sequence>59</Sequence>
           <PartOfSpeech>NNS</PartOfSpeech>
-          <Count>3</Count>
+          <Count>4</Count>
         </Word>
         <Word>
           <Text>-LRB-</Text>
@@ -5582,7 +5932,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Ofs</PluralText>
           <Sequence>5</Sequence>
           <PartOfSpeech>IN</PartOfSpeech>
-          <Count>15</Count>
+          <Count>18</Count>
         </Word>
         <Word>
           <Text>short</Text>
@@ -5604,7 +5954,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Ands</PluralText>
           <Sequence>54</Sequence>
           <PartOfSpeech>CC</PartOfSpeech>
-          <Count>12</Count>
+          <Count>15</Count>
         </Word>
         <Word>
           <Text>long</Text>
@@ -5626,7 +5976,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Signals</PluralText>
           <Sequence>59</Sequence>
           <PartOfSpeech>NNS</PartOfSpeech>
-          <Count>3</Count>
+          <Count>4</Count>
         </Word>
         <Word>
           <Text>called</Text>
@@ -5681,7 +6031,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Ands</PluralText>
           <Sequence>54</Sequence>
           <PartOfSpeech>CC</PartOfSpeech>
-          <Count>12</Count>
+          <Count>15</Count>
         </Word>
         <Word>
           <Text>``</Text>
@@ -5725,7 +6075,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>,</PluralText>
           <Sequence>13</Sequence>
           <PartOfSpeech>,</PartOfSpeech>
-          <Count>25</Count>
+          <Count>26</Count>
         </Word>
         <Word>
           <Text>-LSB-</Text>
@@ -5769,7 +6119,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Ors</PluralText>
           <Sequence>15</Sequence>
           <PartOfSpeech>CC</PartOfSpeech>
-          <Count>7</Count>
+          <Count>8</Count>
         </Word>
         <Word>
           <Text>``</Text>
@@ -5813,7 +6163,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Ands</PluralText>
           <Sequence>54</Sequence>
           <PartOfSpeech>CC</PartOfSpeech>
-          <Count>12</Count>
+          <Count>15</Count>
         </Word>
         <Word>
           <Text>``</Text>
@@ -5857,7 +6207,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>,</PluralText>
           <Sequence>13</Sequence>
           <PartOfSpeech>,</PartOfSpeech>
-          <Count>25</Count>
+          <Count>26</Count>
         </Word>
         <Word>
           <Text>as</Text>
@@ -5923,7 +6273,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>.</PluralText>
           <Sequence>29</Sequence>
           <PartOfSpeech>.</PartOfSpeech>
-          <Count>18</Count>
+          <Count>22</Count>
         </Word>
       </Words>
     </Sentence>
@@ -5950,7 +6300,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Manies</PluralText>
           <Sequence>79</Sequence>
           <PartOfSpeech>JJ</PartOfSpeech>
-          <Count>3</Count>
+          <Count>5</Count>
         </Word>
         <Word>
           <Text>non-English</Text>
@@ -6071,7 +6421,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>,</PluralText>
           <Sequence>13</Sequence>
           <PartOfSpeech>,</PartOfSpeech>
-          <Count>25</Count>
+          <Count>26</Count>
         </Word>
         <Word>
           <Text>extensions</Text>
@@ -6093,7 +6443,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Toes</PluralText>
           <Sequence>89</Sequence>
           <PartOfSpeech>TO</PartOfSpeech>
-          <Count>12</Count>
+          <Count>13</Count>
         </Word>
         <Word>
           <Text>the</Text>
@@ -6126,7 +6476,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Alphabets</PluralText>
           <Sequence>48</Sequence>
           <PartOfSpeech>NN</PartOfSpeech>
-          <Count>3</Count>
+          <Count>4</Count>
         </Word>
         <Word>
           <Text>exist</Text>
@@ -6181,7 +6531,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>.</PluralText>
           <Sequence>29</Sequence>
           <PartOfSpeech>.</PartOfSpeech>
-          <Count>18</Count>
+          <Count>22</Count>
         </Word>
       </Words>
     </Sentence>
@@ -6197,7 +6547,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Each</PluralText>
           <Sequence>92</Sequence>
           <PartOfSpeech>DT</PartOfSpeech>
-          <Count>4</Count>
+          <Count>7</Count>
         </Word>
         <Word>
           <Text>Morse</Text>
@@ -6263,7 +6613,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>A</PluralText>
           <Sequence>3</Sequence>
           <PartOfSpeech>DT</PartOfSpeech>
-          <Count>18</Count>
+          <Count>20</Count>
         </Word>
         <Word>
           <Text>text</Text>
@@ -6285,7 +6635,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Characters</PluralText>
           <Sequence>96</Sequence>
           <PartOfSpeech>NN</PartOfSpeech>
-          <Count>3</Count>
+          <Count>4</Count>
         </Word>
         <Word>
           <Text>-LRB-</Text>
@@ -6318,7 +6668,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Ors</PluralText>
           <Sequence>15</Sequence>
           <PartOfSpeech>CC</PartOfSpeech>
-          <Count>7</Count>
+          <Count>8</Count>
         </Word>
         <Word>
           <Text>numeral</Text>
@@ -6351,7 +6701,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Ors</PluralText>
           <Sequence>15</Sequence>
           <PartOfSpeech>CC</PartOfSpeech>
-          <Count>7</Count>
+          <Count>8</Count>
         </Word>
         <Word>
           <Text>a</Text>
@@ -6362,7 +6712,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>A</PluralText>
           <Sequence>3</Sequence>
           <PartOfSpeech>DT</PartOfSpeech>
-          <Count>18</Count>
+          <Count>20</Count>
         </Word>
         <Word>
           <Text>prosign</Text>
@@ -6384,7 +6734,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Ands</PluralText>
           <Sequence>54</Sequence>
           <PartOfSpeech>CC</PartOfSpeech>
-          <Count>12</Count>
+          <Count>15</Count>
         </Word>
         <Word>
           <Text>is</Text>
@@ -6395,7 +6745,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Ises</PluralText>
           <Sequence>2</Sequence>
           <PartOfSpeech>VBZ</PartOfSpeech>
-          <Count>12</Count>
+          <Count>15</Count>
         </Word>
         <Word>
           <Text>represented</Text>
@@ -6406,7 +6756,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Representeds</PluralText>
           <Sequence>100</Sequence>
           <PartOfSpeech>VBN</PartOfSpeech>
-          <Count>2</Count>
+          <Count>3</Count>
         </Word>
         <Word>
           <Text>by</Text>
@@ -6417,7 +6767,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Bies</PluralText>
           <Sequence>22</Sequence>
           <PartOfSpeech>IN</PartOfSpeech>
-          <Count>7</Count>
+          <Count>8</Count>
         </Word>
         <Word>
           <Text>a</Text>
@@ -6428,7 +6778,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>A</PluralText>
           <Sequence>3</Sequence>
           <PartOfSpeech>DT</PartOfSpeech>
-          <Count>18</Count>
+          <Count>20</Count>
         </Word>
         <Word>
           <Text>unique</Text>
@@ -6450,7 +6800,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Sequences</PluralText>
           <Sequence>102</Sequence>
           <PartOfSpeech>NN</PartOfSpeech>
-          <Count>2</Count>
+          <Count>3</Count>
         </Word>
         <Word>
           <Text>of</Text>
@@ -6461,7 +6811,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Ofs</PluralText>
           <Sequence>5</Sequence>
           <PartOfSpeech>IN</PartOfSpeech>
-          <Count>15</Count>
+          <Count>18</Count>
         </Word>
         <Word>
           <Text>dots</Text>
@@ -6483,7 +6833,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Ands</PluralText>
           <Sequence>54</Sequence>
           <PartOfSpeech>CC</PartOfSpeech>
-          <Count>12</Count>
+          <Count>15</Count>
         </Word>
         <Word>
           <Text>dashes</Text>
@@ -6505,7 +6855,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>.</PluralText>
           <Sequence>29</Sequence>
           <PartOfSpeech>.</PartOfSpeech>
-          <Count>18</Count>
+          <Count>22</Count>
         </Word>
       </Words>
     </Sentence>
@@ -6554,7 +6904,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Ises</PluralText>
           <Sequence>2</Sequence>
           <PartOfSpeech>VBZ</PartOfSpeech>
-          <Count>12</Count>
+          <Count>15</Count>
         </Word>
         <Word>
           <Text>the</Text>
@@ -6598,7 +6948,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Ofs</PluralText>
           <Sequence>5</Sequence>
           <PartOfSpeech>IN</PartOfSpeech>
-          <Count>15</Count>
+          <Count>18</Count>
         </Word>
         <Word>
           <Text>time</Text>
@@ -6664,7 +7014,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>.</PluralText>
           <Sequence>29</Sequence>
           <PartOfSpeech>.</PartOfSpeech>
-          <Count>18</Count>
+          <Count>22</Count>
         </Word>
       </Words>
     </Sentence>
@@ -6702,7 +7052,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Ofs</PluralText>
           <Sequence>5</Sequence>
           <PartOfSpeech>IN</PartOfSpeech>
-          <Count>15</Count>
+          <Count>18</Count>
         </Word>
         <Word>
           <Text>a</Text>
@@ -6713,7 +7063,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>A</PluralText>
           <Sequence>3</Sequence>
           <PartOfSpeech>DT</PartOfSpeech>
-          <Count>18</Count>
+          <Count>20</Count>
         </Word>
         <Word>
           <Text>dash</Text>
@@ -6735,7 +7085,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Ises</PluralText>
           <Sequence>2</Sequence>
           <PartOfSpeech>VBZ</PartOfSpeech>
-          <Count>12</Count>
+          <Count>15</Count>
         </Word>
         <Word>
           <Text>three</Text>
@@ -6790,7 +7140,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Ofs</PluralText>
           <Sequence>5</Sequence>
           <PartOfSpeech>IN</PartOfSpeech>
-          <Count>15</Count>
+          <Count>18</Count>
         </Word>
         <Word>
           <Text>a</Text>
@@ -6801,7 +7151,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>A</PluralText>
           <Sequence>3</Sequence>
           <PartOfSpeech>DT</PartOfSpeech>
-          <Count>18</Count>
+          <Count>20</Count>
         </Word>
         <Word>
           <Text>dot</Text>
@@ -6823,7 +7173,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>.</PluralText>
           <Sequence>29</Sequence>
           <PartOfSpeech>.</PartOfSpeech>
-          <Count>18</Count>
+          <Count>22</Count>
         </Word>
       </Words>
     </Sentence>
@@ -6839,7 +7189,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Each</PluralText>
           <Sequence>92</Sequence>
           <PartOfSpeech>DT</PartOfSpeech>
-          <Count>4</Count>
+          <Count>7</Count>
         </Word>
         <Word>
           <Text>dot</Text>
@@ -6861,7 +7211,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Ors</PluralText>
           <Sequence>15</Sequence>
           <PartOfSpeech>CC</PartOfSpeech>
-          <Count>7</Count>
+          <Count>8</Count>
         </Word>
         <Word>
           <Text>dash</Text>
@@ -6883,7 +7233,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Ises</PluralText>
           <Sequence>2</Sequence>
           <PartOfSpeech>VBZ</PartOfSpeech>
-          <Count>12</Count>
+          <Count>15</Count>
         </Word>
         <Word>
           <Text>followed</Text>
@@ -6905,7 +7255,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Bies</PluralText>
           <Sequence>22</Sequence>
           <PartOfSpeech>IN</PartOfSpeech>
-          <Count>7</Count>
+          <Count>8</Count>
         </Word>
         <Word>
           <Text>a</Text>
@@ -6916,7 +7266,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>A</PluralText>
           <Sequence>3</Sequence>
           <PartOfSpeech>DT</PartOfSpeech>
-          <Count>18</Count>
+          <Count>20</Count>
         </Word>
         <Word>
           <Text>short</Text>
@@ -6949,7 +7299,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>,</PluralText>
           <Sequence>13</Sequence>
           <PartOfSpeech>,</PartOfSpeech>
-          <Count>25</Count>
+          <Count>26</Count>
         </Word>
         <Word>
           <Text>equal</Text>
@@ -6971,7 +7321,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Toes</PluralText>
           <Sequence>89</Sequence>
           <PartOfSpeech>TO</PartOfSpeech>
-          <Count>12</Count>
+          <Count>13</Count>
         </Word>
         <Word>
           <Text>the</Text>
@@ -7015,7 +7365,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>.</PluralText>
           <Sequence>29</Sequence>
           <PartOfSpeech>.</PartOfSpeech>
-          <Count>18</Count>
+          <Count>22</Count>
         </Word>
       </Words>
     </Sentence>
@@ -7053,7 +7403,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Ofs</PluralText>
           <Sequence>5</Sequence>
           <PartOfSpeech>IN</PartOfSpeech>
-          <Count>15</Count>
+          <Count>18</Count>
         </Word>
         <Word>
           <Text>a</Text>
@@ -7064,7 +7414,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>A</PluralText>
           <Sequence>3</Sequence>
           <PartOfSpeech>DT</PartOfSpeech>
-          <Count>18</Count>
+          <Count>20</Count>
         </Word>
         <Word>
           <Text>word</Text>
@@ -7108,7 +7458,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Bies</PluralText>
           <Sequence>22</Sequence>
           <PartOfSpeech>IN</PartOfSpeech>
-          <Count>7</Count>
+          <Count>8</Count>
         </Word>
         <Word>
           <Text>a</Text>
@@ -7119,7 +7469,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>A</PluralText>
           <Sequence>3</Sequence>
           <PartOfSpeech>DT</PartOfSpeech>
-          <Count>18</Count>
+          <Count>20</Count>
         </Word>
         <Word>
           <Text>space</Text>
@@ -7152,7 +7502,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Toes</PluralText>
           <Sequence>89</Sequence>
           <PartOfSpeech>TO</PartOfSpeech>
-          <Count>12</Count>
+          <Count>13</Count>
         </Word>
         <Word>
           <Text>three</Text>
@@ -7229,7 +7579,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>,</PluralText>
           <Sequence>13</Sequence>
           <PartOfSpeech>,</PartOfSpeech>
-          <Count>25</Count>
+          <Count>26</Count>
         </Word>
         <Word>
           <Text>and</Text>
@@ -7240,7 +7590,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Ands</PluralText>
           <Sequence>54</Sequence>
           <PartOfSpeech>CC</PartOfSpeech>
-          <Count>12</Count>
+          <Count>15</Count>
         </Word>
         <Word>
           <Text>the</Text>
@@ -7262,7 +7612,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Words</PluralText>
           <Sequence>120</Sequence>
           <PartOfSpeech>NNS</PartOfSpeech>
-          <Count>2</Count>
+          <Count>3</Count>
         </Word>
         <Word>
           <Text>are</Text>
@@ -7295,7 +7645,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Bies</PluralText>
           <Sequence>22</Sequence>
           <PartOfSpeech>IN</PartOfSpeech>
-          <Count>7</Count>
+          <Count>8</Count>
         </Word>
         <Word>
           <Text>a</Text>
@@ -7306,7 +7656,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>A</PluralText>
           <Sequence>3</Sequence>
           <PartOfSpeech>DT</PartOfSpeech>
-          <Count>18</Count>
+          <Count>20</Count>
         </Word>
         <Word>
           <Text>space</Text>
@@ -7339,7 +7689,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Toes</PluralText>
           <Sequence>89</Sequence>
           <PartOfSpeech>TO</PartOfSpeech>
-          <Count>12</Count>
+          <Count>13</Count>
         </Word>
         <Word>
           <Text>seven</Text>
@@ -7372,7 +7722,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>.</PluralText>
           <Sequence>29</Sequence>
           <PartOfSpeech>.</PartOfSpeech>
-          <Count>18</Count>
+          <Count>22</Count>
         </Word>
       </Words>
     </Sentence>
@@ -7421,7 +7771,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Toes</PluralText>
           <Sequence>89</Sequence>
           <PartOfSpeech>TO</PartOfSpeech>
-          <Count>12</Count>
+          <Count>13</Count>
         </Word>
         <Word>
           <Text>increase</Text>
@@ -7465,7 +7815,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Ofs</PluralText>
           <Sequence>5</Sequence>
           <PartOfSpeech>IN</PartOfSpeech>
-          <Count>15</Count>
+          <Count>18</Count>
         </Word>
         <Word>
           <Text>the</Text>
@@ -7498,7 +7848,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>,</PluralText>
           <Sequence>13</Sequence>
           <PartOfSpeech>,</PartOfSpeech>
-          <Count>25</Count>
+          <Count>26</Count>
         </Word>
         <Word>
           <Text>the</Text>
@@ -7597,7 +7947,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Ofs</PluralText>
           <Sequence>5</Sequence>
           <PartOfSpeech>IN</PartOfSpeech>
-          <Count>15</Count>
+          <Count>18</Count>
         </Word>
         <Word>
           <Text>Each</Text>
@@ -7608,7 +7958,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Each</PluralText>
           <Sequence>92</Sequence>
           <PartOfSpeech>DT</PartOfSpeech>
-          <Count>4</Count>
+          <Count>7</Count>
         </Word>
         <Word>
           <Text>character</Text>
@@ -7619,7 +7969,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Characters</PluralText>
           <Sequence>96</Sequence>
           <PartOfSpeech>NN</PartOfSpeech>
-          <Count>3</Count>
+          <Count>4</Count>
         </Word>
         <Word>
           <Text>in</Text>
@@ -7652,7 +8002,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Ises</PluralText>
           <Sequence>2</Sequence>
           <PartOfSpeech>VBZ</PartOfSpeech>
-          <Count>12</Count>
+          <Count>15</Count>
         </Word>
         <Word>
           <Text>approximately</Text>
@@ -7685,7 +8035,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Toes</PluralText>
           <Sequence>89</Sequence>
           <PartOfSpeech>TO</PartOfSpeech>
-          <Count>12</Count>
+          <Count>13</Count>
         </Word>
         <Word>
           <Text>its</Text>
@@ -7718,7 +8068,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Ofs</PluralText>
           <Sequence>5</Sequence>
           <PartOfSpeech>IN</PartOfSpeech>
-          <Count>15</Count>
+          <Count>18</Count>
         </Word>
         <Word>
           <Text>occurrence</Text>
@@ -7762,7 +8112,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>.</PluralText>
           <Sequence>29</Sequence>
           <PartOfSpeech>.</PartOfSpeech>
-          <Count>18</Count>
+          <Count>22</Count>
         </Word>
       </Words>
     </Sentence>
@@ -7855,7 +8205,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>,</PluralText>
           <Sequence>13</Sequence>
           <PartOfSpeech>,</PartOfSpeech>
-          <Count>25</Count>
+          <Count>26</Count>
         </Word>
         <Word>
           <Text>the</Text>
@@ -7921,7 +8271,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>,</PluralText>
           <Sequence>13</Sequence>
           <PartOfSpeech>,</PartOfSpeech>
-          <Count>25</Count>
+          <Count>26</Count>
         </Word>
         <Word>
           <Text>has</Text>
@@ -7932,7 +8282,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Hases</PluralText>
           <Sequence>139</Sequence>
           <PartOfSpeech>VBZ</PartOfSpeech>
-          <Count>2</Count>
+          <Count>3</Count>
         </Word>
         <Word>
           <Text>the</Text>
@@ -7976,7 +8326,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>,</PluralText>
           <Sequence>13</Sequence>
           <PartOfSpeech>,</PartOfSpeech>
-          <Count>25</Count>
+          <Count>26</Count>
         </Word>
         <Word>
           <Text>a</Text>
@@ -7987,7 +8337,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>A</PluralText>
           <Sequence>3</Sequence>
           <PartOfSpeech>DT</PartOfSpeech>
-          <Count>18</Count>
+          <Count>20</Count>
         </Word>
         <Word>
           <Text>single</Text>
@@ -8020,7 +8370,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>.</PluralText>
           <Sequence>29</Sequence>
           <PartOfSpeech>.</PartOfSpeech>
-          <Count>18</Count>
+          <Count>22</Count>
         </Word>
       </Words>
     </Sentence>
@@ -8058,7 +8408,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Ises</PluralText>
           <Sequence>2</Sequence>
           <PartOfSpeech>VBZ</PartOfSpeech>
-          <Count>12</Count>
+          <Count>15</Count>
         </Word>
         <Word>
           <Text>used</Text>
@@ -8080,7 +8430,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Bies</PluralText>
           <Sequence>22</Sequence>
           <PartOfSpeech>IN</PartOfSpeech>
-          <Count>7</Count>
+          <Count>8</Count>
         </Word>
         <Word>
           <Text>some</Text>
@@ -8135,7 +8485,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>,</PluralText>
           <Sequence>13</Sequence>
           <PartOfSpeech>,</PartOfSpeech>
-          <Count>25</Count>
+          <Count>26</Count>
         </Word>
         <Word>
           <Text>although</Text>
@@ -8168,7 +8518,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Ofs</PluralText>
           <Sequence>5</Sequence>
           <PartOfSpeech>IN</PartOfSpeech>
-          <Count>15</Count>
+          <Count>18</Count>
         </Word>
         <Word>
           <Text>and</Text>
@@ -8179,7 +8529,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Ands</PluralText>
           <Sequence>54</Sequence>
           <PartOfSpeech>CC</PartOfSpeech>
-          <Count>12</Count>
+          <Count>15</Count>
         </Word>
         <Word>
           <Text>proficiency</Text>
@@ -8223,7 +8573,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Ises</PluralText>
           <Sequence>2</Sequence>
           <PartOfSpeech>VBZ</PartOfSpeech>
-          <Count>12</Count>
+          <Count>15</Count>
         </Word>
         <Word>
           <Text>no</Text>
@@ -8322,7 +8672,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>.</PluralText>
           <Sequence>29</Sequence>
           <PartOfSpeech>.</PartOfSpeech>
-          <Count>18</Count>
+          <Count>22</Count>
         </Word>
       </Words>
     </Sentence>
@@ -8349,7 +8699,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Ands</PluralText>
           <Sequence>54</Sequence>
           <PartOfSpeech>CC</PartOfSpeech>
-          <Count>12</Count>
+          <Count>15</Count>
         </Word>
         <Word>
           <Text>air</Text>
@@ -8426,7 +8776,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>A</PluralText>
           <Sequence>3</Sequence>
           <PartOfSpeech>DT</PartOfSpeech>
-          <Count>18</Count>
+          <Count>20</Count>
         </Word>
         <Word>
           <Text>cursory</Text>
@@ -8459,7 +8809,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>.</PluralText>
           <Sequence>29</Sequence>
           <PartOfSpeech>.</PartOfSpeech>
-          <Count>18</Count>
+          <Count>22</Count>
         </Word>
       </Words>
     </Sentence>
@@ -8508,7 +8858,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>,</PluralText>
           <Sequence>13</Sequence>
           <PartOfSpeech>,</PartOfSpeech>
-          <Count>25</Count>
+          <Count>26</Count>
         </Word>
         <Word>
           <Text>such</Text>
@@ -8552,7 +8902,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Ands</PluralText>
           <Sequence>54</Sequence>
           <PartOfSpeech>CC</PartOfSpeech>
-          <Count>12</Count>
+          <Count>15</Count>
         </Word>
         <Word>
           <Text>NDBs</Text>
@@ -8574,7 +8924,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>,</PluralText>
           <Sequence>13</Sequence>
           <PartOfSpeech>,</PartOfSpeech>
-          <Count>25</Count>
+          <Count>26</Count>
         </Word>
         <Word>
           <Text>constantly</Text>
@@ -8640,7 +8990,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>.</PluralText>
           <Sequence>29</Sequence>
           <PartOfSpeech>.</PartOfSpeech>
-          <Count>18</Count>
+          <Count>22</Count>
         </Word>
       </Words>
     </Sentence>
@@ -8667,7 +9017,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Toes</PluralText>
           <Sequence>89</Sequence>
           <PartOfSpeech>TO</PartOfSpeech>
-          <Count>12</Count>
+          <Count>13</Count>
         </Word>
         <Word>
           <Text>voice</Text>
@@ -8689,7 +9039,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>,</PluralText>
           <Sequence>13</Sequence>
           <PartOfSpeech>,</PartOfSpeech>
-          <Count>25</Count>
+          <Count>26</Count>
         </Word>
         <Word>
           <Text>Morse</Text>
@@ -8722,7 +9072,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Ises</PluralText>
           <Sequence>2</Sequence>
           <PartOfSpeech>VBZ</PartOfSpeech>
-          <Count>12</Count>
+          <Count>15</Count>
         </Word>
         <Word>
           <Text>less</Text>
@@ -8755,7 +9105,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Toes</PluralText>
           <Sequence>89</Sequence>
           <PartOfSpeech>TO</PartOfSpeech>
-          <Count>12</Count>
+          <Count>13</Count>
         </Word>
         <Word>
           <Text>poor</Text>
@@ -8799,7 +9149,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>,</PluralText>
           <Sequence>13</Sequence>
           <PartOfSpeech>,</PartOfSpeech>
-          <Count>25</Count>
+          <Count>26</Count>
         </Word>
         <Word>
           <Text>yet</Text>
@@ -8843,7 +9193,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Toes</PluralText>
           <Sequence>89</Sequence>
           <PartOfSpeech>TO</PartOfSpeech>
-          <Count>12</Count>
+          <Count>13</Count>
         </Word>
         <Word>
           <Text>humans</Text>
@@ -8876,7 +9226,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>A</PluralText>
           <Sequence>3</Sequence>
           <PartOfSpeech>DT</PartOfSpeech>
-          <Count>18</Count>
+          <Count>20</Count>
         </Word>
         <Word>
           <Text>decoding</Text>
@@ -8909,7 +9259,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>.</PluralText>
           <Sequence>29</Sequence>
           <PartOfSpeech>.</PartOfSpeech>
-          <Count>18</Count>
+          <Count>22</Count>
         </Word>
       </Words>
     </Sentence>
@@ -8936,7 +9286,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Ises</PluralText>
           <Sequence>2</Sequence>
           <PartOfSpeech>VBZ</PartOfSpeech>
-          <Count>12</Count>
+          <Count>15</Count>
         </Word>
         <Word>
           <Text>,</Text>
@@ -8947,7 +9297,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>,</PluralText>
           <Sequence>13</Sequence>
           <PartOfSpeech>,</PartOfSpeech>
-          <Count>25</Count>
+          <Count>26</Count>
         </Word>
         <Word>
           <Text>therefore</Text>
@@ -8969,7 +9319,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>,</PluralText>
           <Sequence>13</Sequence>
           <PartOfSpeech>,</PartOfSpeech>
-          <Count>25</Count>
+          <Count>26</Count>
         </Word>
         <Word>
           <Text>a</Text>
@@ -8980,7 +9330,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>A</PluralText>
           <Sequence>3</Sequence>
           <PartOfSpeech>DT</PartOfSpeech>
-          <Count>18</Count>
+          <Count>20</Count>
         </Word>
         <Word>
           <Text>useful</Text>
@@ -9013,7 +9363,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Toes</PluralText>
           <Sequence>89</Sequence>
           <PartOfSpeech>TO</PartOfSpeech>
-          <Count>12</Count>
+          <Count>13</Count>
         </Word>
         <Word>
           <Text>synthesized</Text>
@@ -9090,7 +9440,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Toes</PluralText>
           <Sequence>89</Sequence>
           <PartOfSpeech>TO</PartOfSpeech>
-          <Count>12</Count>
+          <Count>13</Count>
         </Word>
         <Word>
           <Text>skilled</Text>
@@ -9156,7 +9506,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>.</PluralText>
           <Sequence>29</Sequence>
           <PartOfSpeech>.</PartOfSpeech>
-          <Count>18</Count>
+          <Count>22</Count>
         </Word>
       </Words>
     </Sentence>
@@ -9172,7 +9522,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>Manies</PluralText>
           <Sequence>79</Sequence>
           <PartOfSpeech>JJ</PartOfSpeech>
-          <Count>3</Count>
+          <Count>5</Count>
         </Word>
         <Word>
           <Text>amateur</Text>
@@ -9216,7 +9566,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>,</PluralText>
           <Sequence>13</Sequence>
           <PartOfSpeech>,</PartOfSpeech>
-          <Count>25</Count>
+          <Count>26</Count>
         </Word>
         <Word>
           <Text>for</Text>
@@ -9249,7 +9599,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>,</PluralText>
           <Sequence>13</Sequence>
           <PartOfSpeech>,</PartOfSpeech>
-          <Count>25</Count>
+          <Count>26</Count>
         </Word>
         <Word>
           <Text>identify</Text>
@@ -9293,7 +9643,7 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>,</PluralText>
           <Sequence>13</Sequence>
           <PartOfSpeech>,</PartOfSpeech>
-          <Count>25</Count>
+          <Count>26</Count>
         </Word>
         <Word>
           <Text>even</Text>
@@ -9392,7 +9742,555 @@ Morse code is used by some amateur radio operators, although knowledge of and pr
           <PluralText>.</PluralText>
           <Sequence>29</Sequence>
           <PartOfSpeech>.</PartOfSpeech>
+          <Count>22</Count>
+        </Word>
+      </Words>
+    </Sentence>
+    <Sentence>
+      <Text>A TelegraphStation allows Customers to send and receive Telegraphs .</Text>
+      <Words>
+        <Word>
+          <Text>a</Text>
+          <LowerText>a</LowerText>
+          <ProperText>A</ProperText>
+          <IsSingular>false</IsSingular>
+          <SingularText>A</SingularText>
+          <PluralText>A</PluralText>
+          <Sequence>3</Sequence>
+          <PartOfSpeech>DT</PartOfSpeech>
+          <Count>20</Count>
+        </Word>
+        <Word>
+          <Text>TelegraphStation</Text>
+          <LowerText>telegraphstation</LowerText>
+          <ProperText>TelegraphStation</ProperText>
+          <IsSingular>true</IsSingular>
+          <SingularText>TelegraphStation</SingularText>
+          <PluralText>TelegraphStations</PluralText>
+          <Sequence>200</Sequence>
+          <PartOfSpeech>NN</PartOfSpeech>
+          <Count>2</Count>
+        </Word>
+        <Word>
+          <Text>allows</Text>
+          <LowerText>allows</LowerText>
+          <ProperText>Allows</ProperText>
+          <IsSingular>false</IsSingular>
+          <SingularText>Allow</SingularText>
+          <PluralText>Allows</PluralText>
+          <Sequence>201</Sequence>
+          <PartOfSpeech>VBZ</PartOfSpeech>
+          <Count>2</Count>
+        </Word>
+        <Word>
+          <Text>Customers</Text>
+          <LowerText>customers</LowerText>
+          <ProperText>Customers</ProperText>
+          <IsSingular>false</IsSingular>
+          <SingularText>Customer</SingularText>
+          <PluralText>Customers</PluralText>
+          <Sequence>202</Sequence>
+          <PartOfSpeech>NNS</PartOfSpeech>
+          <Count>2</Count>
+        </Word>
+        <Word>
+          <Text>to</Text>
+          <LowerText>to</LowerText>
+          <ProperText>To</ProperText>
+          <IsSingular>true</IsSingular>
+          <SingularText>To</SingularText>
+          <PluralText>Toes</PluralText>
+          <Sequence>89</Sequence>
+          <PartOfSpeech>TO</PartOfSpeech>
+          <Count>13</Count>
+        </Word>
+        <Word>
+          <Text>send</Text>
+          <LowerText>send</LowerText>
+          <ProperText>Send</ProperText>
+          <IsSingular>true</IsSingular>
+          <SingularText>Send</SingularText>
+          <PluralText>Sends</PluralText>
+          <Sequence>203</Sequence>
+          <PartOfSpeech>VB</PartOfSpeech>
+          <Count>2</Count>
+        </Word>
+        <Word>
+          <Text>and</Text>
+          <LowerText>and</LowerText>
+          <ProperText>And</ProperText>
+          <IsSingular>true</IsSingular>
+          <SingularText>And</SingularText>
+          <PluralText>Ands</PluralText>
+          <Sequence>54</Sequence>
+          <PartOfSpeech>CC</PartOfSpeech>
+          <Count>15</Count>
+        </Word>
+        <Word>
+          <Text>receive</Text>
+          <LowerText>receive</LowerText>
+          <ProperText>Receive</ProperText>
+          <IsSingular>true</IsSingular>
+          <SingularText>Receive</SingularText>
+          <PluralText>Receives</PluralText>
+          <Sequence>204</Sequence>
+          <PartOfSpeech>VB</PartOfSpeech>
+          <Count>2</Count>
+        </Word>
+        <Word>
+          <Text>Telegraphs</Text>
+          <LowerText>telegraphs</LowerText>
+          <ProperText>Telegraphs</ProperText>
+          <IsSingular>false</IsSingular>
+          <SingularText>Telegraph</SingularText>
+          <PluralText>Telegraphs</PluralText>
+          <Sequence>205</Sequence>
+          <PartOfSpeech>NNPS</PartOfSpeech>
+          <Count>2</Count>
+        </Word>
+        <Word>
+          <Text>.</Text>
+          <LowerText>.</LowerText>
+          <ProperText>.</ProperText>
+          <IsSingular>false</IsSingular>
+          <SingularText>.</SingularText>
+          <PluralText>.</PluralText>
+          <Sequence>29</Sequence>
+          <PartOfSpeech>.</PartOfSpeech>
+          <Count>22</Count>
+        </Word>
+      </Words>
+    </Sentence>
+    <Sentence>
+      <Text>Each telegraph is made up of multiple Sentences .</Text>
+      <Words>
+        <Word>
+          <Text>Each</Text>
+          <LowerText>each</LowerText>
+          <ProperText>Each</ProperText>
+          <IsSingular>false</IsSingular>
+          <SingularText>Each</SingularText>
+          <PluralText>Each</PluralText>
+          <Sequence>92</Sequence>
+          <PartOfSpeech>DT</PartOfSpeech>
+          <Count>7</Count>
+        </Word>
+        <Word>
+          <Text>telegraph</Text>
+          <LowerText>telegraph</LowerText>
+          <ProperText>Telegraph</ProperText>
+          <IsSingular>true</IsSingular>
+          <SingularText>Telegraph</SingularText>
+          <PluralText>Telegraphs</PluralText>
+          <Sequence>39</Sequence>
+          <PartOfSpeech>NN</PartOfSpeech>
+          <Count>3</Count>
+        </Word>
+        <Word>
+          <Text>is</Text>
+          <LowerText>is</LowerText>
+          <ProperText>Is</ProperText>
+          <IsSingular>true</IsSingular>
+          <SingularText>Is</SingularText>
+          <PluralText>Ises</PluralText>
+          <Sequence>2</Sequence>
+          <PartOfSpeech>VBZ</PartOfSpeech>
+          <Count>15</Count>
+        </Word>
+        <Word>
+          <Text>made</Text>
+          <LowerText>made</LowerText>
+          <ProperText>Made</ProperText>
+          <IsSingular>true</IsSingular>
+          <SingularText>Made</SingularText>
+          <PluralText>Mades</PluralText>
+          <Sequence>206</Sequence>
+          <PartOfSpeech>VBN</PartOfSpeech>
+          <Count>2</Count>
+        </Word>
+        <Word>
+          <Text>up</Text>
+          <LowerText>up</LowerText>
+          <ProperText>Up</ProperText>
+          <IsSingular>true</IsSingular>
+          <SingularText>Up</SingularText>
+          <PluralText>Ups</PluralText>
+          <Sequence>207</Sequence>
+          <PartOfSpeech>RP</PartOfSpeech>
+          <Count>2</Count>
+        </Word>
+        <Word>
+          <Text>of</Text>
+          <LowerText>of</LowerText>
+          <ProperText>Of</ProperText>
+          <IsSingular>true</IsSingular>
+          <SingularText>Of</SingularText>
+          <PluralText>Ofs</PluralText>
+          <Sequence>5</Sequence>
+          <PartOfSpeech>IN</PartOfSpeech>
           <Count>18</Count>
+        </Word>
+        <Word>
+          <Text>multiple</Text>
+          <LowerText>multiple</LowerText>
+          <ProperText>Multiple</ProperText>
+          <IsSingular>true</IsSingular>
+          <SingularText>Multiple</SingularText>
+          <PluralText>Multiples</PluralText>
+          <Sequence>208</Sequence>
+          <PartOfSpeech>JJ</PartOfSpeech>
+          <Count>2</Count>
+        </Word>
+        <Word>
+          <Text>Sentences</Text>
+          <LowerText>sentences</LowerText>
+          <ProperText>Sentences</ProperText>
+          <IsSingular>false</IsSingular>
+          <SingularText>Sentence</SingularText>
+          <PluralText>Sentences</PluralText>
+          <Sequence>209</Sequence>
+          <PartOfSpeech>NNS</PartOfSpeech>
+          <Count>2</Count>
+        </Word>
+        <Word>
+          <Text>.</Text>
+          <LowerText>.</LowerText>
+          <ProperText>.</ProperText>
+          <IsSingular>false</IsSingular>
+          <SingularText>.</SingularText>
+          <PluralText>.</PluralText>
+          <Sequence>29</Sequence>
+          <PartOfSpeech>.</PartOfSpeech>
+          <Count>22</Count>
+        </Word>
+      </Words>
+    </Sentence>
+    <Sentence>
+      <Text>Each sentence has many words .</Text>
+      <Words>
+        <Word>
+          <Text>Each</Text>
+          <LowerText>each</LowerText>
+          <ProperText>Each</ProperText>
+          <IsSingular>false</IsSingular>
+          <SingularText>Each</SingularText>
+          <PluralText>Each</PluralText>
+          <Sequence>92</Sequence>
+          <PartOfSpeech>DT</PartOfSpeech>
+          <Count>7</Count>
+        </Word>
+        <Word>
+          <Text>sentence</Text>
+          <LowerText>sentence</LowerText>
+          <ProperText>Sentence</ProperText>
+          <IsSingular>true</IsSingular>
+          <SingularText>Sentence</SingularText>
+          <PluralText>Sentences</PluralText>
+          <Sequence>210</Sequence>
+          <PartOfSpeech>NN</PartOfSpeech>
+          <Count>2</Count>
+        </Word>
+        <Word>
+          <Text>has</Text>
+          <LowerText>has</LowerText>
+          <ProperText>Has</ProperText>
+          <IsSingular>true</IsSingular>
+          <SingularText>Has</SingularText>
+          <PluralText>Hases</PluralText>
+          <Sequence>139</Sequence>
+          <PartOfSpeech>VBZ</PartOfSpeech>
+          <Count>3</Count>
+        </Word>
+        <Word>
+          <Text>many</Text>
+          <LowerText>many</LowerText>
+          <ProperText>Many</ProperText>
+          <IsSingular>true</IsSingular>
+          <SingularText>Many</SingularText>
+          <PluralText>Manies</PluralText>
+          <Sequence>79</Sequence>
+          <PartOfSpeech>JJ</PartOfSpeech>
+          <Count>5</Count>
+        </Word>
+        <Word>
+          <Text>words</Text>
+          <LowerText>words</LowerText>
+          <ProperText>Words</ProperText>
+          <IsSingular>false</IsSingular>
+          <SingularText>Word</SingularText>
+          <PluralText>Words</PluralText>
+          <Sequence>120</Sequence>
+          <PartOfSpeech>NNS</PartOfSpeech>
+          <Count>3</Count>
+        </Word>
+        <Word>
+          <Text>.</Text>
+          <LowerText>.</LowerText>
+          <ProperText>.</ProperText>
+          <IsSingular>false</IsSingular>
+          <SingularText>.</SingularText>
+          <PluralText>.</PluralText>
+          <Sequence>29</Sequence>
+          <PartOfSpeech>.</PartOfSpeech>
+          <Count>22</Count>
+        </Word>
+      </Words>
+    </Sentence>
+    <Sentence>
+      <Text>Each Alphabet is composed of many Characters , and ecah Character is represented by a sequence of tones and silences or Signals .</Text>
+      <Words>
+        <Word>
+          <Text>Each</Text>
+          <LowerText>each</LowerText>
+          <ProperText>Each</ProperText>
+          <IsSingular>false</IsSingular>
+          <SingularText>Each</SingularText>
+          <PluralText>Each</PluralText>
+          <Sequence>92</Sequence>
+          <PartOfSpeech>DT</PartOfSpeech>
+          <Count>7</Count>
+        </Word>
+        <Word>
+          <Text>alphabet</Text>
+          <LowerText>alphabet</LowerText>
+          <ProperText>Alphabet</ProperText>
+          <IsSingular>true</IsSingular>
+          <SingularText>Alphabet</SingularText>
+          <PluralText>Alphabets</PluralText>
+          <Sequence>48</Sequence>
+          <PartOfSpeech>NN</PartOfSpeech>
+          <Count>4</Count>
+        </Word>
+        <Word>
+          <Text>is</Text>
+          <LowerText>is</LowerText>
+          <ProperText>Is</ProperText>
+          <IsSingular>true</IsSingular>
+          <SingularText>Is</SingularText>
+          <PluralText>Ises</PluralText>
+          <Sequence>2</Sequence>
+          <PartOfSpeech>VBZ</PartOfSpeech>
+          <Count>15</Count>
+        </Word>
+        <Word>
+          <Text>composed</Text>
+          <LowerText>composed</LowerText>
+          <ProperText>Composed</ProperText>
+          <IsSingular>true</IsSingular>
+          <SingularText>Composed</SingularText>
+          <PluralText>Composeds</PluralText>
+          <Sequence>211</Sequence>
+          <PartOfSpeech>VBN</PartOfSpeech>
+          <Count>2</Count>
+        </Word>
+        <Word>
+          <Text>of</Text>
+          <LowerText>of</LowerText>
+          <ProperText>Of</ProperText>
+          <IsSingular>true</IsSingular>
+          <SingularText>Of</SingularText>
+          <PluralText>Ofs</PluralText>
+          <Sequence>5</Sequence>
+          <PartOfSpeech>IN</PartOfSpeech>
+          <Count>18</Count>
+        </Word>
+        <Word>
+          <Text>many</Text>
+          <LowerText>many</LowerText>
+          <ProperText>Many</ProperText>
+          <IsSingular>true</IsSingular>
+          <SingularText>Many</SingularText>
+          <PluralText>Manies</PluralText>
+          <Sequence>79</Sequence>
+          <PartOfSpeech>JJ</PartOfSpeech>
+          <Count>5</Count>
+        </Word>
+        <Word>
+          <Text>Characters</Text>
+          <LowerText>characters</LowerText>
+          <ProperText>Characters</ProperText>
+          <IsSingular>false</IsSingular>
+          <SingularText>Character</SingularText>
+          <PluralText>Characters</PluralText>
+          <Sequence>212</Sequence>
+          <PartOfSpeech>NNS</PartOfSpeech>
+          <Count>2</Count>
+        </Word>
+        <Word>
+          <Text>,</Text>
+          <LowerText>,</LowerText>
+          <ProperText>,</ProperText>
+          <IsSingular>false</IsSingular>
+          <SingularText>,</SingularText>
+          <PluralText>,</PluralText>
+          <Sequence>13</Sequence>
+          <PartOfSpeech>,</PartOfSpeech>
+          <Count>26</Count>
+        </Word>
+        <Word>
+          <Text>and</Text>
+          <LowerText>and</LowerText>
+          <ProperText>And</ProperText>
+          <IsSingular>true</IsSingular>
+          <SingularText>And</SingularText>
+          <PluralText>Ands</PluralText>
+          <Sequence>54</Sequence>
+          <PartOfSpeech>CC</PartOfSpeech>
+          <Count>15</Count>
+        </Word>
+        <Word>
+          <Text>ecah</Text>
+          <LowerText>ecah</LowerText>
+          <ProperText>Ecah</ProperText>
+          <IsSingular>true</IsSingular>
+          <SingularText>Ecah</SingularText>
+          <PluralText>Ecahs</PluralText>
+          <Sequence>213</Sequence>
+          <PartOfSpeech>JJ</PartOfSpeech>
+          <Count>2</Count>
+        </Word>
+        <Word>
+          <Text>character</Text>
+          <LowerText>character</LowerText>
+          <ProperText>Character</ProperText>
+          <IsSingular>true</IsSingular>
+          <SingularText>Character</SingularText>
+          <PluralText>Characters</PluralText>
+          <Sequence>96</Sequence>
+          <PartOfSpeech>NN</PartOfSpeech>
+          <Count>4</Count>
+        </Word>
+        <Word>
+          <Text>is</Text>
+          <LowerText>is</LowerText>
+          <ProperText>Is</ProperText>
+          <IsSingular>true</IsSingular>
+          <SingularText>Is</SingularText>
+          <PluralText>Ises</PluralText>
+          <Sequence>2</Sequence>
+          <PartOfSpeech>VBZ</PartOfSpeech>
+          <Count>15</Count>
+        </Word>
+        <Word>
+          <Text>represented</Text>
+          <LowerText>represented</LowerText>
+          <ProperText>Represented</ProperText>
+          <IsSingular>true</IsSingular>
+          <SingularText>Represented</SingularText>
+          <PluralText>Representeds</PluralText>
+          <Sequence>100</Sequence>
+          <PartOfSpeech>VBN</PartOfSpeech>
+          <Count>3</Count>
+        </Word>
+        <Word>
+          <Text>by</Text>
+          <LowerText>by</LowerText>
+          <ProperText>By</ProperText>
+          <IsSingular>true</IsSingular>
+          <SingularText>By</SingularText>
+          <PluralText>Bies</PluralText>
+          <Sequence>22</Sequence>
+          <PartOfSpeech>IN</PartOfSpeech>
+          <Count>8</Count>
+        </Word>
+        <Word>
+          <Text>a</Text>
+          <LowerText>a</LowerText>
+          <ProperText>A</ProperText>
+          <IsSingular>false</IsSingular>
+          <SingularText>A</SingularText>
+          <PluralText>A</PluralText>
+          <Sequence>3</Sequence>
+          <PartOfSpeech>DT</PartOfSpeech>
+          <Count>20</Count>
+        </Word>
+        <Word>
+          <Text>sequence</Text>
+          <LowerText>sequence</LowerText>
+          <ProperText>Sequence</ProperText>
+          <IsSingular>true</IsSingular>
+          <SingularText>Sequence</SingularText>
+          <PluralText>Sequences</PluralText>
+          <Sequence>102</Sequence>
+          <PartOfSpeech>NN</PartOfSpeech>
+          <Count>3</Count>
+        </Word>
+        <Word>
+          <Text>of</Text>
+          <LowerText>of</LowerText>
+          <ProperText>Of</ProperText>
+          <IsSingular>true</IsSingular>
+          <SingularText>Of</SingularText>
+          <PluralText>Ofs</PluralText>
+          <Sequence>5</Sequence>
+          <PartOfSpeech>IN</PartOfSpeech>
+          <Count>18</Count>
+        </Word>
+        <Word>
+          <Text>tones</Text>
+          <LowerText>tones</LowerText>
+          <ProperText>Tones</ProperText>
+          <IsSingular>false</IsSingular>
+          <SingularText>Tone</SingularText>
+          <PluralText>Tones</PluralText>
+          <Sequence>12</Sequence>
+          <PartOfSpeech>NNS</PartOfSpeech>
+          <Count>3</Count>
+        </Word>
+        <Word>
+          <Text>and</Text>
+          <LowerText>and</LowerText>
+          <ProperText>And</ProperText>
+          <IsSingular>true</IsSingular>
+          <SingularText>And</SingularText>
+          <PluralText>Ands</PluralText>
+          <Sequence>54</Sequence>
+          <PartOfSpeech>CC</PartOfSpeech>
+          <Count>15</Count>
+        </Word>
+        <Word>
+          <Text>silences</Text>
+          <LowerText>silences</LowerText>
+          <ProperText>Silences</ProperText>
+          <IsSingular>false</IsSingular>
+          <SingularText>Silence</SingularText>
+          <PluralText>Silences</PluralText>
+          <Sequence>214</Sequence>
+          <PartOfSpeech>NNS</PartOfSpeech>
+          <Count>2</Count>
+        </Word>
+        <Word>
+          <Text>or</Text>
+          <LowerText>or</LowerText>
+          <ProperText>Or</ProperText>
+          <IsSingular>true</IsSingular>
+          <SingularText>Or</SingularText>
+          <PluralText>Ors</PluralText>
+          <Sequence>15</Sequence>
+          <PartOfSpeech>CC</PartOfSpeech>
+          <Count>8</Count>
+        </Word>
+        <Word>
+          <Text>signals</Text>
+          <LowerText>signals</LowerText>
+          <ProperText>Signals</ProperText>
+          <IsSingular>false</IsSingular>
+          <SingularText>Signal</SingularText>
+          <PluralText>Signals</PluralText>
+          <Sequence>59</Sequence>
+          <PartOfSpeech>NNS</PartOfSpeech>
+          <Count>4</Count>
+        </Word>
+        <Word>
+          <Text>.</Text>
+          <LowerText>.</LowerText>
+          <ProperText>.</ProperText>
+          <IsSingular>false</IsSingular>
+          <SingularText>.</SingularText>
+          <PluralText>.</PluralText>
+          <Sequence>29</Sequence>
+          <PartOfSpeech>.</PartOfSpeech>
+          <Count>22</Count>
         </Word>
       </Words>
     </Sentence>

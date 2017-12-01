@@ -15,6 +15,8 @@ namespace MorseCodeHelper.Lib.DataClasses
             
             this.TelegraphOperatorId = Guid.NewGuid();
             
+                this.Communications = new BindingList<Communication>();
+            
 
         }
 
@@ -33,6 +35,41 @@ namespace MorseCodeHelper.Lib.DataClasses
     
 
         
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "Communications")]
+        public BindingList<Communication> Communications { get; set; }
+            
+        /// <summary>
+        /// Check to see if there are any related Communications, and load them if requested
+        /// </summary>
+        public static void CheckExpandCommunications(SqlDataManager sdm, IEnumerable<TelegraphOperator> telegraphOperators, string expandString)
+        {
+            var telegraphOperatorsWhere = CreateTelegraphOperatorWhere(telegraphOperators);
+            expandString = expandString.SafeToString();
+
+            if (String.Equals(expandString, "all", StringComparison.OrdinalIgnoreCase) || expandString.IndexOf("communications", StringComparison.OrdinalIgnoreCase) >= 0)
+            {
+                var childCommunications = sdm.GetAllCommunications<Communication>(telegraphOperatorsWhere);
+
+                telegraphOperators.ToList()
+                        .ForEach(feTelegraphOperator => feTelegraphOperator.LoadCommunications(childCommunications));
+            }
+
+        }
+
+
+        
+
+        
+        /// <summary>
+        /// Find the related Communications (from the list provided) and attach them locally to the Communications list.
+        /// </summary>
+        public void LoadCommunications(IEnumerable<Communication> communications)
+        {
+            communications.Where(whereCommunication => whereCommunication.TelegraphOperatorId == this.TelegraphOperatorId)
+                    .ToList()
+                    .ForEach(feCommunication => this.Communications.Add(feCommunication));
+        }
+        
 
         
 
@@ -50,6 +87,8 @@ namespace MorseCodeHelper.Lib.DataClasses
         public static void CheckExpand(SqlDataManager sdm, IEnumerable<TelegraphOperator> telegraphOperators, string expandString)
         {
             
+            
+            CheckExpandCommunications(sdm, telegraphOperators, expandString);
         }
         
     }

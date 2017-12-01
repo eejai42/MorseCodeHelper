@@ -48,24 +48,14 @@
     <Compile Include="DataClasses\Alphabet.designer.cs">
       <DependentUpon>Alphabet.cs</DependentUpon>
     </Compile>
-    <Compile Include="DataClasses\Alternative.cs" />
-    <Compile Include="DataClasses\Alternative.designer.cs">
-      <DependentUpon>Alternative.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DataClasses\Channel.cs" />
-    <Compile Include="DataClasses\Channel.designer.cs">
-      <DependentUpon>Channel.cs</DependentUpon>
-    </Compile>
     <Compile Include="DataClasses\Character.cs" />
     <Compile Include="DataClasses\Character.designer.cs">
       <DependentUpon>Character.cs</DependentUpon>
     </Compile>
-    <Compile Include="DataClasses\Click.cs" />
-    <Compile Include="DataClasses\Click.designer.cs">
-      <DependentUpon>Click.cs</DependentUpon>
-    </Compile>
     <Compile Include="DataClasses\Communication.cs" />
-    <Compile Include="DataClasses\Communication.designer.cs" />
+    <Compile Include="DataClasses\Communication.designer.cs">
+      <DependentUpon>Communication.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataClasses\Controller.cs" />
     <Compile Include="DataClasses\Controller.designer.cs">
       <DependentUpon>Controller.cs</DependentUpon>
@@ -73,38 +63,6 @@
     <Compile Include="DataClasses\Country.cs" />
     <Compile Include="DataClasses\Country.designer.cs">
       <DependentUpon>Country.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DataClasses\Dash.cs" />
-    <Compile Include="DataClasses\Dash.designer.cs" />
-    <Compile Include="DataClasses\Datum.cs" />
-    <Compile Include="DataClasses\Datum.designer.cs">
-      <DependentUpon>Datum.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DataClasses\Decoding.cs" />
-    <Compile Include="DataClasses\Decoding.designer.cs">
-      <DependentUpon>Decoding.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DataClasses\Device.cs" />
-    <Compile Include="DataClasses\Device.designer.cs">
-      <DependentUpon>Device.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DataClasses\Dot.cs" />
-    <Compile Include="DataClasses\Dot.designer.cs" />
-    <Compile Include="DataClasses\Duration.cs" />
-    <Compile Include="DataClasses\Duration.designer.cs">
-      <DependentUpon>Duration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DataClasses\Extension.cs" />
-    <Compile Include="DataClasses\Extension.designer.cs">
-      <DependentUpon>Extension.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DataClasses\Frequency.cs" />
-    <Compile Include="DataClasses\Frequency.designer.cs">
-      <DependentUpon>Frequency.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DataClasses\Human.cs" />
-    <Compile Include="DataClasses\Human.designer.cs">
-      <DependentUpon>Human.cs</DependentUpon>
     </Compile>
     <Compile Include="DataClasses\Language.cs" />
     <Compile Include="DataClasses\Language.designer.cs">
@@ -115,17 +73,13 @@
       <DependentUpon>Light.cs</DependentUpon>
     </Compile>
     <Compile Include="DataClasses\Listener.cs" />
-    <Compile Include="DataClasses\Listener.designer.cs" />
+    <Compile Include="DataClasses\Listener.designer.cs">
+      <DependentUpon>Listener.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataClasses\MCDevice.cs" />
     <Compile Include="DataClasses\MCDevice.designer.cs">
       <DependentUpon>MCDevice.cs</DependentUpon>
     </Compile>
-    <Compile Include="DataClasses\MorseCode.cs" />
-    <Compile Include="DataClasses\MorseCode.designer.cs">
-      <DependentUpon>MorseCode.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DataClasses\Numeral.cs" />
-    <Compile Include="DataClasses\Numeral.designer.cs" />
     <Compile Include="DataClasses\Observer.cs" />
     <Compile Include="DataClasses\Observer.designer.cs">
       <DependentUpon>Observer.cs</DependentUpon>
@@ -134,37 +88,25 @@
     <Compile Include="DataClasses\Proficiency.designer.cs">
       <DependentUpon>Proficiency.cs</DependentUpon>
     </Compile>
-    <Compile Include="DataClasses\Punctuation.cs" />
-    <Compile Include="DataClasses\Punctuation.designer.cs">
-      <DependentUpon>Punctuation.cs</DependentUpon>
-    </Compile>
     <Compile Include="DataClasses\Repeater.cs" />
     <Compile Include="DataClasses\Repeater.designer.cs">
       <DependentUpon>Repeater.cs</DependentUpon>
     </Compile>
     <Compile Include="DataClasses\Sequence.cs" />
-    <Compile Include="DataClasses\Sequence.designer.cs" />
+    <Compile Include="DataClasses\Sequence.designer.cs">
+      <DependentUpon>Sequence.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataClasses\Signal.cs" />
-    <Compile Include="DataClasses\Signal.designer.cs" />
-    <Compile Include="DataClasses\Silence.cs" />
-    <Compile Include="DataClasses\Silence.designer.cs">
-      <DependentUpon>Silence.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DataClasses\Space.cs" />
-    <Compile Include="DataClasses\Space.designer.cs">
-      <DependentUpon>Space.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DataClasses\Symbol.cs" />
-    <Compile Include="DataClasses\Symbol.designer.cs">
-      <DependentUpon>Symbol.cs</DependentUpon>
+    <Compile Include="DataClasses\Signal.designer.cs">
+      <DependentUpon>Signal.cs</DependentUpon>
     </Compile>
     <Compile Include="DataClasses\Telegraph.cs" />
     <Compile Include="DataClasses\Telegraph.designer.cs">
       <DependentUpon>Telegraph.cs</DependentUpon>
     </Compile>
-    <Compile Include="DataClasses\Tone.cs" />
-    <Compile Include="DataClasses\Tone.designer.cs">
-      <DependentUpon>Tone.cs</DependentUpon>
+    <Compile Include="DataClasses\TelegraphOperator.cs" />
+    <Compile Include="DataClasses\TelegraphOperator.designer.cs">
+      <DependentUpon>TelegraphOperator.cs</DependentUpon>
     </Compile>
     <Compile Include="DataClasses\Transmission.cs" />
     <Compile Include="DataClasses\Transmission.designer.cs">
@@ -174,24 +116,27 @@
     <Compile Include="DataClasses\Understanding.designer.cs">
       <DependentUpon>Understanding.cs</DependentUpon>
     </Compile>
-    <Compile Include="DataClasses\Unit.cs" />
-    <Compile Include="DataClasses\Unit.designer.cs">
-      <DependentUpon>Unit.cs</DependentUpon>
-    </Compile>
     <Compile Include="DataClasses\Word.cs" />
-    <Compile Include="DataClasses\Word.designer.cs" />
+    <Compile Include="DataClasses\Word.designer.cs">
+      <DependentUpon>Word.cs</DependentUpon>
+    </Compile>
     <Compile Include="Extensions\CoreExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlDataAccessLayer\SqlDataManager.cs" />
-    <Compile Include="DataClasses\DeliveryMethod.cs">
+    <Compile Include="DataClasses\TelegraphStation.cs">
     </Compile>
-    <Compile Include="DataClasses\DeliveryMethod.designer.cs">
-      <DependentUpon>DeliveryMethod.cs</DependentUpon>
+    <Compile Include="DataClasses\TelegraphStation.designer.cs">
+      <DependentUpon>TelegraphStation.cs</DependentUpon>
     </Compile>
-    <Compile Include="DataClasses\TelegraphOperator.cs">
+    <Compile Include="DataClasses\Sentence.cs">
     </Compile>
-    <Compile Include="DataClasses\TelegraphOperator.designer.cs">
-      <DependentUpon>TelegraphOperator.cs</DependentUpon>
+    <Compile Include="DataClasses\Sentence.designer.cs">
+      <DependentUpon>Sentence.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataClasses\Customer.cs">
+    </Compile>
+    <Compile Include="DataClasses\Customer.designer.cs">
+      <DependentUpon>Customer.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

@@ -15,23 +15,21 @@ namespace MorseCodeHelper.Lib.DataClasses
             
             this.CommunicationId = Guid.NewGuid();
             
+                this.Controllers = new BindingList<Controller>();
+            
                 this.Listeners = new BindingList<Listener>();
             
                 this.Observers = new BindingList<Observer>();
             
+                this.TelegraphOperators = new BindingList<TelegraphOperator>();
+            
                 this.Telegraphs = new BindingList<Telegraph>();
-            
-                this.Sequences = new BindingList<Sequence>();
-            
-                this.Words = new BindingList<Word>();
             
                 this.Understandings = new BindingList<Understanding>();
             
-                this.Tones = new BindingList<Tone>();
+                this.Words = new BindingList<Word>();
             
-                this.TelegraphOperators = new BindingList<TelegraphOperator>();
-            
-                this.Controllers = new BindingList<Controller>();
+                this.Sentences = new BindingList<Sentence>();
             
 
         }
@@ -46,7 +44,48 @@ namespace MorseCodeHelper.Lib.DataClasses
         [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "Description")]
         public String Description { get; set; }
     
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "TelegraphOperatorId")]
+        public Nullable<Guid> TelegraphOperatorId { get; set; }
+    
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "AlphabetId")]
+        public Nullable<Guid> AlphabetId { get; set; }
+    
 
+        
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "Controllers")]
+        public BindingList<Controller> Controllers { get; set; }
+            
+        /// <summary>
+        /// Check to see if there are any related Controllers, and load them if requested
+        /// </summary>
+        public static void CheckExpandControllers(SqlDataManager sdm, IEnumerable<Communication> communications, string expandString)
+        {
+            var communicationsWhere = CreateCommunicationWhere(communications);
+            expandString = expandString.SafeToString();
+
+            if (String.Equals(expandString, "all", StringComparison.OrdinalIgnoreCase) || expandString.IndexOf("controllers", StringComparison.OrdinalIgnoreCase) >= 0)
+            {
+                var childControllers = sdm.GetAllControllers<Controller>(communicationsWhere);
+
+                communications.ToList()
+                        .ForEach(feCommunication => feCommunication.LoadControllers(childControllers));
+            }
+
+        }
+
+
+        
+
+        
+        /// <summary>
+        /// Find the related Controllers (from the list provided) and attach them locally to the Controllers list.
+        /// </summary>
+        public void LoadControllers(IEnumerable<Controller> controllers)
+        {
+            controllers.Where(whereController => whereController.CommunicationId == this.CommunicationId)
+                    .ToList()
+                    .ForEach(feController => this.Controllers.Add(feController));
+        }
         
         [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "Listeners")]
         public BindingList<Listener> Listeners { get; set; }
@@ -118,6 +157,41 @@ namespace MorseCodeHelper.Lib.DataClasses
                     .ForEach(feObserver => this.Observers.Add(feObserver));
         }
         
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "TelegraphOperators")]
+        public BindingList<TelegraphOperator> TelegraphOperators { get; set; }
+            
+        /// <summary>
+        /// Check to see if there are any related TelegraphOperators, and load them if requested
+        /// </summary>
+        public static void CheckExpandTelegraphOperators(SqlDataManager sdm, IEnumerable<Communication> communications, string expandString)
+        {
+            var communicationsWhere = CreateCommunicationWhere(communications);
+            expandString = expandString.SafeToString();
+
+            if (String.Equals(expandString, "all", StringComparison.OrdinalIgnoreCase) || expandString.IndexOf("telegraphOperators", StringComparison.OrdinalIgnoreCase) >= 0)
+            {
+                var childTelegraphOperators = sdm.GetAllTelegraphOperators<TelegraphOperator>(communicationsWhere);
+
+                communications.ToList()
+                        .ForEach(feCommunication => feCommunication.LoadTelegraphOperators(childTelegraphOperators));
+            }
+
+        }
+
+
+        
+
+        
+        /// <summary>
+        /// Find the related TelegraphOperators (from the list provided) and attach them locally to the TelegraphOperators list.
+        /// </summary>
+        public void LoadTelegraphOperators(IEnumerable<TelegraphOperator> telegraphOperators)
+        {
+            telegraphOperators.Where(whereTelegraphOperator => whereTelegraphOperator.CommunicationId == this.CommunicationId)
+                    .ToList()
+                    .ForEach(feTelegraphOperator => this.TelegraphOperators.Add(feTelegraphOperator));
+        }
+        
         [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "Telegraphs")]
         public BindingList<Telegraph> Telegraphs { get; set; }
             
@@ -151,76 +225,6 @@ namespace MorseCodeHelper.Lib.DataClasses
             telegraphs.Where(whereTelegraph => whereTelegraph.CommunicationId == this.CommunicationId)
                     .ToList()
                     .ForEach(feTelegraph => this.Telegraphs.Add(feTelegraph));
-        }
-        
-        [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "Sequences")]
-        public BindingList<Sequence> Sequences { get; set; }
-            
-        /// <summary>
-        /// Check to see if there are any related Sequences, and load them if requested
-        /// </summary>
-        public static void CheckExpandSequences(SqlDataManager sdm, IEnumerable<Communication> communications, string expandString)
-        {
-            var communicationsWhere = CreateCommunicationWhere(communications);
-            expandString = expandString.SafeToString();
-
-            if (String.Equals(expandString, "all", StringComparison.OrdinalIgnoreCase) || expandString.IndexOf("sequences", StringComparison.OrdinalIgnoreCase) >= 0)
-            {
-                var childSequences = sdm.GetAllSequences<Sequence>(communicationsWhere);
-
-                communications.ToList()
-                        .ForEach(feCommunication => feCommunication.LoadSequences(childSequences));
-            }
-
-        }
-
-
-        
-
-        
-        /// <summary>
-        /// Find the related Sequences (from the list provided) and attach them locally to the Sequences list.
-        /// </summary>
-        public void LoadSequences(IEnumerable<Sequence> sequences)
-        {
-            sequences.Where(whereSequence => whereSequence.CommunicationId == this.CommunicationId)
-                    .ToList()
-                    .ForEach(feSequence => this.Sequences.Add(feSequence));
-        }
-        
-        [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "Words")]
-        public BindingList<Word> Words { get; set; }
-            
-        /// <summary>
-        /// Check to see if there are any related Words, and load them if requested
-        /// </summary>
-        public static void CheckExpandWords(SqlDataManager sdm, IEnumerable<Communication> communications, string expandString)
-        {
-            var communicationsWhere = CreateCommunicationWhere(communications);
-            expandString = expandString.SafeToString();
-
-            if (String.Equals(expandString, "all", StringComparison.OrdinalIgnoreCase) || expandString.IndexOf("words", StringComparison.OrdinalIgnoreCase) >= 0)
-            {
-                var childWords = sdm.GetAllWords<Word>(communicationsWhere);
-
-                communications.ToList()
-                        .ForEach(feCommunication => feCommunication.LoadWords(childWords));
-            }
-
-        }
-
-
-        
-
-        
-        /// <summary>
-        /// Find the related Words (from the list provided) and attach them locally to the Words list.
-        /// </summary>
-        public void LoadWords(IEnumerable<Word> words)
-        {
-            words.Where(whereWord => whereWord.CommunicationId == this.CommunicationId)
-                    .ToList()
-                    .ForEach(feWord => this.Words.Add(feWord));
         }
         
         [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "Understandings")]
@@ -258,23 +262,23 @@ namespace MorseCodeHelper.Lib.DataClasses
                     .ForEach(feUnderstanding => this.Understandings.Add(feUnderstanding));
         }
         
-        [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "Tones")]
-        public BindingList<Tone> Tones { get; set; }
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "Words")]
+        public BindingList<Word> Words { get; set; }
             
         /// <summary>
-        /// Check to see if there are any related Tones, and load them if requested
+        /// Check to see if there are any related Words, and load them if requested
         /// </summary>
-        public static void CheckExpandTones(SqlDataManager sdm, IEnumerable<Communication> communications, string expandString)
+        public static void CheckExpandWords(SqlDataManager sdm, IEnumerable<Communication> communications, string expandString)
         {
             var communicationsWhere = CreateCommunicationWhere(communications);
             expandString = expandString.SafeToString();
 
-            if (String.Equals(expandString, "all", StringComparison.OrdinalIgnoreCase) || expandString.IndexOf("tones", StringComparison.OrdinalIgnoreCase) >= 0)
+            if (String.Equals(expandString, "all", StringComparison.OrdinalIgnoreCase) || expandString.IndexOf("words", StringComparison.OrdinalIgnoreCase) >= 0)
             {
-                var childTones = sdm.GetAllTones<Tone>(communicationsWhere);
+                var childWords = sdm.GetAllWords<Word>(communicationsWhere);
 
                 communications.ToList()
-                        .ForEach(feCommunication => feCommunication.LoadTones(childTones));
+                        .ForEach(feCommunication => feCommunication.LoadWords(childWords));
             }
 
         }
@@ -284,32 +288,32 @@ namespace MorseCodeHelper.Lib.DataClasses
 
         
         /// <summary>
-        /// Find the related Tones (from the list provided) and attach them locally to the Tones list.
+        /// Find the related Words (from the list provided) and attach them locally to the Words list.
         /// </summary>
-        public void LoadTones(IEnumerable<Tone> tones)
+        public void LoadWords(IEnumerable<Word> words)
         {
-            tones.Where(whereTone => whereTone.CommunicationId == this.CommunicationId)
+            words.Where(whereWord => whereWord.CommunicationId == this.CommunicationId)
                     .ToList()
-                    .ForEach(feTone => this.Tones.Add(feTone));
+                    .ForEach(feWord => this.Words.Add(feWord));
         }
         
-        [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "TelegraphOperators")]
-        public BindingList<TelegraphOperator> TelegraphOperators { get; set; }
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "Sentences")]
+        public BindingList<Sentence> Sentences { get; set; }
             
         /// <summary>
-        /// Check to see if there are any related TelegraphOperators, and load them if requested
+        /// Check to see if there are any related Sentences, and load them if requested
         /// </summary>
-        public static void CheckExpandTelegraphOperators(SqlDataManager sdm, IEnumerable<Communication> communications, string expandString)
+        public static void CheckExpandSentences(SqlDataManager sdm, IEnumerable<Communication> communications, string expandString)
         {
             var communicationsWhere = CreateCommunicationWhere(communications);
             expandString = expandString.SafeToString();
 
-            if (String.Equals(expandString, "all", StringComparison.OrdinalIgnoreCase) || expandString.IndexOf("telegraphOperators", StringComparison.OrdinalIgnoreCase) >= 0)
+            if (String.Equals(expandString, "all", StringComparison.OrdinalIgnoreCase) || expandString.IndexOf("sentences", StringComparison.OrdinalIgnoreCase) >= 0)
             {
-                var childTelegraphOperators = sdm.GetAllTelegraphOperators<TelegraphOperator>(communicationsWhere);
+                var childSentences = sdm.GetAllSentences<Sentence>(communicationsWhere);
 
                 communications.ToList()
-                        .ForEach(feCommunication => feCommunication.LoadTelegraphOperators(childTelegraphOperators));
+                        .ForEach(feCommunication => feCommunication.LoadSentences(childSentences));
             }
 
         }
@@ -319,48 +323,13 @@ namespace MorseCodeHelper.Lib.DataClasses
 
         
         /// <summary>
-        /// Find the related TelegraphOperators (from the list provided) and attach them locally to the TelegraphOperators list.
+        /// Find the related Sentences (from the list provided) and attach them locally to the Sentences list.
         /// </summary>
-        public void LoadTelegraphOperators(IEnumerable<TelegraphOperator> telegraphOperators)
+        public void LoadSentences(IEnumerable<Sentence> sentences)
         {
-            telegraphOperators.Where(whereTelegraphOperator => whereTelegraphOperator.CommunicationId == this.CommunicationId)
+            sentences.Where(whereSentence => whereSentence.CommunicationId == this.CommunicationId)
                     .ToList()
-                    .ForEach(feTelegraphOperator => this.TelegraphOperators.Add(feTelegraphOperator));
-        }
-        
-        [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "Controllers")]
-        public BindingList<Controller> Controllers { get; set; }
-            
-        /// <summary>
-        /// Check to see if there are any related Controllers, and load them if requested
-        /// </summary>
-        public static void CheckExpandControllers(SqlDataManager sdm, IEnumerable<Communication> communications, string expandString)
-        {
-            var communicationsWhere = CreateCommunicationWhere(communications);
-            expandString = expandString.SafeToString();
-
-            if (String.Equals(expandString, "all", StringComparison.OrdinalIgnoreCase) || expandString.IndexOf("controllers", StringComparison.OrdinalIgnoreCase) >= 0)
-            {
-                var childControllers = sdm.GetAllControllers<Controller>(communicationsWhere);
-
-                communications.ToList()
-                        .ForEach(feCommunication => feCommunication.LoadControllers(childControllers));
-            }
-
-        }
-
-
-        
-
-        
-        /// <summary>
-        /// Find the related Controllers (from the list provided) and attach them locally to the Controllers list.
-        /// </summary>
-        public void LoadControllers(IEnumerable<Controller> controllers)
-        {
-            controllers.Where(whereController => whereController.CommunicationId == this.CommunicationId)
-                    .ToList()
-                    .ForEach(feController => this.Controllers.Add(feController));
+                    .ForEach(feSentence => this.Sentences.Add(feSentence));
         }
         
 
@@ -381,23 +350,21 @@ namespace MorseCodeHelper.Lib.DataClasses
         {
             
             
+            CheckExpandControllers(sdm, communications, expandString);
+            
             CheckExpandListeners(sdm, communications, expandString);
             
             CheckExpandObservers(sdm, communications, expandString);
             
+            CheckExpandTelegraphOperators(sdm, communications, expandString);
+            
             CheckExpandTelegraphs(sdm, communications, expandString);
-            
-            CheckExpandSequences(sdm, communications, expandString);
-            
-            CheckExpandWords(sdm, communications, expandString);
             
             CheckExpandUnderstandings(sdm, communications, expandString);
             
-            CheckExpandTones(sdm, communications, expandString);
+            CheckExpandWords(sdm, communications, expandString);
             
-            CheckExpandTelegraphOperators(sdm, communications, expandString);
-            
-            CheckExpandControllers(sdm, communications, expandString);
+            CheckExpandSentences(sdm, communications, expandString);
         }
         
     }

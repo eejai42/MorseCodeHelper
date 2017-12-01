@@ -1,39 +1,186 @@
 <html><head><title>MorseCodeHelper - Single Page Doc s</title><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous" /></head><body><h3>MorseCodeHelper Raw Data model</h3><a class="btn btn-sm btn-primary" href="Index.html"><<&nbsp;Back Interactive Object Explorer</a><table style="width: 100%"><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
-                        <a name="MorseCode"></a>
-                        <hr /><h2>MorseCode</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div><div style="padding: 1em;">
-                            Each MorseCode may have zero or more associated
+                        <a name="Alphabet"></a>
+                        <hr /><div style="float: right;">
+                        Parented by 
+                        
+                            
+                                <a href="#Country">Country</a>
+                        
+                        
+                        </div><h2>Alphabet</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div><div style="padding: 1em;">
+                            Each Alphabet may have zero or more associated
                           
                             
-                                <a href="#DeliveryMethod">
+                                <a href="#Character">
                                 
-                                    DeliveryMethods
+                                    Characters
                                     
                                 </a>
                         
                             
-                                , <a href="#Alphabet">
+                                , <a href="#Communication">
+                                
+                                    Communications
+                                    
+                                </a>
+                        
+                        </div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>AlphabetId</td><td>GUID</td><td>AlphabetId</td></tr><tr><td>Name</td><td>TEXT</td><td>Name</td></tr><tr><td>Description</td><td>TEXT</td><td>Description</td></tr><tr><td>CountryId</td><td>GUID</td><td></td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
+                        <a name="Character"></a>
+                        <hr /><div style="float: right;">
+                        Parented by 
+                        
+                            
+                                <a href="#Alphabet">Alphabet</a>
+                        
+                        
+                        </div><h2>Character</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div><div style="padding: 1em;">
+                            Each Character may have zero or more associated
+                          
+                            
+                                <a href="#Sequence">
+                                
+                                    Sequences
+                                    
+                                </a>
+                        
+                        </div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>CharacterId</td><td>GUID</td><td>CharacterId</td></tr><tr><td>Name</td><td>TEXT</td><td>Name</td></tr><tr><td>Description</td><td>TEXT</td><td>Description</td></tr><tr><td>Symbol</td><td>text</td><td>Symbol</td></tr><tr><td>AlphabetId</td><td>GUID</td><td></td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
+                        <a name="Communication"></a>
+                        <hr /><div style="float: right;">
+                        Parented by 
+                        
+                            
+                                <a href="#TelegraphOperator">TelegraphOperator</a>
+                        
+                        
+                            
+                                , <a href="#Alphabet">Alphabet</a>
+                        
+                        
+                        </div><h2>Communication</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div><div style="padding: 1em;">
+                            Each Communication may have zero or more associated
+                          
+                            
+                                <a href="#Controller">
+                                
+                                    Controllers
+                                    
+                                </a>
+                        
+                            
+                                , <a href="#Listener">
+                                
+                                    Listeners
+                                    
+                                </a>
+                        
+                            
+                                , <a href="#Observer">
+                                
+                                    Observers
+                                    
+                                </a>
+                        
+                            
+                                , <a href="#TelegraphOperator">
+                                
+                                    TelegraphOperators
+                                    
+                                </a>
+                        
+                            
+                                , <a href="#Telegraph">
+                                
+                                    Telegraphs
+                                    
+                                </a>
+                        
+                            
+                                , <a href="#Understanding">
+                                
+                                    Understandings
+                                    
+                                </a>
+                        
+                            
+                                , <a href="#Word">
+                                
+                                    Words
+                                    
+                                </a>
+                        
+                            
+                                , <a href="#Sentence">
+                                
+                                    Sentences
+                                    
+                                </a>
+                        
+                        </div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>CommunicationId</td><td>GUID</td><td>CommunicationId</td></tr><tr><td>Name</td><td>TEXT</td><td>Name</td></tr><tr><td>Description</td><td>TEXT</td><td>Description</td></tr><tr><td>TelegraphOperatorId</td><td>GUID</td><td></td></tr><tr><td>AlphabetId</td><td>GUID</td><td></td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
+                        <a name="Controller"></a>
+                        <hr /><div style="float: right;">
+                        Parented by 
+                        
+                            
+                                <a href="#Communication">Communication</a>
+                        
+                        
+                        </div><h2>Controller</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>ControllerId</td><td>GUID</td><td>ControllerId</td></tr><tr><td>Name</td><td>TEXT</td><td>Name</td></tr><tr><td>Description</td><td>TEXT</td><td>Description</td></tr><tr><td>CommunicationId</td><td>GUID</td><td></td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
+                        <a name="Country"></a>
+                        <hr /><h2>Country</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div><div style="padding: 1em;">
+                            Each Country may have zero or more associated
+                          
+                            
+                                <a href="#Alphabet">
                                 
                                     Alphabets
                                     
                                 </a>
                         
                             
-                                , <a href="#Unit">
+                                , <a href="#Language">
                                 
-                                    Units
+                                    Languages
                                     
                                 </a>
                         
-                        </div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>MorseCodeId</td><td>GUID</td><td>CodeId</td></tr><tr><td>Name</td><td>TEXT</td><td>Name</td></tr><tr><td>Description</td><td>TEXT</td><td>Description</td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
-                        <a name="DeliveryMethod"></a>
+                        </div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>CountryId</td><td>GUID</td><td>CountryId</td></tr><tr><td>Name</td><td>TEXT</td><td>Name</td></tr><tr><td>Description</td><td>TEXT</td><td>Description</td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
+                        <a name="MCDevice"></a>
+                        <hr /><h2>MCDevice</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div><div style="padding: 1em;">
+                            Each MCDevice may have zero or more associated
+                          
+                            
+                                <a href="#Light">
+                                
+                                    Lights
+                                    
+                                </a>
+                        
+                            
+                                , <a href="#Repeater">
+                                
+                                    Repeaters
+                                    
+                                </a>
+                        
+                        </div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>MCDeviceId</td><td>GUID</td><td>EquipmentId</td></tr><tr><td>Name</td><td>TEXT</td><td>Name</td></tr><tr><td>Description</td><td>TEXT</td><td>Description</td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
+                        <a name="Language"></a>
                         <hr /><div style="float: right;">
                         Parented by 
                         
                             
-                                <a href="#MorseCode">MorseCode</a>
+                                <a href="#Country">Country</a>
                         
                         
-                        </div><h2>DeliveryMethod</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>DeliveryMethodId</td><td>GUID</td><td>MethodId</td></tr><tr><td>Name</td><td>TEXT</td><td>Name</td></tr><tr><td>Description</td><td>TEXT</td><td>Description</td></tr><tr><td>MorseCodeId</td><td>GUID</td><td></td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
+                        </div><h2>Language</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>LanguageId</td><td>GUID</td><td>LanguageId</td></tr><tr><td>Name</td><td>TEXT</td><td>Name</td></tr><tr><td>Description</td><td>TEXT</td><td>Description</td></tr><tr><td>CountryId</td><td>GUID</td><td></td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
+                        <a name="Light"></a>
+                        <hr /><div style="float: right;">
+                        Parented by 
+                        
+                            
+                                <a href="#MCDevice">MCDevice</a>
+                        
+                        
+                        </div><h2>Light</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>LightId</td><td>GUID</td><td>LightId</td></tr><tr><td>Name</td><td>TEXT</td><td>Name</td></tr><tr><td>Description</td><td>TEXT</td><td>Description</td></tr><tr><td>MCDeviceId</td><td>GUID</td><td></td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
                         <a name="Listener"></a>
                         <hr /><div style="float: right;">
                         Parented by 
@@ -52,33 +199,7 @@
                         
                         
                         </div><h2>Observer</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>ObserverId</td><td>GUID</td><td>ObserverId</td></tr><tr><td>Name</td><td>TEXT</td><td>Name</td></tr><tr><td>Description</td><td>TEXT</td><td>Description</td></tr><tr><td>CommunicationId</td><td>GUID</td><td></td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
-                        <a name="MCDevice"></a>
-                        <hr /><h2>MCDevice</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div><div style="padding: 1em;">
-                            Each MCDevice may have zero or more associated
-                          
-                            
-                                <a href="#Signal">
-                                
-                                    Signals
-                                    
-                                </a>
-                        
-                            
-                                , <a href="#Light">
-                                
-                                    Lights
-                                    
-                                </a>
-                        
-                            
-                                , <a href="#Repeater">
-                                
-                                    Repeaters
-                                    
-                                </a>
-                        
-                        </div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>MCDeviceId</td><td>GUID</td><td>EquipmentId</td></tr><tr><td>Name</td><td>TEXT</td><td>Name</td></tr><tr><td>Description</td><td>TEXT</td><td>Description</td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
-                        <a name="Telegraph"></a>
+                        <a name="TelegraphOperator"></a>
                         <hr /><div style="float: right;">
                         Parented by 
                         
@@ -86,230 +207,17 @@
                                 <a href="#Communication">Communication</a>
                         
                         
-                        </div><h2>Telegraph</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>TelegraphId</td><td>GUID</td><td>TelegraphId</td></tr><tr><td>Name</td><td>TEXT</td><td>Name</td></tr><tr><td>Description</td><td>TEXT</td><td>Description</td></tr><tr><td>CommunicationId</td><td>GUID</td><td></td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
-                        <a name="Alphabet"></a>
-                        <hr /><div style="float: right;">
-                        Parented by 
-                        
-                            
-                                <a href="#MorseCode">MorseCode</a>
-                        
-                        
-                        </div><h2>Alphabet</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div><div style="padding: 1em;">
-                            Each Alphabet may have zero or more associated
+                        </div><h2>TelegraphOperator</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div><div style="padding: 1em;">
+                            Each TelegraphOperator may have zero or more associated
                           
                             
-                                <a href="#Character">
+                                <a href="#Communication">
                                 
-                                    Characters
+                                    Communications
                                     
                                 </a>
                         
-                        </div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>AlphabetId</td><td>GUID</td><td>AlphabetId</td></tr><tr><td>Name</td><td>TEXT</td><td>Name</td></tr><tr><td>Description</td><td>TEXT</td><td>Description</td></tr><tr><td>MorseCodeId</td><td>GUID</td><td></td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
-                        <a name="Punctuation"></a>
-                        <hr /><div style="float: right;">
-                        Parented by 
-                        
-                            
-                                <a href="#Character">Character</a>
-                        
-                        
-                        </div><h2>Punctuation</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>PunctuationId</td><td>GUID</td><td>PunctuationId</td></tr><tr><td>Name</td><td>TEXT</td><td>Name</td></tr><tr><td>Description</td><td>TEXT</td><td>Description</td></tr><tr><td>CharacterId</td><td>GUID</td><td></td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
-                        <a name="Symbol"></a>
-                        <hr /><div style="float: right;">
-                        Parented by 
-                        
-                            
-                                <a href="#Character">Character</a>
-                        
-                        
-                        </div><h2>Symbol</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>SymbolId</td><td>GUID</td><td>SymbolId</td></tr><tr><td>Name</td><td>TEXT</td><td>Name</td></tr><tr><td>Description</td><td>TEXT</td><td>Description</td></tr><tr><td>CharacterId</td><td>GUID</td><td></td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
-                        <a name="Character"></a>
-                        <hr /><div style="float: right;">
-                        Parented by 
-                        
-                            
-                                <a href="#Alphabet">Alphabet</a>
-                        
-                        
-                        </div><h2>Character</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div><div style="padding: 1em;">
-                            Each Character may have zero or more associated
-                          
-                            
-                                <a href="#Punctuation">
-                                
-                                    Punctuations
-                                    
-                                </a>
-                        
-                            
-                                , <a href="#Symbol">
-                                
-                                    Symbols
-                                    
-                                </a>
-                        
-                            
-                                , <a href="#Numeral">
-                                
-                                    Numerals
-                                    
-                                </a>
-                        
-                            
-                                , <a href="#Silence">
-                                
-                                    Silences
-                                    
-                                </a>
-                        
-                            
-                                , <a href="#Space">
-                                
-                                    Spaces
-                                    
-                                </a>
-                        
-                        </div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>CharacterId</td><td>GUID</td><td>CharacterId</td></tr><tr><td>Name</td><td>TEXT</td><td>Name</td></tr><tr><td>Description</td><td>TEXT</td><td>Description</td></tr><tr><td>AlphabetId</td><td>GUID</td><td></td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
-                        <a name="Numeral"></a>
-                        <hr /><div style="float: right;">
-                        Parented by 
-                        
-                            
-                                <a href="#Character">Character</a>
-                        
-                        
-                        </div><h2>Numeral</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>NumeralId</td><td>GUID</td><td>NumeralId</td></tr><tr><td>Name</td><td>TEXT</td><td>Name</td></tr><tr><td>Description</td><td>TEXT</td><td>Description</td></tr><tr><td>CharacterId</td><td>GUID</td><td></td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
-                        <a name="Sequence"></a>
-                        <hr /><div style="float: right;">
-                        Parented by 
-                        
-                            
-                                <a href="#Communication">Communication</a>
-                        
-                        
-                        </div><h2>Sequence</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>SequenceId</td><td>GUID</td><td>SequenceId</td></tr><tr><td>Name</td><td>TEXT</td><td>Name</td></tr><tr><td>Description</td><td>TEXT</td><td>Description</td></tr><tr><td>CommunicationId</td><td>GUID</td><td></td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
-                        <a name="Dot"></a>
-                        <hr /><h2>Dot</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>DotId</td><td>GUID</td><td>DotId</td></tr><tr><td>Name</td><td>TEXT</td><td>Name</td></tr><tr><td>Description</td><td>TEXT</td><td>Description</td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
-                        <a name="Duration"></a>
-                        <hr /><h2>Duration</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>DurationId</td><td>GUID</td><td>DurationId</td></tr><tr><td>Name</td><td>TEXT</td><td>Name</td></tr><tr><td>Description</td><td>TEXT</td><td>Description</td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
-                        <a name="Unit"></a>
-                        <hr /><div style="float: right;">
-                        Parented by 
-                        
-                            
-                                <a href="#MorseCode">MorseCode</a>
-                        
-                        
-                        </div><h2>Unit</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>UnitId</td><td>GUID</td><td>UnitId</td></tr><tr><td>Name</td><td>TEXT</td><td>Name</td></tr><tr><td>Description</td><td>TEXT</td><td>Description</td></tr><tr><td>MorseCodeId</td><td>GUID</td><td></td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
-                        <a name="Transmission"></a>
-                        <hr /><div style="float: right;">
-                        Parented by 
-                        
-                            
-                                <a href="#"></a>
-                        
-                        
-                        </div><h2>Transmission</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>TransmissionId</td><td>GUID</td><td>TransmissionId</td></tr><tr><td>Name</td><td>TEXT</td><td>Name</td></tr><tr><td>Description</td><td>TEXT</td><td>Description</td></tr><tr><td>CommuncatinoId</td><td>GUID</td><td></td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
-                        <a name="Dash"></a>
-                        <hr /><h2>Dash</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>DashId</td><td>GUID</td><td>DashId</td></tr><tr><td>Name</td><td>TEXT</td><td>Name</td></tr><tr><td>Description</td><td>TEXT</td><td>Description</td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
-                        <a name="Silence"></a>
-                        <hr /><div style="float: right;">
-                        Parented by 
-                        
-                            
-                                <a href="#Character">Character</a>
-                        
-                        
-                        </div><h2>Silence</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>SilenceId</td><td>GUID</td><td>SilenceId</td></tr><tr><td>Name</td><td>TEXT</td><td>Name</td></tr><tr><td>Description</td><td>TEXT</td><td>Description</td></tr><tr><td>CharacterId</td><td>GUID</td><td></td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
-                        <a name="Word"></a>
-                        <hr /><div style="float: right;">
-                        Parented by 
-                        
-                            
-                                <a href="#Communication">Communication</a>
-                        
-                        
-                        </div><h2>Word</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>WordId</td><td>GUID</td><td>WordId</td></tr><tr><td>Name</td><td>TEXT</td><td>Name</td></tr><tr><td>Description</td><td>TEXT</td><td>Description</td></tr><tr><td>CommunicationId</td><td>GUID</td><td></td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
-                        <a name="Space"></a>
-                        <hr /><div style="float: right;">
-                        Parented by 
-                        
-                            
-                                <a href="#Character">Character</a>
-                        
-                        
-                        </div><h2>Space</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>SpaceId</td><td>GUID</td><td>SpaceId</td></tr><tr><td>Name</td><td>TEXT</td><td>Name</td></tr><tr><td>Description</td><td>TEXT</td><td>Description</td></tr><tr><td>CharacterId</td><td>GUID</td><td></td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
-                        <a name="Communication"></a>
-                        <hr /><h2>Communication</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div><div style="padding: 1em;">
-                            Each Communication may have zero or more associated
-                          
-                            
-                                <a href="#Listener">
-                                
-                                    Listeners
-                                    
-                                </a>
-                        
-                            
-                                , <a href="#Observer">
-                                
-                                    Observers
-                                    
-                                </a>
-                        
-                            
-                                , <a href="#Telegraph">
-                                
-                                    Telegraphs
-                                    
-                                </a>
-                        
-                            
-                                , <a href="#Sequence">
-                                
-                                    Sequences
-                                    
-                                </a>
-                        
-                            
-                                , <a href="#Word">
-                                
-                                    Words
-                                    
-                                </a>
-                        
-                            
-                                , <a href="#Understanding">
-                                
-                                    Understandings
-                                    
-                                </a>
-                        
-                            
-                                , <a href="#Tone">
-                                
-                                    Tones
-                                    
-                                </a>
-                        
-                            
-                                , <a href="#TelegraphOperator">
-                                
-                                    TelegraphOperators
-                                    
-                                </a>
-                        
-                            
-                                , <a href="#Controller">
-                                
-                                    Controllers
-                                    
-                                </a>
-                        
-                        </div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>CommunicationId</td><td>GUID</td><td>CommunicationId</td></tr><tr><td>Name</td><td>TEXT</td><td>Name</td></tr><tr><td>Description</td><td>TEXT</td><td>Description</td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
-                        <a name="Frequency"></a>
-                        <hr /><h2>Frequency</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>FrequencyId</td><td>GUID</td><td>FrequencyId</td></tr><tr><td>Name</td><td>TEXT</td><td>Name</td></tr><tr><td>Description</td><td>TEXT</td><td>Description</td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
+                        </div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>TelegraphOperatorId</td><td>GUID</td><td>OperatorId</td></tr><tr><td>Name</td><td>TEXT</td><td>Name</td></tr><tr><td>Description</td><td>TEXT</td><td>Description</td></tr><tr><td>CommunicationId</td><td>GUID</td><td></td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
                         <a name="Proficiency"></a>
                         <hr /><div style="float: right;">
                         Parented by 
@@ -319,6 +227,61 @@
                         
                         
                         </div><h2>Proficiency</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>ProficiencyId</td><td>GUID</td><td>ProficiencyId</td></tr><tr><td>Name</td><td>TEXT</td><td>Name</td></tr><tr><td>Description</td><td>TEXT</td><td>Description</td></tr><tr><td>OperatorId</td><td>GUID</td><td></td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
+                        <a name="Repeater"></a>
+                        <hr /><div style="float: right;">
+                        Parented by 
+                        
+                            
+                                <a href="#MCDevice">MCDevice</a>
+                        
+                        
+                        </div><h2>Repeater</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>RepeaterId</td><td>GUID</td><td>RepeaterId</td></tr><tr><td>Name</td><td>TEXT</td><td>Name</td></tr><tr><td>Description</td><td>TEXT</td><td>Description</td></tr><tr><td>MCDeviceId</td><td>GUID</td><td></td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
+                        <a name="Sequence"></a>
+                        <hr /><div style="float: right;">
+                        Parented by 
+                        
+                            
+                                <a href="#Character">Character</a>
+                        
+                        
+                        </div><h2>Sequence</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div><div style="padding: 1em;">
+                            Each Sequence may have zero or more associated
+                          
+                            
+                                <a href="#Signal">
+                                
+                                    Signals
+                                    
+                                </a>
+                        
+                        </div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>SequenceId</td><td>GUID</td><td>SequenceId</td></tr><tr><td>Name</td><td>TEXT</td><td>Name</td></tr><tr><td>Description</td><td>TEXT</td><td>Description</td></tr><tr><td>CharacterId</td><td>GUID</td><td></td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
+                        <a name="Signal"></a>
+                        <hr /><div style="float: right;">
+                        Parented by 
+                        
+                            
+                                <a href="#Sequence">Sequence</a>
+                        
+                        
+                        </div><h2>Signal</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>SignalId</td><td>GUID</td><td>SignalId</td></tr><tr><td>Name</td><td>TEXT</td><td>Name</td></tr><tr><td>Description</td><td>TEXT</td><td>Description</td></tr><tr><td>SequenceId</td><td>GUID</td><td></td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
+                        <a name="Telegraph"></a>
+                        <hr /><div style="float: right;">
+                        Parented by 
+                        
+                            
+                                <a href="#Communication">Communication</a>
+                        
+                        
+                        </div><h2>Telegraph</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>TelegraphId</td><td>GUID</td><td>TelegraphId</td></tr><tr><td>Name</td><td>TEXT</td><td>Name</td></tr><tr><td>Description</td><td>TEXT</td><td>Description</td></tr><tr><td>CommunicationId</td><td>GUID</td><td></td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
+                        <a name="Transmission"></a>
+                        <hr /><div style="float: right;">
+                        Parented by 
+                        
+                            
+                                <a href="#"></a>
+                        
+                        
+                        </div><h2>Transmission</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>TransmissionId</td><td>GUID</td><td>TransmissionId</td></tr><tr><td>Name</td><td>TEXT</td><td>Name</td></tr><tr><td>Description</td><td>TEXT</td><td>Description</td></tr><tr><td>CommuncatinoId</td><td>GUID</td><td></td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
                         <a name="Understanding"></a>
                         <hr /><div style="float: right;">
                         Parented by 
@@ -328,22 +291,7 @@
                         
                         
                         </div><h2>Understanding</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>UnderstandingId</td><td>GUID</td><td>UnderstandingId</td></tr><tr><td>Name</td><td>TEXT</td><td>Name</td></tr><tr><td>Description</td><td>TEXT</td><td>Description</td></tr><tr><td>CommunicationId</td><td>GUID</td><td></td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
-                        <a name="Signal"></a>
-                        <hr /><div style="float: right;">
-                        Parented by 
-                        
-                            
-                                <a href="#MCDevice">MCDevice</a>
-                        
-                        
-                        </div><h2>Signal</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>SignalId</td><td>GUID</td><td>SignalId</td></tr><tr><td>Name</td><td>TEXT</td><td>Name</td></tr><tr><td>Description</td><td>TEXT</td><td>Description</td></tr><tr><td>MCDeviceId</td><td>GUID</td><td></td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
-                        <a name="Decoding"></a>
-                        <hr /><h2>Decoding</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>DecodingId</td><td>GUID</td><td>DecodingId</td></tr><tr><td>Name</td><td>TEXT</td><td>Name</td></tr><tr><td>Description</td><td>TEXT</td><td>Description</td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
-                        <a name="Device"></a>
-                        <hr /><h2>Device</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>DeviceId</td><td>GUID</td><td>DeviceId</td></tr><tr><td>Name</td><td>TEXT</td><td>Name</td></tr><tr><td>Description</td><td>TEXT</td><td>Description</td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
-                        <a name="Alternative"></a>
-                        <hr /><h2>Alternative</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>AlternativeId</td><td>GUID</td><td>AlternativeId</td></tr><tr><td>Name</td><td>TEXT</td><td>Name</td></tr><tr><td>Description</td><td>TEXT</td><td>Description</td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
-                        <a name="Tone"></a>
+                        <a name="Word"></a>
                         <hr /><div style="float: right;">
                         Parented by 
                         
@@ -351,23 +299,10 @@
                                 <a href="#Communication">Communication</a>
                         
                         
-                        </div><h2>Tone</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>ToneId</td><td>GUID</td><td>ToneId</td></tr><tr><td>Name</td><td>TEXT</td><td>Name</td></tr><tr><td>Description</td><td>TEXT</td><td>Description</td></tr><tr><td>CommunicationId</td><td>GUID</td><td></td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
-                        <a name="Light"></a>
-                        <hr /><div style="float: right;">
-                        Parented by 
-                        
-                            
-                                <a href="#MCDevice">MCDevice</a>
-                        
-                        
-                        </div><h2>Light</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>LightId</td><td>GUID</td><td>LightId</td></tr><tr><td>Name</td><td>TEXT</td><td>Name</td></tr><tr><td>Description</td><td>TEXT</td><td>Description</td></tr><tr><td>MCDeviceId</td><td>GUID</td><td></td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
-                        <a name="Click"></a>
-                        <hr /><h2>Click</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>ClickId</td><td>GUID</td><td>ClickId</td></tr><tr><td>Name</td><td>TEXT</td><td>Name</td></tr><tr><td>Description</td><td>TEXT</td><td>Description</td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
-                        <a name="Language"></a>
-                        <hr /><h2>Language</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>LanguageId</td><td>GUID</td><td>LanguageId</td></tr><tr><td>Name</td><td>TEXT</td><td>Name</td></tr><tr><td>Description</td><td>TEXT</td><td>Description</td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
-                        <a name="Extension"></a>
-                        <hr /><h2>Extension</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>ExtensionId</td><td>GUID</td><td>ExtensionId</td></tr><tr><td>Name</td><td>TEXT</td><td>Name</td></tr><tr><td>Description</td><td>TEXT</td><td>Description</td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
-                        <a name="TelegraphOperator"></a>
+                        </div><h2>Word</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>WordId</td><td>GUID</td><td>WordId</td></tr><tr><td>Name</td><td>TEXT</td><td>Name</td></tr><tr><td>Description</td><td>TEXT</td><td>Description</td></tr><tr><td>CommunicationId</td><td>GUID</td><td></td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
+                        <a name="TelegraphStation"></a>
+                        <hr /><h2>TelegraphStation</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>TelegraphStationId</td><td>GUID</td><td>TelegraphStationId</td></tr><tr><td>Name</td><td>TEXT</td><td>Name</td></tr><tr><td>Description</td><td>TEXT</td><td>Description</td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
+                        <a name="Sentence"></a>
                         <hr /><div style="float: right;">
                         Parented by 
                         
@@ -375,30 +310,6 @@
                                 <a href="#Communication">Communication</a>
                         
                         
-                        </div><h2>TelegraphOperator</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>TelegraphOperatorId</td><td>GUID</td><td>OperatorId</td></tr><tr><td>Name</td><td>TEXT</td><td>Name</td></tr><tr><td>Description</td><td>TEXT</td><td>Description</td></tr><tr><td>CommunicationId</td><td>GUID</td><td></td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
-                        <a name="Country"></a>
-                        <hr /><h2>Country</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>CountryId</td><td>GUID</td><td>CountryId</td></tr><tr><td>Name</td><td>TEXT</td><td>Name</td></tr><tr><td>Description</td><td>TEXT</td><td>Description</td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
-                        <a name="Controller"></a>
-                        <hr /><div style="float: right;">
-                        Parented by 
-                        
-                            
-                                <a href="#Communication">Communication</a>
-                        
-                        
-                        </div><h2>Controller</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>ControllerId</td><td>GUID</td><td>ControllerId</td></tr><tr><td>Name</td><td>TEXT</td><td>Name</td></tr><tr><td>Description</td><td>TEXT</td><td>Description</td></tr><tr><td>CommunicationId</td><td>GUID</td><td></td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
-                        <a name="Human"></a>
-                        <hr /><h2>Human</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>HumanId</td><td>GUID</td><td>HumanId</td></tr><tr><td>Name</td><td>TEXT</td><td>Name</td></tr><tr><td>Description</td><td>TEXT</td><td>Description</td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
-                        <a name="Datum"></a>
-                        <hr /><h2>Datum</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>DatumId</td><td>GUID</td><td>DatumId</td></tr><tr><td>Name</td><td>TEXT</td><td>Name</td></tr><tr><td>Description</td><td>TEXT</td><td>Description</td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
-                        <a name="Channel"></a>
-                        <hr /><h2>Channel</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>ChannelId</td><td>GUID</td><td>ChannelId</td></tr><tr><td>Name</td><td>TEXT</td><td>Name</td></tr><tr><td>Description</td><td>TEXT</td><td>Description</td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
-                        <a name="Repeater"></a>
-                        <hr /><div style="float: right;">
-                        Parented by 
-                        
-                            
-                                <a href="#MCDevice">MCDevice</a>
-                        
-                        
-                        </div><h2>Repeater</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>RepeaterId</td><td>GUID</td><td>RepeaterId</td></tr><tr><td>Name</td><td>TEXT</td><td>Name</td></tr><tr><td>Description</td><td>TEXT</td><td>Description</td></tr><tr><td>MCDeviceId</td><td>GUID</td><td></td></tr></table></body></html>
+                        </div><h2>Sentence</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>SentenceId</td><td>GUID</td><td>SentenceId</td></tr><tr><td>Name</td><td>TEXT</td><td>Name</td></tr><tr><td>Description</td><td>TEXT</td><td>Description</td></tr><tr><td>CommunicationId</td><td>GUID</td><td></td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
+                        <a name="Customer"></a>
+                        <hr /><h2>Customer</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>CustomerId</td><td>GUID</td><td>CustomerId</td></tr><tr><td>Name</td><td>TEXT</td><td>Name</td></tr><tr><td>Description</td><td>TEXT</td><td>Description</td></tr></table></body></html>

@@ -8,19 +8,19 @@ using CoreLibrary.Extensions;
 
 namespace MorseCodeHelper.Lib.DataClasses
 {                            
-    public partial class Signal
+    public partial class Sentence
     {
         private void InitPoco()
         {
             
-            this.SignalId = Guid.NewGuid();
+            this.SentenceId = Guid.NewGuid();
             
 
         }
 
         
-        [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "SignalId")]
-        public Guid SignalId { get; set; }
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "SentenceId")]
+        public Guid SentenceId { get; set; }
     
         [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "Name")]
         public String Name { get; set; }
@@ -28,26 +28,26 @@ namespace MorseCodeHelper.Lib.DataClasses
         [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "Description")]
         public String Description { get; set; }
     
-        [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "SequenceId")]
-        public Nullable<Guid> SequenceId { get; set; }
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "CommunicationId")]
+        public Nullable<Guid> CommunicationId { get; set; }
     
 
         
 
         
 
-        private static string CreateSignalWhere(IEnumerable<Signal> signals)
+        private static string CreateSentenceWhere(IEnumerable<Sentence> sentences)
         {
-            if (!signals.Any()) return "1=1";
+            if (!sentences.Any()) return "1=1";
             else 
             {
-                var idList = signals.Select(selectSignal => String.Format("'{0}'", selectSignal.SignalId));
+                var idList = sentences.Select(selectSentence => String.Format("'{0}'", selectSentence.SentenceId));
                 var csIdList = String.Join(",", idList);
-                return String.Format("SignalId in ({0})", csIdList);
+                return String.Format("SentenceId in ({0})", csIdList);
             }
         }
         
-        public static void CheckExpand(SqlDataManager sdm, IEnumerable<Signal> signals, string expandString)
+        public static void CheckExpand(SqlDataManager sdm, IEnumerable<Sentence> sentences, string expandString)
         {
             
         }
