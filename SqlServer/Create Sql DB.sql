@@ -87,7 +87,7 @@
           [CommunicationId] UNIQUEIDENTIFIER NOT NULL,
           [Name] NVARCHAR(100) NOT NULL,
           [Description] NVARCHAR(100) NOT NULL,
-          [TelegraphOperatorId] UNIQUEIDENTIFIER NULL,
+          [TelegraphStationId] UNIQUEIDENTIFIER NULL,
           [AlphabetId] UNIQUEIDENTIFIER NULL,
         
         CONSTRAINT [PK_Communication] PRIMARY KEY CLUSTERED
@@ -144,6 +144,7 @@
           [MCDeviceId] UNIQUEIDENTIFIER NOT NULL,
           [Name] NVARCHAR(100) NOT NULL,
           [Description] NVARCHAR(100) NOT NULL,
+          [TelegraphStationId] UNIQUEIDENTIFIER NULL,
         
         CONSTRAINT [PK_MCDevice] PRIMARY KEY CLUSTERED
           (
@@ -314,6 +315,10 @@
           [SignalId] UNIQUEIDENTIFIER NOT NULL,
           [Name] NVARCHAR(100) NOT NULL,
           [Description] NVARCHAR(100) NOT NULL,
+          [Symbol] NVARCHAR(100) NOT NULL,
+          [ShortCode] NVARCHAR(100) NOT NULL,
+          [LongCode] NVARCHAR(100) NOT NULL,
+          [RelativeTime] INT NOT NULL,
           [SequenceId] UNIQUEIDENTIFIER NULL,
         
         CONSTRAINT [PK_Signal] PRIMARY KEY CLUSTERED
@@ -446,6 +451,7 @@
           [CustomerId] UNIQUEIDENTIFIER NOT NULL,
           [Name] NVARCHAR(100) NOT NULL,
           [Description] NVARCHAR(100) NOT NULL,
+          [CommunicationId] UNIQUEIDENTIFIER NULL,
         
         CONSTRAINT [PK_Customer] PRIMARY KEY CLUSTERED
           (
@@ -503,17 +509,17 @@
           END
           GO
         
-          -- FK for TelegraphOperatorId :: 8 :: Communication :: TelegraphOperator
-          IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_Communication_TelegraphOperator]') AND parent_object_id = OBJECT_ID(N'[dbo].[Communication]'))
-            ALTER TABLE [dbo].[Communication]  WITH CHECK ADD  CONSTRAINT [FK_Communication_TelegraphOperator] FOREIGN KEY([TelegraphOperatorId])
-            REFERENCES [dbo].[TelegraphOperator] (TelegraphOperatorId)
+          -- FK for TelegraphStationId :: 9 :: Communication :: TelegraphStation
+          IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_Communication_TelegraphStationIdTelegraphStation]') AND parent_object_id = OBJECT_ID(N'[dbo].[Communication]'))
+            ALTER TABLE [dbo].[Communication]  WITH CHECK ADD  CONSTRAINT [FK_Communication_TelegraphStationIdTelegraphStation] FOREIGN KEY([TelegraphStationId])
+            REFERENCES [dbo].[TelegraphStation] (TelegraphStationId)
           GO
 
-          IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_Communication_TelegraphOperator]') AND parent_object_id = OBJECT_ID(N'[dbo].[Communication]'))
-            ALTER TABLE [dbo].[Communication] CHECK CONSTRAINT [FK_Communication_TelegraphOperator]
+          IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_Communication_TelegraphStationIdTelegraphStation]') AND parent_object_id = OBJECT_ID(N'[dbo].[Communication]'))
+            ALTER TABLE [dbo].[Communication] CHECK CONSTRAINT [FK_Communication_TelegraphStationIdTelegraphStation]
             GO
           
-          -- FK for AlphabetId :: 8 :: Communication :: Alphabet
+          -- FK for AlphabetId :: 9 :: Communication :: Alphabet
           IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_Communication_AlphabetIdAlphabet]') AND parent_object_id = OBJECT_ID(N'[dbo].[Communication]'))
             ALTER TABLE [dbo].[Communication]  WITH CHECK ADD  CONSTRAINT [FK_Communication_AlphabetIdAlphabet] FOREIGN KEY([AlphabetId])
             REFERENCES [dbo].[Alphabet] (AlphabetId)
@@ -560,6 +566,16 @@
           END
           GO
         
+          -- FK for TelegraphStationId :: 2 :: MCDevice :: TelegraphStation
+          IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_MCDevice_TelegraphStationIdTelegraphStation]') AND parent_object_id = OBJECT_ID(N'[dbo].[MCDevice]'))
+            ALTER TABLE [dbo].[MCDevice]  WITH CHECK ADD  CONSTRAINT [FK_MCDevice_TelegraphStationIdTelegraphStation] FOREIGN KEY([TelegraphStationId])
+            REFERENCES [dbo].[TelegraphStation] (TelegraphStationId)
+          GO
+
+          IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_MCDevice_TelegraphStationIdTelegraphStation]') AND parent_object_id = OBJECT_ID(N'[dbo].[MCDevice]'))
+            ALTER TABLE [dbo].[MCDevice] CHECK CONSTRAINT [FK_MCDevice_TelegraphStationIdTelegraphStation]
+            GO
+          
 
               -- ****** KEYS FOR Table [dbo].[Language]
           -- Primary Key
@@ -645,7 +661,7 @@
           END
           GO
         
-          -- FK for CommunicationId :: 1 :: TelegraphOperator :: Communication
+          -- FK for CommunicationId :: 0 :: TelegraphOperator :: Communication
           IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_TelegraphOperator_CommunicationIdCommunication]') AND parent_object_id = OBJECT_ID(N'[dbo].[TelegraphOperator]'))
             ALTER TABLE [dbo].[TelegraphOperator]  WITH CHECK ADD  CONSTRAINT [FK_TelegraphOperator_CommunicationIdCommunication] FOREIGN KEY([CommunicationId])
             REFERENCES [dbo].[Communication] (CommunicationId)
@@ -824,6 +840,16 @@
           END
           GO
         
+          -- FK for CommunicationId :: 0 :: Customer :: Communication
+          IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_Customer_CommunicationIdCommunication]') AND parent_object_id = OBJECT_ID(N'[dbo].[Customer]'))
+            ALTER TABLE [dbo].[Customer]  WITH CHECK ADD  CONSTRAINT [FK_Customer_CommunicationIdCommunication] FOREIGN KEY([CommunicationId])
+            REFERENCES [dbo].[Communication] (CommunicationId)
+          GO
+
+          IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_Customer_CommunicationIdCommunication]') AND parent_object_id = OBJECT_ID(N'[dbo].[Customer]'))
+            ALTER TABLE [dbo].[Customer] CHECK CONSTRAINT [FK_Customer_CommunicationIdCommunication]
+            GO
+          
 
 
             SELECT 'Successful' as Value

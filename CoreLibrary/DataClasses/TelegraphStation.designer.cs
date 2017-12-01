@@ -15,6 +15,10 @@ namespace MorseCodeHelper.Lib.DataClasses
             
             this.TelegraphStationId = Guid.NewGuid();
             
+                this.Communications = new BindingList<Communication>();
+            
+                this.MCDevices = new BindingList<MCDevice>();
+            
 
         }
 
@@ -29,6 +33,76 @@ namespace MorseCodeHelper.Lib.DataClasses
         public String Description { get; set; }
     
 
+        
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "Communications")]
+        public BindingList<Communication> Communications { get; set; }
+            
+        /// <summary>
+        /// Check to see if there are any related Communications, and load them if requested
+        /// </summary>
+        public static void CheckExpandCommunications(SqlDataManager sdm, IEnumerable<TelegraphStation> telegraphStations, string expandString)
+        {
+            var telegraphStationsWhere = CreateTelegraphStationWhere(telegraphStations);
+            expandString = expandString.SafeToString();
+
+            if (String.Equals(expandString, "all", StringComparison.OrdinalIgnoreCase) || expandString.IndexOf("communications", StringComparison.OrdinalIgnoreCase) >= 0)
+            {
+                var childCommunications = sdm.GetAllCommunications<Communication>(telegraphStationsWhere);
+
+                telegraphStations.ToList()
+                        .ForEach(feTelegraphStation => feTelegraphStation.LoadCommunications(childCommunications));
+            }
+
+        }
+
+
+        
+
+        
+        /// <summary>
+        /// Find the related Communications (from the list provided) and attach them locally to the Communications list.
+        /// </summary>
+        public void LoadCommunications(IEnumerable<Communication> communications)
+        {
+            communications.Where(whereCommunication => whereCommunication.TelegraphStationId == this.TelegraphStationId)
+                    .ToList()
+                    .ForEach(feCommunication => this.Communications.Add(feCommunication));
+        }
+        
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "MCDevices")]
+        public BindingList<MCDevice> MCDevices { get; set; }
+            
+        /// <summary>
+        /// Check to see if there are any related MCDevices, and load them if requested
+        /// </summary>
+        public static void CheckExpandMCDevices(SqlDataManager sdm, IEnumerable<TelegraphStation> telegraphStations, string expandString)
+        {
+            var telegraphStationsWhere = CreateTelegraphStationWhere(telegraphStations);
+            expandString = expandString.SafeToString();
+
+            if (String.Equals(expandString, "all", StringComparison.OrdinalIgnoreCase) || expandString.IndexOf("mCDevices", StringComparison.OrdinalIgnoreCase) >= 0)
+            {
+                var childMCDevices = sdm.GetAllMCDevices<MCDevice>(telegraphStationsWhere);
+
+                telegraphStations.ToList()
+                        .ForEach(feTelegraphStation => feTelegraphStation.LoadMCDevices(childMCDevices));
+            }
+
+        }
+
+
+        
+
+        
+        /// <summary>
+        /// Find the related MCDevices (from the list provided) and attach them locally to the MCDevices list.
+        /// </summary>
+        public void LoadMCDevices(IEnumerable<MCDevice> mCDevices)
+        {
+            mCDevices.Where(whereMCDevice => whereMCDevice.TelegraphStationId == this.TelegraphStationId)
+                    .ToList()
+                    .ForEach(feMCDevice => this.MCDevices.Add(feMCDevice));
+        }
         
 
         
@@ -47,6 +121,10 @@ namespace MorseCodeHelper.Lib.DataClasses
         public static void CheckExpand(SqlDataManager sdm, IEnumerable<TelegraphStation> telegraphStations, string expandString)
         {
             
+            
+            CheckExpandCommunications(sdm, telegraphStations, expandString);
+            
+            CheckExpandMCDevices(sdm, telegraphStations, expandString);
         }
         
     }

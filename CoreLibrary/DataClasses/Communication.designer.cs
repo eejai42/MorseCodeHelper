@@ -31,6 +31,8 @@ namespace MorseCodeHelper.Lib.DataClasses
             
                 this.Sentences = new BindingList<Sentence>();
             
+                this.Customers = new BindingList<Customer>();
+            
 
         }
 
@@ -44,8 +46,8 @@ namespace MorseCodeHelper.Lib.DataClasses
         [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "Description")]
         public String Description { get; set; }
     
-        [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "TelegraphOperatorId")]
-        public Nullable<Guid> TelegraphOperatorId { get; set; }
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "TelegraphStationId")]
+        public Nullable<Guid> TelegraphStationId { get; set; }
     
         [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "AlphabetId")]
         public Nullable<Guid> AlphabetId { get; set; }
@@ -332,6 +334,41 @@ namespace MorseCodeHelper.Lib.DataClasses
                     .ForEach(feSentence => this.Sentences.Add(feSentence));
         }
         
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "Customers")]
+        public BindingList<Customer> Customers { get; set; }
+            
+        /// <summary>
+        /// Check to see if there are any related Customers, and load them if requested
+        /// </summary>
+        public static void CheckExpandCustomers(SqlDataManager sdm, IEnumerable<Communication> communications, string expandString)
+        {
+            var communicationsWhere = CreateCommunicationWhere(communications);
+            expandString = expandString.SafeToString();
+
+            if (String.Equals(expandString, "all", StringComparison.OrdinalIgnoreCase) || expandString.IndexOf("customers", StringComparison.OrdinalIgnoreCase) >= 0)
+            {
+                var childCustomers = sdm.GetAllCustomers<Customer>(communicationsWhere);
+
+                communications.ToList()
+                        .ForEach(feCommunication => feCommunication.LoadCustomers(childCustomers));
+            }
+
+        }
+
+
+        
+
+        
+        /// <summary>
+        /// Find the related Customers (from the list provided) and attach them locally to the Customers list.
+        /// </summary>
+        public void LoadCustomers(IEnumerable<Customer> customers)
+        {
+            customers.Where(whereCustomer => whereCustomer.CommunicationId == this.CommunicationId)
+                    .ToList()
+                    .ForEach(feCustomer => this.Customers.Add(feCustomer));
+        }
+        
 
         
 
@@ -365,6 +402,8 @@ namespace MorseCodeHelper.Lib.DataClasses
             CheckExpandWords(sdm, communications, expandString);
             
             CheckExpandSentences(sdm, communications, expandString);
+            
+            CheckExpandCustomers(sdm, communications, expandString);
         }
         
     }

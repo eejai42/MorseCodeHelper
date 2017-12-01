@@ -168,7 +168,7 @@
             {
               "Name": "Communication",
               "OriginalName": "Communication",
-              "ParentName": "TelegraphOperator",
+              "ParentName": "TelegraphStation",
               "Include": "TRUE",
               "TableName": "Communication",
               "SortOrder": "165",
@@ -222,15 +222,15 @@
                     "TableIncluded": "TRUE"
                   },
                   {
-                    "Name": "TelegraphOperatorId",
+                    "Name": "TelegraphStationId",
                     "DataType": "GUID",
                     "DataLength": "",
                     "IsPrimaryKey": "0",
                     "IsNullable": "1",
                     "Relationships": {
                       "Relationship": {
-                        "ReferencedObjectDef": "TelegraphOperator",
-                        "ReferencedPropertyDef": "TelegraphOperatorId"
+                        "ReferencedObjectDef": "TelegraphStation",
+                        "ReferencedPropertyDef": "TelegraphStationId"
                       }
                     }
                   },
@@ -381,6 +381,7 @@
             {
               "Name": "MCDevice",
               "OriginalName": "Equipment",
+              "ParentName": "TelegraphStation",
               "Include": "TRUE",
               "TableName": "Equipment",
               "SortOrder": "61",
@@ -431,6 +432,19 @@
                     "TableName": "Equipment",
                     "SortOrder": "64",
                     "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "TelegraphStationId",
+                    "DataType": "GUID",
+                    "DataLength": "",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "1",
+                    "Relationships": {
+                      "Relationship": {
+                        "ReferencedObjectDef": "TelegraphStation",
+                        "ReferencedPropertyDef": "TelegraphStationId"
+                      }
+                    }
                   }
                 ]
               }
@@ -1059,6 +1073,67 @@
                     "TableIncluded": "TRUE"
                   },
                   {
+                    "Name": "Symbol",
+                    "OriginalName": "Symbol",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "50",
+                      "50"
+                    ],
+                    "FromName": "Signal.Symbol",
+                    "Include": "TRUE",
+                    "TableName": "Signal",
+                    "SortOrder": "216",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "ShortCode",
+                    "OriginalName": "ShortCode",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "50",
+                      "50"
+                    ],
+                    "FromName": "Signal.ShortCode",
+                    "Include": "TRUE",
+                    "TableName": "Signal",
+                    "SortOrder": "216",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "LongCode",
+                    "OriginalName": "LongCode",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "50",
+                      "50"
+                    ],
+                    "FromName": "Signal.LongCode",
+                    "Include": "TRUE",
+                    "TableName": "Signal",
+                    "SortOrder": "216",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "RelativeTime",
+                    "OriginalName": "RelativeTime",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "int32",
+                    "DataLength": "",
+                    "FromName": "Signal.RelativeTime",
+                    "Include": "TRUE",
+                    "TableName": "Signal",
+                    "SortOrder": "216",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
                     "Name": "SequenceId",
                     "DataType": "GUID",
                     "DataLength": "",
@@ -1465,6 +1540,7 @@
             {
               "Name": "Customer",
               "OriginalName": "Customer",
+              "ParentName": "Communication",
               "Include": "TRUE",
               "PropertyDefs": {
                 "PropertyDef": [
@@ -1503,6 +1579,19 @@
                     ],
                     "FromName": "Customer.Description",
                     "Include": "TRUE"
+                  },
+                  {
+                    "Name": "CommunicationId",
+                    "DataType": "GUID",
+                    "DataLength": "",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "1",
+                    "Relationships": {
+                      "Relationship": {
+                        "ReferencedObjectDef": "Communication",
+                        "ReferencedPropertyDef": "CommunicationId"
+                      }
+                    }
                   }
                 ]
               }

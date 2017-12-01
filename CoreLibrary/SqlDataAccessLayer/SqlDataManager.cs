@@ -556,8 +556,8 @@ namespace MorseCodeHelper.Lib.SqlDataManagement
             {
                 this.InitializeConnection(conn);
                 SqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = String.Format(@"INSERT INTO [{0}].[Communication] (CommunicationId, Name, Description, TelegraphOperatorId, AlphabetId)
-                                    VALUES (@CommunicationId, @Name, @Description, @TelegraphOperatorId, @AlphabetId)", this.Schema);
+                cmd.CommandText = String.Format(@"INSERT INTO [{0}].[Communication] (CommunicationId, Name, Description, TelegraphStationId, AlphabetId)
+                                    VALUES (@CommunicationId, @Name, @Description, @TelegraphStationId, @AlphabetId)", this.Schema);
 
                 
                   
@@ -576,9 +576,9 @@ namespace MorseCodeHelper.Lib.SqlDataManagement
                 else cmd.Parameters.AddWithValue("@Description", communication.Description);
                 
                   
-                if (ReferenceEquals(communication.TelegraphOperatorId, null)) cmd.Parameters.AddWithValue("@TelegraphOperatorId", DBNull.Value);
+                if (ReferenceEquals(communication.TelegraphStationId, null)) cmd.Parameters.AddWithValue("@TelegraphStationId", DBNull.Value);
                     
-                else cmd.Parameters.AddWithValue("@TelegraphOperatorId", communication.TelegraphOperatorId);
+                else cmd.Parameters.AddWithValue("@TelegraphStationId", communication.TelegraphStationId);
                 
                   
                 if (ReferenceEquals(communication.AlphabetId, null)) cmd.Parameters.AddWithValue("@AlphabetId", DBNull.Value);
@@ -679,11 +679,11 @@ namespace MorseCodeHelper.Lib.SqlDataManagement
                           communication.Description = reader.GetString(propertyIndex);
                       }
                    
-                      propertyIndex = reader.GetOrdinal("TelegraphOperatorId");
+                      propertyIndex = reader.GetOrdinal("TelegraphStationId");
                       if (!reader.IsDBNull(propertyIndex)) //GUID
                       {
                           
-                          communication.TelegraphOperatorId = reader.GetGuid(propertyIndex);
+                          communication.TelegraphStationId = reader.GetGuid(propertyIndex);
                       }
                    
                       propertyIndex = reader.GetOrdinal("AlphabetId");
@@ -716,7 +716,7 @@ namespace MorseCodeHelper.Lib.SqlDataManagement
                 this.InitializeConnection(conn);
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandText = String.Format(@"UPDATE [{0}].[Communication] SET 
-                                    Name = @Name,Description = @Description,TelegraphOperatorId = @TelegraphOperatorId,AlphabetId = @AlphabetId
+                                    Name = @Name,Description = @Description,TelegraphStationId = @TelegraphStationId,AlphabetId = @AlphabetId
                                     WHERE CommunicationId = @CommunicationId", this.Schema);
 
                  //GUID
@@ -736,9 +736,9 @@ namespace MorseCodeHelper.Lib.SqlDataManagement
                 else cmd.Parameters.AddWithValue("@Description", communication.Description);
                  //GUID
                 
-                if (ReferenceEquals(communication.TelegraphOperatorId, null)) cmd.Parameters.AddWithValue("@TelegraphOperatorId", DBNull.Value);
+                if (ReferenceEquals(communication.TelegraphStationId, null)) cmd.Parameters.AddWithValue("@TelegraphStationId", DBNull.Value);
                     
-                else cmd.Parameters.AddWithValue("@TelegraphOperatorId", communication.TelegraphOperatorId);
+                else cmd.Parameters.AddWithValue("@TelegraphStationId", communication.TelegraphStationId);
                  //GUID
                 
                 if (ReferenceEquals(communication.AlphabetId, null)) cmd.Parameters.AddWithValue("@AlphabetId", DBNull.Value);
@@ -1252,8 +1252,8 @@ namespace MorseCodeHelper.Lib.SqlDataManagement
             {
                 this.InitializeConnection(conn);
                 SqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = String.Format(@"INSERT INTO [{0}].[MCDevice] (MCDeviceId, Name, Description)
-                                    VALUES (@MCDeviceId, @Name, @Description)", this.Schema);
+                cmd.CommandText = String.Format(@"INSERT INTO [{0}].[MCDevice] (MCDeviceId, Name, Description, TelegraphStationId)
+                                    VALUES (@MCDeviceId, @Name, @Description, @TelegraphStationId)", this.Schema);
 
                 
                   
@@ -1270,6 +1270,11 @@ namespace MorseCodeHelper.Lib.SqlDataManagement
                 if (ReferenceEquals(mCDevice.Description, null)) cmd.Parameters.AddWithValue("@Description", DBNull.Value);
                     
                 else cmd.Parameters.AddWithValue("@Description", mCDevice.Description);
+                
+                  
+                if (ReferenceEquals(mCDevice.TelegraphStationId, null)) cmd.Parameters.AddWithValue("@TelegraphStationId", DBNull.Value);
+                    
+                else cmd.Parameters.AddWithValue("@TelegraphStationId", mCDevice.TelegraphStationId);
                 
 
                 int rowsAffected = cmd.ExecuteNonQuery();
@@ -1365,6 +1370,13 @@ namespace MorseCodeHelper.Lib.SqlDataManagement
                           mCDevice.Description = reader.GetString(propertyIndex);
                       }
                    
+                      propertyIndex = reader.GetOrdinal("TelegraphStationId");
+                      if (!reader.IsDBNull(propertyIndex)) //GUID
+                      {
+                          
+                          mCDevice.TelegraphStationId = reader.GetGuid(propertyIndex);
+                      }
+                   
                     results.Add(mCDevice);
                 }
 
@@ -1388,7 +1400,7 @@ namespace MorseCodeHelper.Lib.SqlDataManagement
                 this.InitializeConnection(conn);
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandText = String.Format(@"UPDATE [{0}].[MCDevice] SET 
-                                    Name = @Name,Description = @Description
+                                    Name = @Name,Description = @Description,TelegraphStationId = @TelegraphStationId
                                     WHERE MCDeviceId = @MCDeviceId", this.Schema);
 
                  //GUID
@@ -1406,6 +1418,11 @@ namespace MorseCodeHelper.Lib.SqlDataManagement
                 if (ReferenceEquals(mCDevice.Description, null)) cmd.Parameters.AddWithValue("@Description", DBNull.Value);
                     
                 else cmd.Parameters.AddWithValue("@Description", mCDevice.Description);
+                 //GUID
+                
+                if (ReferenceEquals(mCDevice.TelegraphStationId, null)) cmd.Parameters.AddWithValue("@TelegraphStationId", DBNull.Value);
+                    
+                else cmd.Parameters.AddWithValue("@TelegraphStationId", mCDevice.TelegraphStationId);
                 
 
                 int rowsAffected = cmd.ExecuteNonQuery();
@@ -3323,8 +3340,8 @@ namespace MorseCodeHelper.Lib.SqlDataManagement
             {
                 this.InitializeConnection(conn);
                 SqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = String.Format(@"INSERT INTO [{0}].[Signal] (SignalId, Name, Description, SequenceId)
-                                    VALUES (@SignalId, @Name, @Description, @SequenceId)", this.Schema);
+                cmd.CommandText = String.Format(@"INSERT INTO [{0}].[Signal] (SignalId, Name, Description, Symbol, ShortCode, LongCode, RelativeTime, SequenceId)
+                                    VALUES (@SignalId, @Name, @Description, @Symbol, @ShortCode, @LongCode, @RelativeTime, @SequenceId)", this.Schema);
 
                 
                   
@@ -3341,6 +3358,26 @@ namespace MorseCodeHelper.Lib.SqlDataManagement
                 if (ReferenceEquals(signal.Description, null)) cmd.Parameters.AddWithValue("@Description", DBNull.Value);
                     
                 else cmd.Parameters.AddWithValue("@Description", signal.Description);
+                
+                  
+                if (ReferenceEquals(signal.Symbol, null)) cmd.Parameters.AddWithValue("@Symbol", DBNull.Value);
+                    
+                else cmd.Parameters.AddWithValue("@Symbol", signal.Symbol);
+                
+                  
+                if (ReferenceEquals(signal.ShortCode, null)) cmd.Parameters.AddWithValue("@ShortCode", DBNull.Value);
+                    
+                else cmd.Parameters.AddWithValue("@ShortCode", signal.ShortCode);
+                
+                  
+                if (ReferenceEquals(signal.LongCode, null)) cmd.Parameters.AddWithValue("@LongCode", DBNull.Value);
+                    
+                else cmd.Parameters.AddWithValue("@LongCode", signal.LongCode);
+                
+                  
+                if (ReferenceEquals(signal.RelativeTime, null)) cmd.Parameters.AddWithValue("@RelativeTime", DBNull.Value);
+                    
+                else cmd.Parameters.AddWithValue("@RelativeTime", signal.RelativeTime);
                 
                   
                 if (ReferenceEquals(signal.SequenceId, null)) cmd.Parameters.AddWithValue("@SequenceId", DBNull.Value);
@@ -3441,6 +3478,34 @@ namespace MorseCodeHelper.Lib.SqlDataManagement
                           signal.Description = reader.GetString(propertyIndex);
                       }
                    
+                      propertyIndex = reader.GetOrdinal("Symbol");
+                      if (!reader.IsDBNull(propertyIndex)) //TEXT
+                      {
+                          
+                          signal.Symbol = reader.GetString(propertyIndex);
+                      }
+                   
+                      propertyIndex = reader.GetOrdinal("ShortCode");
+                      if (!reader.IsDBNull(propertyIndex)) //TEXT
+                      {
+                          
+                          signal.ShortCode = reader.GetString(propertyIndex);
+                      }
+                   
+                      propertyIndex = reader.GetOrdinal("LongCode");
+                      if (!reader.IsDBNull(propertyIndex)) //TEXT
+                      {
+                          
+                          signal.LongCode = reader.GetString(propertyIndex);
+                      }
+                   
+                      propertyIndex = reader.GetOrdinal("RelativeTime");
+                      if (!reader.IsDBNull(propertyIndex)) //INT32
+                      {
+                          
+                          signal.RelativeTime = reader.GetInt32(propertyIndex);
+                      }
+                   
                       propertyIndex = reader.GetOrdinal("SequenceId");
                       if (!reader.IsDBNull(propertyIndex)) //GUID
                       {
@@ -3471,7 +3536,7 @@ namespace MorseCodeHelper.Lib.SqlDataManagement
                 this.InitializeConnection(conn);
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandText = String.Format(@"UPDATE [{0}].[Signal] SET 
-                                    Name = @Name,Description = @Description,SequenceId = @SequenceId
+                                    Name = @Name,Description = @Description,Symbol = @Symbol,ShortCode = @ShortCode,LongCode = @LongCode,RelativeTime = @RelativeTime,SequenceId = @SequenceId
                                     WHERE SignalId = @SignalId", this.Schema);
 
                  //GUID
@@ -3489,6 +3554,26 @@ namespace MorseCodeHelper.Lib.SqlDataManagement
                 if (ReferenceEquals(signal.Description, null)) cmd.Parameters.AddWithValue("@Description", DBNull.Value);
                     
                 else cmd.Parameters.AddWithValue("@Description", signal.Description);
+                 //TEXT
+                
+                if (ReferenceEquals(signal.Symbol, null)) cmd.Parameters.AddWithValue("@Symbol", DBNull.Value);
+                    
+                else cmd.Parameters.AddWithValue("@Symbol", signal.Symbol);
+                 //TEXT
+                
+                if (ReferenceEquals(signal.ShortCode, null)) cmd.Parameters.AddWithValue("@ShortCode", DBNull.Value);
+                    
+                else cmd.Parameters.AddWithValue("@ShortCode", signal.ShortCode);
+                 //TEXT
+                
+                if (ReferenceEquals(signal.LongCode, null)) cmd.Parameters.AddWithValue("@LongCode", DBNull.Value);
+                    
+                else cmd.Parameters.AddWithValue("@LongCode", signal.LongCode);
+                 //int32
+                
+                if (ReferenceEquals(signal.RelativeTime, null)) cmd.Parameters.AddWithValue("@RelativeTime", DBNull.Value);
+                    
+                else cmd.Parameters.AddWithValue("@RelativeTime", signal.RelativeTime);
                  //GUID
                 
                 if (ReferenceEquals(signal.SequenceId, null)) cmd.Parameters.AddWithValue("@SequenceId", DBNull.Value);
@@ -4930,8 +5015,8 @@ namespace MorseCodeHelper.Lib.SqlDataManagement
             {
                 this.InitializeConnection(conn);
                 SqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = String.Format(@"INSERT INTO [{0}].[Customer] (CustomerId, Name, Description)
-                                    VALUES (@CustomerId, @Name, @Description)", this.Schema);
+                cmd.CommandText = String.Format(@"INSERT INTO [{0}].[Customer] (CustomerId, Name, Description, CommunicationId)
+                                    VALUES (@CustomerId, @Name, @Description, @CommunicationId)", this.Schema);
 
                 
                   
@@ -4948,6 +5033,11 @@ namespace MorseCodeHelper.Lib.SqlDataManagement
                 if (ReferenceEquals(customer.Description, null)) cmd.Parameters.AddWithValue("@Description", DBNull.Value);
                     
                 else cmd.Parameters.AddWithValue("@Description", customer.Description);
+                
+                  
+                if (ReferenceEquals(customer.CommunicationId, null)) cmd.Parameters.AddWithValue("@CommunicationId", DBNull.Value);
+                    
+                else cmd.Parameters.AddWithValue("@CommunicationId", customer.CommunicationId);
                 
 
                 int rowsAffected = cmd.ExecuteNonQuery();
@@ -5043,6 +5133,13 @@ namespace MorseCodeHelper.Lib.SqlDataManagement
                           customer.Description = reader.GetString(propertyIndex);
                       }
                    
+                      propertyIndex = reader.GetOrdinal("CommunicationId");
+                      if (!reader.IsDBNull(propertyIndex)) //GUID
+                      {
+                          
+                          customer.CommunicationId = reader.GetGuid(propertyIndex);
+                      }
+                   
                     results.Add(customer);
                 }
 
@@ -5066,7 +5163,7 @@ namespace MorseCodeHelper.Lib.SqlDataManagement
                 this.InitializeConnection(conn);
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandText = String.Format(@"UPDATE [{0}].[Customer] SET 
-                                    Name = @Name,Description = @Description
+                                    Name = @Name,Description = @Description,CommunicationId = @CommunicationId
                                     WHERE CustomerId = @CustomerId", this.Schema);
 
                  //GUID
@@ -5084,6 +5181,11 @@ namespace MorseCodeHelper.Lib.SqlDataManagement
                 if (ReferenceEquals(customer.Description, null)) cmd.Parameters.AddWithValue("@Description", DBNull.Value);
                     
                 else cmd.Parameters.AddWithValue("@Description", customer.Description);
+                 //GUID
+                
+                if (ReferenceEquals(customer.CommunicationId, null)) cmd.Parameters.AddWithValue("@CommunicationId", DBNull.Value);
+                    
+                else cmd.Parameters.AddWithValue("@CommunicationId", customer.CommunicationId);
                 
 
                 int rowsAffected = cmd.ExecuteNonQuery();

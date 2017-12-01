@@ -226,9 +226,9 @@ ELSE
     
     
     -- COUNT: 5
-IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'TelegraphOperatorId' AND Object_ID = Object_ID(N'Communication'))
+IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'TelegraphStationId' AND Object_ID = Object_ID(N'Communication'))
 BEGIN
-        ALTER TABLE [dbo].[Communication] ADD [TelegraphOperatorId] UNIQUEIDENTIFIER NULL;
+        ALTER TABLE [dbo].[Communication] ADD [TelegraphStationId] UNIQUEIDENTIFIER NULL;
 END
 
     
@@ -236,7 +236,7 @@ ELSE
     BEGIN 
 
 
-        ALTER TABLE [dbo].[Communication] ALTER COLUMN [TelegraphOperatorId] UNIQUEIDENTIFIER NULL;
+        ALTER TABLE [dbo].[Communication] ALTER COLUMN [TelegraphStationId] UNIQUEIDENTIFIER NULL;
 
     
 
@@ -392,7 +392,7 @@ ELSE
     
     
     
-    -- COUNT: 3
+    -- COUNT: 4
 IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'MCDeviceId' AND Object_ID = Object_ID(N'MCDevice'))
 BEGIN
         ALTER TABLE [dbo].[MCDevice] ADD [MCDeviceId] UNIQUEIDENTIFIER NULL;
@@ -402,7 +402,7 @@ END
     
     
     
-    -- COUNT: 3
+    -- COUNT: 4
 IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'Name' AND Object_ID = Object_ID(N'MCDevice'))
 BEGIN
         ALTER TABLE [dbo].[MCDevice] ADD [Name] NVARCHAR(100) NULL;
@@ -423,7 +423,7 @@ ELSE
     
     
     
-    -- COUNT: 3
+    -- COUNT: 4
 IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'Description' AND Object_ID = Object_ID(N'MCDevice'))
 BEGIN
         ALTER TABLE [dbo].[MCDevice] ADD [Description] NVARCHAR(100) NULL;
@@ -435,6 +435,27 @@ ELSE
 
 
         ALTER TABLE [dbo].[MCDevice] ALTER COLUMN [Description] NVARCHAR(100) NOT NULL;
+
+    
+
+	END
+
+    
+    
+    
+    
+    -- COUNT: 4
+IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'TelegraphStationId' AND Object_ID = Object_ID(N'MCDevice'))
+BEGIN
+        ALTER TABLE [dbo].[MCDevice] ADD [TelegraphStationId] UNIQUEIDENTIFIER NULL;
+END
+
+    
+ELSE
+    BEGIN 
+
+
+        ALTER TABLE [dbo].[MCDevice] ALTER COLUMN [TelegraphStationId] UNIQUEIDENTIFIER NULL;
 
     
 
@@ -1028,7 +1049,7 @@ ELSE
     
     
     
-    -- COUNT: 4
+    -- COUNT: 8
 IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'SignalId' AND Object_ID = Object_ID(N'Signal'))
 BEGIN
         ALTER TABLE [dbo].[Signal] ADD [SignalId] UNIQUEIDENTIFIER NULL;
@@ -1038,7 +1059,7 @@ END
     
     
     
-    -- COUNT: 4
+    -- COUNT: 8
 IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'Name' AND Object_ID = Object_ID(N'Signal'))
 BEGIN
         ALTER TABLE [dbo].[Signal] ADD [Name] NVARCHAR(100) NULL;
@@ -1059,7 +1080,7 @@ ELSE
     
     
     
-    -- COUNT: 4
+    -- COUNT: 8
 IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'Description' AND Object_ID = Object_ID(N'Signal'))
 BEGIN
         ALTER TABLE [dbo].[Signal] ADD [Description] NVARCHAR(100) NULL;
@@ -1080,7 +1101,91 @@ ELSE
     
     
     
-    -- COUNT: 4
+    -- COUNT: 8
+IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'Symbol' AND Object_ID = Object_ID(N'Signal'))
+BEGIN
+        ALTER TABLE [dbo].[Signal] ADD [Symbol] NVARCHAR(100) NULL;
+END
+
+    
+ELSE
+    BEGIN 
+
+
+        ALTER TABLE [dbo].[Signal] ALTER COLUMN [Symbol] NVARCHAR(100) NOT NULL;
+
+    
+
+	END
+
+    
+    
+    
+    
+    -- COUNT: 8
+IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'ShortCode' AND Object_ID = Object_ID(N'Signal'))
+BEGIN
+        ALTER TABLE [dbo].[Signal] ADD [ShortCode] NVARCHAR(100) NULL;
+END
+
+    
+ELSE
+    BEGIN 
+
+
+        ALTER TABLE [dbo].[Signal] ALTER COLUMN [ShortCode] NVARCHAR(100) NOT NULL;
+
+    
+
+	END
+
+    
+    
+    
+    
+    -- COUNT: 8
+IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'LongCode' AND Object_ID = Object_ID(N'Signal'))
+BEGIN
+        ALTER TABLE [dbo].[Signal] ADD [LongCode] NVARCHAR(100) NULL;
+END
+
+    
+ELSE
+    BEGIN 
+
+
+        ALTER TABLE [dbo].[Signal] ALTER COLUMN [LongCode] NVARCHAR(100) NOT NULL;
+
+    
+
+	END
+
+    
+    
+    
+    
+    -- COUNT: 8
+IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'RelativeTime' AND Object_ID = Object_ID(N'Signal'))
+BEGIN
+        ALTER TABLE [dbo].[Signal] ADD [RelativeTime] INT NULL;
+END
+
+    
+ELSE
+    BEGIN 
+
+
+        ALTER TABLE [dbo].[Signal] ALTER COLUMN [RelativeTime] INT NOT NULL;
+
+    
+
+	END
+
+    
+    
+    
+    
+    -- COUNT: 8
 IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'SequenceId' AND Object_ID = Object_ID(N'Signal'))
 BEGIN
         ALTER TABLE [dbo].[Signal] ADD [SequenceId] UNIQUEIDENTIFIER NULL;
@@ -1518,7 +1623,7 @@ ELSE
     
     
     
-    -- COUNT: 3
+    -- COUNT: 4
 IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'CustomerId' AND Object_ID = Object_ID(N'Customer'))
 BEGIN
         ALTER TABLE [dbo].[Customer] ADD [CustomerId] UNIQUEIDENTIFIER NULL;
@@ -1528,7 +1633,7 @@ END
     
     
     
-    -- COUNT: 3
+    -- COUNT: 4
 IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'Name' AND Object_ID = Object_ID(N'Customer'))
 BEGIN
         ALTER TABLE [dbo].[Customer] ADD [Name] NVARCHAR(100) NULL;
@@ -1549,7 +1654,7 @@ ELSE
     
     
     
-    -- COUNT: 3
+    -- COUNT: 4
 IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'Description' AND Object_ID = Object_ID(N'Customer'))
 BEGIN
         ALTER TABLE [dbo].[Customer] ADD [Description] NVARCHAR(100) NULL;
@@ -1561,6 +1666,27 @@ ELSE
 
 
         ALTER TABLE [dbo].[Customer] ALTER COLUMN [Description] NVARCHAR(100) NOT NULL;
+
+    
+
+	END
+
+    
+    
+    
+    
+    -- COUNT: 4
+IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'CommunicationId' AND Object_ID = Object_ID(N'Customer'))
+BEGIN
+        ALTER TABLE [dbo].[Customer] ADD [CommunicationId] UNIQUEIDENTIFIER NULL;
+END
+
+    
+ELSE
+    BEGIN 
+
+
+        ALTER TABLE [dbo].[Customer] ALTER COLUMN [CommunicationId] UNIQUEIDENTIFIER NULL;
 
     
 
