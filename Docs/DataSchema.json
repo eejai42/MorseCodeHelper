@@ -1263,6 +1263,22 @@
                     "TableIncluded": "TRUE"
                   },
                   {
+                    "Name": "InputMessage",
+                    "OriginalName": "InputMessage",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "MAX",
+                      "MAX"
+                    ],
+                    "FromName": "Telegraph.InputMessage",
+                    "Include": "TRUE",
+                    "TableName": "Telegraph",
+                    "SortOrder": "72",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
                     "Name": "CommunicationId",
                     "DataType": "GUID",
                     "DataLength": "",

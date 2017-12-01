@@ -7,11 +7,12 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using MorseCodeHelper.Lib.SqlDataManagement;
+using System.Linq;
 
 namespace MorseCodeHelper.Lib.DataClasses
-{                   
-    
-    public partial class Alphabet 
+{
+
+    public partial class Alphabet
     {
         public Alphabet()
         {
@@ -27,10 +28,50 @@ namespace MorseCodeHelper.Lib.DataClasses
         {
             var charSequenceWhere = String.Format("CharacterId IN (SELECT CharacterId from Character where AlphabetId = '{0}')", this.AlphabetId);
             var charSequences = sdm.GetAllCharacterSquences<CharacterSquence>(charSequenceWhere);
-            
-            foreach (var charToCheck in this.Characters) {
+
+            foreach (var charToCheck in this.Characters)
+            {
                 charToCheck.LoadCharacterSquences(charSequences);
                 charToCheck.ParseSequence(sdm, allSignals);
+            }
+        }
+
+        public void PlayTelegraph(Telegraph telegraph)
+        {
+            this.EnsureLoaded();
+            Console.WriteLine("\n\nPlaying: {0} using the {1} alphabet", telegraph.InputMessage, this.Name);
+            foreach (var character in telegraph.InputMessage)
+            {
+                this.PlayCharacter(character);
+            }
+        }
+
+        private void EnsureLoaded()
+        {
+            var sdm = new SqlDataManager();
+
+            var charWhere = String.Format("AlphabetId = '{0}'", this.AlphabetId);
+            var chars = sdm.GetAllCharacters<Character>(charWhere);
+            this.Characters.Clear();
+            chars.ForEach(feChar => this.Characters.Add(feChar));
+
+
+            var charSequenceWhere = String.Format("CharacterId IN (SELECT CharacterId from Character where AlphabetId = '{0}')", this.AlphabetId);
+            var charSequences = sdm.GetAllCharacterSquences<CharacterSquence>(charSequenceWhere);
+
+            foreach (var charToCheck in this.Characters)
+            {
+                charToCheck.LoadCharacterSquences(charSequences);
+            }
+
+        }
+
+        private void PlayCharacter(char character)
+        {
+            var alphabetChar = this.Characters.FirstOrDefault(fodChar => String.Equals(fodChar.Symbol , character.ToString(), StringComparison.OrdinalIgnoreCase));
+            if (!ReferenceEquals(alphabetChar, null))
+            {
+                alphabetChar.Play();
             }
         }
     }

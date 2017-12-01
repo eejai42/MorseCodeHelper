@@ -28,6 +28,9 @@ namespace MorseCodeHelper.Lib.DataClasses
         [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "Description")]
         public String Description { get; set; }
     
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "InputMessage")]
+        public String InputMessage { get; set; }
+    
         [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "CommunicationId")]
         public Nullable<Guid> CommunicationId { get; set; }
     

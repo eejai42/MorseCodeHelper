@@ -47,5 +47,12 @@ namespace MorseCodeHelper.Lib.DataClasses
             foreach (var charSequence in this.CharacterSquences) sdm.Delete(charSequence);
             this.CharacterSquences.Clear();
         }
+
+        internal void Play()
+        {
+            foreach (var charSequence in this.CharacterSquences) {
+                charSequence.Play();
+            }
+        }
     }
 }

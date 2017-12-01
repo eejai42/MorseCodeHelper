@@ -20,5 +20,11 @@ namespace MorseCodeHelper.Lib.DataClasses
         {
             return String.Format("CharacterSquence: {0}", this.Name);
         }
+
+        internal void Play()
+        {
+            if (!this.SignalId.HasValue) throw new Exception("Can't play sequence because there is no matching signal id");
+            else Signal.Play(this.SignalId.Value);
+        }
     }
 }

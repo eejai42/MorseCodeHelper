@@ -342,6 +342,7 @@
           [TelegraphId] UNIQUEIDENTIFIER NOT NULL,
           [Name] NVARCHAR(100) NOT NULL,
           [Description] NVARCHAR(100) NOT NULL,
+          [InputMessage] NVARCHAR(100) NOT NULL,
           [CommunicationId] UNIQUEIDENTIFIER NULL,
         
         CONSTRAINT [PK_Telegraph] PRIMARY KEY CLUSTERED

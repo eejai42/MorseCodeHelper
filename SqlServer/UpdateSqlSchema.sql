@@ -1290,7 +1290,7 @@ ELSE
     
     
     
-    -- COUNT: 4
+    -- COUNT: 5
 IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'TelegraphId' AND Object_ID = Object_ID(N'Telegraph'))
 BEGIN
         ALTER TABLE [dbo].[Telegraph] ADD [TelegraphId] UNIQUEIDENTIFIER NULL;
@@ -1300,7 +1300,7 @@ END
     
     
     
-    -- COUNT: 4
+    -- COUNT: 5
 IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'Name' AND Object_ID = Object_ID(N'Telegraph'))
 BEGIN
         ALTER TABLE [dbo].[Telegraph] ADD [Name] NVARCHAR(100) NULL;
@@ -1321,7 +1321,7 @@ ELSE
     
     
     
-    -- COUNT: 4
+    -- COUNT: 5
 IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'Description' AND Object_ID = Object_ID(N'Telegraph'))
 BEGIN
         ALTER TABLE [dbo].[Telegraph] ADD [Description] NVARCHAR(100) NULL;
@@ -1342,7 +1342,28 @@ ELSE
     
     
     
-    -- COUNT: 4
+    -- COUNT: 5
+IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'InputMessage' AND Object_ID = Object_ID(N'Telegraph'))
+BEGIN
+        ALTER TABLE [dbo].[Telegraph] ADD [InputMessage] NVARCHAR(100) NULL;
+END
+
+    
+ELSE
+    BEGIN 
+
+
+        ALTER TABLE [dbo].[Telegraph] ALTER COLUMN [InputMessage] NVARCHAR(100) NOT NULL;
+
+    
+
+	END
+
+    
+    
+    
+    
+    -- COUNT: 5
 IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'CommunicationId' AND Object_ID = Object_ID(N'Telegraph'))
 BEGIN
         ALTER TABLE [dbo].[Telegraph] ADD [CommunicationId] UNIQUEIDENTIFIER NULL;

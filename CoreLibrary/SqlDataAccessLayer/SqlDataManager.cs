@@ -3708,8 +3708,8 @@ namespace MorseCodeHelper.Lib.SqlDataManagement
             {
                 this.InitializeConnection(conn);
                 SqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = String.Format(@"INSERT INTO [{0}].[Telegraph] (TelegraphId, Name, Description, CommunicationId)
-                                    VALUES (@TelegraphId, @Name, @Description, @CommunicationId)", this.Schema);
+                cmd.CommandText = String.Format(@"INSERT INTO [{0}].[Telegraph] (TelegraphId, Name, Description, InputMessage, CommunicationId)
+                                    VALUES (@TelegraphId, @Name, @Description, @InputMessage, @CommunicationId)", this.Schema);
 
                 
                   
@@ -3726,6 +3726,11 @@ namespace MorseCodeHelper.Lib.SqlDataManagement
                 if (ReferenceEquals(telegraph.Description, null)) cmd.Parameters.AddWithValue("@Description", DBNull.Value);
                     
                 else cmd.Parameters.AddWithValue("@Description", telegraph.Description);
+                
+                  
+                if (ReferenceEquals(telegraph.InputMessage, null)) cmd.Parameters.AddWithValue("@InputMessage", DBNull.Value);
+                    
+                else cmd.Parameters.AddWithValue("@InputMessage", telegraph.InputMessage);
                 
                   
                 if (ReferenceEquals(telegraph.CommunicationId, null)) cmd.Parameters.AddWithValue("@CommunicationId", DBNull.Value);
@@ -3826,6 +3831,13 @@ namespace MorseCodeHelper.Lib.SqlDataManagement
                           telegraph.Description = reader.GetString(propertyIndex);
                       }
                    
+                      propertyIndex = reader.GetOrdinal("InputMessage");
+                      if (!reader.IsDBNull(propertyIndex)) //TEXT
+                      {
+                          
+                          telegraph.InputMessage = reader.GetString(propertyIndex);
+                      }
+                   
                       propertyIndex = reader.GetOrdinal("CommunicationId");
                       if (!reader.IsDBNull(propertyIndex)) //GUID
                       {
@@ -3856,7 +3868,7 @@ namespace MorseCodeHelper.Lib.SqlDataManagement
                 this.InitializeConnection(conn);
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandText = String.Format(@"UPDATE [{0}].[Telegraph] SET 
-                                    Name = @Name,Description = @Description,CommunicationId = @CommunicationId
+                                    Name = @Name,Description = @Description,InputMessage = @InputMessage,CommunicationId = @CommunicationId
                                     WHERE TelegraphId = @TelegraphId", this.Schema);
 
                  //GUID
@@ -3874,6 +3886,11 @@ namespace MorseCodeHelper.Lib.SqlDataManagement
                 if (ReferenceEquals(telegraph.Description, null)) cmd.Parameters.AddWithValue("@Description", DBNull.Value);
                     
                 else cmd.Parameters.AddWithValue("@Description", telegraph.Description);
+                 //TEXT
+                
+                if (ReferenceEquals(telegraph.InputMessage, null)) cmd.Parameters.AddWithValue("@InputMessage", DBNull.Value);
+                    
+                else cmd.Parameters.AddWithValue("@InputMessage", telegraph.InputMessage);
                  //GUID
                 
                 if (ReferenceEquals(telegraph.CommunicationId, null)) cmd.Parameters.AddWithValue("@CommunicationId", DBNull.Value);

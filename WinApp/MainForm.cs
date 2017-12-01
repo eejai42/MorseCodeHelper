@@ -63,5 +63,15 @@ namespace WindowsFormsApp1
         {
             MorseCodeMetaSnapshot.SaveNow();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            
+            var telegraph = new Telegraph();
+            telegraph.InputMessage = textBox1.Text;
+
+            var alphabet = this.listBox1.SelectedItem as Alphabet;
+            alphabet.PlayTelegraph(telegraph);
+        }
     }
 }
