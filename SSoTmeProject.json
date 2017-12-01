@@ -1,12 +1,12 @@
 {
   "SSoTmeProjectId": "109a3ca6-4391-4d84-9edc-68585ce5b4eb",
-  "Name": "MsSeed",
-  "RootPath": "C:\\Development\\ssotme-ms-seed",
+  "Name": "MorseCodeHelper",
+  "RootPath": "C:\\Development\\MorseCodeHelper",
   "ProjectSettings": [
     {
-      "ProjectSettingId": "551a946a-f014-471b-a8fb-461e6477d5f0",
+      "ProjectSettingId": "ba3b0b95-6a29-4aff-8c62-d4f2f80c244b",
       "Name": "project-name",
-      "Value": "MsSeed"
+      "Value": "MorseCodeHelper"
     }
   ],
   "ProjectTranspilers": [

@@ -179,6 +179,158 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\api\AlphabetsController.cs" />
+    <Compile Include="Controllers\api\AlphabetsController.designer.cs">
+      <DependentUpon>AlphabetsController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\api\AlternativesController.cs" />
+    <Compile Include="Controllers\api\AlternativesController.designer.cs">
+      <DependentUpon>AlternativesController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\api\ChannelsController.cs" />
+    <Compile Include="Controllers\api\ChannelsController.designer.cs">
+      <DependentUpon>ChannelsController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\api\CharactersController.cs" />
+    <Compile Include="Controllers\api\CharactersController.designer.cs">
+      <DependentUpon>CharactersController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\api\ClicksController.cs" />
+    <Compile Include="Controllers\api\ClicksController.designer.cs">
+      <DependentUpon>ClicksController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\api\CommunicationsController.cs" />
+    <Compile Include="Controllers\api\CommunicationsController.designer.cs">
+      <DependentUpon>CommunicationsController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\api\ControllersController.cs" />
+    <Compile Include="Controllers\api\ControllersController.designer.cs">
+      <DependentUpon>ControllersController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\api\CountriesController.cs" />
+    <Compile Include="Controllers\api\CountriesController.designer.cs">
+      <DependentUpon>CountriesController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\api\DashsController.cs" />
+    <Compile Include="Controllers\api\DashsController.designer.cs">
+      <DependentUpon>DashsController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\api\DatumsController.cs" />
+    <Compile Include="Controllers\api\DatumsController.designer.cs">
+      <DependentUpon>DatumsController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\api\DecodingsController.cs" />
+    <Compile Include="Controllers\api\DecodingsController.designer.cs">
+      <DependentUpon>DecodingsController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\api\DevicesController.cs" />
+    <Compile Include="Controllers\api\DevicesController.designer.cs">
+      <DependentUpon>DevicesController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\api\DotsController.cs" />
+    <Compile Include="Controllers\api\DotsController.designer.cs">
+      <DependentUpon>DotsController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\api\DurationsController.cs" />
+    <Compile Include="Controllers\api\DurationsController.designer.cs">
+      <DependentUpon>DurationsController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\api\ExtensionsController.cs" />
+    <Compile Include="Controllers\api\ExtensionsController.designer.cs">
+      <DependentUpon>ExtensionsController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\api\FrequenciesController.cs" />
+    <Compile Include="Controllers\api\FrequenciesController.designer.cs">
+      <DependentUpon>FrequenciesController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\api\HumansController.cs" />
+    <Compile Include="Controllers\api\HumansController.designer.cs">
+      <DependentUpon>HumansController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\api\LanguagesController.cs" />
+    <Compile Include="Controllers\api\LanguagesController.designer.cs">
+      <DependentUpon>LanguagesController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\api\LightsController.cs" />
+    <Compile Include="Controllers\api\LightsController.designer.cs">
+      <DependentUpon>LightsController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\api\ListenersController.cs" />
+    <Compile Include="Controllers\api\ListenersController.designer.cs">
+      <DependentUpon>ListenersController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\api\MCDevicesController.cs" />
+    <Compile Include="Controllers\api\MCDevicesController.designer.cs">
+      <DependentUpon>MCDevicesController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\api\MorseCodesController.cs" />
+    <Compile Include="Controllers\api\MorseCodesController.designer.cs">
+      <DependentUpon>MorseCodesController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\api\NumeralsController.cs" />
+    <Compile Include="Controllers\api\NumeralsController.designer.cs">
+      <DependentUpon>NumeralsController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\api\ObserversController.cs" />
+    <Compile Include="Controllers\api\ObserversController.designer.cs">
+      <DependentUpon>ObserversController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\api\ProficienciesController.cs" />
+    <Compile Include="Controllers\api\ProficienciesController.designer.cs">
+      <DependentUpon>ProficienciesController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\api\PunctuationsController.cs" />
+    <Compile Include="Controllers\api\PunctuationsController.designer.cs">
+      <DependentUpon>PunctuationsController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\api\RepeatersController.cs" />
+    <Compile Include="Controllers\api\RepeatersController.designer.cs">
+      <DependentUpon>RepeatersController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\api\SequencesController.cs" />
+    <Compile Include="Controllers\api\SequencesController.designer.cs">
+      <DependentUpon>SequencesController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\api\SignalsController.cs" />
+    <Compile Include="Controllers\api\SignalsController.designer.cs">
+      <DependentUpon>SignalsController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\api\SilencesController.cs" />
+    <Compile Include="Controllers\api\SilencesController.designer.cs">
+      <DependentUpon>SilencesController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\api\SpacesController.cs" />
+    <Compile Include="Controllers\api\SpacesController.designer.cs">
+      <DependentUpon>SpacesController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\api\SymbolsController.cs" />
+    <Compile Include="Controllers\api\SymbolsController.designer.cs">
+      <DependentUpon>SymbolsController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\api\TelegraphsController.cs" />
+    <Compile Include="Controllers\api\TelegraphsController.designer.cs">
+      <DependentUpon>TelegraphsController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\api\TonesController.cs" />
+    <Compile Include="Controllers\api\TonesController.designer.cs">
+      <DependentUpon>TonesController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\api\TransmissionsController.cs" />
+    <Compile Include="Controllers\api\TransmissionsController.designer.cs">
+      <DependentUpon>TransmissionsController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\api\UnderstandingsController.cs" />
+    <Compile Include="Controllers\api\UnderstandingsController.designer.cs">
+      <DependentUpon>UnderstandingsController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\api\UnitsController.cs" />
+    <Compile Include="Controllers\api\UnitsController.designer.cs">
+      <DependentUpon>UnitsController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\api\WordsController.cs" />
+    <Compile Include="Controllers\api\WordsController.designer.cs">
+      <DependentUpon>WordsController.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

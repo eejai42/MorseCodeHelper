@@ -1,0 +1,2618 @@
+
+{
+  "Ontology": {
+    "Name": "MorseCodeHelper",
+    "OntologyGroups": {
+      "OntologyGroup": {
+        "Name": "dbo",
+        "ObjectDefs": {
+          "ObjectDef": [
+            {
+              "Name": "MorseCode",
+              "OriginalName": "Code",
+              "Include": "TRUE",
+              "TableName": "Code",
+              "SortOrder": "33",
+              "TableIncluded": "TRUE",
+              "PropertyDefs": {
+                "PropertyDef": [
+                  {
+                    "Name": "MorseCodeId",
+                    "OriginalName": "CodeId",
+                    "IsPrimaryKey": "1",
+                    "IsNullable": "0",
+                    "DataType": "GUID",
+                    "DataLength": "",
+                    "FromName": "Code.CodeId",
+                    "Include": "TRUE",
+                    "TableName": "Code",
+                    "SortOrder": "34",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Name",
+                    "OriginalName": "Name",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "50",
+                      "50"
+                    ],
+                    "FromName": "Code.Name",
+                    "Include": "TRUE",
+                    "TableName": "Code",
+                    "SortOrder": "35",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Description",
+                    "OriginalName": "Description",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "500",
+                      "500"
+                    ],
+                    "FromName": "Code.Description",
+                    "Include": "TRUE",
+                    "TableName": "Code",
+                    "SortOrder": "36",
+                    "TableIncluded": "TRUE"
+                  }
+                ]
+              }
+            },
+            {
+              "Name": "DeliveryMethod",
+              "OriginalName": "Method",
+              "ParentName": "MorseCode",
+              "Include": "TRUE",
+              "TableName": "Method",
+              "SortOrder": "37",
+              "TableIncluded": "TRUE",
+              "PropertyDefs": {
+                "PropertyDef": [
+                  {
+                    "Name": "DeliveryMethodId",
+                    "OriginalName": "MethodId",
+                    "IsPrimaryKey": "1",
+                    "IsNullable": "0",
+                    "DataType": "GUID",
+                    "DataLength": "",
+                    "FromName": "Method.MethodId",
+                    "Include": "TRUE",
+                    "TableName": "Method",
+                    "SortOrder": "38",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Name",
+                    "OriginalName": "Name",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "50",
+                      "50"
+                    ],
+                    "FromName": "Method.Name",
+                    "Include": "TRUE",
+                    "TableName": "Method",
+                    "SortOrder": "39",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Description",
+                    "OriginalName": "Description",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "500",
+                      "500"
+                    ],
+                    "FromName": "Method.Description",
+                    "Include": "TRUE",
+                    "TableName": "Method",
+                    "SortOrder": "40",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "MorseCodeId",
+                    "DataType": "GUID",
+                    "DataLength": "",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "1",
+                    "Relationships": {
+                      "Relationship": {
+                        "ReferencedObjectDef": "MorseCode",
+                        "ReferencedPropertyDef": "MorseCodeId"
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "Name": "Listener",
+              "OriginalName": "Listener",
+              "ParentName": "Communication",
+              "Include": "TRUE",
+              "TableName": "Listener",
+              "SortOrder": "53",
+              "TableIncluded": "TRUE",
+              "PropertyDefs": {
+                "PropertyDef": [
+                  {
+                    "Name": "ListenerId",
+                    "OriginalName": "ListenerId",
+                    "IsPrimaryKey": "1",
+                    "IsNullable": "0",
+                    "DataType": "GUID",
+                    "DataLength": "",
+                    "FromName": "Listener.ListenerId",
+                    "Include": "TRUE",
+                    "TableName": "Listener",
+                    "SortOrder": "54",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Name",
+                    "OriginalName": "Name",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "50",
+                      "50"
+                    ],
+                    "FromName": "Listener.Name",
+                    "Include": "TRUE",
+                    "TableName": "Listener",
+                    "SortOrder": "55",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Description",
+                    "OriginalName": "Description",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "500",
+                      "500"
+                    ],
+                    "FromName": "Listener.Description",
+                    "Include": "TRUE",
+                    "TableName": "Listener",
+                    "SortOrder": "56",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "CommunicationId",
+                    "DataType": "GUID",
+                    "DataLength": "",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "1",
+                    "Relationships": {
+                      "Relationship": {
+                        "ReferencedObjectDef": "Communication",
+                        "ReferencedPropertyDef": "CommunicationId"
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "Name": "Observer",
+              "OriginalName": "Observer",
+              "ParentName": "Communication",
+              "Include": "TRUE",
+              "TableName": "Observer",
+              "SortOrder": "57",
+              "TableIncluded": "TRUE",
+              "PropertyDefs": {
+                "PropertyDef": [
+                  {
+                    "Name": "ObserverId",
+                    "OriginalName": "ObserverId",
+                    "IsPrimaryKey": "1",
+                    "IsNullable": "0",
+                    "DataType": "GUID",
+                    "DataLength": "",
+                    "FromName": "Observer.ObserverId",
+                    "Include": "TRUE",
+                    "TableName": "Observer",
+                    "SortOrder": "58",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Name",
+                    "OriginalName": "Name",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "50",
+                      "50"
+                    ],
+                    "FromName": "Observer.Name",
+                    "Include": "TRUE",
+                    "TableName": "Observer",
+                    "SortOrder": "59",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Description",
+                    "OriginalName": "Description",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "500",
+                      "500"
+                    ],
+                    "FromName": "Observer.Description",
+                    "Include": "TRUE",
+                    "TableName": "Observer",
+                    "SortOrder": "60",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "CommunicationId",
+                    "DataType": "GUID",
+                    "DataLength": "",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "1",
+                    "Relationships": {
+                      "Relationship": {
+                        "ReferencedObjectDef": "Communication",
+                        "ReferencedPropertyDef": "CommunicationId"
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "Name": "MCDevice",
+              "OriginalName": "Equipment",
+              "Include": "TRUE",
+              "TableName": "Equipment",
+              "SortOrder": "61",
+              "TableIncluded": "TRUE",
+              "PropertyDefs": {
+                "PropertyDef": [
+                  {
+                    "Name": "MCDeviceId",
+                    "OriginalName": "EquipmentId",
+                    "IsPrimaryKey": "1",
+                    "IsNullable": "0",
+                    "DataType": "GUID",
+                    "DataLength": "",
+                    "FromName": "Equipment.EquipmentId",
+                    "Include": "TRUE",
+                    "TableName": "Equipment",
+                    "SortOrder": "62",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Name",
+                    "OriginalName": "Name",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "50",
+                      "50"
+                    ],
+                    "FromName": "Equipment.Name",
+                    "Include": "TRUE",
+                    "TableName": "Equipment",
+                    "SortOrder": "63",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Description",
+                    "OriginalName": "Description",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "500",
+                      "500"
+                    ],
+                    "FromName": "Equipment.Description",
+                    "Include": "TRUE",
+                    "TableName": "Equipment",
+                    "SortOrder": "64",
+                    "TableIncluded": "TRUE"
+                  }
+                ]
+              }
+            },
+            {
+              "Name": "Telegraph",
+              "OriginalName": "Telegraph",
+              "ParentName": "Communication",
+              "Include": "TRUE",
+              "TableName": "Telegraph",
+              "SortOrder": "69",
+              "TableIncluded": "TRUE",
+              "PropertyDefs": {
+                "PropertyDef": [
+                  {
+                    "Name": "TelegraphId",
+                    "OriginalName": "TelegraphId",
+                    "IsPrimaryKey": "1",
+                    "IsNullable": "0",
+                    "DataType": "GUID",
+                    "DataLength": "",
+                    "FromName": "Telegraph.TelegraphId",
+                    "Include": "TRUE",
+                    "TableName": "Telegraph",
+                    "SortOrder": "70",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Name",
+                    "OriginalName": "Name",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "50",
+                      "50"
+                    ],
+                    "FromName": "Telegraph.Name",
+                    "Include": "TRUE",
+                    "TableName": "Telegraph",
+                    "SortOrder": "71",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Description",
+                    "OriginalName": "Description",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "500",
+                      "500"
+                    ],
+                    "FromName": "Telegraph.Description",
+                    "Include": "TRUE",
+                    "TableName": "Telegraph",
+                    "SortOrder": "72",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "CommunicationId",
+                    "DataType": "GUID",
+                    "DataLength": "",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "1",
+                    "Relationships": {
+                      "Relationship": {
+                        "ReferencedObjectDef": "Communication",
+                        "ReferencedPropertyDef": "CommunicationId"
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "Name": "Alphabet",
+              "OriginalName": "Alphabet",
+              "ParentName": "MorseCode",
+              "Include": "TRUE",
+              "TableName": "Alphabet",
+              "SortOrder": "77",
+              "TableIncluded": "TRUE",
+              "PropertyDefs": {
+                "PropertyDef": [
+                  {
+                    "Name": "AlphabetId",
+                    "OriginalName": "AlphabetId",
+                    "IsPrimaryKey": "1",
+                    "IsNullable": "0",
+                    "DataType": "GUID",
+                    "DataLength": "",
+                    "FromName": "Alphabet.AlphabetId",
+                    "Include": "TRUE",
+                    "TableName": "Alphabet",
+                    "SortOrder": "78",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Name",
+                    "OriginalName": "Name",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "50",
+                      "50"
+                    ],
+                    "FromName": "Alphabet.Name",
+                    "Include": "TRUE",
+                    "TableName": "Alphabet",
+                    "SortOrder": "79",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Description",
+                    "OriginalName": "Description",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "500",
+                      "500"
+                    ],
+                    "FromName": "Alphabet.Description",
+                    "Include": "TRUE",
+                    "TableName": "Alphabet",
+                    "SortOrder": "80",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "MorseCodeId",
+                    "DataType": "GUID",
+                    "DataLength": "",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "1",
+                    "Relationships": {
+                      "Relationship": {
+                        "ReferencedObjectDef": "MorseCode",
+                        "ReferencedPropertyDef": "MorseCodeId"
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "Name": "Punctuation",
+              "OriginalName": "Punctuation",
+              "ParentName": "Character",
+              "Include": "TRUE",
+              "TableName": "Punctuation",
+              "SortOrder": "85",
+              "TableIncluded": "TRUE",
+              "PropertyDefs": {
+                "PropertyDef": [
+                  {
+                    "Name": "PunctuationId",
+                    "OriginalName": "PunctuationId",
+                    "IsPrimaryKey": "1",
+                    "IsNullable": "0",
+                    "DataType": "GUID",
+                    "DataLength": "",
+                    "FromName": "Punctuation.PunctuationId",
+                    "Include": "TRUE",
+                    "TableName": "Punctuation",
+                    "SortOrder": "86",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Name",
+                    "OriginalName": "Name",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "50",
+                      "50"
+                    ],
+                    "FromName": "Punctuation.Name",
+                    "Include": "TRUE",
+                    "TableName": "Punctuation",
+                    "SortOrder": "87",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Description",
+                    "OriginalName": "Description",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "500",
+                      "500"
+                    ],
+                    "FromName": "Punctuation.Description",
+                    "Include": "TRUE",
+                    "TableName": "Punctuation",
+                    "SortOrder": "88",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "CharacterId",
+                    "DataType": "GUID",
+                    "DataLength": "",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "1",
+                    "Relationships": {
+                      "Relationship": {
+                        "ReferencedObjectDef": "Character",
+                        "ReferencedPropertyDef": "CharacterId"
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "Name": "Symbol",
+              "OriginalName": "Symbol",
+              "ParentName": "Character",
+              "Include": "TRUE",
+              "TableName": "Symbol",
+              "SortOrder": "97",
+              "TableIncluded": "TRUE",
+              "PropertyDefs": {
+                "PropertyDef": [
+                  {
+                    "Name": "SymbolId",
+                    "OriginalName": "SymbolId",
+                    "IsPrimaryKey": "1",
+                    "IsNullable": "0",
+                    "DataType": "GUID",
+                    "DataLength": "",
+                    "FromName": "Symbol.SymbolId",
+                    "Include": "TRUE",
+                    "TableName": "Symbol",
+                    "SortOrder": "98",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Name",
+                    "OriginalName": "Name",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "50",
+                      "50"
+                    ],
+                    "FromName": "Symbol.Name",
+                    "Include": "TRUE",
+                    "TableName": "Symbol",
+                    "SortOrder": "99",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Description",
+                    "OriginalName": "Description",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "500",
+                      "500"
+                    ],
+                    "FromName": "Symbol.Description",
+                    "Include": "TRUE",
+                    "TableName": "Symbol",
+                    "SortOrder": "100",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "CharacterId",
+                    "DataType": "GUID",
+                    "DataLength": "",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "1",
+                    "Relationships": {
+                      "Relationship": {
+                        "ReferencedObjectDef": "Character",
+                        "ReferencedPropertyDef": "CharacterId"
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "Name": "Character",
+              "OriginalName": "Character",
+              "ParentName": "Alphabet",
+              "Include": "TRUE",
+              "TableName": "Character",
+              "SortOrder": "101",
+              "TableIncluded": "TRUE",
+              "PropertyDefs": {
+                "PropertyDef": [
+                  {
+                    "Name": "CharacterId",
+                    "OriginalName": "CharacterId",
+                    "IsPrimaryKey": "1",
+                    "IsNullable": "0",
+                    "DataType": "GUID",
+                    "DataLength": "",
+                    "FromName": "Character.CharacterId",
+                    "Include": "TRUE",
+                    "TableName": "Character",
+                    "SortOrder": "102",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Name",
+                    "OriginalName": "Name",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "50",
+                      "50"
+                    ],
+                    "FromName": "Character.Name",
+                    "Include": "TRUE",
+                    "TableName": "Character",
+                    "SortOrder": "103",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Description",
+                    "OriginalName": "Description",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "500",
+                      "500"
+                    ],
+                    "FromName": "Character.Description",
+                    "Include": "TRUE",
+                    "TableName": "Character",
+                    "SortOrder": "104",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "AlphabetId",
+                    "DataType": "GUID",
+                    "DataLength": "",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "1",
+                    "Relationships": {
+                      "Relationship": {
+                        "ReferencedObjectDef": "Alphabet",
+                        "ReferencedPropertyDef": "AlphabetId"
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "Name": "Numeral",
+              "OriginalName": "Numeral",
+              "ParentName": "Character",
+              "Include": "TRUE",
+              "TableName": "Numeral",
+              "SortOrder": "109",
+              "TableIncluded": "TRUE",
+              "PropertyDefs": {
+                "PropertyDef": [
+                  {
+                    "Name": "NumeralId",
+                    "OriginalName": "NumeralId",
+                    "IsPrimaryKey": "1",
+                    "IsNullable": "0",
+                    "DataType": "GUID",
+                    "DataLength": "",
+                    "FromName": "Numeral.NumeralId",
+                    "Include": "TRUE",
+                    "TableName": "Numeral",
+                    "SortOrder": "110",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Name",
+                    "OriginalName": "Name",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "50",
+                      "50"
+                    ],
+                    "FromName": "Numeral.Name",
+                    "Include": "TRUE",
+                    "TableName": "Numeral",
+                    "SortOrder": "111",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Description",
+                    "OriginalName": "Description",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "500",
+                      "500"
+                    ],
+                    "FromName": "Numeral.Description",
+                    "Include": "TRUE",
+                    "TableName": "Numeral",
+                    "SortOrder": "112",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "CharacterId",
+                    "DataType": "GUID",
+                    "DataLength": "",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "1",
+                    "Relationships": {
+                      "Relationship": {
+                        "ReferencedObjectDef": "Character",
+                        "ReferencedPropertyDef": "CharacterId"
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "Name": "Sequence",
+              "OriginalName": "Sequence",
+              "ParentName": "Communication",
+              "Include": "TRUE",
+              "TableName": "Sequence",
+              "SortOrder": "117",
+              "TableIncluded": "TRUE",
+              "PropertyDefs": {
+                "PropertyDef": [
+                  {
+                    "Name": "SequenceId",
+                    "OriginalName": "SequenceId",
+                    "IsPrimaryKey": "1",
+                    "IsNullable": "0",
+                    "DataType": "GUID",
+                    "DataLength": "",
+                    "FromName": "Sequence.SequenceId",
+                    "Include": "TRUE",
+                    "TableName": "Sequence",
+                    "SortOrder": "118",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Name",
+                    "OriginalName": "Name",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "50",
+                      "50"
+                    ],
+                    "FromName": "Sequence.Name",
+                    "Include": "TRUE",
+                    "TableName": "Sequence",
+                    "SortOrder": "119",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Description",
+                    "OriginalName": "Description",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "500",
+                      "500"
+                    ],
+                    "FromName": "Sequence.Description",
+                    "Include": "TRUE",
+                    "TableName": "Sequence",
+                    "SortOrder": "120",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "CommunicationId",
+                    "DataType": "GUID",
+                    "DataLength": "",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "1",
+                    "Relationships": {
+                      "Relationship": {
+                        "ReferencedObjectDef": "Communication",
+                        "ReferencedPropertyDef": "CommunicationId"
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "Name": "Dot",
+              "OriginalName": "Dot",
+              "Include": "TRUE",
+              "TableName": "Dot",
+              "SortOrder": "121",
+              "TableIncluded": "TRUE",
+              "PropertyDefs": {
+                "PropertyDef": [
+                  {
+                    "Name": "DotId",
+                    "OriginalName": "DotId",
+                    "IsPrimaryKey": "1",
+                    "IsNullable": "0",
+                    "DataType": "GUID",
+                    "DataLength": "",
+                    "FromName": "Dot.DotId",
+                    "Include": "TRUE",
+                    "TableName": "Dot",
+                    "SortOrder": "122",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Name",
+                    "OriginalName": "Name",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "50",
+                      "50"
+                    ],
+                    "FromName": "Dot.Name",
+                    "Include": "TRUE",
+                    "TableName": "Dot",
+                    "SortOrder": "123",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Description",
+                    "OriginalName": "Description",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "500",
+                      "500"
+                    ],
+                    "FromName": "Dot.Description",
+                    "Include": "TRUE",
+                    "TableName": "Dot",
+                    "SortOrder": "124",
+                    "TableIncluded": "TRUE"
+                  }
+                ]
+              }
+            },
+            {
+              "Name": "Duration",
+              "OriginalName": "Duration",
+              "Include": "TRUE",
+              "TableName": "Duration",
+              "SortOrder": "125",
+              "TableIncluded": "TRUE",
+              "PropertyDefs": {
+                "PropertyDef": [
+                  {
+                    "Name": "DurationId",
+                    "OriginalName": "DurationId",
+                    "IsPrimaryKey": "1",
+                    "IsNullable": "0",
+                    "DataType": "GUID",
+                    "DataLength": "",
+                    "FromName": "Duration.DurationId",
+                    "Include": "TRUE",
+                    "TableName": "Duration",
+                    "SortOrder": "126",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Name",
+                    "OriginalName": "Name",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "50",
+                      "50"
+                    ],
+                    "FromName": "Duration.Name",
+                    "Include": "TRUE",
+                    "TableName": "Duration",
+                    "SortOrder": "127",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Description",
+                    "OriginalName": "Description",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "500",
+                      "500"
+                    ],
+                    "FromName": "Duration.Description",
+                    "Include": "TRUE",
+                    "TableName": "Duration",
+                    "SortOrder": "128",
+                    "TableIncluded": "TRUE"
+                  }
+                ]
+              }
+            },
+            {
+              "Name": "Unit",
+              "OriginalName": "Unit",
+              "ParentName": "MorseCode",
+              "Include": "TRUE",
+              "TableName": "Unit",
+              "SortOrder": "129",
+              "TableIncluded": "TRUE",
+              "PropertyDefs": {
+                "PropertyDef": [
+                  {
+                    "Name": "UnitId",
+                    "OriginalName": "UnitId",
+                    "IsPrimaryKey": "1",
+                    "IsNullable": "0",
+                    "DataType": "GUID",
+                    "DataLength": "",
+                    "FromName": "Unit.UnitId",
+                    "Include": "TRUE",
+                    "TableName": "Unit",
+                    "SortOrder": "130",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Name",
+                    "OriginalName": "Name",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "50",
+                      "50"
+                    ],
+                    "FromName": "Unit.Name",
+                    "Include": "TRUE",
+                    "TableName": "Unit",
+                    "SortOrder": "131",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Description",
+                    "OriginalName": "Description",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "500",
+                      "500"
+                    ],
+                    "FromName": "Unit.Description",
+                    "Include": "TRUE",
+                    "TableName": "Unit",
+                    "SortOrder": "132",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "MorseCodeId",
+                    "DataType": "GUID",
+                    "DataLength": "",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "1",
+                    "Relationships": {
+                      "Relationship": {
+                        "ReferencedObjectDef": "MorseCode",
+                        "ReferencedPropertyDef": "MorseCodeId"
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "Name": "Transmission",
+              "OriginalName": "Transmission",
+              "ParentName": "Communcatino",
+              "Include": "TRUE",
+              "TableName": "Transmission",
+              "SortOrder": "141",
+              "TableIncluded": "TRUE",
+              "PropertyDefs": {
+                "PropertyDef": [
+                  {
+                    "Name": "TransmissionId",
+                    "OriginalName": "TransmissionId",
+                    "IsPrimaryKey": "1",
+                    "IsNullable": "0",
+                    "DataType": "GUID",
+                    "DataLength": "",
+                    "FromName": "Transmission.TransmissionId",
+                    "Include": "TRUE",
+                    "TableName": "Transmission",
+                    "SortOrder": "142",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Name",
+                    "OriginalName": "Name",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "50",
+                      "50"
+                    ],
+                    "FromName": "Transmission.Name",
+                    "Include": "TRUE",
+                    "TableName": "Transmission",
+                    "SortOrder": "143",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Description",
+                    "OriginalName": "Description",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "500",
+                      "500"
+                    ],
+                    "FromName": "Transmission.Description",
+                    "Include": "TRUE",
+                    "TableName": "Transmission",
+                    "SortOrder": "144",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "CommuncatinoId",
+                    "DataType": "GUID",
+                    "DataLength": "",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "1",
+                    "Relationships": {
+                      "Relationship": {
+                        "ReferencedObjectDef": "Communcatino",
+                        "ReferencedPropertyDef": "CommuncatinoId"
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "Name": "Dash",
+              "OriginalName": "Dash",
+              "Include": "TRUE",
+              "TableName": "Dash",
+              "SortOrder": "145",
+              "TableIncluded": "TRUE",
+              "PropertyDefs": {
+                "PropertyDef": [
+                  {
+                    "Name": "DashId",
+                    "OriginalName": "DashId",
+                    "IsPrimaryKey": "1",
+                    "IsNullable": "0",
+                    "DataType": "GUID",
+                    "DataLength": "",
+                    "FromName": "Dash.DashId",
+                    "Include": "TRUE",
+                    "TableName": "Dash",
+                    "SortOrder": "146",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Name",
+                    "OriginalName": "Name",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "50",
+                      "50"
+                    ],
+                    "FromName": "Dash.Name",
+                    "Include": "TRUE",
+                    "TableName": "Dash",
+                    "SortOrder": "147",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Description",
+                    "OriginalName": "Description",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "500",
+                      "500"
+                    ],
+                    "FromName": "Dash.Description",
+                    "Include": "TRUE",
+                    "TableName": "Dash",
+                    "SortOrder": "148",
+                    "TableIncluded": "TRUE"
+                  }
+                ]
+              }
+            },
+            {
+              "Name": "Silence",
+              "OriginalName": "Silence",
+              "ParentName": "Character",
+              "Include": "TRUE",
+              "TableName": "Silence",
+              "SortOrder": "149",
+              "TableIncluded": "TRUE",
+              "PropertyDefs": {
+                "PropertyDef": [
+                  {
+                    "Name": "SilenceId",
+                    "OriginalName": "SilenceId",
+                    "IsPrimaryKey": "1",
+                    "IsNullable": "0",
+                    "DataType": "GUID",
+                    "DataLength": "",
+                    "FromName": "Silence.SilenceId",
+                    "Include": "TRUE",
+                    "TableName": "Silence",
+                    "SortOrder": "150",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Name",
+                    "OriginalName": "Name",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "50",
+                      "50"
+                    ],
+                    "FromName": "Silence.Name",
+                    "Include": "TRUE",
+                    "TableName": "Silence",
+                    "SortOrder": "151",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Description",
+                    "OriginalName": "Description",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "500",
+                      "500"
+                    ],
+                    "FromName": "Silence.Description",
+                    "Include": "TRUE",
+                    "TableName": "Silence",
+                    "SortOrder": "152",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "CharacterId",
+                    "DataType": "GUID",
+                    "DataLength": "",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "1",
+                    "Relationships": {
+                      "Relationship": {
+                        "ReferencedObjectDef": "Character",
+                        "ReferencedPropertyDef": "CharacterId"
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "Name": "Word",
+              "OriginalName": "Word",
+              "ParentName": "Communication",
+              "Include": "TRUE",
+              "TableName": "Word",
+              "SortOrder": "153",
+              "TableIncluded": "TRUE",
+              "PropertyDefs": {
+                "PropertyDef": [
+                  {
+                    "Name": "WordId",
+                    "OriginalName": "WordId",
+                    "IsPrimaryKey": "1",
+                    "IsNullable": "0",
+                    "DataType": "GUID",
+                    "DataLength": "",
+                    "FromName": "Word.WordId",
+                    "Include": "TRUE",
+                    "TableName": "Word",
+                    "SortOrder": "154",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Name",
+                    "OriginalName": "Name",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "50",
+                      "50"
+                    ],
+                    "FromName": "Word.Name",
+                    "Include": "TRUE",
+                    "TableName": "Word",
+                    "SortOrder": "155",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Description",
+                    "OriginalName": "Description",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "500",
+                      "500"
+                    ],
+                    "FromName": "Word.Description",
+                    "Include": "TRUE",
+                    "TableName": "Word",
+                    "SortOrder": "156",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "CommunicationId",
+                    "DataType": "GUID",
+                    "DataLength": "",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "1",
+                    "Relationships": {
+                      "Relationship": {
+                        "ReferencedObjectDef": "Communication",
+                        "ReferencedPropertyDef": "CommunicationId"
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "Name": "Space",
+              "OriginalName": "Space",
+              "ParentName": "Character",
+              "Include": "TRUE",
+              "TableName": "Space",
+              "SortOrder": "157",
+              "TableIncluded": "TRUE",
+              "PropertyDefs": {
+                "PropertyDef": [
+                  {
+                    "Name": "SpaceId",
+                    "OriginalName": "SpaceId",
+                    "IsPrimaryKey": "1",
+                    "IsNullable": "0",
+                    "DataType": "GUID",
+                    "DataLength": "",
+                    "FromName": "Space.SpaceId",
+                    "Include": "TRUE",
+                    "TableName": "Space",
+                    "SortOrder": "158",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Name",
+                    "OriginalName": "Name",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "50",
+                      "50"
+                    ],
+                    "FromName": "Space.Name",
+                    "Include": "TRUE",
+                    "TableName": "Space",
+                    "SortOrder": "159",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Description",
+                    "OriginalName": "Description",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "500",
+                      "500"
+                    ],
+                    "FromName": "Space.Description",
+                    "Include": "TRUE",
+                    "TableName": "Space",
+                    "SortOrder": "160",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "CharacterId",
+                    "DataType": "GUID",
+                    "DataLength": "",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "1",
+                    "Relationships": {
+                      "Relationship": {
+                        "ReferencedObjectDef": "Character",
+                        "ReferencedPropertyDef": "CharacterId"
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "Name": "Communication",
+              "OriginalName": "Communication",
+              "Include": "TRUE",
+              "TableName": "Communication",
+              "SortOrder": "165",
+              "TableIncluded": "TRUE",
+              "PropertyDefs": {
+                "PropertyDef": [
+                  {
+                    "Name": "CommunicationId",
+                    "OriginalName": "CommunicationId",
+                    "IsPrimaryKey": "1",
+                    "IsNullable": "0",
+                    "DataType": "GUID",
+                    "DataLength": "",
+                    "FromName": "Communication.CommunicationId",
+                    "Include": "TRUE",
+                    "TableName": "Communication",
+                    "SortOrder": "166",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Name",
+                    "OriginalName": "Name",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "50",
+                      "50"
+                    ],
+                    "FromName": "Communication.Name",
+                    "Include": "TRUE",
+                    "TableName": "Communication",
+                    "SortOrder": "167",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Description",
+                    "OriginalName": "Description",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "500",
+                      "500"
+                    ],
+                    "FromName": "Communication.Description",
+                    "Include": "TRUE",
+                    "TableName": "Communication",
+                    "SortOrder": "168",
+                    "TableIncluded": "TRUE"
+                  }
+                ]
+              }
+            },
+            {
+              "Name": "Frequency",
+              "OriginalName": "Frequency",
+              "Include": "TRUE",
+              "TableName": "Frequency",
+              "SortOrder": "173",
+              "TableIncluded": "TRUE",
+              "PropertyDefs": {
+                "PropertyDef": [
+                  {
+                    "Name": "FrequencyId",
+                    "OriginalName": "FrequencyId",
+                    "IsPrimaryKey": "1",
+                    "IsNullable": "0",
+                    "DataType": "GUID",
+                    "DataLength": "",
+                    "FromName": "Frequency.FrequencyId",
+                    "Include": "TRUE",
+                    "TableName": "Frequency",
+                    "SortOrder": "174",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Name",
+                    "OriginalName": "Name",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "50",
+                      "50"
+                    ],
+                    "FromName": "Frequency.Name",
+                    "Include": "TRUE",
+                    "TableName": "Frequency",
+                    "SortOrder": "175",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Description",
+                    "OriginalName": "Description",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "500",
+                      "500"
+                    ],
+                    "FromName": "Frequency.Description",
+                    "Include": "TRUE",
+                    "TableName": "Frequency",
+                    "SortOrder": "176",
+                    "TableIncluded": "TRUE"
+                  }
+                ]
+              }
+            },
+            {
+              "Name": "Proficiency",
+              "OriginalName": "Proficiency",
+              "ParentName": "Operator",
+              "Include": "TRUE",
+              "TableName": "Proficiency",
+              "SortOrder": "189",
+              "TableIncluded": "TRUE",
+              "PropertyDefs": {
+                "PropertyDef": [
+                  {
+                    "Name": "ProficiencyId",
+                    "OriginalName": "ProficiencyId",
+                    "IsPrimaryKey": "1",
+                    "IsNullable": "0",
+                    "DataType": "GUID",
+                    "DataLength": "",
+                    "FromName": "Proficiency.ProficiencyId",
+                    "Include": "TRUE",
+                    "TableName": "Proficiency",
+                    "SortOrder": "190",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Name",
+                    "OriginalName": "Name",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "50",
+                      "50"
+                    ],
+                    "FromName": "Proficiency.Name",
+                    "Include": "TRUE",
+                    "TableName": "Proficiency",
+                    "SortOrder": "191",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Description",
+                    "OriginalName": "Description",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "500",
+                      "500"
+                    ],
+                    "FromName": "Proficiency.Description",
+                    "Include": "TRUE",
+                    "TableName": "Proficiency",
+                    "SortOrder": "192",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "OperatorId",
+                    "DataType": "GUID",
+                    "DataLength": "",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "1",
+                    "Relationships": {
+                      "Relationship": {
+                        "ReferencedObjectDef": "Operator",
+                        "ReferencedPropertyDef": "OperatorId"
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "Name": "Understanding",
+              "OriginalName": "Understanding",
+              "ParentName": "Communication",
+              "Include": "TRUE",
+              "TableName": "Understanding",
+              "SortOrder": "205",
+              "TableIncluded": "TRUE",
+              "PropertyDefs": {
+                "PropertyDef": [
+                  {
+                    "Name": "UnderstandingId",
+                    "OriginalName": "UnderstandingId",
+                    "IsPrimaryKey": "1",
+                    "IsNullable": "0",
+                    "DataType": "GUID",
+                    "DataLength": "",
+                    "FromName": "Understanding.UnderstandingId",
+                    "Include": "TRUE",
+                    "TableName": "Understanding",
+                    "SortOrder": "206",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Name",
+                    "OriginalName": "Name",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "50",
+                      "50"
+                    ],
+                    "FromName": "Understanding.Name",
+                    "Include": "TRUE",
+                    "TableName": "Understanding",
+                    "SortOrder": "207",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Description",
+                    "OriginalName": "Description",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "500",
+                      "500"
+                    ],
+                    "FromName": "Understanding.Description",
+                    "Include": "TRUE",
+                    "TableName": "Understanding",
+                    "SortOrder": "208",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "CommunicationId",
+                    "DataType": "GUID",
+                    "DataLength": "",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "1",
+                    "Relationships": {
+                      "Relationship": {
+                        "ReferencedObjectDef": "Communication",
+                        "ReferencedPropertyDef": "CommunicationId"
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "Name": "Signal",
+              "OriginalName": "Signal",
+              "ParentName": "MCDevice",
+              "Include": "TRUE",
+              "TableName": "Signal",
+              "SortOrder": "213",
+              "TableIncluded": "TRUE",
+              "PropertyDefs": {
+                "PropertyDef": [
+                  {
+                    "Name": "SignalId",
+                    "OriginalName": "SignalId",
+                    "IsPrimaryKey": "1",
+                    "IsNullable": "0",
+                    "DataType": "GUID",
+                    "DataLength": "",
+                    "FromName": "Signal.SignalId",
+                    "Include": "TRUE",
+                    "TableName": "Signal",
+                    "SortOrder": "214",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Name",
+                    "OriginalName": "Name",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "50",
+                      "50"
+                    ],
+                    "FromName": "Signal.Name",
+                    "Include": "TRUE",
+                    "TableName": "Signal",
+                    "SortOrder": "215",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Description",
+                    "OriginalName": "Description",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "500",
+                      "500"
+                    ],
+                    "FromName": "Signal.Description",
+                    "Include": "TRUE",
+                    "TableName": "Signal",
+                    "SortOrder": "216",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "MCDeviceId",
+                    "DataType": "GUID",
+                    "DataLength": "",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "1",
+                    "Relationships": {
+                      "Relationship": {
+                        "ReferencedObjectDef": "MCDevice",
+                        "ReferencedPropertyDef": "MCDeviceId"
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "Name": "Decoding",
+              "OriginalName": "Decoding",
+              "Include": "TRUE",
+              "TableName": "Decoding",
+              "SortOrder": "217",
+              "TableIncluded": "TRUE",
+              "PropertyDefs": {
+                "PropertyDef": [
+                  {
+                    "Name": "DecodingId",
+                    "OriginalName": "DecodingId",
+                    "IsPrimaryKey": "1",
+                    "IsNullable": "0",
+                    "DataType": "GUID",
+                    "DataLength": "",
+                    "FromName": "Decoding.DecodingId",
+                    "Include": "TRUE",
+                    "TableName": "Decoding",
+                    "SortOrder": "218",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Name",
+                    "OriginalName": "Name",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "50",
+                      "50"
+                    ],
+                    "FromName": "Decoding.Name",
+                    "Include": "TRUE",
+                    "TableName": "Decoding",
+                    "SortOrder": "219",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Description",
+                    "OriginalName": "Description",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "500",
+                      "500"
+                    ],
+                    "FromName": "Decoding.Description",
+                    "Include": "TRUE",
+                    "TableName": "Decoding",
+                    "SortOrder": "220",
+                    "TableIncluded": "TRUE"
+                  }
+                ]
+              }
+            },
+            {
+              "Name": "Device",
+              "OriginalName": "Device",
+              "Include": "TRUE",
+              "TableName": "Device",
+              "SortOrder": "221",
+              "TableIncluded": "TRUE",
+              "PropertyDefs": {
+                "PropertyDef": [
+                  {
+                    "Name": "DeviceId",
+                    "OriginalName": "DeviceId",
+                    "IsPrimaryKey": "1",
+                    "IsNullable": "0",
+                    "DataType": "GUID",
+                    "DataLength": "",
+                    "FromName": "Device.DeviceId",
+                    "Include": "TRUE",
+                    "TableName": "Device",
+                    "SortOrder": "222",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Name",
+                    "OriginalName": "Name",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "50",
+                      "50"
+                    ],
+                    "FromName": "Device.Name",
+                    "Include": "TRUE",
+                    "TableName": "Device",
+                    "SortOrder": "223",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Description",
+                    "OriginalName": "Description",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "500",
+                      "500"
+                    ],
+                    "FromName": "Device.Description",
+                    "Include": "TRUE",
+                    "TableName": "Device",
+                    "SortOrder": "224",
+                    "TableIncluded": "TRUE"
+                  }
+                ]
+              }
+            },
+            {
+              "Name": "Alternative",
+              "OriginalName": "Alternative",
+              "Include": "TRUE",
+              "TableName": "Alternative",
+              "SortOrder": "225",
+              "TableIncluded": "TRUE",
+              "PropertyDefs": {
+                "PropertyDef": [
+                  {
+                    "Name": "AlternativeId",
+                    "OriginalName": "AlternativeId",
+                    "IsPrimaryKey": "1",
+                    "IsNullable": "0",
+                    "DataType": "GUID",
+                    "DataLength": "",
+                    "FromName": "Alternative.AlternativeId",
+                    "Include": "TRUE",
+                    "TableName": "Alternative",
+                    "SortOrder": "226",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Name",
+                    "OriginalName": "Name",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "50",
+                      "50"
+                    ],
+                    "FromName": "Alternative.Name",
+                    "Include": "TRUE",
+                    "TableName": "Alternative",
+                    "SortOrder": "227",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Description",
+                    "OriginalName": "Description",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "500",
+                      "500"
+                    ],
+                    "FromName": "Alternative.Description",
+                    "Include": "TRUE",
+                    "TableName": "Alternative",
+                    "SortOrder": "228",
+                    "TableIncluded": "TRUE"
+                  }
+                ]
+              }
+            },
+            {
+              "Name": "Tone",
+              "OriginalName": "Tone",
+              "ParentName": "Communication",
+              "Include": "TRUE",
+              "TableName": "Tone",
+              "SortOrder": "237",
+              "TableIncluded": "TRUE",
+              "PropertyDefs": {
+                "PropertyDef": [
+                  {
+                    "Name": "ToneId",
+                    "OriginalName": "ToneId",
+                    "IsPrimaryKey": "1",
+                    "IsNullable": "0",
+                    "DataType": "GUID",
+                    "DataLength": "",
+                    "FromName": "Tone.ToneId",
+                    "Include": "TRUE",
+                    "TableName": "Tone",
+                    "SortOrder": "238",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Name",
+                    "OriginalName": "Name",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "50",
+                      "50"
+                    ],
+                    "FromName": "Tone.Name",
+                    "Include": "TRUE",
+                    "TableName": "Tone",
+                    "SortOrder": "239",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Description",
+                    "OriginalName": "Description",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "500",
+                      "500"
+                    ],
+                    "FromName": "Tone.Description",
+                    "Include": "TRUE",
+                    "TableName": "Tone",
+                    "SortOrder": "240",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "CommunicationId",
+                    "DataType": "GUID",
+                    "DataLength": "",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "1",
+                    "Relationships": {
+                      "Relationship": {
+                        "ReferencedObjectDef": "Communication",
+                        "ReferencedPropertyDef": "CommunicationId"
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "Name": "Light",
+              "OriginalName": "Light",
+              "ParentName": "MCDevice",
+              "Include": "TRUE",
+              "TableName": "Light",
+              "SortOrder": "241",
+              "TableIncluded": "TRUE",
+              "PropertyDefs": {
+                "PropertyDef": [
+                  {
+                    "Name": "LightId",
+                    "OriginalName": "LightId",
+                    "IsPrimaryKey": "1",
+                    "IsNullable": "0",
+                    "DataType": "GUID",
+                    "DataLength": "",
+                    "FromName": "Light.LightId",
+                    "Include": "TRUE",
+                    "TableName": "Light",
+                    "SortOrder": "242",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Name",
+                    "OriginalName": "Name",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "50",
+                      "50"
+                    ],
+                    "FromName": "Light.Name",
+                    "Include": "TRUE",
+                    "TableName": "Light",
+                    "SortOrder": "243",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Description",
+                    "OriginalName": "Description",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "500",
+                      "500"
+                    ],
+                    "FromName": "Light.Description",
+                    "Include": "TRUE",
+                    "TableName": "Light",
+                    "SortOrder": "244",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "MCDeviceId",
+                    "DataType": "GUID",
+                    "DataLength": "",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "1",
+                    "Relationships": {
+                      "Relationship": {
+                        "ReferencedObjectDef": "MCDevice",
+                        "ReferencedPropertyDef": "MCDeviceId"
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "Name": "Click",
+              "OriginalName": "Click",
+              "Include": "TRUE",
+              "TableName": "Click",
+              "SortOrder": "245",
+              "TableIncluded": "TRUE",
+              "PropertyDefs": {
+                "PropertyDef": [
+                  {
+                    "Name": "ClickId",
+                    "OriginalName": "ClickId",
+                    "IsPrimaryKey": "1",
+                    "IsNullable": "0",
+                    "DataType": "GUID",
+                    "DataLength": "",
+                    "FromName": "Click.ClickId",
+                    "Include": "TRUE",
+                    "TableName": "Click",
+                    "SortOrder": "246",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Name",
+                    "OriginalName": "Name",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "50",
+                      "50"
+                    ],
+                    "FromName": "Click.Name",
+                    "Include": "TRUE",
+                    "TableName": "Click",
+                    "SortOrder": "247",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Description",
+                    "OriginalName": "Description",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "500",
+                      "500"
+                    ],
+                    "FromName": "Click.Description",
+                    "Include": "TRUE",
+                    "TableName": "Click",
+                    "SortOrder": "248",
+                    "TableIncluded": "TRUE"
+                  }
+                ]
+              }
+            },
+            {
+              "Name": "Language",
+              "OriginalName": "Language",
+              "Include": "TRUE",
+              "TableName": "Language",
+              "SortOrder": "277",
+              "TableIncluded": "TRUE",
+              "PropertyDefs": {
+                "PropertyDef": [
+                  {
+                    "Name": "LanguageId",
+                    "OriginalName": "LanguageId",
+                    "IsPrimaryKey": "1",
+                    "IsNullable": "0",
+                    "DataType": "GUID",
+                    "DataLength": "",
+                    "FromName": "Language.LanguageId",
+                    "Include": "TRUE",
+                    "TableName": "Language",
+                    "SortOrder": "278",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Name",
+                    "OriginalName": "Name",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "50",
+                      "50"
+                    ],
+                    "FromName": "Language.Name",
+                    "Include": "TRUE",
+                    "TableName": "Language",
+                    "SortOrder": "279",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Description",
+                    "OriginalName": "Description",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "500",
+                      "500"
+                    ],
+                    "FromName": "Language.Description",
+                    "Include": "TRUE",
+                    "TableName": "Language",
+                    "SortOrder": "280",
+                    "TableIncluded": "TRUE"
+                  }
+                ]
+              }
+            },
+            {
+              "Name": "Extension",
+              "OriginalName": "Extension",
+              "Include": "TRUE",
+              "TableName": "Extension",
+              "SortOrder": "281",
+              "TableIncluded": "TRUE",
+              "PropertyDefs": {
+                "PropertyDef": [
+                  {
+                    "Name": "ExtensionId",
+                    "OriginalName": "ExtensionId",
+                    "IsPrimaryKey": "1",
+                    "IsNullable": "0",
+                    "DataType": "GUID",
+                    "DataLength": "",
+                    "FromName": "Extension.ExtensionId",
+                    "Include": "TRUE",
+                    "TableName": "Extension",
+                    "SortOrder": "282",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Name",
+                    "OriginalName": "Name",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "50",
+                      "50"
+                    ],
+                    "FromName": "Extension.Name",
+                    "Include": "TRUE",
+                    "TableName": "Extension",
+                    "SortOrder": "283",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Description",
+                    "OriginalName": "Description",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "500",
+                      "500"
+                    ],
+                    "FromName": "Extension.Description",
+                    "Include": "TRUE",
+                    "TableName": "Extension",
+                    "SortOrder": "284",
+                    "TableIncluded": "TRUE"
+                  }
+                ]
+              }
+            },
+            {
+              "Name": "TelegraphOperator",
+              "OriginalName": "Operator",
+              "ParentName": "Communication",
+              "Include": "TRUE",
+              "TableName": "Operator",
+              "SortOrder": "293",
+              "TableIncluded": "TRUE",
+              "PropertyDefs": {
+                "PropertyDef": [
+                  {
+                    "Name": "TelegraphOperatorId",
+                    "OriginalName": "OperatorId",
+                    "IsPrimaryKey": "1",
+                    "IsNullable": "0",
+                    "DataType": "GUID",
+                    "DataLength": "",
+                    "FromName": "Operator.OperatorId",
+                    "Include": "TRUE",
+                    "TableName": "Operator",
+                    "SortOrder": "294",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Name",
+                    "OriginalName": "Name",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "50",
+                      "50"
+                    ],
+                    "FromName": "Operator.Name",
+                    "Include": "TRUE",
+                    "TableName": "Operator",
+                    "SortOrder": "295",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Description",
+                    "OriginalName": "Description",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "500",
+                      "500"
+                    ],
+                    "FromName": "Operator.Description",
+                    "Include": "TRUE",
+                    "TableName": "Operator",
+                    "SortOrder": "296",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "CommunicationId",
+                    "DataType": "GUID",
+                    "DataLength": "",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "1",
+                    "Relationships": {
+                      "Relationship": {
+                        "ReferencedObjectDef": "Communication",
+                        "ReferencedPropertyDef": "CommunicationId"
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "Name": "Country",
+              "OriginalName": "Country",
+              "Include": "TRUE",
+              "TableName": "Country",
+              "SortOrder": "297",
+              "TableIncluded": "TRUE",
+              "PropertyDefs": {
+                "PropertyDef": [
+                  {
+                    "Name": "CountryId",
+                    "OriginalName": "CountryId",
+                    "IsPrimaryKey": "1",
+                    "IsNullable": "0",
+                    "DataType": "GUID",
+                    "DataLength": "",
+                    "FromName": "Country.CountryId",
+                    "Include": "TRUE",
+                    "TableName": "Country",
+                    "SortOrder": "298",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Name",
+                    "OriginalName": "Name",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "50",
+                      "50"
+                    ],
+                    "FromName": "Country.Name",
+                    "Include": "TRUE",
+                    "TableName": "Country",
+                    "SortOrder": "299",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Description",
+                    "OriginalName": "Description",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "500",
+                      "500"
+                    ],
+                    "FromName": "Country.Description",
+                    "Include": "TRUE",
+                    "TableName": "Country",
+                    "SortOrder": "300",
+                    "TableIncluded": "TRUE"
+                  }
+                ]
+              }
+            },
+            {
+              "Name": "Controller",
+              "OriginalName": "Controller",
+              "ParentName": "Communication",
+              "Include": "TRUE",
+              "TableName": "Controller",
+              "SortOrder": "305",
+              "TableIncluded": "TRUE",
+              "PropertyDefs": {
+                "PropertyDef": [
+                  {
+                    "Name": "ControllerId",
+                    "OriginalName": "ControllerId",
+                    "IsPrimaryKey": "1",
+                    "IsNullable": "0",
+                    "DataType": "GUID",
+                    "DataLength": "",
+                    "FromName": "Controller.ControllerId",
+                    "Include": "TRUE",
+                    "TableName": "Controller",
+                    "SortOrder": "306",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Name",
+                    "OriginalName": "Name",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "50",
+                      "50"
+                    ],
+                    "FromName": "Controller.Name",
+                    "Include": "TRUE",
+                    "TableName": "Controller",
+                    "SortOrder": "307",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Description",
+                    "OriginalName": "Description",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "500",
+                      "500"
+                    ],
+                    "FromName": "Controller.Description",
+                    "Include": "TRUE",
+                    "TableName": "Controller",
+                    "SortOrder": "308",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "CommunicationId",
+                    "DataType": "GUID",
+                    "DataLength": "",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "1",
+                    "Relationships": {
+                      "Relationship": {
+                        "ReferencedObjectDef": "Communication",
+                        "ReferencedPropertyDef": "CommunicationId"
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "Name": "Human",
+              "OriginalName": "Human",
+              "Include": "TRUE",
+              "TableName": "Human",
+              "SortOrder": "325",
+              "TableIncluded": "TRUE",
+              "PropertyDefs": {
+                "PropertyDef": [
+                  {
+                    "Name": "HumanId",
+                    "OriginalName": "HumanId",
+                    "IsPrimaryKey": "1",
+                    "IsNullable": "0",
+                    "DataType": "GUID",
+                    "DataLength": "",
+                    "FromName": "Human.HumanId",
+                    "Include": "TRUE",
+                    "TableName": "Human",
+                    "SortOrder": "326",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Name",
+                    "OriginalName": "Name",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "50",
+                      "50"
+                    ],
+                    "FromName": "Human.Name",
+                    "Include": "TRUE",
+                    "TableName": "Human",
+                    "SortOrder": "327",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Description",
+                    "OriginalName": "Description",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "500",
+                      "500"
+                    ],
+                    "FromName": "Human.Description",
+                    "Include": "TRUE",
+                    "TableName": "Human",
+                    "SortOrder": "328",
+                    "TableIncluded": "TRUE"
+                  }
+                ]
+              }
+            },
+            {
+              "Name": "Datum",
+              "OriginalName": "Datum",
+              "Include": "TRUE",
+              "TableName": "Datum",
+              "SortOrder": "329",
+              "TableIncluded": "TRUE",
+              "PropertyDefs": {
+                "PropertyDef": [
+                  {
+                    "Name": "DatumId",
+                    "OriginalName": "DatumId",
+                    "IsPrimaryKey": "1",
+                    "IsNullable": "0",
+                    "DataType": "GUID",
+                    "DataLength": "",
+                    "FromName": "Datum.DatumId",
+                    "Include": "TRUE",
+                    "TableName": "Datum",
+                    "SortOrder": "330",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Name",
+                    "OriginalName": "Name",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "50",
+                      "50"
+                    ],
+                    "FromName": "Datum.Name",
+                    "Include": "TRUE",
+                    "TableName": "Datum",
+                    "SortOrder": "331",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Description",
+                    "OriginalName": "Description",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "500",
+                      "500"
+                    ],
+                    "FromName": "Datum.Description",
+                    "Include": "TRUE",
+                    "TableName": "Datum",
+                    "SortOrder": "332",
+                    "TableIncluded": "TRUE"
+                  }
+                ]
+              }
+            },
+            {
+              "Name": "Channel",
+              "OriginalName": "Channel",
+              "Include": "TRUE",
+              "TableName": "Channel",
+              "SortOrder": "337",
+              "TableIncluded": "TRUE",
+              "PropertyDefs": {
+                "PropertyDef": [
+                  {
+                    "Name": "ChannelId",
+                    "OriginalName": "ChannelId",
+                    "IsPrimaryKey": "1",
+                    "IsNullable": "0",
+                    "DataType": "GUID",
+                    "DataLength": "",
+                    "FromName": "Channel.ChannelId",
+                    "Include": "TRUE",
+                    "TableName": "Channel",
+                    "SortOrder": "338",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Name",
+                    "OriginalName": "Name",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "50",
+                      "50"
+                    ],
+                    "FromName": "Channel.Name",
+                    "Include": "TRUE",
+                    "TableName": "Channel",
+                    "SortOrder": "339",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Description",
+                    "OriginalName": "Description",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "500",
+                      "500"
+                    ],
+                    "FromName": "Channel.Description",
+                    "Include": "TRUE",
+                    "TableName": "Channel",
+                    "SortOrder": "340",
+                    "TableIncluded": "TRUE"
+                  }
+                ]
+              }
+            },
+            {
+              "Name": "Repeater",
+              "OriginalName": "Repeater",
+              "ParentName": "MCDevice",
+              "Include": "TRUE",
+              "TableName": "Repeater",
+              "SortOrder": "341",
+              "TableIncluded": "TRUE",
+              "PropertyDefs": {
+                "PropertyDef": [
+                  {
+                    "Name": "RepeaterId",
+                    "OriginalName": "RepeaterId",
+                    "IsPrimaryKey": "1",
+                    "IsNullable": "0",
+                    "DataType": "GUID",
+                    "DataLength": "",
+                    "FromName": "Repeater.RepeaterId",
+                    "Include": "TRUE",
+                    "TableName": "Repeater",
+                    "SortOrder": "342",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Name",
+                    "OriginalName": "Name",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "50",
+                      "50"
+                    ],
+                    "FromName": "Repeater.Name",
+                    "Include": "TRUE",
+                    "TableName": "Repeater",
+                    "SortOrder": "343",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Description",
+                    "OriginalName": "Description",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "500",
+                      "500"
+                    ],
+                    "FromName": "Repeater.Description",
+                    "Include": "TRUE",
+                    "TableName": "Repeater",
+                    "SortOrder": "344",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "MCDeviceId",
+                    "DataType": "GUID",
+                    "DataLength": "",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "1",
+                    "Relationships": {
+                      "Relationship": {
+                        "ReferencedObjectDef": "MCDevice",
+                        "ReferencedPropertyDef": "MCDeviceId"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}
+                    
