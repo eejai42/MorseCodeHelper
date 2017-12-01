@@ -19,7 +19,7 @@
       -- TABLE: TelegraphOperator
       -- TABLE: Proficiency
       -- TABLE: Repeater
-      -- TABLE: Sequence
+      -- TABLE: CharacterSquence
       -- TABLE: Signal
       -- TABLE: Telegraph
       -- TABLE: Transmission
@@ -67,6 +67,7 @@
           [CharacterId] UNIQUEIDENTIFIER NOT NULL,
           [Name] NVARCHAR(100) NOT NULL,
           [Description] NVARCHAR(100) NOT NULL,
+          [SequenceCode] NVARCHAR(100) NOT NULL,
           [Symbol] NVARCHAR(100) NOT NULL,
           [AlphabetId] UNIQUEIDENTIFIER NULL,
         
@@ -288,19 +289,21 @@
         END
         GO
 
-        -- TABLE: Sequence
-        -- ****** Object:  Table [dbo].[Sequence]   Script Date:  ******
-        IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Sequence]') AND type in (N'U')) 
+        -- TABLE: CharacterSquence
+        -- ****** Object:  Table [dbo].[CharacterSquence]   Script Date:  ******
+        IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[CharacterSquence]') AND type in (N'U')) 
         BEGIN
-        CREATE TABLE [dbo].[Sequence] (
-          [SequenceId] UNIQUEIDENTIFIER NOT NULL,
+        CREATE TABLE [dbo].[CharacterSquence] (
+          [CharacterSquenceId] UNIQUEIDENTIFIER NOT NULL,
           [Name] NVARCHAR(100) NOT NULL,
           [Description] NVARCHAR(100) NOT NULL,
+          [Index] INT NOT NULL,
           [CharacterId] UNIQUEIDENTIFIER NULL,
+          [SignalId] UNIQUEIDENTIFIER NULL,
         
-        CONSTRAINT [PK_Sequence] PRIMARY KEY CLUSTERED
+        CONSTRAINT [PK_CharacterSquence] PRIMARY KEY CLUSTERED
           (
-            [SequenceId] ASC
+            [CharacterSquenceId] ASC
           )
         
         ) ON [PRIMARY]
@@ -318,8 +321,9 @@
           [Symbol] NVARCHAR(100) NOT NULL,
           [ShortCode] NVARCHAR(100) NOT NULL,
           [LongCode] NVARCHAR(100) NOT NULL,
+          [BinaryCode] NVARCHAR(100) NOT NULL,
+          [SortOrder] INT NOT NULL,
           [RelativeTime] INT NOT NULL,
-          [SequenceId] UNIQUEIDENTIFIER NULL,
         
         CONSTRAINT [PK_Signal] PRIMARY KEY CLUSTERED
           (
@@ -700,22 +704,32 @@
             GO
           
 
-              -- ****** KEYS FOR Table [dbo].[Sequence]
+              -- ****** KEYS FOR Table [dbo].[CharacterSquence]
           -- Primary Key
-          IF NOT EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'[dbo].[DF_Sequence_SequenceId]') AND type = 'D')
+          IF NOT EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'[dbo].[DF_CharacterSquence_CharacterSquenceId]') AND type = 'D')
           BEGIN
-            ALTER TABLE [dbo].[Sequence] ADD  CONSTRAINT [DF_Sequence_SequenceId]  DEFAULT (newid()) FOR [SequenceId]
+            ALTER TABLE [dbo].[CharacterSquence] ADD  CONSTRAINT [DF_CharacterSquence_CharacterSquenceId]  DEFAULT (newid()) FOR [CharacterSquenceId]
           END
           GO
         
-          -- FK for CharacterId :: 1 :: Sequence :: Character
-          IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_Sequence_Character]') AND parent_object_id = OBJECT_ID(N'[dbo].[Sequence]'))
-            ALTER TABLE [dbo].[Sequence]  WITH CHECK ADD  CONSTRAINT [FK_Sequence_Character] FOREIGN KEY([CharacterId])
+          -- FK for CharacterId :: 0 :: CharacterSquence :: Character
+          IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_CharacterSquence_Character]') AND parent_object_id = OBJECT_ID(N'[dbo].[CharacterSquence]'))
+            ALTER TABLE [dbo].[CharacterSquence]  WITH CHECK ADD  CONSTRAINT [FK_CharacterSquence_Character] FOREIGN KEY([CharacterId])
             REFERENCES [dbo].[Character] (CharacterId)
           GO
 
-          IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_Sequence_Character]') AND parent_object_id = OBJECT_ID(N'[dbo].[Sequence]'))
-            ALTER TABLE [dbo].[Sequence] CHECK CONSTRAINT [FK_Sequence_Character]
+          IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_CharacterSquence_Character]') AND parent_object_id = OBJECT_ID(N'[dbo].[CharacterSquence]'))
+            ALTER TABLE [dbo].[CharacterSquence] CHECK CONSTRAINT [FK_CharacterSquence_Character]
+            GO
+          
+          -- FK for SignalId :: 0 :: CharacterSquence :: Signal
+          IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_CharacterSquence_Signal]') AND parent_object_id = OBJECT_ID(N'[dbo].[CharacterSquence]'))
+            ALTER TABLE [dbo].[CharacterSquence]  WITH CHECK ADD  CONSTRAINT [FK_CharacterSquence_Signal] FOREIGN KEY([SignalId])
+            REFERENCES [dbo].[Signal] (SignalId)
+          GO
+
+          IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_CharacterSquence_Signal]') AND parent_object_id = OBJECT_ID(N'[dbo].[CharacterSquence]'))
+            ALTER TABLE [dbo].[CharacterSquence] CHECK CONSTRAINT [FK_CharacterSquence_Signal]
             GO
           
 
@@ -727,16 +741,6 @@
           END
           GO
         
-          -- FK for SequenceId :: 0 :: Signal :: Sequence
-          IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_Signal_Sequence]') AND parent_object_id = OBJECT_ID(N'[dbo].[Signal]'))
-            ALTER TABLE [dbo].[Signal]  WITH CHECK ADD  CONSTRAINT [FK_Signal_Sequence] FOREIGN KEY([SequenceId])
-            REFERENCES [dbo].[Sequence] (SequenceId)
-          GO
-
-          IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_Signal_Sequence]') AND parent_object_id = OBJECT_ID(N'[dbo].[Signal]'))
-            ALTER TABLE [dbo].[Signal] CHECK CONSTRAINT [FK_Signal_Sequence]
-            GO
-          
 
               -- ****** KEYS FOR Table [dbo].[Telegraph]
           -- Primary Key

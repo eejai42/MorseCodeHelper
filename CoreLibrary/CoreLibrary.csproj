@@ -92,10 +92,6 @@
     <Compile Include="DataClasses\Repeater.designer.cs">
       <DependentUpon>Repeater.cs</DependentUpon>
     </Compile>
-    <Compile Include="DataClasses\Sequence.cs" />
-    <Compile Include="DataClasses\Sequence.designer.cs">
-      <DependentUpon>Sequence.cs</DependentUpon>
-    </Compile>
     <Compile Include="DataClasses\Signal.cs" />
     <Compile Include="DataClasses\Signal.designer.cs">
       <DependentUpon>Signal.cs</DependentUpon>
@@ -121,6 +117,7 @@
       <DependentUpon>Word.cs</DependentUpon>
     </Compile>
     <Compile Include="Extensions\CoreExtensions.cs" />
+    <Compile Include="MorseCodeMetaSnapshot.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlDataAccessLayer\SqlDataManager.cs" />
     <Compile Include="DataClasses\TelegraphStation.cs">
@@ -137,6 +134,11 @@
     </Compile>
     <Compile Include="DataClasses\Customer.designer.cs">
       <DependentUpon>Customer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataClasses\CharacterSquence.cs">
+    </Compile>
+    <Compile Include="DataClasses\CharacterSquence.designer.cs">
+      <DependentUpon>CharacterSquence.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

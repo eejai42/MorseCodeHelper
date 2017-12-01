@@ -1,0 +1,964 @@
+{
+    "Alphabets": [
+        {
+            "AlphabetId": "0e80df5b-9894-4c64-bb73-a09290e549a3",
+            "Name": "Continental",
+            "Description": "",
+            "Characters": [
+                {
+                    "CharacterId": "999720c8-9182-4c31-9822-025f8ffa25b1",
+                    "Name": "F",
+                    "Description": "Continental char F",
+                    "Symbol": "F",
+                    "AlphabetId": "0e80df5b-9894-4c64-bb73-a09290e549a3",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "f980be93-fe22-4fcb-b110-12124720bfa0",
+                    "Name": "6",
+                    "Description": "Continental char 6",
+                    "Symbol": "6",
+                    "AlphabetId": "0e80df5b-9894-4c64-bb73-a09290e549a3",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "0f198c9e-7d99-4c9b-a3cb-133fc2f3d7d7",
+                    "Name": "M",
+                    "Description": "Continental char M",
+                    "Symbol": "M",
+                    "AlphabetId": "0e80df5b-9894-4c64-bb73-a09290e549a3",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "c7caf814-60f1-4365-a3e1-17aaf49ecaa3",
+                    "Name": "N",
+                    "Description": "Continental char N",
+                    "Symbol": "N",
+                    "AlphabetId": "0e80df5b-9894-4c64-bb73-a09290e549a3",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "5dcc98d6-dd6d-4924-9d92-186fa42237a9",
+                    "Name": "K",
+                    "Description": "Continental char K",
+                    "Symbol": "K",
+                    "AlphabetId": "0e80df5b-9894-4c64-bb73-a09290e549a3",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "09327487-973b-4877-9f5d-2500d02066d9",
+                    "Name": "9",
+                    "Description": "Continental char 9",
+                    "Symbol": "9",
+                    "AlphabetId": "0e80df5b-9894-4c64-bb73-a09290e549a3",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "ec027e72-e88e-44e8-bee1-2f7602d35089",
+                    "Name": "U",
+                    "Description": "Continental char U",
+                    "Symbol": "U",
+                    "AlphabetId": "0e80df5b-9894-4c64-bb73-a09290e549a3",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "ac37ca37-6867-4ca9-83c9-33d688492879",
+                    "Name": "C",
+                    "Description": "Continental char C",
+                    "Symbol": "C",
+                    "AlphabetId": "0e80df5b-9894-4c64-bb73-a09290e549a3",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "0794f613-90d8-4b82-8441-3570f82bc95b",
+                    "Name": "Q",
+                    "Description": "Continental char Q",
+                    "Symbol": "Q",
+                    "AlphabetId": "0e80df5b-9894-4c64-bb73-a09290e549a3",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "66f82c8f-76f5-44e4-8115-461dc20d3787",
+                    "Name": "P",
+                    "Description": "Continental char P",
+                    "Symbol": "P",
+                    "AlphabetId": "0e80df5b-9894-4c64-bb73-a09290e549a3",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "1c223133-e589-4610-9055-4dfff6f94575",
+                    "Name": "G",
+                    "Description": "Continental char G",
+                    "Symbol": "G",
+                    "AlphabetId": "0e80df5b-9894-4c64-bb73-a09290e549a3",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "4de0b47a-517d-47f7-86ca-545c2b7b544c",
+                    "Name": "S",
+                    "Description": "Continental char S",
+                    "Symbol": "S",
+                    "AlphabetId": "0e80df5b-9894-4c64-bb73-a09290e549a3",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "74f45fcb-9928-43a9-aa93-54c0c4d89aff",
+                    "Name": "1",
+                    "Description": "Continental char 1",
+                    "Symbol": "1",
+                    "AlphabetId": "0e80df5b-9894-4c64-bb73-a09290e549a3",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "89bfaf82-d91c-48dc-b4d9-563abd2f2335",
+                    "Name": "V",
+                    "Description": "Continental char V",
+                    "Symbol": "V",
+                    "AlphabetId": "0e80df5b-9894-4c64-bb73-a09290e549a3",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "aed9b3de-a273-4d42-9de7-5d62d8cb484f",
+                    "Name": "7",
+                    "Description": "Continental char 7",
+                    "Symbol": "7",
+                    "AlphabetId": "0e80df5b-9894-4c64-bb73-a09290e549a3",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "b8fbb6de-8df5-4439-bedb-6398dd9dbf01",
+                    "Name": "D",
+                    "Description": "Continental char D",
+                    "Symbol": "D",
+                    "AlphabetId": "0e80df5b-9894-4c64-bb73-a09290e549a3",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "a71db5de-fd06-40bc-b4ce-647f3c37e2a0",
+                    "Name": "-",
+                    "Description": "Continental char -",
+                    "Symbol": "-",
+                    "AlphabetId": "0e80df5b-9894-4c64-bb73-a09290e549a3",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "bd9dd446-5bd9-47d7-98a4-711b5b09e850",
+                    "Name": " ",
+                    "Description": "Continental char  ",
+                    "Symbol": " ",
+                    "AlphabetId": "0e80df5b-9894-4c64-bb73-a09290e549a3",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "cdcdd304-e2de-4d88-9db9-7774377a4c15",
+                    "Name": "A",
+                    "Description": "Continental char A",
+                    "Symbol": "A",
+                    "AlphabetId": "0e80df5b-9894-4c64-bb73-a09290e549a3",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "c3c8cd6f-e2f5-4cd9-98f6-7bc43dbf3551",
+                    "Name": "I",
+                    "Description": "Continental char I",
+                    "Symbol": "I",
+                    "AlphabetId": "0e80df5b-9894-4c64-bb73-a09290e549a3",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "a1db4b93-df75-4c0f-ac70-7e8b05fcc185",
+                    "Name": "J",
+                    "Description": "Continental char J",
+                    "Symbol": "J",
+                    "AlphabetId": "0e80df5b-9894-4c64-bb73-a09290e549a3",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "35e656dc-e546-480b-bcbf-8e5bbcd39764",
+                    "Name": "Y",
+                    "Description": "Continental char Y",
+                    "Symbol": "Y",
+                    "AlphabetId": "0e80df5b-9894-4c64-bb73-a09290e549a3",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "c9c02438-428e-48f7-bc9d-957037c20765",
+                    "Name": "4",
+                    "Description": "Continental char 4",
+                    "Symbol": "4",
+                    "AlphabetId": "0e80df5b-9894-4c64-bb73-a09290e549a3",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "e29ab2c6-acc4-4cbe-af63-9cb56d0af0e3",
+                    "Name": "R",
+                    "Description": "Continental char R",
+                    "Symbol": "R",
+                    "AlphabetId": "0e80df5b-9894-4c64-bb73-a09290e549a3",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "930e055e-d7ad-4145-847a-9e47c1627a0d",
+                    "Name": "T",
+                    "Description": "Continental char T",
+                    "Symbol": "T",
+                    "AlphabetId": "0e80df5b-9894-4c64-bb73-a09290e549a3",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "367c5eac-ecea-49a9-8171-a1c32271b9f8",
+                    "Name": "B",
+                    "Description": "Continental char B",
+                    "Symbol": "B",
+                    "AlphabetId": "0e80df5b-9894-4c64-bb73-a09290e549a3",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "627690f5-bcea-4b8b-b813-a26c2d966c92",
+                    "Name": "L",
+                    "Description": "Continental char L",
+                    "Symbol": "L",
+                    "AlphabetId": "0e80df5b-9894-4c64-bb73-a09290e549a3",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "5ba20c5d-ad3f-4634-9791-a2ed59b78b15",
+                    "Name": "8",
+                    "Description": "Continental char 8",
+                    "Symbol": "8",
+                    "AlphabetId": "0e80df5b-9894-4c64-bb73-a09290e549a3",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "2bc2aa3f-1c17-4788-83da-a8157436b326",
+                    "Name": "X",
+                    "Description": "Continental char X",
+                    "Symbol": "X",
+                    "AlphabetId": "0e80df5b-9894-4c64-bb73-a09290e549a3",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "e28bdb35-fbd3-483f-88af-aedccd1df8d9",
+                    "Name": "5",
+                    "Description": "Continental char 5",
+                    "Symbol": "5",
+                    "AlphabetId": "0e80df5b-9894-4c64-bb73-a09290e549a3",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "c25da203-8e8e-4896-9c8f-b0be3f60e5b1",
+                    "Name": "0",
+                    "Description": "Continental char 0",
+                    "Symbol": "0",
+                    "AlphabetId": "0e80df5b-9894-4c64-bb73-a09290e549a3",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "a85c6e8c-ba3b-4daa-904a-b375711faac5",
+                    "Name": "2",
+                    "Description": "Continental char 2",
+                    "Symbol": "2",
+                    "AlphabetId": "0e80df5b-9894-4c64-bb73-a09290e549a3",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "a8976512-e1d8-4a1e-a8c3-c3d956b990e7",
+                    "Name": "O",
+                    "Description": "Continental char O",
+                    "Symbol": "O",
+                    "AlphabetId": "0e80df5b-9894-4c64-bb73-a09290e549a3",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "24736e08-0731-487a-9fb0-cdfd3f02ec38",
+                    "Name": ".",
+                    "Description": "Continental char .",
+                    "Symbol": ".",
+                    "AlphabetId": "0e80df5b-9894-4c64-bb73-a09290e549a3",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "c262a145-15fc-414e-9cf3-d5ba034ab30d",
+                    "Name": "W",
+                    "Description": "Continental char W",
+                    "Symbol": "W",
+                    "AlphabetId": "0e80df5b-9894-4c64-bb73-a09290e549a3",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "495bc272-cf92-424d-93e8-e09f2c266b7f",
+                    "Name": "E",
+                    "Description": "Continental char E",
+                    "Symbol": "E",
+                    "AlphabetId": "0e80df5b-9894-4c64-bb73-a09290e549a3",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "13a8cde5-d91a-4ceb-91cf-ea7c549ee3e5",
+                    "Name": "Z",
+                    "Description": "Continental char Z",
+                    "Symbol": "Z",
+                    "AlphabetId": "0e80df5b-9894-4c64-bb73-a09290e549a3",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "12418fd3-07fe-41da-a98a-eb4ca2ca03f9",
+                    "Name": "H",
+                    "Description": "Continental char H",
+                    "Symbol": "H",
+                    "AlphabetId": "0e80df5b-9894-4c64-bb73-a09290e549a3",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "fbd3388b-e80f-4175-aafa-ed6d2639ebc0",
+                    "Name": "3",
+                    "Description": "Continental char 3",
+                    "Symbol": "3",
+                    "AlphabetId": "0e80df5b-9894-4c64-bb73-a09290e549a3",
+                    "CharacterSquences": []
+                }
+            ],
+            "Communications": []
+        },
+        {
+            "AlphabetId": "1339c23c-bd38-46c6-a425-cd5a12047f06",
+            "Name": "International",
+            "Description": "",
+            "Characters": [
+                {
+                    "CharacterId": "18f95cf9-0daa-4d6f-9407-059536112175",
+                    "Name": "0",
+                    "Description": "International char 0",
+                    "Symbol": "0",
+                    "AlphabetId": "1339c23c-bd38-46c6-a425-cd5a12047f06",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "d8ed5df3-c433-4f2b-bd86-05955149d792",
+                    "Name": "6",
+                    "Description": "International char 6",
+                    "Symbol": "6",
+                    "AlphabetId": "1339c23c-bd38-46c6-a425-cd5a12047f06",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "a3540aab-c1ee-43ba-8a3f-11939cdd66e6",
+                    "Name": "O",
+                    "Description": "International char O",
+                    "Symbol": "O",
+                    "AlphabetId": "1339c23c-bd38-46c6-a425-cd5a12047f06",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "3b1b3550-0604-49f4-91c3-1b91e6d05a51",
+                    "Name": "X",
+                    "Description": "International char X",
+                    "Symbol": "X",
+                    "AlphabetId": "1339c23c-bd38-46c6-a425-cd5a12047f06",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "761b2787-784d-453b-82ac-2758c65c0538",
+                    "Name": "-",
+                    "Description": "International char -",
+                    "Symbol": "-",
+                    "AlphabetId": "1339c23c-bd38-46c6-a425-cd5a12047f06",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "20388357-f65f-48f9-8b39-29d283bc9c5f",
+                    "Name": "P",
+                    "Description": "International char P",
+                    "Symbol": "P",
+                    "AlphabetId": "1339c23c-bd38-46c6-a425-cd5a12047f06",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "3051dcb1-a4e7-44d7-b5d5-2cca96ae4988",
+                    "Name": "4",
+                    "Description": "International char 4",
+                    "Symbol": "4",
+                    "AlphabetId": "1339c23c-bd38-46c6-a425-cd5a12047f06",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "296ec7ac-25ea-4dbe-8425-38fd18892d0f",
+                    "Name": "W",
+                    "Description": "International char W",
+                    "Symbol": "W",
+                    "AlphabetId": "1339c23c-bd38-46c6-a425-cd5a12047f06",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "76ebf6d8-e6e5-4b4a-a165-3d6050e7e8db",
+                    "Name": "K",
+                    "Description": "International char K",
+                    "Symbol": "K",
+                    "AlphabetId": "1339c23c-bd38-46c6-a425-cd5a12047f06",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "5c7dca44-4a40-48b0-a77a-3dc432f0765e",
+                    "Name": " ",
+                    "Description": "International char  ",
+                    "Symbol": " ",
+                    "AlphabetId": "1339c23c-bd38-46c6-a425-cd5a12047f06",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "42d9b20f-0b3a-4129-9598-4079b5722f90",
+                    "Name": "Y",
+                    "Description": "International char Y",
+                    "Symbol": "Y",
+                    "AlphabetId": "1339c23c-bd38-46c6-a425-cd5a12047f06",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "c0f3421f-b855-4f97-a38f-441b38722c78",
+                    "Name": "A",
+                    "Description": "International char A",
+                    "Symbol": "A",
+                    "AlphabetId": "1339c23c-bd38-46c6-a425-cd5a12047f06",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "8cca103c-dca9-4e99-97d7-464f0af69016",
+                    "Name": "I",
+                    "Description": "International char I",
+                    "Symbol": "I",
+                    "AlphabetId": "1339c23c-bd38-46c6-a425-cd5a12047f06",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "3dc4e07b-e23d-480f-ab00-4a5f79d9f23f",
+                    "Name": "7",
+                    "Description": "International char 7",
+                    "Symbol": "7",
+                    "AlphabetId": "1339c23c-bd38-46c6-a425-cd5a12047f06",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "66d44e42-f975-4487-bdff-4f719d313b69",
+                    "Name": "F",
+                    "Description": "International char F",
+                    "Symbol": "F",
+                    "AlphabetId": "1339c23c-bd38-46c6-a425-cd5a12047f06",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "f8c31522-7dc9-4d4e-8924-4f85844bed16",
+                    "Name": "3",
+                    "Description": "International char 3",
+                    "Symbol": "3",
+                    "AlphabetId": "1339c23c-bd38-46c6-a425-cd5a12047f06",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "edece086-9ba6-485a-984d-4fd7a84430ec",
+                    "Name": "T",
+                    "Description": "International char T",
+                    "Symbol": "T",
+                    "AlphabetId": "1339c23c-bd38-46c6-a425-cd5a12047f06",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "da44c5dc-cf22-43a5-875d-505f2a2f634c",
+                    "Name": "S",
+                    "Description": "International char S",
+                    "Symbol": "S",
+                    "AlphabetId": "1339c23c-bd38-46c6-a425-cd5a12047f06",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "2566656f-399b-48c2-ad10-50808d3286d8",
+                    "Name": "M",
+                    "Description": "International char M",
+                    "Symbol": "M",
+                    "AlphabetId": "1339c23c-bd38-46c6-a425-cd5a12047f06",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "9f4cbc9e-9d3b-47f1-9ab0-5531e1fe7ecd",
+                    "Name": ".",
+                    "Description": "International char .",
+                    "Symbol": ".",
+                    "AlphabetId": "1339c23c-bd38-46c6-a425-cd5a12047f06",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "20e7c572-7aa6-492e-9ba8-570868d9f1b5",
+                    "Name": "C",
+                    "Description": "International char C",
+                    "Symbol": "C",
+                    "AlphabetId": "1339c23c-bd38-46c6-a425-cd5a12047f06",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "6627ac97-056b-4ed7-b5f5-5721249f1c99",
+                    "Name": "R",
+                    "Description": "International char R",
+                    "Symbol": "R",
+                    "AlphabetId": "1339c23c-bd38-46c6-a425-cd5a12047f06",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "3c152f5b-9ec5-4301-9b24-794b1d378926",
+                    "Name": "E",
+                    "Description": "International char E",
+                    "Symbol": "E",
+                    "AlphabetId": "1339c23c-bd38-46c6-a425-cd5a12047f06",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "0fcaec10-e8ed-4f97-847d-7b23d4348ad4",
+                    "Name": "1",
+                    "Description": "International char 1",
+                    "Symbol": "1",
+                    "AlphabetId": "1339c23c-bd38-46c6-a425-cd5a12047f06",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "99b38770-cd82-497b-b7cc-7eeaecc712f6",
+                    "Name": "2",
+                    "Description": "International char 2",
+                    "Symbol": "2",
+                    "AlphabetId": "1339c23c-bd38-46c6-a425-cd5a12047f06",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "cd56f4d9-f5a5-4a5e-ad18-82b851cd526b",
+                    "Name": "L",
+                    "Description": "International char L",
+                    "Symbol": "L",
+                    "AlphabetId": "1339c23c-bd38-46c6-a425-cd5a12047f06",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "52428046-cad2-4a18-881d-848cee9e96a7",
+                    "Name": "D",
+                    "Description": "International char D",
+                    "Symbol": "D",
+                    "AlphabetId": "1339c23c-bd38-46c6-a425-cd5a12047f06",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "9ff1ffdb-acec-4a5f-998f-8b2ac6265ef8",
+                    "Name": "N",
+                    "Description": "International char N",
+                    "Symbol": "N",
+                    "AlphabetId": "1339c23c-bd38-46c6-a425-cd5a12047f06",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "70cdc580-4559-4644-bd3d-920b4b22e1bf",
+                    "Name": "V",
+                    "Description": "International char V",
+                    "Symbol": "V",
+                    "AlphabetId": "1339c23c-bd38-46c6-a425-cd5a12047f06",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "2f5cce43-185f-4c61-874f-b3273692c176",
+                    "Name": "G",
+                    "Description": "International char G",
+                    "Symbol": "G",
+                    "AlphabetId": "1339c23c-bd38-46c6-a425-cd5a12047f06",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "61d935ba-97e2-4800-bc29-b52a4553fc45",
+                    "Name": "U",
+                    "Description": "International char U",
+                    "Symbol": "U",
+                    "AlphabetId": "1339c23c-bd38-46c6-a425-cd5a12047f06",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "f12bc785-d303-4334-b4d4-b62a71869d43",
+                    "Name": "Q",
+                    "Description": "International char Q",
+                    "Symbol": "Q",
+                    "AlphabetId": "1339c23c-bd38-46c6-a425-cd5a12047f06",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "fa204d55-655f-4d69-92af-b646cb5bc3a2",
+                    "Name": "H",
+                    "Description": "International char H",
+                    "Symbol": "H",
+                    "AlphabetId": "1339c23c-bd38-46c6-a425-cd5a12047f06",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "19f081ad-c393-4cd0-a894-b747a96329ba",
+                    "Name": "J",
+                    "Description": "International char J",
+                    "Symbol": "J",
+                    "AlphabetId": "1339c23c-bd38-46c6-a425-cd5a12047f06",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "25bb5650-69b4-4d36-9548-bf3efcf48e50",
+                    "Name": "B",
+                    "Description": "International char B",
+                    "Symbol": "B",
+                    "AlphabetId": "1339c23c-bd38-46c6-a425-cd5a12047f06",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "410b85ab-1393-4722-96fc-e77576da4a70",
+                    "Name": "5",
+                    "Description": "International char 5",
+                    "Symbol": "5",
+                    "AlphabetId": "1339c23c-bd38-46c6-a425-cd5a12047f06",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "7c6fe851-d8f4-4059-8825-f9f8f2931fa5",
+                    "Name": "9",
+                    "Description": "International char 9",
+                    "Symbol": "9",
+                    "AlphabetId": "1339c23c-bd38-46c6-a425-cd5a12047f06",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "ab3aebed-704b-46a7-a94a-fbd69027f79e",
+                    "Name": "8",
+                    "Description": "International char 8",
+                    "Symbol": "8",
+                    "AlphabetId": "1339c23c-bd38-46c6-a425-cd5a12047f06",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "594900d1-76e4-4c79-9a71-ff4c50226f24",
+                    "Name": "Z",
+                    "Description": "International char Z",
+                    "Symbol": "Z",
+                    "AlphabetId": "1339c23c-bd38-46c6-a425-cd5a12047f06",
+                    "CharacterSquences": []
+                }
+            ],
+            "Communications": []
+        },
+        {
+            "AlphabetId": "9ef17723-4707-4225-94eb-d7459ed6f504",
+            "Name": "American",
+            "Description": "",
+            "Characters": [
+                {
+                    "CharacterId": "54267320-d851-46d4-be13-00b2a9a54225",
+                    "Name": "Z",
+                    "Description": "American char Z",
+                    "Symbol": "Z",
+                    "AlphabetId": "9ef17723-4707-4225-94eb-d7459ed6f504",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "03237e1d-1b14-400b-b32c-0d59b5c95186",
+                    "Name": "R",
+                    "Description": "American char R",
+                    "Symbol": "R",
+                    "AlphabetId": "9ef17723-4707-4225-94eb-d7459ed6f504",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "8db89091-ccac-488d-95fd-0f9c27a57bc0",
+                    "Name": "J",
+                    "Description": "American char J",
+                    "Symbol": "J",
+                    "AlphabetId": "9ef17723-4707-4225-94eb-d7459ed6f504",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "88d23aae-6544-4328-8c50-11f3b7616e05",
+                    "Name": "D",
+                    "Description": "American char D",
+                    "Symbol": "D",
+                    "AlphabetId": "9ef17723-4707-4225-94eb-d7459ed6f504",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "2b40ae42-68df-41f4-965d-1a1520245285",
+                    "Name": "A",
+                    "Description": "",
+                    "Symbol": "A",
+                    "AlphabetId": "9ef17723-4707-4225-94eb-d7459ed6f504",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "8b1dfca3-5cce-40bb-a8b7-35fa3e6388ec",
+                    "Name": "I",
+                    "Description": "American char I",
+                    "Symbol": "I",
+                    "AlphabetId": "9ef17723-4707-4225-94eb-d7459ed6f504",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "90c9adbb-10f5-4708-a4c3-607efb798d5d",
+                    "Name": "2",
+                    "Description": "American char 2",
+                    "Symbol": "2",
+                    "AlphabetId": "9ef17723-4707-4225-94eb-d7459ed6f504",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "a19fb8eb-8053-49dc-86be-66aebfcd80b6",
+                    "Name": "K",
+                    "Description": "American char K",
+                    "Symbol": "K",
+                    "AlphabetId": "9ef17723-4707-4225-94eb-d7459ed6f504",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "c99710b5-529f-42ff-b00e-6b6828fc15fb",
+                    "Name": "1",
+                    "Description": "American char 1",
+                    "Symbol": "1",
+                    "AlphabetId": "9ef17723-4707-4225-94eb-d7459ed6f504",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "1f293de8-9684-4c61-9b2c-6b947ef45046",
+                    "Name": "Q",
+                    "Description": "American char Q",
+                    "Symbol": "Q",
+                    "AlphabetId": "9ef17723-4707-4225-94eb-d7459ed6f504",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "dec1449b-2010-4458-afb5-6bbda7d211be",
+                    "Name": "M",
+                    "Description": "American char M",
+                    "Symbol": "M",
+                    "AlphabetId": "9ef17723-4707-4225-94eb-d7459ed6f504",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "6fd6a3e5-03a5-4aa6-9762-6dd72b70b91c",
+                    "Name": "U",
+                    "Description": "American char U",
+                    "Symbol": "U",
+                    "AlphabetId": "9ef17723-4707-4225-94eb-d7459ed6f504",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "62c43629-c9e7-43e5-8da5-6f9d578ca3eb",
+                    "Name": "4",
+                    "Description": "American char 4",
+                    "Symbol": "4",
+                    "AlphabetId": "9ef17723-4707-4225-94eb-d7459ed6f504",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "00d2c51f-60ae-4409-b6e9-73ee4701a27b",
+                    "Name": "F",
+                    "Description": "American char F",
+                    "Symbol": "F",
+                    "AlphabetId": "9ef17723-4707-4225-94eb-d7459ed6f504",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "5f65e343-d124-45dc-98a7-7e98ab5ad8b0",
+                    "Name": "X",
+                    "Description": "American char X",
+                    "Symbol": "X",
+                    "AlphabetId": "9ef17723-4707-4225-94eb-d7459ed6f504",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "059d8ca3-a0e8-4dbe-8c6f-7fc3999f55f6",
+                    "Name": "H",
+                    "Description": "American char H",
+                    "Symbol": "H",
+                    "AlphabetId": "9ef17723-4707-4225-94eb-d7459ed6f504",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "b5332a14-c228-454e-a013-87d0215e4ab1",
+                    "Name": "C",
+                    "Description": "American char C",
+                    "Symbol": "C",
+                    "AlphabetId": "9ef17723-4707-4225-94eb-d7459ed6f504",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "194953ed-7855-44c8-95f8-8cc5d0354f46",
+                    "Name": "E",
+                    "Description": "American char E",
+                    "Symbol": "E",
+                    "AlphabetId": "9ef17723-4707-4225-94eb-d7459ed6f504",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "d6069831-1d09-484e-a533-8d6b5a07a848",
+                    "Name": "6",
+                    "Description": "American char 6",
+                    "Symbol": "6",
+                    "AlphabetId": "9ef17723-4707-4225-94eb-d7459ed6f504",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "6dc9a9dd-667f-459b-b78b-9ba7d4825f35",
+                    "Name": "8",
+                    "Description": "American char 8",
+                    "Symbol": "8",
+                    "AlphabetId": "9ef17723-4707-4225-94eb-d7459ed6f504",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "af56f091-be88-4a87-8d7f-9f6c0a7569e0",
+                    "Name": "3",
+                    "Description": "American char 3",
+                    "Symbol": "3",
+                    "AlphabetId": "9ef17723-4707-4225-94eb-d7459ed6f504",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "f02b27dd-5e8d-4025-8ec9-a0fae1d26fd3",
+                    "Name": "9",
+                    "Description": "American char 9",
+                    "Symbol": "9",
+                    "AlphabetId": "9ef17723-4707-4225-94eb-d7459ed6f504",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "f2711c48-bac4-47bf-afd1-a273d860567f",
+                    "Name": "G",
+                    "Description": "American char G",
+                    "Symbol": "G",
+                    "AlphabetId": "9ef17723-4707-4225-94eb-d7459ed6f504",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "2c7c1d15-e563-4618-8a69-a4dbcfccad89",
+                    "Name": "T",
+                    "Description": "American char T",
+                    "Symbol": "T",
+                    "AlphabetId": "9ef17723-4707-4225-94eb-d7459ed6f504",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "92af75b4-a3a5-443d-af25-a594aa905076",
+                    "Name": "V",
+                    "Description": "American char V",
+                    "Symbol": "V",
+                    "AlphabetId": "9ef17723-4707-4225-94eb-d7459ed6f504",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "b91fc878-7a7a-4101-9302-b7999f5aad19",
+                    "Name": "S",
+                    "Description": "American char S",
+                    "Symbol": "S",
+                    "AlphabetId": "9ef17723-4707-4225-94eb-d7459ed6f504",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "671df617-c256-41fb-8de6-b8a84eeb4b9b",
+                    "Name": "O",
+                    "Description": "American char O",
+                    "Symbol": "O",
+                    "AlphabetId": "9ef17723-4707-4225-94eb-d7459ed6f504",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "7c9ef50f-d0dc-46f3-b40a-bd01eaa682a4",
+                    "Name": "W",
+                    "Description": "American char W",
+                    "Symbol": "W",
+                    "AlphabetId": "9ef17723-4707-4225-94eb-d7459ed6f504",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "5588c788-a0f0-4bd6-a4a7-be9fc442372d",
+                    "Name": "-",
+                    "Description": "American char -",
+                    "Symbol": "-",
+                    "AlphabetId": "9ef17723-4707-4225-94eb-d7459ed6f504",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "45bfdf78-a792-4762-93cd-bfcef5f3b789",
+                    "Name": "N",
+                    "Description": "American char N",
+                    "Symbol": "N",
+                    "AlphabetId": "9ef17723-4707-4225-94eb-d7459ed6f504",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "52146c2d-481b-4af9-9898-c843b0d35e81",
+                    "Name": "L",
+                    "Description": "American char L",
+                    "Symbol": "L",
+                    "AlphabetId": "9ef17723-4707-4225-94eb-d7459ed6f504",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "a8eda4bc-76b3-48f7-ad2f-c9f17dd2501f",
+                    "Name": "0",
+                    "Description": "American char 0",
+                    "Symbol": "0",
+                    "AlphabetId": "9ef17723-4707-4225-94eb-d7459ed6f504",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "dc1551b6-6c21-46d9-b385-cde6ad79c8a7",
+                    "Name": "B",
+                    "Description": "",
+                    "Symbol": "B",
+                    "AlphabetId": "9ef17723-4707-4225-94eb-d7459ed6f504",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "6765f098-567b-4f17-8f14-d713bdc7bbb8",
+                    "Name": ".",
+                    "Description": "American char .",
+                    "Symbol": ".",
+                    "AlphabetId": "9ef17723-4707-4225-94eb-d7459ed6f504",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "9a6353bd-d533-473e-9e33-ddfc442e928d",
+                    "Name": "P",
+                    "Description": "American char P",
+                    "Symbol": "P",
+                    "AlphabetId": "9ef17723-4707-4225-94eb-d7459ed6f504",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "771023f3-a246-4e13-ab6a-e1f06f3515e4",
+                    "Name": " ",
+                    "Description": "American char  ",
+                    "Symbol": " ",
+                    "AlphabetId": "9ef17723-4707-4225-94eb-d7459ed6f504",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "832d2e54-b05e-4505-a3de-e322040ded13",
+                    "Name": "5",
+                    "Description": "American char 5",
+                    "Symbol": "5",
+                    "AlphabetId": "9ef17723-4707-4225-94eb-d7459ed6f504",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "2acde574-d674-4964-afae-e67eed764480",
+                    "Name": "Y",
+                    "Description": "American char Y",
+                    "Symbol": "Y",
+                    "AlphabetId": "9ef17723-4707-4225-94eb-d7459ed6f504",
+                    "CharacterSquences": []
+                },
+                {
+                    "CharacterId": "e71860ed-3ff4-4e31-9050-f537fd94cd2a",
+                    "Name": "7",
+                    "Description": "American char 7",
+                    "Symbol": "7",
+                    "AlphabetId": "9ef17723-4707-4225-94eb-d7459ed6f504",
+                    "CharacterSquences": []
+                }
+            ],
+            "Communications": []
+        }
+    ]
+}

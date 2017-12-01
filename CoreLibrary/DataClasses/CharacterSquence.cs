@@ -9,11 +9,16 @@ using System.ComponentModel;
 namespace MorseCodeHelper.Lib.DataClasses
 {                   
     
-    public partial class Sequence 
+    public partial class CharacterSquence 
     {
-        public Sequence()
+        public CharacterSquence()
         {
             this.InitPoco();
+        }
+
+        public override String ToString()
+        {
+            return String.Format("CharacterSquence: {0}", this.Name);
         }
     }
 }

@@ -37,13 +37,13 @@
                             Each Character may have zero or more associated
                           
                             
-                                <a href="#Sequence">
+                                <a href="#CharacterSquence">
                                 
-                                    Sequences
+                                    CharacterSquences
                                     
                                 </a>
                         
-                        </div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>CharacterId</td><td>GUID</td><td>CharacterId</td></tr><tr><td>Name</td><td>TEXT</td><td>Name</td></tr><tr><td>Description</td><td>TEXT</td><td>Description</td></tr><tr><td>Symbol</td><td>text</td><td>Symbol</td></tr><tr><td>AlphabetId</td><td>GUID</td><td></td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
+                        </div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>CharacterId</td><td>GUID</td><td>CharacterId</td></tr><tr><td>Name</td><td>TEXT</td><td>Name</td></tr><tr><td>Description</td><td>TEXT</td><td>Description</td></tr><tr><td>SequenceCode</td><td>TEXT</td><td>SequenceCode</td></tr><tr><td>Symbol</td><td>text</td><td>Symbol</td></tr><tr><td>AlphabetId</td><td>GUID</td><td></td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
                         <a name="Communication"></a>
                         <hr /><div style="float: right;">
                         Parented by 
@@ -240,7 +240,7 @@
                         
                         
                         </div><h2>Repeater</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>RepeaterId</td><td>GUID</td><td>RepeaterId</td></tr><tr><td>Name</td><td>TEXT</td><td>Name</td></tr><tr><td>Description</td><td>TEXT</td><td>Description</td></tr><tr><td>MCDeviceId</td><td>GUID</td><td></td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
-                        <a name="Sequence"></a>
+                        <a name="CharacterSquence"></a>
                         <hr /><div style="float: right;">
                         Parented by 
                         
@@ -248,26 +248,23 @@
                                 <a href="#Character">Character</a>
                         
                         
-                        </div><h2>Sequence</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div><div style="padding: 1em;">
-                            Each Sequence may have zero or more associated
+                            
+                                , <a href="#Signal">Signal</a>
+                        
+                        
+                        </div><h2>CharacterSquence</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>CharacterSquenceId</td><td>GUID</td><td>SequenceId</td></tr><tr><td>Name</td><td>TEXT</td><td>Name</td></tr><tr><td>Description</td><td>TEXT</td><td>Description</td></tr><tr><td>Index</td><td>INT32</td><td>Index</td></tr><tr><td>CharacterId</td><td>GUID</td><td></td></tr><tr><td>SignalId</td><td>GUID</td><td></td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
+                        <a name="Signal"></a>
+                        <hr /><h2>Signal</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div><div style="padding: 1em;">
+                            Each Signal may have zero or more associated
                           
                             
-                                <a href="#Signal">
+                                <a href="#CharacterSquence">
                                 
-                                    Signals
+                                    CharacterSquences
                                     
                                 </a>
                         
-                        </div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>SequenceId</td><td>GUID</td><td>SequenceId</td></tr><tr><td>Name</td><td>TEXT</td><td>Name</td></tr><tr><td>Description</td><td>TEXT</td><td>Description</td></tr><tr><td>CharacterId</td><td>GUID</td><td></td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
-                        <a name="Signal"></a>
-                        <hr /><div style="float: right;">
-                        Parented by 
-                        
-                            
-                                <a href="#Sequence">Sequence</a>
-                        
-                        
-                        </div><h2>Signal</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>SignalId</td><td>GUID</td><td>SignalId</td></tr><tr><td>Name</td><td>TEXT</td><td>Name</td></tr><tr><td>Description</td><td>TEXT</td><td>Description</td></tr><tr><td>Symbol</td><td>TEXT</td><td>Symbol</td></tr><tr><td>ShortCode</td><td>TEXT</td><td>ShortCode</td></tr><tr><td>LongCode</td><td>TEXT</td><td>LongCode</td></tr><tr><td>RelativeTime</td><td>int32</td><td>RelativeTime</td></tr><tr><td>SequenceId</td><td>GUID</td><td></td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
+                        </div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>SignalId</td><td>GUID</td><td>SignalId</td></tr><tr><td>Name</td><td>TEXT</td><td>Name</td></tr><tr><td>Description</td><td>TEXT</td><td>Description</td></tr><tr><td>Symbol</td><td>TEXT</td><td>Symbol</td></tr><tr><td>ShortCode</td><td>TEXT</td><td>ShortCode</td></tr><tr><td>LongCode</td><td>TEXT</td><td>LongCode</td></tr><tr><td>BinaryCode</td><td>TEXT</td><td>BinaryCode</td></tr><tr><td>SortOrder</td><td>int32</td><td>SortOrder</td></tr><tr><td>RelativeTime</td><td>int32</td><td>RelativeTime</td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
                         <a name="Telegraph"></a>
                         <hr /><div style="float: right;">
                         Parented by 

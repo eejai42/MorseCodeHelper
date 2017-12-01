@@ -187,6 +187,10 @@
     <Compile Include="Controllers\api\CharactersController.designer.cs">
       <DependentUpon>CharactersController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\api\CharacterSquencesController.cs" />
+    <Compile Include="Controllers\api\CharacterSquencesController.designer.cs">
+      <DependentUpon>CharacterSquencesController.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\api\CommunicationsController.cs" />
     <Compile Include="Controllers\api\CommunicationsController.designer.cs">
       <DependentUpon>CommunicationsController.cs</DependentUpon>
@@ -234,10 +238,6 @@
     <Compile Include="Controllers\api\SentencesController.cs" />
     <Compile Include="Controllers\api\SentencesController.designer.cs">
       <DependentUpon>SentencesController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controllers\api\SequencesController.cs" />
-    <Compile Include="Controllers\api\SequencesController.designer.cs">
-      <DependentUpon>SequencesController.cs</DependentUpon>
     </Compile>
     <Compile Include="Controllers\api\SignalsController.cs" />
     <Compile Include="Controllers\api\SignalsController.designer.cs">

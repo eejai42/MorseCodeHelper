@@ -15,7 +15,7 @@ namespace MorseCodeHelper.Lib.DataClasses
             
             this.CharacterId = Guid.NewGuid();
             
-                this.Sequences = new BindingList<Sequence>();
+                this.CharacterSquences = new BindingList<CharacterSquence>();
             
 
         }
@@ -30,6 +30,9 @@ namespace MorseCodeHelper.Lib.DataClasses
         [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "Description")]
         public String Description { get; set; }
     
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "SequenceCode")]
+        public String SequenceCode { get; set; }
+    
         [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "Symbol")]
         public String Symbol { get; set; }
     
@@ -38,23 +41,23 @@ namespace MorseCodeHelper.Lib.DataClasses
     
 
         
-        [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "Sequences")]
-        public BindingList<Sequence> Sequences { get; set; }
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "CharacterSquences")]
+        public BindingList<CharacterSquence> CharacterSquences { get; set; }
             
         /// <summary>
-        /// Check to see if there are any related Sequences, and load them if requested
+        /// Check to see if there are any related CharacterSquences, and load them if requested
         /// </summary>
-        public static void CheckExpandSequences(SqlDataManager sdm, IEnumerable<Character> characters, string expandString)
+        public static void CheckExpandCharacterSquences(SqlDataManager sdm, IEnumerable<Character> characters, string expandString)
         {
             var charactersWhere = CreateCharacterWhere(characters);
             expandString = expandString.SafeToString();
 
-            if (String.Equals(expandString, "all", StringComparison.OrdinalIgnoreCase) || expandString.IndexOf("sequences", StringComparison.OrdinalIgnoreCase) >= 0)
+            if (String.Equals(expandString, "all", StringComparison.OrdinalIgnoreCase) || expandString.IndexOf("characterSquences", StringComparison.OrdinalIgnoreCase) >= 0)
             {
-                var childSequences = sdm.GetAllSequences<Sequence>(charactersWhere);
+                var childCharacterSquences = sdm.GetAllCharacterSquences<CharacterSquence>(charactersWhere);
 
                 characters.ToList()
-                        .ForEach(feCharacter => feCharacter.LoadSequences(childSequences));
+                        .ForEach(feCharacter => feCharacter.LoadCharacterSquences(childCharacterSquences));
             }
 
         }
@@ -64,13 +67,13 @@ namespace MorseCodeHelper.Lib.DataClasses
 
         
         /// <summary>
-        /// Find the related Sequences (from the list provided) and attach them locally to the Sequences list.
+        /// Find the related CharacterSquences (from the list provided) and attach them locally to the CharacterSquences list.
         /// </summary>
-        public void LoadSequences(IEnumerable<Sequence> sequences)
+        public void LoadCharacterSquences(IEnumerable<CharacterSquence> characterSquences)
         {
-            sequences.Where(whereSequence => whereSequence.CharacterId == this.CharacterId)
+            characterSquences.Where(whereCharacterSquence => whereCharacterSquence.CharacterId == this.CharacterId)
                     .ToList()
-                    .ForEach(feSequence => this.Sequences.Add(feSequence));
+                    .ForEach(feCharacterSquence => this.CharacterSquences.Add(feCharacterSquence));
         }
         
 
@@ -91,7 +94,7 @@ namespace MorseCodeHelper.Lib.DataClasses
         {
             
             
-            CheckExpandSequences(sdm, characters, expandString);
+            CheckExpandCharacterSquences(sdm, characters, expandString);
         }
         
     }

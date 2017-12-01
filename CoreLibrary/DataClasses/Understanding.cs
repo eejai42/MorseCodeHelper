@@ -15,5 +15,10 @@ namespace MorseCodeHelper.Lib.DataClasses
         {
             this.InitPoco();
         }
+
+        public override String ToString()
+        {
+            return String.Format("Understanding: {0}", this.Name);
+        }
     }
 }

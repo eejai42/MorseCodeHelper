@@ -79,7 +79,7 @@ ELSE
     
     
     
-    -- COUNT: 5
+    -- COUNT: 6
 IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'CharacterId' AND Object_ID = Object_ID(N'Character'))
 BEGIN
         ALTER TABLE [dbo].[Character] ADD [CharacterId] UNIQUEIDENTIFIER NULL;
@@ -89,7 +89,7 @@ END
     
     
     
-    -- COUNT: 5
+    -- COUNT: 6
 IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'Name' AND Object_ID = Object_ID(N'Character'))
 BEGIN
         ALTER TABLE [dbo].[Character] ADD [Name] NVARCHAR(100) NULL;
@@ -110,7 +110,7 @@ ELSE
     
     
     
-    -- COUNT: 5
+    -- COUNT: 6
 IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'Description' AND Object_ID = Object_ID(N'Character'))
 BEGIN
         ALTER TABLE [dbo].[Character] ADD [Description] NVARCHAR(100) NULL;
@@ -131,7 +131,28 @@ ELSE
     
     
     
-    -- COUNT: 5
+    -- COUNT: 6
+IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'SequenceCode' AND Object_ID = Object_ID(N'Character'))
+BEGIN
+        ALTER TABLE [dbo].[Character] ADD [SequenceCode] NVARCHAR(100) NULL;
+END
+
+    
+ELSE
+    BEGIN 
+
+
+        ALTER TABLE [dbo].[Character] ALTER COLUMN [SequenceCode] NVARCHAR(100) NOT NULL;
+
+    
+
+	END
+
+    
+    
+    
+    
+    -- COUNT: 6
 IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'Symbol' AND Object_ID = Object_ID(N'Character'))
 BEGIN
         ALTER TABLE [dbo].[Character] ADD [Symbol] NVARCHAR(100) NULL;
@@ -152,7 +173,7 @@ ELSE
     
     
     
-    -- COUNT: 5
+    -- COUNT: 6
 IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'AlphabetId' AND Object_ID = Object_ID(N'Character'))
 BEGIN
         ALTER TABLE [dbo].[Character] ADD [AlphabetId] UNIQUEIDENTIFIER NULL;
@@ -976,20 +997,20 @@ ELSE
     
     
     
-    -- COUNT: 4
-IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'SequenceId' AND Object_ID = Object_ID(N'Sequence'))
+    -- COUNT: 6
+IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'CharacterSquenceId' AND Object_ID = Object_ID(N'CharacterSquence'))
 BEGIN
-        ALTER TABLE [dbo].[Sequence] ADD [SequenceId] UNIQUEIDENTIFIER NULL;
+        ALTER TABLE [dbo].[CharacterSquence] ADD [CharacterSquenceId] UNIQUEIDENTIFIER NULL;
 END
 
     
     
     
     
-    -- COUNT: 4
-IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'Name' AND Object_ID = Object_ID(N'Sequence'))
+    -- COUNT: 6
+IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'Name' AND Object_ID = Object_ID(N'CharacterSquence'))
 BEGIN
-        ALTER TABLE [dbo].[Sequence] ADD [Name] NVARCHAR(100) NULL;
+        ALTER TABLE [dbo].[CharacterSquence] ADD [Name] NVARCHAR(100) NULL;
 END
 
     
@@ -997,7 +1018,7 @@ ELSE
     BEGIN 
 
 
-        ALTER TABLE [dbo].[Sequence] ALTER COLUMN [Name] NVARCHAR(100) NOT NULL;
+        ALTER TABLE [dbo].[CharacterSquence] ALTER COLUMN [Name] NVARCHAR(100) NOT NULL;
 
     
 
@@ -1007,10 +1028,10 @@ ELSE
     
     
     
-    -- COUNT: 4
-IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'Description' AND Object_ID = Object_ID(N'Sequence'))
+    -- COUNT: 6
+IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'Description' AND Object_ID = Object_ID(N'CharacterSquence'))
 BEGIN
-        ALTER TABLE [dbo].[Sequence] ADD [Description] NVARCHAR(100) NULL;
+        ALTER TABLE [dbo].[CharacterSquence] ADD [Description] NVARCHAR(100) NULL;
 END
 
     
@@ -1018,7 +1039,7 @@ ELSE
     BEGIN 
 
 
-        ALTER TABLE [dbo].[Sequence] ALTER COLUMN [Description] NVARCHAR(100) NOT NULL;
+        ALTER TABLE [dbo].[CharacterSquence] ALTER COLUMN [Description] NVARCHAR(100) NOT NULL;
 
     
 
@@ -1028,10 +1049,10 @@ ELSE
     
     
     
-    -- COUNT: 4
-IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'CharacterId' AND Object_ID = Object_ID(N'Sequence'))
+    -- COUNT: 6
+IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'Index' AND Object_ID = Object_ID(N'CharacterSquence'))
 BEGIN
-        ALTER TABLE [dbo].[Sequence] ADD [CharacterId] UNIQUEIDENTIFIER NULL;
+        ALTER TABLE [dbo].[CharacterSquence] ADD [Index] INT NULL;
 END
 
     
@@ -1039,7 +1060,7 @@ ELSE
     BEGIN 
 
 
-        ALTER TABLE [dbo].[Sequence] ALTER COLUMN [CharacterId] UNIQUEIDENTIFIER NULL;
+        ALTER TABLE [dbo].[CharacterSquence] ALTER COLUMN [Index] INT NOT NULL;
 
     
 
@@ -1049,7 +1070,49 @@ ELSE
     
     
     
-    -- COUNT: 8
+    -- COUNT: 6
+IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'CharacterId' AND Object_ID = Object_ID(N'CharacterSquence'))
+BEGIN
+        ALTER TABLE [dbo].[CharacterSquence] ADD [CharacterId] UNIQUEIDENTIFIER NULL;
+END
+
+    
+ELSE
+    BEGIN 
+
+
+        ALTER TABLE [dbo].[CharacterSquence] ALTER COLUMN [CharacterId] UNIQUEIDENTIFIER NULL;
+
+    
+
+	END
+
+    
+    
+    
+    
+    -- COUNT: 6
+IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'SignalId' AND Object_ID = Object_ID(N'CharacterSquence'))
+BEGIN
+        ALTER TABLE [dbo].[CharacterSquence] ADD [SignalId] UNIQUEIDENTIFIER NULL;
+END
+
+    
+ELSE
+    BEGIN 
+
+
+        ALTER TABLE [dbo].[CharacterSquence] ALTER COLUMN [SignalId] UNIQUEIDENTIFIER NULL;
+
+    
+
+	END
+
+    
+    
+    
+    
+    -- COUNT: 9
 IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'SignalId' AND Object_ID = Object_ID(N'Signal'))
 BEGIN
         ALTER TABLE [dbo].[Signal] ADD [SignalId] UNIQUEIDENTIFIER NULL;
@@ -1059,7 +1122,7 @@ END
     
     
     
-    -- COUNT: 8
+    -- COUNT: 9
 IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'Name' AND Object_ID = Object_ID(N'Signal'))
 BEGIN
         ALTER TABLE [dbo].[Signal] ADD [Name] NVARCHAR(100) NULL;
@@ -1080,7 +1143,7 @@ ELSE
     
     
     
-    -- COUNT: 8
+    -- COUNT: 9
 IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'Description' AND Object_ID = Object_ID(N'Signal'))
 BEGIN
         ALTER TABLE [dbo].[Signal] ADD [Description] NVARCHAR(100) NULL;
@@ -1101,7 +1164,7 @@ ELSE
     
     
     
-    -- COUNT: 8
+    -- COUNT: 9
 IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'Symbol' AND Object_ID = Object_ID(N'Signal'))
 BEGIN
         ALTER TABLE [dbo].[Signal] ADD [Symbol] NVARCHAR(100) NULL;
@@ -1122,7 +1185,7 @@ ELSE
     
     
     
-    -- COUNT: 8
+    -- COUNT: 9
 IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'ShortCode' AND Object_ID = Object_ID(N'Signal'))
 BEGIN
         ALTER TABLE [dbo].[Signal] ADD [ShortCode] NVARCHAR(100) NULL;
@@ -1143,7 +1206,7 @@ ELSE
     
     
     
-    -- COUNT: 8
+    -- COUNT: 9
 IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'LongCode' AND Object_ID = Object_ID(N'Signal'))
 BEGIN
         ALTER TABLE [dbo].[Signal] ADD [LongCode] NVARCHAR(100) NULL;
@@ -1164,7 +1227,49 @@ ELSE
     
     
     
-    -- COUNT: 8
+    -- COUNT: 9
+IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'BinaryCode' AND Object_ID = Object_ID(N'Signal'))
+BEGIN
+        ALTER TABLE [dbo].[Signal] ADD [BinaryCode] NVARCHAR(100) NULL;
+END
+
+    
+ELSE
+    BEGIN 
+
+
+        ALTER TABLE [dbo].[Signal] ALTER COLUMN [BinaryCode] NVARCHAR(100) NOT NULL;
+
+    
+
+	END
+
+    
+    
+    
+    
+    -- COUNT: 9
+IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'SortOrder' AND Object_ID = Object_ID(N'Signal'))
+BEGIN
+        ALTER TABLE [dbo].[Signal] ADD [SortOrder] INT NULL;
+END
+
+    
+ELSE
+    BEGIN 
+
+
+        ALTER TABLE [dbo].[Signal] ALTER COLUMN [SortOrder] INT NOT NULL;
+
+    
+
+	END
+
+    
+    
+    
+    
+    -- COUNT: 9
 IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'RelativeTime' AND Object_ID = Object_ID(N'Signal'))
 BEGIN
         ALTER TABLE [dbo].[Signal] ADD [RelativeTime] INT NULL;
@@ -1176,27 +1281,6 @@ ELSE
 
 
         ALTER TABLE [dbo].[Signal] ALTER COLUMN [RelativeTime] INT NOT NULL;
-
-    
-
-	END
-
-    
-    
-    
-    
-    -- COUNT: 8
-IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'SequenceId' AND Object_ID = Object_ID(N'Signal'))
-BEGIN
-        ALTER TABLE [dbo].[Signal] ADD [SequenceId] UNIQUEIDENTIFIER NULL;
-END
-
-    
-ELSE
-    BEGIN 
-
-
-        ALTER TABLE [dbo].[Signal] ALTER COLUMN [SequenceId] UNIQUEIDENTIFIER NULL;
 
     
 

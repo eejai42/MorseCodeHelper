@@ -134,6 +134,22 @@
                     "TableIncluded": "TRUE"
                   },
                   {
+                    "Name": "SequenceCode",
+                    "OriginalName": "SequenceCode",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "500",
+                      "500"
+                    ],
+                    "FromName": "Character.SequenceCode",
+                    "Include": "TRUE",
+                    "TableName": "Character",
+                    "SortOrder": "104",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
                     "Name": "Symbol",
                     "OriginalName": "Symbol",
                     "IsPrimaryKey": "0",
@@ -947,17 +963,18 @@
               }
             },
             {
-              "Name": "Sequence",
+              "Name": "CharacterSquence",
               "OriginalName": "Sequence",
               "ParentName": "Character",
               "Include": "TRUE",
-              "TableName": "Sequence",
+              "TableName": "CharacterSquence",
               "SortOrder": "117",
               "TableIncluded": "TRUE",
+              "ParentName2": "Signal",
               "PropertyDefs": {
                 "PropertyDef": [
                   {
-                    "Name": "SequenceId",
+                    "Name": "CharacterSquenceId",
                     "OriginalName": "SequenceId",
                     "IsPrimaryKey": "1",
                     "IsNullable": "0",
@@ -965,7 +982,7 @@
                     "DataLength": "",
                     "FromName": "Sequence.SequenceId",
                     "Include": "TRUE",
-                    "TableName": "Sequence",
+                    "TableName": "CharacterSquence",
                     "SortOrder": "118",
                     "TableIncluded": "TRUE"
                   },
@@ -981,7 +998,7 @@
                     ],
                     "FromName": "Sequence.Name",
                     "Include": "TRUE",
-                    "TableName": "Sequence",
+                    "TableName": "CharacterSquence",
                     "SortOrder": "119",
                     "TableIncluded": "TRUE"
                   },
@@ -997,7 +1014,20 @@
                     ],
                     "FromName": "Sequence.Description",
                     "Include": "TRUE",
-                    "TableName": "Sequence",
+                    "TableName": "CharacterSquence",
+                    "SortOrder": "120",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "Index",
+                    "OriginalName": "Index",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "INT32",
+                    "DataLength": "",
+                    "FromName": "Sequence.Index",
+                    "Include": "TRUE",
+                    "TableName": "CharacterSquence",
                     "SortOrder": "120",
                     "TableIncluded": "TRUE"
                   },
@@ -1013,6 +1043,19 @@
                         "ReferencedPropertyDef": "CharacterId"
                       }
                     }
+                  },
+                  {
+                    "Name": "SignalId",
+                    "DataType": "GUID",
+                    "DataLength": "",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "1",
+                    "Relationships": {
+                      "Relationship": {
+                        "ReferencedObjectDef": "Signal",
+                        "ReferencedPropertyDef": "SignalId"
+                      }
+                    }
                   }
                 ]
               }
@@ -1020,7 +1063,6 @@
             {
               "Name": "Signal",
               "OriginalName": "Signal",
-              "ParentName": "Sequence",
               "Include": "TRUE",
               "TableName": "Signal",
               "SortOrder": "213",
@@ -1121,6 +1163,35 @@
                     "TableIncluded": "TRUE"
                   },
                   {
+                    "Name": "BinaryCode",
+                    "OriginalName": "BinaryCode",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "TEXT",
+                    "DataLength": [
+                      "50",
+                      "50"
+                    ],
+                    "FromName": "Signal.BinaryCode",
+                    "Include": "TRUE",
+                    "TableName": "Signal",
+                    "SortOrder": "216",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
+                    "Name": "SortOrder",
+                    "OriginalName": "SortOrder",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "0",
+                    "DataType": "int32",
+                    "DataLength": "",
+                    "FromName": "Signal.SortOrder",
+                    "Include": "TRUE",
+                    "TableName": "Signal",
+                    "SortOrder": "216",
+                    "TableIncluded": "TRUE"
+                  },
+                  {
                     "Name": "RelativeTime",
                     "OriginalName": "RelativeTime",
                     "IsPrimaryKey": "0",
@@ -1132,19 +1203,6 @@
                     "TableName": "Signal",
                     "SortOrder": "216",
                     "TableIncluded": "TRUE"
-                  },
-                  {
-                    "Name": "SequenceId",
-                    "DataType": "GUID",
-                    "DataLength": "",
-                    "IsPrimaryKey": "0",
-                    "IsNullable": "1",
-                    "Relationships": {
-                      "Relationship": {
-                        "ReferencedObjectDef": "Sequence",
-                        "ReferencedPropertyDef": "SequenceId"
-                      }
-                    }
                   }
                 ]
               }

@@ -9,7 +9,7 @@ using System.Web.Http;
 
 namespace WebApplication1.Areas.RESTApi.Controllers
 {
-    public partial class SequencesController
+    public partial class CharacterSquencesController
     {
     }
 }

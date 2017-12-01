@@ -307,8 +307,8 @@ namespace MorseCodeHelper.Lib.SqlDataManagement
             {
                 this.InitializeConnection(conn);
                 SqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = String.Format(@"INSERT INTO [{0}].[Character] (CharacterId, Name, Description, Symbol, AlphabetId)
-                                    VALUES (@CharacterId, @Name, @Description, @Symbol, @AlphabetId)", this.Schema);
+                cmd.CommandText = String.Format(@"INSERT INTO [{0}].[Character] (CharacterId, Name, Description, SequenceCode, Symbol, AlphabetId)
+                                    VALUES (@CharacterId, @Name, @Description, @SequenceCode, @Symbol, @AlphabetId)", this.Schema);
 
                 
                   
@@ -325,6 +325,11 @@ namespace MorseCodeHelper.Lib.SqlDataManagement
                 if (ReferenceEquals(character.Description, null)) cmd.Parameters.AddWithValue("@Description", DBNull.Value);
                     
                 else cmd.Parameters.AddWithValue("@Description", character.Description);
+                
+                  
+                if (ReferenceEquals(character.SequenceCode, null)) cmd.Parameters.AddWithValue("@SequenceCode", DBNull.Value);
+                    
+                else cmd.Parameters.AddWithValue("@SequenceCode", character.SequenceCode);
                 
                   
                 if (ReferenceEquals(character.Symbol, null)) cmd.Parameters.AddWithValue("@Symbol", DBNull.Value);
@@ -430,6 +435,13 @@ namespace MorseCodeHelper.Lib.SqlDataManagement
                           character.Description = reader.GetString(propertyIndex);
                       }
                    
+                      propertyIndex = reader.GetOrdinal("SequenceCode");
+                      if (!reader.IsDBNull(propertyIndex)) //TEXT
+                      {
+                          
+                          character.SequenceCode = reader.GetString(propertyIndex);
+                      }
+                   
                       propertyIndex = reader.GetOrdinal("Symbol");
                       if (!reader.IsDBNull(propertyIndex)) //TEXT
                       {
@@ -467,7 +479,7 @@ namespace MorseCodeHelper.Lib.SqlDataManagement
                 this.InitializeConnection(conn);
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandText = String.Format(@"UPDATE [{0}].[Character] SET 
-                                    Name = @Name,Description = @Description,Symbol = @Symbol,AlphabetId = @AlphabetId
+                                    Name = @Name,Description = @Description,SequenceCode = @SequenceCode,Symbol = @Symbol,AlphabetId = @AlphabetId
                                     WHERE CharacterId = @CharacterId", this.Schema);
 
                  //GUID
@@ -485,6 +497,11 @@ namespace MorseCodeHelper.Lib.SqlDataManagement
                 if (ReferenceEquals(character.Description, null)) cmd.Parameters.AddWithValue("@Description", DBNull.Value);
                     
                 else cmd.Parameters.AddWithValue("@Description", character.Description);
+                 //TEXT
+                
+                if (ReferenceEquals(character.SequenceCode, null)) cmd.Parameters.AddWithValue("@SequenceCode", DBNull.Value);
+                    
+                else cmd.Parameters.AddWithValue("@SequenceCode", character.SequenceCode);
                  //text
                 
                 if (ReferenceEquals(character.Symbol, null)) cmd.Parameters.AddWithValue("@Symbol", DBNull.Value);
@@ -3101,36 +3118,46 @@ namespace MorseCodeHelper.Lib.SqlDataManagement
   
   
   
-        public int Insert(Sequence sequence)
+        public int Insert(CharacterSquence characterSquence)
         {
             SqlConnection conn = this.CreateSqlConnection();
             try
             {
                 this.InitializeConnection(conn);
                 SqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = String.Format(@"INSERT INTO [{0}].[Sequence] (SequenceId, Name, Description, CharacterId)
-                                    VALUES (@SequenceId, @Name, @Description, @CharacterId)", this.Schema);
+                cmd.CommandText = String.Format(@"INSERT INTO [{0}].[CharacterSquence] (CharacterSquenceId, Name, Description, Index, CharacterId, SignalId)
+                                    VALUES (@CharacterSquenceId, @Name, @Description, @Index, @CharacterId, @SignalId)", this.Schema);
 
                 
                   
-                if (ReferenceEquals(sequence.SequenceId, null)) cmd.Parameters.AddWithValue("@SequenceId", DBNull.Value);
+                if (ReferenceEquals(characterSquence.CharacterSquenceId, null)) cmd.Parameters.AddWithValue("@CharacterSquenceId", DBNull.Value);
                     
-                else cmd.Parameters.AddWithValue("@SequenceId", sequence.SequenceId);
+                else cmd.Parameters.AddWithValue("@CharacterSquenceId", characterSquence.CharacterSquenceId);
                 
                   
-                if (ReferenceEquals(sequence.Name, null)) cmd.Parameters.AddWithValue("@Name", DBNull.Value);
+                if (ReferenceEquals(characterSquence.Name, null)) cmd.Parameters.AddWithValue("@Name", DBNull.Value);
                     
-                else cmd.Parameters.AddWithValue("@Name", sequence.Name);
+                else cmd.Parameters.AddWithValue("@Name", characterSquence.Name);
                 
                   
-                if (ReferenceEquals(sequence.Description, null)) cmd.Parameters.AddWithValue("@Description", DBNull.Value);
+                if (ReferenceEquals(characterSquence.Description, null)) cmd.Parameters.AddWithValue("@Description", DBNull.Value);
                     
-                else cmd.Parameters.AddWithValue("@Description", sequence.Description);
+                else cmd.Parameters.AddWithValue("@Description", characterSquence.Description);
                 
                   
-                if (ReferenceEquals(sequence.CharacterId, null)) cmd.Parameters.AddWithValue("@CharacterId", DBNull.Value);
+                if (ReferenceEquals(characterSquence.Index, null)) cmd.Parameters.AddWithValue("@Index", DBNull.Value);
                     
-                else cmd.Parameters.AddWithValue("@CharacterId", sequence.CharacterId);
+                else cmd.Parameters.AddWithValue("@Index", characterSquence.Index);
+                
+                  
+                if (ReferenceEquals(characterSquence.CharacterId, null)) cmd.Parameters.AddWithValue("@CharacterId", DBNull.Value);
+                    
+                else cmd.Parameters.AddWithValue("@CharacterId", characterSquence.CharacterId);
+                
+                  
+                if (ReferenceEquals(characterSquence.SignalId, null)) cmd.Parameters.AddWithValue("@SignalId", DBNull.Value);
+                    
+                else cmd.Parameters.AddWithValue("@SignalId", characterSquence.SignalId);
                 
 
                 int rowsAffected = cmd.ExecuteNonQuery();
@@ -3150,7 +3177,7 @@ namespace MorseCodeHelper.Lib.SqlDataManagement
         /// <param name="dataSource"></param>
         /// <param name="dbName"></param>
         /// <returns></returns>
-        public int Upsert(Sequence sequence)
+        public int Upsert(CharacterSquence characterSquence)
         {
             SqlConnection conn = this.CreateSqlConnection();
             try
@@ -3161,13 +3188,13 @@ namespace MorseCodeHelper.Lib.SqlDataManagement
                 // Check if this method exists, and call insert or udpate as appropriate
                 
                 
-                var id = sequence.SequenceId;
-                cmd.CommandText = String.Format(@"SELECT CASE WHEN EXISTS (SELECT * FROM Sequence WHERE SequenceId = '{0}') THEN 1 else 0 END", id);
+                var id = characterSquence.CharacterSquenceId;
+                cmd.CommandText = String.Format(@"SELECT CASE WHEN EXISTS (SELECT * FROM CharacterSquence WHERE CharacterSquenceId = '{0}') THEN 1 else 0 END", id);
                 
                 var rowExists = cmd.ExecuteScalar();
 
-                if (rowExists.SafeToString() == "1") return this.Update(sequence);
-                else return this.Insert(sequence);
+                if (rowExists.SafeToString() == "1") return this.Update(characterSquence);
+                else return this.Insert(characterSquence);
             }
             finally
             {
@@ -3175,15 +3202,15 @@ namespace MorseCodeHelper.Lib.SqlDataManagement
             }
         }
         
-        public List<T> GetAllSequences<T>()
-            where T : Sequence, new()
+        public List<T> GetAllCharacterSquences<T>()
+            where T : CharacterSquence, new()
         {
-            return this.GetAllSequences<T>(String.Empty);
+            return this.GetAllCharacterSquences<T>(String.Empty);
         }
 
         
-        public List<T> GetAllSequences<T>(String whereClause)
-            where T : Sequence, new()
+        public List<T> GetAllCharacterSquences<T>(String whereClause)
+            where T : CharacterSquence, new()
         {
             List<T> results = new List<T>();
             SqlConnection conn = this.CreateSqlConnection();
@@ -3191,7 +3218,7 @@ namespace MorseCodeHelper.Lib.SqlDataManagement
             {
                 this.InitializeConnection(conn);
                 SqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = String.Format(@"SELECT * FROM [{0}].[Sequence]", this.Schema);
+                cmd.CommandText = String.Format(@"SELECT * FROM [{0}].[CharacterSquence]", this.Schema);
                 if (!String.IsNullOrEmpty(whereClause)) 
                 {
                     cmd.CommandText = String.Format("{0} WHERE {1}", cmd.CommandText, whereClause);
@@ -3202,38 +3229,52 @@ namespace MorseCodeHelper.Lib.SqlDataManagement
                 int propertyIndex = -1;
                 while (reader.Read())
                 {
-                    T sequence = new T();
+                    T characterSquence = new T();
                     
                     
-                      propertyIndex = reader.GetOrdinal("SequenceId");
+                      propertyIndex = reader.GetOrdinal("CharacterSquenceId");
                       if (!reader.IsDBNull(propertyIndex)) //GUID
                       {
                           
-                          sequence.SequenceId = reader.GetGuid(propertyIndex);
+                          characterSquence.CharacterSquenceId = reader.GetGuid(propertyIndex);
                       }
                    
                       propertyIndex = reader.GetOrdinal("Name");
                       if (!reader.IsDBNull(propertyIndex)) //TEXT
                       {
                           
-                          sequence.Name = reader.GetString(propertyIndex);
+                          characterSquence.Name = reader.GetString(propertyIndex);
                       }
                    
                       propertyIndex = reader.GetOrdinal("Description");
                       if (!reader.IsDBNull(propertyIndex)) //TEXT
                       {
                           
-                          sequence.Description = reader.GetString(propertyIndex);
+                          characterSquence.Description = reader.GetString(propertyIndex);
+                      }
+                   
+                      propertyIndex = reader.GetOrdinal("Index");
+                      if (!reader.IsDBNull(propertyIndex)) //INT32
+                      {
+                          
+                          characterSquence.Index = reader.GetInt32(propertyIndex);
                       }
                    
                       propertyIndex = reader.GetOrdinal("CharacterId");
                       if (!reader.IsDBNull(propertyIndex)) //GUID
                       {
                           
-                          sequence.CharacterId = reader.GetGuid(propertyIndex);
+                          characterSquence.CharacterId = reader.GetGuid(propertyIndex);
                       }
                    
-                    results.Add(sequence);
+                      propertyIndex = reader.GetOrdinal("SignalId");
+                      if (!reader.IsDBNull(propertyIndex)) //GUID
+                      {
+                          
+                          characterSquence.SignalId = reader.GetGuid(propertyIndex);
+                      }
+                   
+                    results.Add(characterSquence);
                 }
 
                 return results;
@@ -3245,40 +3286,50 @@ namespace MorseCodeHelper.Lib.SqlDataManagement
         }
         
         /// <summary>
-        /// Updates the specified Sequence
+        /// Updates the specified CharacterSquence
         /// </summary>
         /// <returns></returns>
-        public int Update(Sequence sequence)
+        public int Update(CharacterSquence characterSquence)
         {
             SqlConnection conn = this.CreateSqlConnection();
             try
             {
                 this.InitializeConnection(conn);
                 SqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = String.Format(@"UPDATE [{0}].[Sequence] SET 
-                                    Name = @Name,Description = @Description,CharacterId = @CharacterId
-                                    WHERE SequenceId = @SequenceId", this.Schema);
+                cmd.CommandText = String.Format(@"UPDATE [{0}].[CharacterSquence] SET 
+                                    Name = @Name,Description = @Description,Index = @Index,CharacterId = @CharacterId,SignalId = @SignalId
+                                    WHERE CharacterSquenceId = @CharacterSquenceId", this.Schema);
 
                  //GUID
                 
-                if (ReferenceEquals(sequence.SequenceId, null)) cmd.Parameters.AddWithValue("@SequenceId", DBNull.Value);
+                if (ReferenceEquals(characterSquence.CharacterSquenceId, null)) cmd.Parameters.AddWithValue("@CharacterSquenceId", DBNull.Value);
                     
-                else cmd.Parameters.AddWithValue("@SequenceId", sequence.SequenceId);
+                else cmd.Parameters.AddWithValue("@CharacterSquenceId", characterSquence.CharacterSquenceId);
                  //TEXT
                 
-                if (ReferenceEquals(sequence.Name, null)) cmd.Parameters.AddWithValue("@Name", DBNull.Value);
+                if (ReferenceEquals(characterSquence.Name, null)) cmd.Parameters.AddWithValue("@Name", DBNull.Value);
                     
-                else cmd.Parameters.AddWithValue("@Name", sequence.Name);
+                else cmd.Parameters.AddWithValue("@Name", characterSquence.Name);
                  //TEXT
                 
-                if (ReferenceEquals(sequence.Description, null)) cmd.Parameters.AddWithValue("@Description", DBNull.Value);
+                if (ReferenceEquals(characterSquence.Description, null)) cmd.Parameters.AddWithValue("@Description", DBNull.Value);
                     
-                else cmd.Parameters.AddWithValue("@Description", sequence.Description);
+                else cmd.Parameters.AddWithValue("@Description", characterSquence.Description);
+                 //INT32
+                
+                if (ReferenceEquals(characterSquence.Index, null)) cmd.Parameters.AddWithValue("@Index", DBNull.Value);
+                    
+                else cmd.Parameters.AddWithValue("@Index", characterSquence.Index);
                  //GUID
                 
-                if (ReferenceEquals(sequence.CharacterId, null)) cmd.Parameters.AddWithValue("@CharacterId", DBNull.Value);
+                if (ReferenceEquals(characterSquence.CharacterId, null)) cmd.Parameters.AddWithValue("@CharacterId", DBNull.Value);
                     
-                else cmd.Parameters.AddWithValue("@CharacterId", sequence.CharacterId);
+                else cmd.Parameters.AddWithValue("@CharacterId", characterSquence.CharacterId);
+                 //GUID
+                
+                if (ReferenceEquals(characterSquence.SignalId, null)) cmd.Parameters.AddWithValue("@SignalId", DBNull.Value);
+                    
+                else cmd.Parameters.AddWithValue("@SignalId", characterSquence.SignalId);
                 
 
                 int rowsAffected = cmd.ExecuteNonQuery();
@@ -3293,22 +3344,22 @@ namespace MorseCodeHelper.Lib.SqlDataManagement
         
                 
         /// <summary>
-        /// Deletes the specified Sequence
+        /// Deletes the specified CharacterSquence
         /// </summary>
         /// <returns></returns>
-        public int Delete(Sequence sequence)
+        public int Delete(CharacterSquence characterSquence)
         {
             SqlConnection conn = this.CreateSqlConnection();
             try
             {
                 this.InitializeConnection(conn);
                 SqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = String.Format(@"DELETE FROM [{0}].[Sequence] 
-                                    WHERE SequenceId = @SequenceId", this.Schema);
+                cmd.CommandText = String.Format(@"DELETE FROM [{0}].[CharacterSquence] 
+                                    WHERE CharacterSquenceId = @CharacterSquenceId", this.Schema);
                                     
                 
-                if (ReferenceEquals(sequence.SequenceId, null)) cmd.Parameters.AddWithValue("@SequenceId", DBNull.Value);
-                else cmd.Parameters.AddWithValue("@SequenceId", sequence.SequenceId);
+                if (ReferenceEquals(characterSquence.CharacterSquenceId, null)) cmd.Parameters.AddWithValue("@CharacterSquenceId", DBNull.Value);
+                else cmd.Parameters.AddWithValue("@CharacterSquenceId", characterSquence.CharacterSquenceId);
                 
 
                 int rowsAffected = cmd.ExecuteNonQuery();
@@ -3340,8 +3391,8 @@ namespace MorseCodeHelper.Lib.SqlDataManagement
             {
                 this.InitializeConnection(conn);
                 SqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = String.Format(@"INSERT INTO [{0}].[Signal] (SignalId, Name, Description, Symbol, ShortCode, LongCode, RelativeTime, SequenceId)
-                                    VALUES (@SignalId, @Name, @Description, @Symbol, @ShortCode, @LongCode, @RelativeTime, @SequenceId)", this.Schema);
+                cmd.CommandText = String.Format(@"INSERT INTO [{0}].[Signal] (SignalId, Name, Description, Symbol, ShortCode, LongCode, BinaryCode, SortOrder, RelativeTime)
+                                    VALUES (@SignalId, @Name, @Description, @Symbol, @ShortCode, @LongCode, @BinaryCode, @SortOrder, @RelativeTime)", this.Schema);
 
                 
                   
@@ -3375,14 +3426,19 @@ namespace MorseCodeHelper.Lib.SqlDataManagement
                 else cmd.Parameters.AddWithValue("@LongCode", signal.LongCode);
                 
                   
+                if (ReferenceEquals(signal.BinaryCode, null)) cmd.Parameters.AddWithValue("@BinaryCode", DBNull.Value);
+                    
+                else cmd.Parameters.AddWithValue("@BinaryCode", signal.BinaryCode);
+                
+                  
+                if (ReferenceEquals(signal.SortOrder, null)) cmd.Parameters.AddWithValue("@SortOrder", DBNull.Value);
+                    
+                else cmd.Parameters.AddWithValue("@SortOrder", signal.SortOrder);
+                
+                  
                 if (ReferenceEquals(signal.RelativeTime, null)) cmd.Parameters.AddWithValue("@RelativeTime", DBNull.Value);
                     
                 else cmd.Parameters.AddWithValue("@RelativeTime", signal.RelativeTime);
-                
-                  
-                if (ReferenceEquals(signal.SequenceId, null)) cmd.Parameters.AddWithValue("@SequenceId", DBNull.Value);
-                    
-                else cmd.Parameters.AddWithValue("@SequenceId", signal.SequenceId);
                 
 
                 int rowsAffected = cmd.ExecuteNonQuery();
@@ -3499,18 +3555,25 @@ namespace MorseCodeHelper.Lib.SqlDataManagement
                           signal.LongCode = reader.GetString(propertyIndex);
                       }
                    
+                      propertyIndex = reader.GetOrdinal("BinaryCode");
+                      if (!reader.IsDBNull(propertyIndex)) //TEXT
+                      {
+                          
+                          signal.BinaryCode = reader.GetString(propertyIndex);
+                      }
+                   
+                      propertyIndex = reader.GetOrdinal("SortOrder");
+                      if (!reader.IsDBNull(propertyIndex)) //INT32
+                      {
+                          
+                          signal.SortOrder = reader.GetInt32(propertyIndex);
+                      }
+                   
                       propertyIndex = reader.GetOrdinal("RelativeTime");
                       if (!reader.IsDBNull(propertyIndex)) //INT32
                       {
                           
                           signal.RelativeTime = reader.GetInt32(propertyIndex);
-                      }
-                   
-                      propertyIndex = reader.GetOrdinal("SequenceId");
-                      if (!reader.IsDBNull(propertyIndex)) //GUID
-                      {
-                          
-                          signal.SequenceId = reader.GetGuid(propertyIndex);
                       }
                    
                     results.Add(signal);
@@ -3536,7 +3599,7 @@ namespace MorseCodeHelper.Lib.SqlDataManagement
                 this.InitializeConnection(conn);
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandText = String.Format(@"UPDATE [{0}].[Signal] SET 
-                                    Name = @Name,Description = @Description,Symbol = @Symbol,ShortCode = @ShortCode,LongCode = @LongCode,RelativeTime = @RelativeTime,SequenceId = @SequenceId
+                                    Name = @Name,Description = @Description,Symbol = @Symbol,ShortCode = @ShortCode,LongCode = @LongCode,BinaryCode = @BinaryCode,SortOrder = @SortOrder,RelativeTime = @RelativeTime
                                     WHERE SignalId = @SignalId", this.Schema);
 
                  //GUID
@@ -3569,16 +3632,21 @@ namespace MorseCodeHelper.Lib.SqlDataManagement
                 if (ReferenceEquals(signal.LongCode, null)) cmd.Parameters.AddWithValue("@LongCode", DBNull.Value);
                     
                 else cmd.Parameters.AddWithValue("@LongCode", signal.LongCode);
+                 //TEXT
+                
+                if (ReferenceEquals(signal.BinaryCode, null)) cmd.Parameters.AddWithValue("@BinaryCode", DBNull.Value);
+                    
+                else cmd.Parameters.AddWithValue("@BinaryCode", signal.BinaryCode);
+                 //int32
+                
+                if (ReferenceEquals(signal.SortOrder, null)) cmd.Parameters.AddWithValue("@SortOrder", DBNull.Value);
+                    
+                else cmd.Parameters.AddWithValue("@SortOrder", signal.SortOrder);
                  //int32
                 
                 if (ReferenceEquals(signal.RelativeTime, null)) cmd.Parameters.AddWithValue("@RelativeTime", DBNull.Value);
                     
                 else cmd.Parameters.AddWithValue("@RelativeTime", signal.RelativeTime);
-                 //GUID
-                
-                if (ReferenceEquals(signal.SequenceId, null)) cmd.Parameters.AddWithValue("@SequenceId", DBNull.Value);
-                    
-                else cmd.Parameters.AddWithValue("@SequenceId", signal.SequenceId);
                 
 
                 int rowsAffected = cmd.ExecuteNonQuery();
