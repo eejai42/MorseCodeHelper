@@ -26,6 +26,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Config", "Config", "{419B1AF3-2AB0-4740-8478-B1230325AA16}"
 	ProjectSection(SolutionItems) = preProject
 		CustomTools\CreateDefaultFiles.xslt = CustomTools\CreateDefaultFiles.xslt
+		Docs\MorseCode.html = Docs\MorseCode.html
 		SSoT\MorseCodeMetaSnapshot.json = SSoT\MorseCodeMetaSnapshot.json
 		Docs\SinglePageDocs.html = Docs\SinglePageDocs.html
 	EndProjectSection
@@ -79,6 +80,11 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinApp", "WinApp\WinApp.csproj", "{6474D74E-CCE7-4437-B3AE-4B483BFD6877}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCRestApi", "MVCRestApi\MVCRestApi.csproj", "{EFE45374-1DB7-4E92-AC9C-9B047DD5B8D0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0CFDC374-0DA8-409F-97E8-5132FA1A107A}"
+	ProjectSection(SolutionItems) = preProject
+		Docs\CreateMorseCodeDocs.xslt = Docs\CreateMorseCodeDocs.xslt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
