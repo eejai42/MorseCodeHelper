@@ -1019,7 +1019,7 @@
                     "TableIncluded": "TRUE"
                   },
                   {
-                    "Name": "Index",
+                    "Name": "SignalIndex",
                     "OriginalName": "Index",
                     "IsPrimaryKey": "0",
                     "IsNullable": "0",

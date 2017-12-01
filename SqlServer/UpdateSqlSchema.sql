@@ -1050,9 +1050,9 @@ ELSE
     
     
     -- COUNT: 6
-IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'Index' AND Object_ID = Object_ID(N'CharacterSquence'))
+IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'SignalIndex' AND Object_ID = Object_ID(N'CharacterSquence'))
 BEGIN
-        ALTER TABLE [dbo].[CharacterSquence] ADD [Index] INT NULL;
+        ALTER TABLE [dbo].[CharacterSquence] ADD [SignalIndex] INT NULL;
 END
 
     
@@ -1060,7 +1060,7 @@ ELSE
     BEGIN 
 
 
-        ALTER TABLE [dbo].[CharacterSquence] ALTER COLUMN [Index] INT NOT NULL;
+        ALTER TABLE [dbo].[CharacterSquence] ALTER COLUMN [SignalIndex] INT NOT NULL;
 
     
 

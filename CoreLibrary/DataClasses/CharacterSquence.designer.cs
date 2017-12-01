@@ -29,7 +29,7 @@ namespace MorseCodeHelper.Lib.DataClasses
         public String Description { get; set; }
     
         [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "Index")]
-        public Int32 Index { get; set; }
+        public Int32 SignalIndex { get; set; }
     
         [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "CharacterId")]
         public Nullable<Guid> CharacterId { get; set; }

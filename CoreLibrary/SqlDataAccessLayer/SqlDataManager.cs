@@ -3125,8 +3125,8 @@ namespace MorseCodeHelper.Lib.SqlDataManagement
             {
                 this.InitializeConnection(conn);
                 SqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = String.Format(@"INSERT INTO [{0}].[CharacterSquence] (CharacterSquenceId, Name, Description, Index, CharacterId, SignalId)
-                                    VALUES (@CharacterSquenceId, @Name, @Description, @Index, @CharacterId, @SignalId)", this.Schema);
+                cmd.CommandText = String.Format(@"INSERT INTO [{0}].[CharacterSquence] (CharacterSquenceId, Name, Description, SignalIndex, CharacterId, SignalId)
+                                    VALUES (@CharacterSquenceId, @Name, @Description, @SignalIndex, @CharacterId, @SignalId)", this.Schema);
 
                 
                   
@@ -3145,9 +3145,9 @@ namespace MorseCodeHelper.Lib.SqlDataManagement
                 else cmd.Parameters.AddWithValue("@Description", characterSquence.Description);
                 
                   
-                if (ReferenceEquals(characterSquence.Index, null)) cmd.Parameters.AddWithValue("@Index", DBNull.Value);
+                if (ReferenceEquals(characterSquence.SignalIndex, null)) cmd.Parameters.AddWithValue("@SignalIndex", DBNull.Value);
                     
-                else cmd.Parameters.AddWithValue("@Index", characterSquence.Index);
+                else cmd.Parameters.AddWithValue("@SignalIndex", characterSquence.SignalIndex);
                 
                   
                 if (ReferenceEquals(characterSquence.CharacterId, null)) cmd.Parameters.AddWithValue("@CharacterId", DBNull.Value);
@@ -3253,11 +3253,11 @@ namespace MorseCodeHelper.Lib.SqlDataManagement
                           characterSquence.Description = reader.GetString(propertyIndex);
                       }
                    
-                      propertyIndex = reader.GetOrdinal("Index");
+                      propertyIndex = reader.GetOrdinal("SignalIndex");
                       if (!reader.IsDBNull(propertyIndex)) //INT32
                       {
                           
-                          characterSquence.Index = reader.GetInt32(propertyIndex);
+                          characterSquence.SignalIndex = reader.GetInt32(propertyIndex);
                       }
                    
                       propertyIndex = reader.GetOrdinal("CharacterId");
@@ -3297,7 +3297,7 @@ namespace MorseCodeHelper.Lib.SqlDataManagement
                 this.InitializeConnection(conn);
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandText = String.Format(@"UPDATE [{0}].[CharacterSquence] SET 
-                                    Name = @Name,Description = @Description,Index = @Index,CharacterId = @CharacterId,SignalId = @SignalId
+                                    Name = @Name,Description = @Description,SignalIndex = @SignalIndex,CharacterId = @CharacterId,SignalId = @SignalId
                                     WHERE CharacterSquenceId = @CharacterSquenceId", this.Schema);
 
                  //GUID
@@ -3317,9 +3317,9 @@ namespace MorseCodeHelper.Lib.SqlDataManagement
                 else cmd.Parameters.AddWithValue("@Description", characterSquence.Description);
                  //INT32
                 
-                if (ReferenceEquals(characterSquence.Index, null)) cmd.Parameters.AddWithValue("@Index", DBNull.Value);
+                if (ReferenceEquals(characterSquence.SignalIndex, null)) cmd.Parameters.AddWithValue("@SignalIndex", DBNull.Value);
                     
-                else cmd.Parameters.AddWithValue("@Index", characterSquence.Index);
+                else cmd.Parameters.AddWithValue("@SignalIndex", characterSquence.SignalIndex);
                  //GUID
                 
                 if (ReferenceEquals(characterSquence.CharacterId, null)) cmd.Parameters.AddWithValue("@CharacterId", DBNull.Value);

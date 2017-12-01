@@ -297,7 +297,7 @@
           [CharacterSquenceId] UNIQUEIDENTIFIER NOT NULL,
           [Name] NVARCHAR(100) NOT NULL,
           [Description] NVARCHAR(100) NOT NULL,
-          [Index] INT NOT NULL,
+          [SignalIndex] INT NOT NULL,
           [CharacterId] UNIQUEIDENTIFIER NULL,
           [SignalId] UNIQUEIDENTIFIER NULL,
         
