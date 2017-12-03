@@ -23,7 +23,7 @@
                     </FileSetFile>
                 <FileSetFile>
                     <RelativePath>
-                        <xsl:text>index2.html</xsl:text>
+                        <xsl:text>index.html</xsl:text>
                     </RelativePath>
                     <xsl:element name="FileContents" xml:space="preserve"><html>
     <body>
