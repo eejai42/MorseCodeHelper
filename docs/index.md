@@ -18,3 +18,8 @@ There are multiple "morse code alphabets" or dialects - they are described here.
 ## Github Repo
 
 [Morse Code SDK](https://github.com/eejai42/MorseCodeHelper)
+
+This is a description of how SSoTme is used to create/manage this project.
+
+[SSoT.me Project Description](./DSPXml/SSoTmeProject.html)
+

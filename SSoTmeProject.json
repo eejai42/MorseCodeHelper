@@ -526,6 +526,45 @@
       "Name": "XmlXsltTransform",
       "RelativePath": "/Docs",
       "CommandLine": "xml-xslt-transform -i ..\\SSoT\\MorseCodeMetaSnapshot.json.xml -i CreateMorseCodeDocs.xslt"
+    },
+    {
+      "MatchedTranspiler": {
+        "TranspilerId": "06876a87-a56c-4c75-a01f-377e97deed7a",
+        "AccountHolderId": "1e876e4f-d63b-4698-bd68-3bc27876e41e",
+        "Name": "DetailedSPXmlToHtmlDocs",
+        "DisplayName": "Detailed S P Xml To Html Docs",
+        "Description": "Detailed S P Xml To Html Docs",
+        "CreatedOn": "2017-10-14T22:05:54.85",
+        "IsActive": true,
+        "CurrentRoutingKey": "amq.gen-oEpCrG1TUS34T1e-TSjftA",
+        "LowerName": "detailedspxmltohtmldocs",
+        "UpperName": "DETAILEDSPXMLTOHTMLDOCS",
+        "LowerHyphenName": "detailed-s-p-xml-to-html-docs",
+        "ReadMeMD": "This system tool turns a detailed SPXml file into detailed Html Documentation about how the SSoT.me project is organized. Specifically, how does the tech \"flow\" thorugh the project. ",
+        "InputFileTypeId": "f1b92a2a-3f83-4000-9b37-57f920e14419",
+        "OutputFileTypeId": "d8fc84b7-442d-4c7a-92a0-eefc11391934",
+        "UsageCount": 395,
+        "Category": "ssotme",
+        "TranspileRequests": [],
+        "TranspilerInstances": [],
+        "TranspilerVersions": [
+          {
+            "TranspilerVersionId": "59b27e72-9f6d-4f13-b246-69afadb78106",
+            "TranspilerId": "06876a87-a56c-4c75-a01f-377e97deed7a",
+            "Name": "v1",
+            "CreatedOn": "2017-10-14T22:05:59.07",
+            "IsActive": true,
+            "TranspilerFileTypeId_TranspilerInputHints": [],
+            "TranspilerInstances": [],
+            "ReplacedByTranspilerVersionId_TranspilerVersions": []
+          }
+        ]
+      },
+      "CLIHandler": null,
+      "ProjectTranspilerId": "e9a5c0b3-7ec2-4b2d-9620-380ce8a58885",
+      "Name": "DetailedSPXmlToHtmlDocs",
+      "RelativePath": "/docs/DSPXml",
+      "CommandLine": "detailed-spxml-to-html-docs -i ..\\..\\DSPXml\\SSoTmeProject.dspxml"
     }
   ]
 }
