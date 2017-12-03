@@ -15,6 +15,8 @@ namespace MorseCodeHelper.Lib.DataClasses
             
             this.SentenceId = Guid.NewGuid();
             
+                this.Words = new BindingList<Word>();
+            
 
         }
 
@@ -28,10 +30,45 @@ namespace MorseCodeHelper.Lib.DataClasses
         [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "Description")]
         public String Description { get; set; }
     
-        [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "CommunicationId")]
-        public Nullable<Guid> CommunicationId { get; set; }
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "TelegraphId")]
+        public Nullable<Guid> TelegraphId { get; set; }
     
 
+        
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "Words")]
+        public BindingList<Word> Words { get; set; }
+            
+        /// <summary>
+        /// Check to see if there are any related Words, and load them if requested
+        /// </summary>
+        public static void CheckExpandWords(SqlDataManager sdm, IEnumerable<Sentence> sentences, string expandString)
+        {
+            var sentencesWhere = CreateSentenceWhere(sentences);
+            expandString = expandString.SafeToString();
+
+            if (String.Equals(expandString, "all", StringComparison.OrdinalIgnoreCase) || expandString.IndexOf("words", StringComparison.OrdinalIgnoreCase) >= 0)
+            {
+                var childWords = sdm.GetAllWords<Word>(sentencesWhere);
+
+                sentences.ToList()
+                        .ForEach(feSentence => feSentence.LoadWords(childWords));
+            }
+
+        }
+
+
+        
+
+        
+        /// <summary>
+        /// Find the related Words (from the list provided) and attach them locally to the Words list.
+        /// </summary>
+        public void LoadWords(IEnumerable<Word> words)
+        {
+            words.Where(whereWord => whereWord.SentenceId == this.SentenceId)
+                    .ToList()
+                    .ForEach(feWord => this.Words.Add(feWord));
+        }
         
 
         
@@ -50,6 +87,8 @@ namespace MorseCodeHelper.Lib.DataClasses
         public static void CheckExpand(SqlDataManager sdm, IEnumerable<Sentence> sentences, string expandString)
         {
             
+            
+            CheckExpandWords(sdm, sentences, expandString);
         }
         
     }

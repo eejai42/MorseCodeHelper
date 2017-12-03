@@ -1,5 +1,5 @@
 {
-    "id": "00000000-0000-0000-0000-000000000000",
+    "id": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
     "name": "MorseCodeHelper",
     "requests": [
     
@@ -7,8 +7,8 @@
                     
                     
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "074d2e34-c777-42e1-8219-f29aa47e5ecc",
             "name": "Get Alphabets",
             "description": "",
             "url": "http://localhost:64110/api/Alphabets?expand=all",
@@ -21,8 +21,8 @@
             "version": 2
         },
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "dfb9fc8f-db53-445e-bd16-9856428d28ba",
             "name": "Add Alphabet",
             "description": "",
             "url": "http://localhost:64110/api/Alphabets",
@@ -35,8 +35,8 @@
             "time": 1511746503557
         },
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "09c770dc-9912-4dbe-a777-cea64e56e6df",
             "name": "Update Alphabet",
             "description": "",
             "url": "http://localhost:64110/api/Alphabets",
@@ -49,8 +49,8 @@
             "time": 1511747864924
         },
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "5a91b61f-dccd-4032-bd87-b8f78df1f198",
             "name": "Delete Alphabet",
             "description": "",
             "url": "http://localhost:64110/api/Alphabets?alphabetId=00000000-0000-0000-0000-000000000000",
@@ -67,8 +67,8 @@
                     
                     
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "47c24196-6a01-4126-9582-dfb901b1dcc8",
             "name": "Get Characters",
             "description": "",
             "url": "http://localhost:64110/api/Characters?expand=all",
@@ -81,8 +81,8 @@
             "version": 2
         },
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "ddaf3917-13f4-4467-bf8d-6fef71388bb7",
             "name": "Add Character",
             "description": "",
             "url": "http://localhost:64110/api/Characters",
@@ -95,8 +95,8 @@
             "time": 1511746503557
         },
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "43071f2e-5928-4177-a061-e1d392f0a059",
             "name": "Update Character",
             "description": "",
             "url": "http://localhost:64110/api/Characters",
@@ -109,8 +109,8 @@
             "time": 1511747864924
         },
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "8f4b08e6-2fdd-4099-be77-7b3825a88924",
             "name": "Delete Character",
             "description": "",
             "url": "http://localhost:64110/api/Characters?characterId=00000000-0000-0000-0000-000000000000",
@@ -127,68 +127,8 @@
                     
                     
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
-            "name": "Get Communications",
-            "description": "",
-            "url": "http://localhost:64110/api/Communications?expand=all",
-            "method": "GET",
-            "headers": "Content-Type: application/json\n",
-            "data": "",
-            "dataMode": "raw",
-            "timestamp": 0,
-            "responses": [],
-            "version": 2
-        },
-        {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
-            "name": "Add Communication",
-            "description": "",
-            "url": "http://localhost:64110/api/Communications",
-            "method": "POST",
-            "headers": "Content-Type: application/json\n",
-            "data": "  {\n        \"Name\": \"New Communication\",\n        \"Description\": \"\"\n    }",
-            "dataMode": "raw",
-            "timestamp": 0,
-            "version": 2,
-            "time": 1511746503557
-        },
-        {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
-            "name": "Update Communication",
-            "description": "",
-            "url": "http://localhost:64110/api/Communications",
-            "method": "PUT",
-            "headers": "Content-Type: application/json\n",
-            "data": "{\n    \"CommunicationId\": \"00000000-0000-0000-0000-000000000000\",\n    \"Name\": \"Changed Communication\",\n    \"Description\": \"changed description\"\n}",
-            "dataMode": "raw",
-            "timestamp": 0,
-            "version": 2,
-            "time": 1511747864924
-        },
-        {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
-            "name": "Delete Communication",
-            "description": "",
-            "url": "http://localhost:64110/api/Communications?communicationId=00000000-0000-0000-0000-000000000000",
-            "method": "DELETE",
-            "headers": "",
-            "data": [], 
-            "dataMode": "params",
-            "timestamp": 0,
-            "version": 2,
-            "time": 1511747257887
-        },
-        
-                    
-                    
-                    
-        {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "0523fbfe-fead-43cc-9cac-392a3977bc62",
             "name": "Get Controllers",
             "description": "",
             "url": "http://localhost:64110/api/Controllers?expand=all",
@@ -201,8 +141,8 @@
             "version": 2
         },
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "07ed4604-5a6b-42ef-8bdc-fa5775616029",
             "name": "Add Controller",
             "description": "",
             "url": "http://localhost:64110/api/Controllers",
@@ -215,8 +155,8 @@
             "time": 1511746503557
         },
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "a6fbe39e-ed22-4367-9ea8-6f2be70dc35b",
             "name": "Update Controller",
             "description": "",
             "url": "http://localhost:64110/api/Controllers",
@@ -229,8 +169,8 @@
             "time": 1511747864924
         },
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "e02c9309-acc5-4a97-90b7-51761fd5857d",
             "name": "Delete Controller",
             "description": "",
             "url": "http://localhost:64110/api/Controllers?controllerId=00000000-0000-0000-0000-000000000000",
@@ -247,8 +187,8 @@
                     
                     
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "682e9b21-8d81-4214-a94f-e050fe1c0c97",
             "name": "Get Countries",
             "description": "",
             "url": "http://localhost:64110/api/Countries?expand=all",
@@ -261,8 +201,8 @@
             "version": 2
         },
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "67ecc17f-f13b-47ea-93ce-5a14d8572032",
             "name": "Add Country",
             "description": "",
             "url": "http://localhost:64110/api/Countries",
@@ -275,8 +215,8 @@
             "time": 1511746503557
         },
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "cfa419f6-11ac-4ee0-95ec-bef920d64900",
             "name": "Update Country",
             "description": "",
             "url": "http://localhost:64110/api/Countries",
@@ -289,8 +229,8 @@
             "time": 1511747864924
         },
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "60fd04f2-29ac-4453-8b40-823ab7ac0a9a",
             "name": "Delete Country",
             "description": "",
             "url": "http://localhost:64110/api/Countries?countryId=00000000-0000-0000-0000-000000000000",
@@ -307,8 +247,8 @@
                     
                     
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "41ed3cfa-8f37-47c8-8a94-785b4c2ca03d",
             "name": "Get MCDevices",
             "description": "",
             "url": "http://localhost:64110/api/MCDevices?expand=all",
@@ -321,8 +261,8 @@
             "version": 2
         },
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "cdb8db15-381d-452c-8b29-2f51608ef360",
             "name": "Add MCDevice",
             "description": "",
             "url": "http://localhost:64110/api/MCDevices",
@@ -335,8 +275,8 @@
             "time": 1511746503557
         },
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "db4616a7-ef00-40f0-9082-518850945033",
             "name": "Update MCDevice",
             "description": "",
             "url": "http://localhost:64110/api/MCDevices",
@@ -349,8 +289,8 @@
             "time": 1511747864924
         },
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "88436be6-f4c5-45a5-ab33-fcc0d64fb7ab",
             "name": "Delete MCDevice",
             "description": "",
             "url": "http://localhost:64110/api/MCDevices?mcdeviceId=00000000-0000-0000-0000-000000000000",
@@ -367,8 +307,8 @@
                     
                     
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "e8883be1-c159-4a34-9987-e234935ed5f3",
             "name": "Get Languages",
             "description": "",
             "url": "http://localhost:64110/api/Languages?expand=all",
@@ -381,8 +321,8 @@
             "version": 2
         },
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "d2d82f9a-404e-416b-b0c4-90474fe4dd99",
             "name": "Add Language",
             "description": "",
             "url": "http://localhost:64110/api/Languages",
@@ -395,8 +335,8 @@
             "time": 1511746503557
         },
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "b4955cc7-3168-488e-9865-a4deb0418b52",
             "name": "Update Language",
             "description": "",
             "url": "http://localhost:64110/api/Languages",
@@ -409,8 +349,8 @@
             "time": 1511747864924
         },
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "fb86834f-2d3b-48b2-bfb2-6e066d3b687f",
             "name": "Delete Language",
             "description": "",
             "url": "http://localhost:64110/api/Languages?languageId=00000000-0000-0000-0000-000000000000",
@@ -427,8 +367,8 @@
                     
                     
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "ee981224-1546-45db-aba7-168ac272eec6",
             "name": "Get Lights",
             "description": "",
             "url": "http://localhost:64110/api/Lights?expand=all",
@@ -441,8 +381,8 @@
             "version": 2
         },
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "b1604c41-7372-4e70-8a6f-5f50ca90ad71",
             "name": "Add Light",
             "description": "",
             "url": "http://localhost:64110/api/Lights",
@@ -455,8 +395,8 @@
             "time": 1511746503557
         },
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "6ad01c1d-62be-4318-8e06-2d5bf2d12bee",
             "name": "Update Light",
             "description": "",
             "url": "http://localhost:64110/api/Lights",
@@ -469,8 +409,8 @@
             "time": 1511747864924
         },
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "c7948a28-3644-41fd-a699-bc8be6ff86f6",
             "name": "Delete Light",
             "description": "",
             "url": "http://localhost:64110/api/Lights?lightId=00000000-0000-0000-0000-000000000000",
@@ -487,8 +427,8 @@
                     
                     
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "78a549ff-2c09-46bf-bf6b-653e326f3c00",
             "name": "Get Listeners",
             "description": "",
             "url": "http://localhost:64110/api/Listeners?expand=all",
@@ -501,8 +441,8 @@
             "version": 2
         },
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "7b8db94a-bb33-4398-b487-cb80aa08cb67",
             "name": "Add Listener",
             "description": "",
             "url": "http://localhost:64110/api/Listeners",
@@ -515,8 +455,8 @@
             "time": 1511746503557
         },
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "77f46a84-2f86-4586-b5ee-2bb3c0b45653",
             "name": "Update Listener",
             "description": "",
             "url": "http://localhost:64110/api/Listeners",
@@ -529,8 +469,8 @@
             "time": 1511747864924
         },
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "3d7b95c9-89ed-4968-826d-d8cd4d01fafc",
             "name": "Delete Listener",
             "description": "",
             "url": "http://localhost:64110/api/Listeners?listenerId=00000000-0000-0000-0000-000000000000",
@@ -547,8 +487,8 @@
                     
                     
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "f8bca3c7-af35-4394-98cf-5def186b0123",
             "name": "Get Observers",
             "description": "",
             "url": "http://localhost:64110/api/Observers?expand=all",
@@ -561,8 +501,8 @@
             "version": 2
         },
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "7ba52b1d-1b14-404d-8a93-947abdba548c",
             "name": "Add Observer",
             "description": "",
             "url": "http://localhost:64110/api/Observers",
@@ -575,8 +515,8 @@
             "time": 1511746503557
         },
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "f101937b-9b6e-4617-965c-bcfaf25526a2",
             "name": "Update Observer",
             "description": "",
             "url": "http://localhost:64110/api/Observers",
@@ -589,8 +529,8 @@
             "time": 1511747864924
         },
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "364b2708-6f95-4762-9efe-74b707e6fe15",
             "name": "Delete Observer",
             "description": "",
             "url": "http://localhost:64110/api/Observers?observerId=00000000-0000-0000-0000-000000000000",
@@ -607,8 +547,8 @@
                     
                     
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "37793c77-d30c-4879-b7b8-2f1f8652b42f",
             "name": "Get TelegraphOperators",
             "description": "",
             "url": "http://localhost:64110/api/TelegraphOperators?expand=all",
@@ -621,8 +561,8 @@
             "version": 2
         },
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "604d2214-8a45-4355-b20a-45a6369734f4",
             "name": "Add TelegraphOperator",
             "description": "",
             "url": "http://localhost:64110/api/TelegraphOperators",
@@ -635,8 +575,8 @@
             "time": 1511746503557
         },
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "a7f79e08-7d93-4831-b189-17407d1028fb",
             "name": "Update TelegraphOperator",
             "description": "",
             "url": "http://localhost:64110/api/TelegraphOperators",
@@ -649,8 +589,8 @@
             "time": 1511747864924
         },
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "a3e8b81e-d30a-48bc-9af8-2108ab587db0",
             "name": "Delete TelegraphOperator",
             "description": "",
             "url": "http://localhost:64110/api/TelegraphOperators?telegraphoperatorId=00000000-0000-0000-0000-000000000000",
@@ -667,8 +607,8 @@
                     
                     
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "131ca80a-080c-4fe8-853e-544252431515",
             "name": "Get Proficiencies",
             "description": "",
             "url": "http://localhost:64110/api/Proficiencies?expand=all",
@@ -681,8 +621,8 @@
             "version": 2
         },
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "68e044d1-255a-4a2f-8bd1-862808bdd360",
             "name": "Add Proficiency",
             "description": "",
             "url": "http://localhost:64110/api/Proficiencies",
@@ -695,8 +635,8 @@
             "time": 1511746503557
         },
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "80d24dba-f661-49f0-9e86-7002c9780e9f",
             "name": "Update Proficiency",
             "description": "",
             "url": "http://localhost:64110/api/Proficiencies",
@@ -709,8 +649,8 @@
             "time": 1511747864924
         },
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "1adeefa9-2128-405f-b8cb-4c23247e4b44",
             "name": "Delete Proficiency",
             "description": "",
             "url": "http://localhost:64110/api/Proficiencies?proficiencyId=00000000-0000-0000-0000-000000000000",
@@ -727,8 +667,8 @@
                     
                     
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "664ccbda-a201-4288-bf2a-aa2e72a07c02",
             "name": "Get Repeaters",
             "description": "",
             "url": "http://localhost:64110/api/Repeaters?expand=all",
@@ -741,8 +681,8 @@
             "version": 2
         },
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "5652727e-67ce-4dcd-8461-cee6fa322be2",
             "name": "Add Repeater",
             "description": "",
             "url": "http://localhost:64110/api/Repeaters",
@@ -755,8 +695,8 @@
             "time": 1511746503557
         },
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "a1bb0d15-afa5-45ec-921d-7a75a60ecd4d",
             "name": "Update Repeater",
             "description": "",
             "url": "http://localhost:64110/api/Repeaters",
@@ -769,8 +709,8 @@
             "time": 1511747864924
         },
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "c82cb85c-a9e0-431c-b1e6-717971868a5a",
             "name": "Delete Repeater",
             "description": "",
             "url": "http://localhost:64110/api/Repeaters?repeaterId=00000000-0000-0000-0000-000000000000",
@@ -787,8 +727,8 @@
                     
                     
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "bc4594c9-0c55-48a4-b301-f35a71e44048",
             "name": "Get CharacterSquences",
             "description": "",
             "url": "http://localhost:64110/api/CharacterSquences?expand=all",
@@ -801,8 +741,8 @@
             "version": 2
         },
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "731702d1-cfae-4483-affa-1d7ef6a2727a",
             "name": "Add CharacterSquence",
             "description": "",
             "url": "http://localhost:64110/api/CharacterSquences",
@@ -815,8 +755,8 @@
             "time": 1511746503557
         },
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "c1cc2699-522e-4d1a-bd2a-615938d8ec9a",
             "name": "Update CharacterSquence",
             "description": "",
             "url": "http://localhost:64110/api/CharacterSquences",
@@ -829,8 +769,8 @@
             "time": 1511747864924
         },
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "3cb1ca5a-4938-4a24-b8b5-bac0cf271d58",
             "name": "Delete CharacterSquence",
             "description": "",
             "url": "http://localhost:64110/api/CharacterSquences?charactersquenceId=00000000-0000-0000-0000-000000000000",
@@ -847,8 +787,8 @@
                     
                     
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "14cfeb90-f208-4fe2-ac23-392b20d98d36",
             "name": "Get Signals",
             "description": "",
             "url": "http://localhost:64110/api/Signals?expand=all",
@@ -861,8 +801,8 @@
             "version": 2
         },
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "ac6c01b4-1954-4d55-8a7a-c4a4e3bcad92",
             "name": "Add Signal",
             "description": "",
             "url": "http://localhost:64110/api/Signals",
@@ -875,8 +815,8 @@
             "time": 1511746503557
         },
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "3d127a25-57ff-4985-983e-4e0d87bd9779",
             "name": "Update Signal",
             "description": "",
             "url": "http://localhost:64110/api/Signals",
@@ -889,8 +829,8 @@
             "time": 1511747864924
         },
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "1c843ad1-ab6e-4254-84fa-cefe7e8d7298",
             "name": "Delete Signal",
             "description": "",
             "url": "http://localhost:64110/api/Signals?signalId=00000000-0000-0000-0000-000000000000",
@@ -907,8 +847,8 @@
                     
                     
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "462cd113-caed-4af8-8c99-cd1f995124f9",
             "name": "Get Telegraphs",
             "description": "",
             "url": "http://localhost:64110/api/Telegraphs?expand=all",
@@ -921,8 +861,8 @@
             "version": 2
         },
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "6a88f3d2-cfc7-4e9e-8b1f-48a24daf4d43",
             "name": "Add Telegraph",
             "description": "",
             "url": "http://localhost:64110/api/Telegraphs",
@@ -935,8 +875,8 @@
             "time": 1511746503557
         },
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "3c2ddad8-703b-48dc-b470-775ccba467dd",
             "name": "Update Telegraph",
             "description": "",
             "url": "http://localhost:64110/api/Telegraphs",
@@ -949,8 +889,8 @@
             "time": 1511747864924
         },
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "64bf81b6-239c-474a-9db4-1d77b0fc9e92",
             "name": "Delete Telegraph",
             "description": "",
             "url": "http://localhost:64110/api/Telegraphs?telegraphId=00000000-0000-0000-0000-000000000000",
@@ -967,8 +907,8 @@
                     
                     
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "3796e0ae-603a-408d-b420-b1f0e03a545a",
             "name": "Get Transmissions",
             "description": "",
             "url": "http://localhost:64110/api/Transmissions?expand=all",
@@ -981,8 +921,8 @@
             "version": 2
         },
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "63b3bc64-9a18-474a-9549-6cf1546b4780",
             "name": "Add Transmission",
             "description": "",
             "url": "http://localhost:64110/api/Transmissions",
@@ -995,8 +935,8 @@
             "time": 1511746503557
         },
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "b685070e-34fd-42f6-882b-48ad016d976e",
             "name": "Update Transmission",
             "description": "",
             "url": "http://localhost:64110/api/Transmissions",
@@ -1009,8 +949,8 @@
             "time": 1511747864924
         },
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "15d891c0-5946-414e-af7c-86ff398f6641",
             "name": "Delete Transmission",
             "description": "",
             "url": "http://localhost:64110/api/Transmissions?transmissionId=00000000-0000-0000-0000-000000000000",
@@ -1027,8 +967,8 @@
                     
                     
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "a0d66c56-ba36-432d-8d8f-6d6b356fe20f",
             "name": "Get Understandings",
             "description": "",
             "url": "http://localhost:64110/api/Understandings?expand=all",
@@ -1041,8 +981,8 @@
             "version": 2
         },
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "a651c2ce-2301-40fb-a877-2ce2c0347bdd",
             "name": "Add Understanding",
             "description": "",
             "url": "http://localhost:64110/api/Understandings",
@@ -1055,8 +995,8 @@
             "time": 1511746503557
         },
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "bf694d14-e0c1-4f13-b977-72a38098278e",
             "name": "Update Understanding",
             "description": "",
             "url": "http://localhost:64110/api/Understandings",
@@ -1069,8 +1009,8 @@
             "time": 1511747864924
         },
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "cec2d7a2-d419-422e-a976-91fc407cb518",
             "name": "Delete Understanding",
             "description": "",
             "url": "http://localhost:64110/api/Understandings?understandingId=00000000-0000-0000-0000-000000000000",
@@ -1087,8 +1027,8 @@
                     
                     
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "91e881dc-e24b-42ff-b24a-10ebfc0a0883",
             "name": "Get Words",
             "description": "",
             "url": "http://localhost:64110/api/Words?expand=all",
@@ -1101,8 +1041,8 @@
             "version": 2
         },
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "c2a29ee3-f19b-4b6b-878c-8067f599fc3e",
             "name": "Add Word",
             "description": "",
             "url": "http://localhost:64110/api/Words",
@@ -1115,8 +1055,8 @@
             "time": 1511746503557
         },
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "8c7a52a2-b60e-4932-9fcc-ef951913f4cf",
             "name": "Update Word",
             "description": "",
             "url": "http://localhost:64110/api/Words",
@@ -1129,8 +1069,8 @@
             "time": 1511747864924
         },
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "8767accb-05f6-44d7-9668-282770ad555e",
             "name": "Delete Word",
             "description": "",
             "url": "http://localhost:64110/api/Words?wordId=00000000-0000-0000-0000-000000000000",
@@ -1147,8 +1087,8 @@
                     
                     
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "a39d8085-7413-4a28-b0f2-6a145ea574c1",
             "name": "Get TelegraphStations",
             "description": "",
             "url": "http://localhost:64110/api/TelegraphStations?expand=all",
@@ -1161,8 +1101,8 @@
             "version": 2
         },
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "fbb2a41f-3304-42bb-a642-d555ea9e7cae",
             "name": "Add TelegraphStation",
             "description": "",
             "url": "http://localhost:64110/api/TelegraphStations",
@@ -1175,8 +1115,8 @@
             "time": 1511746503557
         },
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "0f64e402-ca75-4afc-8bf5-5d8ea0522994",
             "name": "Update TelegraphStation",
             "description": "",
             "url": "http://localhost:64110/api/TelegraphStations",
@@ -1189,8 +1129,8 @@
             "time": 1511747864924
         },
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "1dcde1b3-37c0-489b-83c6-802166e0f8eb",
             "name": "Delete TelegraphStation",
             "description": "",
             "url": "http://localhost:64110/api/TelegraphStations?telegraphstationId=00000000-0000-0000-0000-000000000000",
@@ -1207,8 +1147,8 @@
                     
                     
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "e52419a2-a5c4-4be8-a64a-860721cd5d41",
             "name": "Get Sentences",
             "description": "",
             "url": "http://localhost:64110/api/Sentences?expand=all",
@@ -1221,8 +1161,8 @@
             "version": 2
         },
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "52a0d6b7-a732-43bd-aba9-e644a8fcbb89",
             "name": "Add Sentence",
             "description": "",
             "url": "http://localhost:64110/api/Sentences",
@@ -1235,8 +1175,8 @@
             "time": 1511746503557
         },
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "30976298-aeea-4ade-9dde-590b63eafc88",
             "name": "Update Sentence",
             "description": "",
             "url": "http://localhost:64110/api/Sentences",
@@ -1249,8 +1189,8 @@
             "time": 1511747864924
         },
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "249fdd25-1f39-4fc8-be81-101f5efe3329",
             "name": "Delete Sentence",
             "description": "",
             "url": "http://localhost:64110/api/Sentences?sentenceId=00000000-0000-0000-0000-000000000000",
@@ -1267,8 +1207,8 @@
                     
                     
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "c48a5144-c1d3-4577-876d-79745e034a19",
             "name": "Get Customers",
             "description": "",
             "url": "http://localhost:64110/api/Customers?expand=all",
@@ -1281,8 +1221,8 @@
             "version": 2
         },
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "6ac1f83d-f6ab-458e-b988-52a8fbc00dbf",
             "name": "Add Customer",
             "description": "",
             "url": "http://localhost:64110/api/Customers",
@@ -1295,8 +1235,8 @@
             "time": 1511746503557
         },
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "2d3da7f1-b692-4872-9a5e-2e363d55a157",
             "name": "Update Customer",
             "description": "",
             "url": "http://localhost:64110/api/Customers",
@@ -1309,8 +1249,8 @@
             "time": 1511747864924
         },
         {
-            "collectionId": "00000000-0000-0000-0000-000000000000",
-            "id": "00000000-0000-0000-0000-000000000000",
+            "collectionId": "3623cd5e-ad63-49e7-9f01-6cf01d3b64d3",
+            "id": "2296aabe-1d03-4545-9532-6f1d00ea2e43",
             "name": "Delete Customer",
             "description": "",
             "url": "http://localhost:64110/api/Customers?customerId=00000000-0000-0000-0000-000000000000",

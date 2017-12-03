@@ -52,10 +52,6 @@
     <Compile Include="DataClasses\Character.designer.cs">
       <DependentUpon>Character.cs</DependentUpon>
     </Compile>
-    <Compile Include="DataClasses\Communication.cs" />
-    <Compile Include="DataClasses\Communication.designer.cs">
-      <DependentUpon>Communication.cs</DependentUpon>
-    </Compile>
     <Compile Include="DataClasses\Controller.cs" />
     <Compile Include="DataClasses\Controller.designer.cs">
       <DependentUpon>Controller.cs</DependentUpon>

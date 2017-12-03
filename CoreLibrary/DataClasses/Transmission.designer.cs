@@ -15,6 +15,8 @@ namespace MorseCodeHelper.Lib.DataClasses
             
             this.TransmissionId = Guid.NewGuid();
             
+                this.Understandings = new BindingList<Understanding>();
+            
 
         }
 
@@ -28,10 +30,45 @@ namespace MorseCodeHelper.Lib.DataClasses
         [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "Description")]
         public String Description { get; set; }
     
-        [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "CommuncatinoId")]
-        public Nullable<Guid> CommuncatinoId { get; set; }
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "TelegraphId")]
+        public Nullable<Guid> TelegraphId { get; set; }
     
 
+        
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "Understandings")]
+        public BindingList<Understanding> Understandings { get; set; }
+            
+        /// <summary>
+        /// Check to see if there are any related Understandings, and load them if requested
+        /// </summary>
+        public static void CheckExpandUnderstandings(SqlDataManager sdm, IEnumerable<Transmission> transmissions, string expandString)
+        {
+            var transmissionsWhere = CreateTransmissionWhere(transmissions);
+            expandString = expandString.SafeToString();
+
+            if (String.Equals(expandString, "all", StringComparison.OrdinalIgnoreCase) || expandString.IndexOf("understandings", StringComparison.OrdinalIgnoreCase) >= 0)
+            {
+                var childUnderstandings = sdm.GetAllUnderstandings<Understanding>(transmissionsWhere);
+
+                transmissions.ToList()
+                        .ForEach(feTransmission => feTransmission.LoadUnderstandings(childUnderstandings));
+            }
+
+        }
+
+
+        
+
+        
+        /// <summary>
+        /// Find the related Understandings (from the list provided) and attach them locally to the Understandings list.
+        /// </summary>
+        public void LoadUnderstandings(IEnumerable<Understanding> understandings)
+        {
+            understandings.Where(whereUnderstanding => whereUnderstanding.TransmissionId == this.TransmissionId)
+                    .ToList()
+                    .ForEach(feUnderstanding => this.Understandings.Add(feUnderstanding));
+        }
         
 
         
@@ -50,6 +87,8 @@ namespace MorseCodeHelper.Lib.DataClasses
         public static void CheckExpand(SqlDataManager sdm, IEnumerable<Transmission> transmissions, string expandString)
         {
             
+            
+            CheckExpandUnderstandings(sdm, transmissions, expandString);
         }
         
     }

@@ -194,100 +194,6 @@ ELSE
     
     
     
-    -- COUNT: 5
-IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'CommunicationId' AND Object_ID = Object_ID(N'Communication'))
-BEGIN
-        ALTER TABLE [dbo].[Communication] ADD [CommunicationId] UNIQUEIDENTIFIER NULL;
-END
-
-    
-    
-    
-    
-    -- COUNT: 5
-IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'Name' AND Object_ID = Object_ID(N'Communication'))
-BEGIN
-        ALTER TABLE [dbo].[Communication] ADD [Name] NVARCHAR(100) NULL;
-END
-
-    
-ELSE
-    BEGIN 
-
-
-        ALTER TABLE [dbo].[Communication] ALTER COLUMN [Name] NVARCHAR(100) NOT NULL;
-
-    
-
-	END
-
-    
-    
-    
-    
-    -- COUNT: 5
-IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'Description' AND Object_ID = Object_ID(N'Communication'))
-BEGIN
-        ALTER TABLE [dbo].[Communication] ADD [Description] NVARCHAR(100) NULL;
-END
-
-    
-ELSE
-    BEGIN 
-
-
-        ALTER TABLE [dbo].[Communication] ALTER COLUMN [Description] NVARCHAR(100) NOT NULL;
-
-    
-
-	END
-
-    
-    
-    
-    
-    -- COUNT: 5
-IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'TelegraphStationId' AND Object_ID = Object_ID(N'Communication'))
-BEGIN
-        ALTER TABLE [dbo].[Communication] ADD [TelegraphStationId] UNIQUEIDENTIFIER NULL;
-END
-
-    
-ELSE
-    BEGIN 
-
-
-        ALTER TABLE [dbo].[Communication] ALTER COLUMN [TelegraphStationId] UNIQUEIDENTIFIER NULL;
-
-    
-
-	END
-
-    
-    
-    
-    
-    -- COUNT: 5
-IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'AlphabetId' AND Object_ID = Object_ID(N'Communication'))
-BEGIN
-        ALTER TABLE [dbo].[Communication] ADD [AlphabetId] UNIQUEIDENTIFIER NULL;
-END
-
-    
-ELSE
-    BEGIN 
-
-
-        ALTER TABLE [dbo].[Communication] ALTER COLUMN [AlphabetId] UNIQUEIDENTIFIER NULL;
-
-    
-
-	END
-
-    
-    
-    
-    
     -- COUNT: 4
 IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'ControllerId' AND Object_ID = Object_ID(N'Controller'))
 BEGIN
@@ -341,9 +247,9 @@ ELSE
     
     
     -- COUNT: 4
-IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'CommunicationId' AND Object_ID = Object_ID(N'Controller'))
+IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'TelegraphId' AND Object_ID = Object_ID(N'Controller'))
 BEGIN
-        ALTER TABLE [dbo].[Controller] ADD [CommunicationId] UNIQUEIDENTIFIER NULL;
+        ALTER TABLE [dbo].[Controller] ADD [TelegraphId] UNIQUEIDENTIFIER NULL;
 END
 
     
@@ -351,7 +257,7 @@ ELSE
     BEGIN 
 
 
-        ALTER TABLE [dbo].[Controller] ALTER COLUMN [CommunicationId] UNIQUEIDENTIFIER NULL;
+        ALTER TABLE [dbo].[Controller] ALTER COLUMN [TelegraphId] UNIQUEIDENTIFIER NULL;
 
     
 
@@ -685,9 +591,9 @@ ELSE
     
     
     -- COUNT: 4
-IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'CommunicationId' AND Object_ID = Object_ID(N'Listener'))
+IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'TelegraphId' AND Object_ID = Object_ID(N'Listener'))
 BEGIN
-        ALTER TABLE [dbo].[Listener] ADD [CommunicationId] UNIQUEIDENTIFIER NULL;
+        ALTER TABLE [dbo].[Listener] ADD [TelegraphId] UNIQUEIDENTIFIER NULL;
 END
 
     
@@ -695,7 +601,7 @@ ELSE
     BEGIN 
 
 
-        ALTER TABLE [dbo].[Listener] ALTER COLUMN [CommunicationId] UNIQUEIDENTIFIER NULL;
+        ALTER TABLE [dbo].[Listener] ALTER COLUMN [TelegraphId] UNIQUEIDENTIFIER NULL;
 
     
 
@@ -758,9 +664,9 @@ ELSE
     
     
     -- COUNT: 4
-IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'CommunicationId' AND Object_ID = Object_ID(N'Observer'))
+IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'TelegraphId' AND Object_ID = Object_ID(N'Observer'))
 BEGIN
-        ALTER TABLE [dbo].[Observer] ADD [CommunicationId] UNIQUEIDENTIFIER NULL;
+        ALTER TABLE [dbo].[Observer] ADD [TelegraphId] UNIQUEIDENTIFIER NULL;
 END
 
     
@@ -768,7 +674,7 @@ ELSE
     BEGIN 
 
 
-        ALTER TABLE [dbo].[Observer] ALTER COLUMN [CommunicationId] UNIQUEIDENTIFIER NULL;
+        ALTER TABLE [dbo].[Observer] ALTER COLUMN [TelegraphId] UNIQUEIDENTIFIER NULL;
 
     
 
@@ -831,9 +737,9 @@ ELSE
     
     
     -- COUNT: 4
-IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'CommunicationId' AND Object_ID = Object_ID(N'TelegraphOperator'))
+IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'TelegraphStationId' AND Object_ID = Object_ID(N'TelegraphOperator'))
 BEGIN
-        ALTER TABLE [dbo].[TelegraphOperator] ADD [CommunicationId] UNIQUEIDENTIFIER NULL;
+        ALTER TABLE [dbo].[TelegraphOperator] ADD [TelegraphStationId] UNIQUEIDENTIFIER NULL;
 END
 
     
@@ -841,7 +747,7 @@ ELSE
     BEGIN 
 
 
-        ALTER TABLE [dbo].[TelegraphOperator] ALTER COLUMN [CommunicationId] UNIQUEIDENTIFIER NULL;
+        ALTER TABLE [dbo].[TelegraphOperator] ALTER COLUMN [TelegraphStationId] UNIQUEIDENTIFIER NULL;
 
     
 
@@ -1290,7 +1196,7 @@ ELSE
     
     
     
-    -- COUNT: 5
+    -- COUNT: 7
 IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'TelegraphId' AND Object_ID = Object_ID(N'Telegraph'))
 BEGIN
         ALTER TABLE [dbo].[Telegraph] ADD [TelegraphId] UNIQUEIDENTIFIER NULL;
@@ -1300,7 +1206,7 @@ END
     
     
     
-    -- COUNT: 5
+    -- COUNT: 7
 IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'Name' AND Object_ID = Object_ID(N'Telegraph'))
 BEGIN
         ALTER TABLE [dbo].[Telegraph] ADD [Name] NVARCHAR(100) NULL;
@@ -1321,7 +1227,7 @@ ELSE
     
     
     
-    -- COUNT: 5
+    -- COUNT: 7
 IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'Description' AND Object_ID = Object_ID(N'Telegraph'))
 BEGIN
         ALTER TABLE [dbo].[Telegraph] ADD [Description] NVARCHAR(100) NULL;
@@ -1342,7 +1248,7 @@ ELSE
     
     
     
-    -- COUNT: 5
+    -- COUNT: 7
 IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'InputMessage' AND Object_ID = Object_ID(N'Telegraph'))
 BEGIN
         ALTER TABLE [dbo].[Telegraph] ADD [InputMessage] NVARCHAR(100) NULL;
@@ -1363,10 +1269,10 @@ ELSE
     
     
     
-    -- COUNT: 5
-IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'CommunicationId' AND Object_ID = Object_ID(N'Telegraph'))
+    -- COUNT: 7
+IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'TelegraphStationId' AND Object_ID = Object_ID(N'Telegraph'))
 BEGIN
-        ALTER TABLE [dbo].[Telegraph] ADD [CommunicationId] UNIQUEIDENTIFIER NULL;
+        ALTER TABLE [dbo].[Telegraph] ADD [TelegraphStationId] UNIQUEIDENTIFIER NULL;
 END
 
     
@@ -1374,7 +1280,49 @@ ELSE
     BEGIN 
 
 
-        ALTER TABLE [dbo].[Telegraph] ALTER COLUMN [CommunicationId] UNIQUEIDENTIFIER NULL;
+        ALTER TABLE [dbo].[Telegraph] ALTER COLUMN [TelegraphStationId] UNIQUEIDENTIFIER NULL;
+
+    
+
+	END
+
+    
+    
+    
+    
+    -- COUNT: 7
+IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'CustomerId' AND Object_ID = Object_ID(N'Telegraph'))
+BEGIN
+        ALTER TABLE [dbo].[Telegraph] ADD [CustomerId] UNIQUEIDENTIFIER NULL;
+END
+
+    
+ELSE
+    BEGIN 
+
+
+        ALTER TABLE [dbo].[Telegraph] ALTER COLUMN [CustomerId] UNIQUEIDENTIFIER NULL;
+
+    
+
+	END
+
+    
+    
+    
+    
+    -- COUNT: 7
+IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'TelegraphOperatorId' AND Object_ID = Object_ID(N'Telegraph'))
+BEGIN
+        ALTER TABLE [dbo].[Telegraph] ADD [TelegraphOperatorId] UNIQUEIDENTIFIER NULL;
+END
+
+    
+ELSE
+    BEGIN 
+
+
+        ALTER TABLE [dbo].[Telegraph] ALTER COLUMN [TelegraphOperatorId] UNIQUEIDENTIFIER NULL;
 
     
 
@@ -1437,9 +1385,9 @@ ELSE
     
     
     -- COUNT: 4
-IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'CommuncatinoId' AND Object_ID = Object_ID(N'Transmission'))
+IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'TelegraphId' AND Object_ID = Object_ID(N'Transmission'))
 BEGIN
-        ALTER TABLE [dbo].[Transmission] ADD [CommuncatinoId] UNIQUEIDENTIFIER NULL;
+        ALTER TABLE [dbo].[Transmission] ADD [TelegraphId] UNIQUEIDENTIFIER NULL;
 END
 
     
@@ -1447,7 +1395,7 @@ ELSE
     BEGIN 
 
 
-        ALTER TABLE [dbo].[Transmission] ALTER COLUMN [CommuncatinoId] UNIQUEIDENTIFIER NULL;
+        ALTER TABLE [dbo].[Transmission] ALTER COLUMN [TelegraphId] UNIQUEIDENTIFIER NULL;
 
     
 
@@ -1510,9 +1458,9 @@ ELSE
     
     
     -- COUNT: 4
-IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'CommunicationId' AND Object_ID = Object_ID(N'Understanding'))
+IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'TransmissionId' AND Object_ID = Object_ID(N'Understanding'))
 BEGIN
-        ALTER TABLE [dbo].[Understanding] ADD [CommunicationId] UNIQUEIDENTIFIER NULL;
+        ALTER TABLE [dbo].[Understanding] ADD [TransmissionId] UNIQUEIDENTIFIER NULL;
 END
 
     
@@ -1520,7 +1468,7 @@ ELSE
     BEGIN 
 
 
-        ALTER TABLE [dbo].[Understanding] ALTER COLUMN [CommunicationId] UNIQUEIDENTIFIER NULL;
+        ALTER TABLE [dbo].[Understanding] ALTER COLUMN [TransmissionId] UNIQUEIDENTIFIER NULL;
 
     
 
@@ -1583,9 +1531,9 @@ ELSE
     
     
     -- COUNT: 4
-IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'CommunicationId' AND Object_ID = Object_ID(N'Word'))
+IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'SentenceId' AND Object_ID = Object_ID(N'Word'))
 BEGIN
-        ALTER TABLE [dbo].[Word] ADD [CommunicationId] UNIQUEIDENTIFIER NULL;
+        ALTER TABLE [dbo].[Word] ADD [SentenceId] UNIQUEIDENTIFIER NULL;
 END
 
     
@@ -1593,7 +1541,7 @@ ELSE
     BEGIN 
 
 
-        ALTER TABLE [dbo].[Word] ALTER COLUMN [CommunicationId] UNIQUEIDENTIFIER NULL;
+        ALTER TABLE [dbo].[Word] ALTER COLUMN [SentenceId] UNIQUEIDENTIFIER NULL;
 
     
 
@@ -1708,9 +1656,9 @@ ELSE
     
     
     -- COUNT: 4
-IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'CommunicationId' AND Object_ID = Object_ID(N'Sentence'))
+IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'TelegraphId' AND Object_ID = Object_ID(N'Sentence'))
 BEGIN
-        ALTER TABLE [dbo].[Sentence] ADD [CommunicationId] UNIQUEIDENTIFIER NULL;
+        ALTER TABLE [dbo].[Sentence] ADD [TelegraphId] UNIQUEIDENTIFIER NULL;
 END
 
     
@@ -1718,7 +1666,7 @@ ELSE
     BEGIN 
 
 
-        ALTER TABLE [dbo].[Sentence] ALTER COLUMN [CommunicationId] UNIQUEIDENTIFIER NULL;
+        ALTER TABLE [dbo].[Sentence] ALTER COLUMN [TelegraphId] UNIQUEIDENTIFIER NULL;
 
     
 
@@ -1781,9 +1729,9 @@ ELSE
     
     
     -- COUNT: 4
-IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'CommunicationId' AND Object_ID = Object_ID(N'Customer'))
+IF NOT EXISTS(SELECT * FROM sys.columns WHERE Name = N'TelegraphStationId' AND Object_ID = Object_ID(N'Customer'))
 BEGIN
-        ALTER TABLE [dbo].[Customer] ADD [CommunicationId] UNIQUEIDENTIFIER NULL;
+        ALTER TABLE [dbo].[Customer] ADD [TelegraphStationId] UNIQUEIDENTIFIER NULL;
 END
 
     
@@ -1791,7 +1739,7 @@ ELSE
     BEGIN 
 
 
-        ALTER TABLE [dbo].[Customer] ALTER COLUMN [CommunicationId] UNIQUEIDENTIFIER NULL;
+        ALTER TABLE [dbo].[Customer] ALTER COLUMN [TelegraphStationId] UNIQUEIDENTIFIER NULL;
 
     
 

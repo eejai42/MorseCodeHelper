@@ -15,6 +15,8 @@ namespace MorseCodeHelper.Lib.DataClasses
             
             this.TelegraphOperatorId = Guid.NewGuid();
             
+                this.Telegraphs = new BindingList<Telegraph>();
+            
 
         }
 
@@ -28,10 +30,45 @@ namespace MorseCodeHelper.Lib.DataClasses
         [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "Description")]
         public String Description { get; set; }
     
-        [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "CommunicationId")]
-        public Nullable<Guid> CommunicationId { get; set; }
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "TelegraphStationId")]
+        public Nullable<Guid> TelegraphStationId { get; set; }
     
 
+        
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "Telegraphs")]
+        public BindingList<Telegraph> Telegraphs { get; set; }
+            
+        /// <summary>
+        /// Check to see if there are any related Telegraphs, and load them if requested
+        /// </summary>
+        public static void CheckExpandTelegraphs(SqlDataManager sdm, IEnumerable<TelegraphOperator> telegraphOperators, string expandString)
+        {
+            var telegraphOperatorsWhere = CreateTelegraphOperatorWhere(telegraphOperators);
+            expandString = expandString.SafeToString();
+
+            if (String.Equals(expandString, "all", StringComparison.OrdinalIgnoreCase) || expandString.IndexOf("telegraphs", StringComparison.OrdinalIgnoreCase) >= 0)
+            {
+                var childTelegraphs = sdm.GetAllTelegraphs<Telegraph>(telegraphOperatorsWhere);
+
+                telegraphOperators.ToList()
+                        .ForEach(feTelegraphOperator => feTelegraphOperator.LoadTelegraphs(childTelegraphs));
+            }
+
+        }
+
+
+        
+
+        
+        /// <summary>
+        /// Find the related Telegraphs (from the list provided) and attach them locally to the Telegraphs list.
+        /// </summary>
+        public void LoadTelegraphs(IEnumerable<Telegraph> telegraphs)
+        {
+            telegraphs.Where(whereTelegraph => whereTelegraph.TelegraphOperatorId == this.TelegraphOperatorId)
+                    .ToList()
+                    .ForEach(feTelegraph => this.Telegraphs.Add(feTelegraph));
+        }
         
 
         
@@ -50,6 +87,8 @@ namespace MorseCodeHelper.Lib.DataClasses
         public static void CheckExpand(SqlDataManager sdm, IEnumerable<TelegraphOperator> telegraphOperators, string expandString)
         {
             
+            
+            CheckExpandTelegraphs(sdm, telegraphOperators, expandString);
         }
         
     }

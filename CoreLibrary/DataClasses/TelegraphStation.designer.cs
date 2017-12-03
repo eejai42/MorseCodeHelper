@@ -15,9 +15,13 @@ namespace MorseCodeHelper.Lib.DataClasses
             
             this.TelegraphStationId = Guid.NewGuid();
             
-                this.Communications = new BindingList<Communication>();
-            
                 this.MCDevices = new BindingList<MCDevice>();
+            
+                this.TelegraphOperators = new BindingList<TelegraphOperator>();
+            
+                this.Telegraphs = new BindingList<Telegraph>();
+            
+                this.Customers = new BindingList<Customer>();
             
 
         }
@@ -33,41 +37,6 @@ namespace MorseCodeHelper.Lib.DataClasses
         public String Description { get; set; }
     
 
-        
-        [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "Communications")]
-        public BindingList<Communication> Communications { get; set; }
-            
-        /// <summary>
-        /// Check to see if there are any related Communications, and load them if requested
-        /// </summary>
-        public static void CheckExpandCommunications(SqlDataManager sdm, IEnumerable<TelegraphStation> telegraphStations, string expandString)
-        {
-            var telegraphStationsWhere = CreateTelegraphStationWhere(telegraphStations);
-            expandString = expandString.SafeToString();
-
-            if (String.Equals(expandString, "all", StringComparison.OrdinalIgnoreCase) || expandString.IndexOf("communications", StringComparison.OrdinalIgnoreCase) >= 0)
-            {
-                var childCommunications = sdm.GetAllCommunications<Communication>(telegraphStationsWhere);
-
-                telegraphStations.ToList()
-                        .ForEach(feTelegraphStation => feTelegraphStation.LoadCommunications(childCommunications));
-            }
-
-        }
-
-
-        
-
-        
-        /// <summary>
-        /// Find the related Communications (from the list provided) and attach them locally to the Communications list.
-        /// </summary>
-        public void LoadCommunications(IEnumerable<Communication> communications)
-        {
-            communications.Where(whereCommunication => whereCommunication.TelegraphStationId == this.TelegraphStationId)
-                    .ToList()
-                    .ForEach(feCommunication => this.Communications.Add(feCommunication));
-        }
         
         [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "MCDevices")]
         public BindingList<MCDevice> MCDevices { get; set; }
@@ -104,6 +73,111 @@ namespace MorseCodeHelper.Lib.DataClasses
                     .ForEach(feMCDevice => this.MCDevices.Add(feMCDevice));
         }
         
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "TelegraphOperators")]
+        public BindingList<TelegraphOperator> TelegraphOperators { get; set; }
+            
+        /// <summary>
+        /// Check to see if there are any related TelegraphOperators, and load them if requested
+        /// </summary>
+        public static void CheckExpandTelegraphOperators(SqlDataManager sdm, IEnumerable<TelegraphStation> telegraphStations, string expandString)
+        {
+            var telegraphStationsWhere = CreateTelegraphStationWhere(telegraphStations);
+            expandString = expandString.SafeToString();
+
+            if (String.Equals(expandString, "all", StringComparison.OrdinalIgnoreCase) || expandString.IndexOf("telegraphOperators", StringComparison.OrdinalIgnoreCase) >= 0)
+            {
+                var childTelegraphOperators = sdm.GetAllTelegraphOperators<TelegraphOperator>(telegraphStationsWhere);
+
+                telegraphStations.ToList()
+                        .ForEach(feTelegraphStation => feTelegraphStation.LoadTelegraphOperators(childTelegraphOperators));
+            }
+
+        }
+
+
+        
+
+        
+        /// <summary>
+        /// Find the related TelegraphOperators (from the list provided) and attach them locally to the TelegraphOperators list.
+        /// </summary>
+        public void LoadTelegraphOperators(IEnumerable<TelegraphOperator> telegraphOperators)
+        {
+            telegraphOperators.Where(whereTelegraphOperator => whereTelegraphOperator.TelegraphStationId == this.TelegraphStationId)
+                    .ToList()
+                    .ForEach(feTelegraphOperator => this.TelegraphOperators.Add(feTelegraphOperator));
+        }
+        
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "Telegraphs")]
+        public BindingList<Telegraph> Telegraphs { get; set; }
+            
+        /// <summary>
+        /// Check to see if there are any related Telegraphs, and load them if requested
+        /// </summary>
+        public static void CheckExpandTelegraphs(SqlDataManager sdm, IEnumerable<TelegraphStation> telegraphStations, string expandString)
+        {
+            var telegraphStationsWhere = CreateTelegraphStationWhere(telegraphStations);
+            expandString = expandString.SafeToString();
+
+            if (String.Equals(expandString, "all", StringComparison.OrdinalIgnoreCase) || expandString.IndexOf("telegraphs", StringComparison.OrdinalIgnoreCase) >= 0)
+            {
+                var childTelegraphs = sdm.GetAllTelegraphs<Telegraph>(telegraphStationsWhere);
+
+                telegraphStations.ToList()
+                        .ForEach(feTelegraphStation => feTelegraphStation.LoadTelegraphs(childTelegraphs));
+            }
+
+        }
+
+
+        
+
+        
+        /// <summary>
+        /// Find the related Telegraphs (from the list provided) and attach them locally to the Telegraphs list.
+        /// </summary>
+        public void LoadTelegraphs(IEnumerable<Telegraph> telegraphs)
+        {
+            telegraphs.Where(whereTelegraph => whereTelegraph.TelegraphStationId == this.TelegraphStationId)
+                    .ToList()
+                    .ForEach(feTelegraph => this.Telegraphs.Add(feTelegraph));
+        }
+        
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "Customers")]
+        public BindingList<Customer> Customers { get; set; }
+            
+        /// <summary>
+        /// Check to see if there are any related Customers, and load them if requested
+        /// </summary>
+        public static void CheckExpandCustomers(SqlDataManager sdm, IEnumerable<TelegraphStation> telegraphStations, string expandString)
+        {
+            var telegraphStationsWhere = CreateTelegraphStationWhere(telegraphStations);
+            expandString = expandString.SafeToString();
+
+            if (String.Equals(expandString, "all", StringComparison.OrdinalIgnoreCase) || expandString.IndexOf("customers", StringComparison.OrdinalIgnoreCase) >= 0)
+            {
+                var childCustomers = sdm.GetAllCustomers<Customer>(telegraphStationsWhere);
+
+                telegraphStations.ToList()
+                        .ForEach(feTelegraphStation => feTelegraphStation.LoadCustomers(childCustomers));
+            }
+
+        }
+
+
+        
+
+        
+        /// <summary>
+        /// Find the related Customers (from the list provided) and attach them locally to the Customers list.
+        /// </summary>
+        public void LoadCustomers(IEnumerable<Customer> customers)
+        {
+            customers.Where(whereCustomer => whereCustomer.TelegraphStationId == this.TelegraphStationId)
+                    .ToList()
+                    .ForEach(feCustomer => this.Customers.Add(feCustomer));
+        }
+        
 
         
 
@@ -122,9 +196,13 @@ namespace MorseCodeHelper.Lib.DataClasses
         {
             
             
-            CheckExpandCommunications(sdm, telegraphStations, expandString);
-            
             CheckExpandMCDevices(sdm, telegraphStations, expandString);
+            
+            CheckExpandTelegraphOperators(sdm, telegraphStations, expandString);
+            
+            CheckExpandTelegraphs(sdm, telegraphStations, expandString);
+            
+            CheckExpandCustomers(sdm, telegraphStations, expandString);
         }
         
     }

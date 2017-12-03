@@ -182,94 +182,9 @@
               }
             },
             {
-              "Name": "Communication",
-              "OriginalName": "Communication",
-              "ParentName": "TelegraphStation",
-              "Include": "TRUE",
-              "TableName": "Communication",
-              "SortOrder": "165",
-              "TableIncluded": "TRUE",
-              "ParentName2": "Alphabet",
-              "PropertyDefs": {
-                "PropertyDef": [
-                  {
-                    "Name": "CommunicationId",
-                    "OriginalName": "CommunicationId",
-                    "IsPrimaryKey": "1",
-                    "IsNullable": "0",
-                    "DataType": "GUID",
-                    "DataLength": "",
-                    "FromName": "Communication.CommunicationId",
-                    "Include": "TRUE",
-                    "TableName": "Communication",
-                    "SortOrder": "166",
-                    "TableIncluded": "TRUE"
-                  },
-                  {
-                    "Name": "Name",
-                    "OriginalName": "Name",
-                    "IsPrimaryKey": "0",
-                    "IsNullable": "0",
-                    "DataType": "TEXT",
-                    "DataLength": [
-                      "50",
-                      "50"
-                    ],
-                    "FromName": "Communication.Name",
-                    "Include": "TRUE",
-                    "TableName": "Communication",
-                    "SortOrder": "167",
-                    "TableIncluded": "TRUE"
-                  },
-                  {
-                    "Name": "Description",
-                    "OriginalName": "Description",
-                    "IsPrimaryKey": "0",
-                    "IsNullable": "0",
-                    "DataType": "TEXT",
-                    "DataLength": [
-                      "500",
-                      "500"
-                    ],
-                    "FromName": "Communication.Description",
-                    "Include": "TRUE",
-                    "TableName": "Communication",
-                    "SortOrder": "168",
-                    "TableIncluded": "TRUE"
-                  },
-                  {
-                    "Name": "TelegraphStationId",
-                    "DataType": "GUID",
-                    "DataLength": "",
-                    "IsPrimaryKey": "0",
-                    "IsNullable": "1",
-                    "Relationships": {
-                      "Relationship": {
-                        "ReferencedObjectDef": "TelegraphStation",
-                        "ReferencedPropertyDef": "TelegraphStationId"
-                      }
-                    }
-                  },
-                  {
-                    "Name": "AlphabetId",
-                    "DataType": "GUID",
-                    "DataLength": "",
-                    "IsPrimaryKey": "0",
-                    "IsNullable": "1",
-                    "Relationships": {
-                      "Relationship": {
-                        "ReferencedObjectDef": "Alphabet",
-                        "ReferencedPropertyDef": "AlphabetId"
-                      }
-                    }
-                  }
-                ]
-              }
-            },
-            {
               "Name": "Controller",
               "OriginalName": "Controller",
-              "ParentName": "Communication",
+              "ParentName": "Telegraph",
               "Include": "TRUE",
               "TableName": "Controller",
               "SortOrder": "305",
@@ -322,15 +237,15 @@
                     "TableIncluded": "TRUE"
                   },
                   {
-                    "Name": "CommunicationId",
+                    "Name": "TelegraphId",
                     "DataType": "GUID",
                     "DataLength": "",
                     "IsPrimaryKey": "0",
                     "IsNullable": "1",
                     "Relationships": {
                       "Relationship": {
-                        "ReferencedObjectDef": "Communication",
-                        "ReferencedPropertyDef": "CommunicationId"
+                        "ReferencedObjectDef": "Telegraph",
+                        "ReferencedPropertyDef": "TelegraphId"
                       }
                     }
                   }
@@ -610,7 +525,7 @@
             {
               "Name": "Listener",
               "OriginalName": "Listener",
-              "ParentName": "Communication",
+              "ParentName": "Telegraph",
               "Include": "TRUE",
               "TableName": "Listener",
               "SortOrder": "53",
@@ -663,15 +578,15 @@
                     "TableIncluded": "TRUE"
                   },
                   {
-                    "Name": "CommunicationId",
+                    "Name": "TelegraphId",
                     "DataType": "GUID",
                     "DataLength": "",
                     "IsPrimaryKey": "0",
                     "IsNullable": "1",
                     "Relationships": {
                       "Relationship": {
-                        "ReferencedObjectDef": "Communication",
-                        "ReferencedPropertyDef": "CommunicationId"
+                        "ReferencedObjectDef": "Telegraph",
+                        "ReferencedPropertyDef": "TelegraphId"
                       }
                     }
                   }
@@ -681,7 +596,7 @@
             {
               "Name": "Observer",
               "OriginalName": "Observer",
-              "ParentName": "Communication",
+              "ParentName": "Telegraph",
               "Include": "TRUE",
               "TableName": "Observer",
               "SortOrder": "57",
@@ -734,15 +649,15 @@
                     "TableIncluded": "TRUE"
                   },
                   {
-                    "Name": "CommunicationId",
+                    "Name": "TelegraphId",
                     "DataType": "GUID",
                     "DataLength": "",
                     "IsPrimaryKey": "0",
                     "IsNullable": "1",
                     "Relationships": {
                       "Relationship": {
-                        "ReferencedObjectDef": "Communication",
-                        "ReferencedPropertyDef": "CommunicationId"
+                        "ReferencedObjectDef": "Telegraph",
+                        "ReferencedPropertyDef": "TelegraphId"
                       }
                     }
                   }
@@ -752,7 +667,7 @@
             {
               "Name": "TelegraphOperator",
               "OriginalName": "Operator",
-              "ParentName": "Communication",
+              "ParentName": "TelegraphStation",
               "Include": "TRUE",
               "TableName": "Operator",
               "SortOrder": "293",
@@ -805,15 +720,15 @@
                     "TableIncluded": "TRUE"
                   },
                   {
-                    "Name": "CommunicationId",
+                    "Name": "TelegraphStationId",
                     "DataType": "GUID",
                     "DataLength": "",
                     "IsPrimaryKey": "0",
                     "IsNullable": "1",
                     "Relationships": {
                       "Relationship": {
-                        "ReferencedObjectDef": "Communication",
-                        "ReferencedPropertyDef": "CommunicationId"
+                        "ReferencedObjectDef": "TelegraphStation",
+                        "ReferencedPropertyDef": "TelegraphStationId"
                       }
                     }
                   }
@@ -1210,11 +1125,13 @@
             {
               "Name": "Telegraph",
               "OriginalName": "Telegraph",
-              "ParentName": "Communication",
+              "ParentName": "TelegraphStation",
               "Include": "TRUE",
               "TableName": "Telegraph",
               "SortOrder": "69",
               "TableIncluded": "TRUE",
+              "ParentName2": "Customer",
+              "ParentName3": "TelegraphOperator",
               "PropertyDefs": {
                 "PropertyDef": [
                   {
@@ -1279,15 +1196,41 @@
                     "TableIncluded": "TRUE"
                   },
                   {
-                    "Name": "CommunicationId",
+                    "Name": "TelegraphStationId",
                     "DataType": "GUID",
                     "DataLength": "",
                     "IsPrimaryKey": "0",
                     "IsNullable": "1",
                     "Relationships": {
                       "Relationship": {
-                        "ReferencedObjectDef": "Communication",
-                        "ReferencedPropertyDef": "CommunicationId"
+                        "ReferencedObjectDef": "TelegraphStation",
+                        "ReferencedPropertyDef": "TelegraphStationId"
+                      }
+                    }
+                  },
+                  {
+                    "Name": "CustomerId",
+                    "DataType": "GUID",
+                    "DataLength": "",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "1",
+                    "Relationships": {
+                      "Relationship": {
+                        "ReferencedObjectDef": "Customer",
+                        "ReferencedPropertyDef": "CustomerId"
+                      }
+                    }
+                  },
+                  {
+                    "Name": "TelegraphOperatorId",
+                    "DataType": "GUID",
+                    "DataLength": "",
+                    "IsPrimaryKey": "0",
+                    "IsNullable": "1",
+                    "Relationships": {
+                      "Relationship": {
+                        "ReferencedObjectDef": "TelegraphOperator",
+                        "ReferencedPropertyDef": "TelegraphOperatorId"
                       }
                     }
                   }
@@ -1297,7 +1240,7 @@
             {
               "Name": "Transmission",
               "OriginalName": "Transmission",
-              "ParentName": "Communcatino",
+              "ParentName": "Telegraph",
               "Include": "TRUE",
               "TableName": "Transmission",
               "SortOrder": "141",
@@ -1350,15 +1293,15 @@
                     "TableIncluded": "TRUE"
                   },
                   {
-                    "Name": "CommuncatinoId",
+                    "Name": "TelegraphId",
                     "DataType": "GUID",
                     "DataLength": "",
                     "IsPrimaryKey": "0",
                     "IsNullable": "1",
                     "Relationships": {
                       "Relationship": {
-                        "ReferencedObjectDef": "Communcatino",
-                        "ReferencedPropertyDef": "CommuncatinoId"
+                        "ReferencedObjectDef": "Telegraph",
+                        "ReferencedPropertyDef": "TelegraphId"
                       }
                     }
                   }
@@ -1368,7 +1311,7 @@
             {
               "Name": "Understanding",
               "OriginalName": "Understanding",
-              "ParentName": "Communication",
+              "ParentName": "Transmission",
               "Include": "TRUE",
               "TableName": "Understanding",
               "SortOrder": "205",
@@ -1421,15 +1364,15 @@
                     "TableIncluded": "TRUE"
                   },
                   {
-                    "Name": "CommunicationId",
+                    "Name": "TransmissionId",
                     "DataType": "GUID",
                     "DataLength": "",
                     "IsPrimaryKey": "0",
                     "IsNullable": "1",
                     "Relationships": {
                       "Relationship": {
-                        "ReferencedObjectDef": "Communication",
-                        "ReferencedPropertyDef": "CommunicationId"
+                        "ReferencedObjectDef": "Transmission",
+                        "ReferencedPropertyDef": "TransmissionId"
                       }
                     }
                   }
@@ -1439,7 +1382,7 @@
             {
               "Name": "Word",
               "OriginalName": "Word",
-              "ParentName": "Communication",
+              "ParentName": "Sentence",
               "Include": "TRUE",
               "TableName": "Word",
               "SortOrder": "153",
@@ -1492,15 +1435,15 @@
                     "TableIncluded": "TRUE"
                   },
                   {
-                    "Name": "CommunicationId",
+                    "Name": "SentenceId",
                     "DataType": "GUID",
                     "DataLength": "",
                     "IsPrimaryKey": "0",
                     "IsNullable": "1",
                     "Relationships": {
                       "Relationship": {
-                        "ReferencedObjectDef": "Communication",
-                        "ReferencedPropertyDef": "CommunicationId"
+                        "ReferencedObjectDef": "Sentence",
+                        "ReferencedPropertyDef": "SentenceId"
                       }
                     }
                   }
@@ -1555,7 +1498,7 @@
             {
               "Name": "Sentence",
               "OriginalName": "Sentence",
-              "ParentName": "Communication",
+              "ParentName": "Telegraph",
               "Include": "TRUE",
               "PropertyDefs": {
                 "PropertyDef": [
@@ -1596,15 +1539,15 @@
                     "Include": "TRUE"
                   },
                   {
-                    "Name": "CommunicationId",
+                    "Name": "TelegraphId",
                     "DataType": "GUID",
                     "DataLength": "",
                     "IsPrimaryKey": "0",
                     "IsNullable": "1",
                     "Relationships": {
                       "Relationship": {
-                        "ReferencedObjectDef": "Communication",
-                        "ReferencedPropertyDef": "CommunicationId"
+                        "ReferencedObjectDef": "Telegraph",
+                        "ReferencedPropertyDef": "TelegraphId"
                       }
                     }
                   }
@@ -1614,7 +1557,7 @@
             {
               "Name": "Customer",
               "OriginalName": "Customer",
-              "ParentName": "Communication",
+              "ParentName": "TelegraphStation",
               "Include": "TRUE",
               "PropertyDefs": {
                 "PropertyDef": [
@@ -1655,15 +1598,15 @@
                     "Include": "TRUE"
                   },
                   {
-                    "Name": "CommunicationId",
+                    "Name": "TelegraphStationId",
                     "DataType": "GUID",
                     "DataLength": "",
                     "IsPrimaryKey": "0",
                     "IsNullable": "1",
                     "Relationships": {
                       "Relationship": {
-                        "ReferencedObjectDef": "Communication",
-                        "ReferencedPropertyDef": "CommunicationId"
+                        "ReferencedObjectDef": "TelegraphStation",
+                        "ReferencedPropertyDef": "TelegraphStationId"
                       }
                     }
                   }

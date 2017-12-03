@@ -17,8 +17,6 @@ namespace MorseCodeHelper.Lib.DataClasses
             
                 this.Characters = new BindingList<Character>();
             
-                this.Communications = new BindingList<Communication>();
-            
 
         }
 
@@ -72,41 +70,6 @@ namespace MorseCodeHelper.Lib.DataClasses
                     .ForEach(feCharacter => this.Characters.Add(feCharacter));
         }
         
-        [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "Communications")]
-        public BindingList<Communication> Communications { get; set; }
-            
-        /// <summary>
-        /// Check to see if there are any related Communications, and load them if requested
-        /// </summary>
-        public static void CheckExpandCommunications(SqlDataManager sdm, IEnumerable<Alphabet> alphabets, string expandString)
-        {
-            var alphabetsWhere = CreateAlphabetWhere(alphabets);
-            expandString = expandString.SafeToString();
-
-            if (String.Equals(expandString, "all", StringComparison.OrdinalIgnoreCase) || expandString.IndexOf("communications", StringComparison.OrdinalIgnoreCase) >= 0)
-            {
-                var childCommunications = sdm.GetAllCommunications<Communication>(alphabetsWhere);
-
-                alphabets.ToList()
-                        .ForEach(feAlphabet => feAlphabet.LoadCommunications(childCommunications));
-            }
-
-        }
-
-
-        
-
-        
-        /// <summary>
-        /// Find the related Communications (from the list provided) and attach them locally to the Communications list.
-        /// </summary>
-        public void LoadCommunications(IEnumerable<Communication> communications)
-        {
-            communications.Where(whereCommunication => whereCommunication.AlphabetId == this.AlphabetId)
-                    .ToList()
-                    .ForEach(feCommunication => this.Communications.Add(feCommunication));
-        }
-        
 
         
 
@@ -126,8 +89,6 @@ namespace MorseCodeHelper.Lib.DataClasses
             
             
             CheckExpandCharacters(sdm, alphabets, expandString);
-            
-            CheckExpandCommunications(sdm, alphabets, expandString);
         }
         
     }
