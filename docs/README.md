@@ -2,7 +2,7 @@
 
 ## Supported Alphabets
 
-[SDK Alphabets](morse-code.html)
+[SDK Alphabets](https://eejai42.github.io/MorseCodeHelper/)
 
 ## Github Repo
 
