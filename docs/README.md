@@ -4,5 +4,5 @@ Markdown
 
 ## header2 - this is just text I think
                     
-           this is the text         [OtherLink](index.html)
+           this is the text         [OtherLink](./index.html)
                     
