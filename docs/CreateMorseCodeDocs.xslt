@@ -56,7 +56,7 @@
                         <td><xsl:value-of select="Name"/></td>
                         <td><xsl:value-of select="SequenceCode"/></td>
                         <td><xsl:for-each select="./CharacterSquences">
-                            &lt;img src="Images/<xsl:value-of select="//Signals[SignalId = current()/SignalId]/Name" />.png" style="float: left" />                                
+                            &lt;img src="images/<xsl:value-of select="//Signals[SignalId = current()/SignalId]/Name" />.png" style="float: left" />                                
                         </xsl:for-each></td>
                     </tr>
                 </xsl:for-each>
