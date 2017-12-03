@@ -37,15 +37,6 @@
                                 </a>
                         
                         </div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>CharacterId</td><td>GUID</td><td>CharacterId</td></tr><tr><td>Name</td><td>TEXT</td><td>Name</td></tr><tr><td>Description</td><td>TEXT</td><td>Description</td></tr><tr><td>SequenceCode</td><td>TEXT</td><td>SequenceCode</td></tr><tr><td>Symbol</td><td>text</td><td>Symbol</td></tr><tr><td>AlphabetId</td><td>GUID</td><td></td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
-                        <a name="Controller"></a>
-                        <hr /><div style="float: right;">
-                        Parented by 
-                        
-                            
-                                <a href="#Telegraph">Telegraph</a>
-                        
-                        
-                        </div><h2>Controller</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>ControllerId</td><td>GUID</td><td>ControllerId</td></tr><tr><td>Name</td><td>TEXT</td><td>Name</td></tr><tr><td>Description</td><td>TEXT</td><td>Description</td></tr><tr><td>TelegraphId</td><td>GUID</td><td></td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
                         <a name="Country"></a>
                         <hr /><h2>Country</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div><div style="padding: 1em;">
                             Each Country may have zero or more associated
@@ -109,24 +100,6 @@
                         
                         
                         </div><h2>Light</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>LightId</td><td>GUID</td><td>LightId</td></tr><tr><td>Name</td><td>TEXT</td><td>Name</td></tr><tr><td>Description</td><td>TEXT</td><td>Description</td></tr><tr><td>MCDeviceId</td><td>GUID</td><td></td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
-                        <a name="Listener"></a>
-                        <hr /><div style="float: right;">
-                        Parented by 
-                        
-                            
-                                <a href="#Telegraph">Telegraph</a>
-                        
-                        
-                        </div><h2>Listener</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>ListenerId</td><td>GUID</td><td>ListenerId</td></tr><tr><td>Name</td><td>TEXT</td><td>Name</td></tr><tr><td>Description</td><td>TEXT</td><td>Description</td></tr><tr><td>TelegraphId</td><td>GUID</td><td></td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
-                        <a name="Observer"></a>
-                        <hr /><div style="float: right;">
-                        Parented by 
-                        
-                            
-                                <a href="#Telegraph">Telegraph</a>
-                        
-                        
-                        </div><h2>Observer</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>ObserverId</td><td>GUID</td><td>ObserverId</td></tr><tr><td>Name</td><td>TEXT</td><td>Name</td></tr><tr><td>Description</td><td>TEXT</td><td>Description</td></tr><tr><td>TelegraphId</td><td>GUID</td><td></td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
                         <a name="TelegraphOperator"></a>
                         <hr /><div style="float: right;">
                         Parented by 
@@ -139,7 +112,14 @@
                             Each TelegraphOperator may have zero or more associated
                           
                             
-                                <a href="#Telegraph">
+                                <a href="#Proficiency">
+                                
+                                    Proficiencies
+                                    
+                                </a>
+                        
+                            
+                                , <a href="#Telegraph">
                                 
                                     Telegraphs
                                     
@@ -151,10 +131,10 @@
                         Parented by 
                         
                             
-                                <a href="#"></a>
+                                <a href="#TelegraphOperator">TelegraphOperator</a>
                         
                         
-                        </div><h2>Proficiency</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>ProficiencyId</td><td>GUID</td><td>ProficiencyId</td></tr><tr><td>Name</td><td>TEXT</td><td>Name</td></tr><tr><td>Description</td><td>TEXT</td><td>Description</td></tr><tr><td>OperatorId</td><td>GUID</td><td></td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
+                        </div><h2>Proficiency</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>ProficiencyId</td><td>GUID</td><td>ProficiencyId</td></tr><tr><td>Name</td><td>TEXT</td><td>Name</td></tr><tr><td>Description</td><td>TEXT</td><td>Description</td></tr><tr><td>TelegraphOperatorId</td><td>GUID</td><td></td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
                         <a name="Repeater"></a>
                         <hr /><div style="float: right;">
                         Parented by 
@@ -194,11 +174,7 @@
                         Parented by 
                         
                             
-                                <a href="#TelegraphStation">TelegraphStation</a>
-                        
-                        
-                            
-                                , <a href="#Customer">Customer</a>
+                                <a href="#Customer">Customer</a>
                         
                         
                             
@@ -209,28 +185,7 @@
                             Each Telegraph may have zero or more associated
                           
                             
-                                <a href="#Controller">
-                                
-                                    Controllers
-                                    
-                                </a>
-                        
-                            
-                                , <a href="#Listener">
-                                
-                                    Listeners
-                                    
-                                </a>
-                        
-                            
-                                , <a href="#Observer">
-                                
-                                    Observers
-                                    
-                                </a>
-                        
-                            
-                                , <a href="#Transmission">
+                                <a href="#Transmission">
                                 
                                     Transmissions
                                     
@@ -243,7 +198,7 @@
                                     
                                 </a>
                         
-                        </div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>TelegraphId</td><td>GUID</td><td>TelegraphId</td></tr><tr><td>Name</td><td>TEXT</td><td>Name</td></tr><tr><td>Description</td><td>TEXT</td><td>Description</td></tr><tr><td>InputMessage</td><td>TEXT</td><td>InputMessage</td></tr><tr><td>TelegraphStationId</td><td>GUID</td><td></td></tr><tr><td>CustomerId</td><td>GUID</td><td></td></tr><tr><td>TelegraphOperatorId</td><td>GUID</td><td></td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
+                        </div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>TelegraphId</td><td>GUID</td><td>TelegraphId</td></tr><tr><td>Name</td><td>TEXT</td><td>Name</td></tr><tr><td>Description</td><td>TEXT</td><td>Description</td></tr><tr><td>InputMessage</td><td>TEXT</td><td>InputMessage</td></tr><tr><td>CustomerId</td><td>GUID</td><td></td></tr><tr><td>TelegraphOperatorId</td><td>GUID</td><td></td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
                         <a name="Transmission"></a>
                         <hr /><div style="float: right;">
                         Parented by 
@@ -252,26 +207,7 @@
                                 <a href="#Telegraph">Telegraph</a>
                         
                         
-                        </div><h2>Transmission</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div><div style="padding: 1em;">
-                            Each Transmission may have zero or more associated
-                          
-                            
-                                <a href="#Understanding">
-                                
-                                    Understandings
-                                    
-                                </a>
-                        
-                        </div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>TransmissionId</td><td>GUID</td><td>TransmissionId</td></tr><tr><td>Name</td><td>TEXT</td><td>Name</td></tr><tr><td>Description</td><td>TEXT</td><td>Description</td></tr><tr><td>TelegraphId</td><td>GUID</td><td></td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
-                        <a name="Understanding"></a>
-                        <hr /><div style="float: right;">
-                        Parented by 
-                        
-                            
-                                <a href="#Transmission">Transmission</a>
-                        
-                        
-                        </div><h2>Understanding</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>UnderstandingId</td><td>GUID</td><td>UnderstandingId</td></tr><tr><td>Name</td><td>TEXT</td><td>Name</td></tr><tr><td>Description</td><td>TEXT</td><td>Description</td></tr><tr><td>TransmissionId</td><td>GUID</td><td></td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
+                        </div><h2>Transmission</h2><div style="padding: 0.25em; font-size: 0.8em; font-weight: bold;"></div></div></div></td></tr><tr><th align="left">Name</th><th align="left">Type</th><th align="left">Original Name</th></tr><tr><td>TransmissionId</td><td>GUID</td><td>TransmissionId</td></tr><tr><td>Name</td><td>TEXT</td><td>Name</td></tr><tr><td>Description</td><td>TEXT</td><td>Description</td></tr><tr><td>TelegraphId</td><td>GUID</td><td></td></tr><tr><td colspan="3"><div style="clear: both"></div><div class="row"><div class="col-md-12">
                         <a name="Word"></a>
                         <hr /><div style="float: right;">
                         Parented by 
@@ -296,13 +232,6 @@
                                 , <a href="#TelegraphOperator">
                                 
                                     TelegraphOperators
-                                    
-                                </a>
-                        
-                            
-                                , <a href="#Telegraph">
-                                
-                                    Telegraphs
                                     
                                 </a>
                         

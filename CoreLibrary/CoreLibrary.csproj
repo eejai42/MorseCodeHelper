@@ -52,10 +52,6 @@
     <Compile Include="DataClasses\Character.designer.cs">
       <DependentUpon>Character.cs</DependentUpon>
     </Compile>
-    <Compile Include="DataClasses\Controller.cs" />
-    <Compile Include="DataClasses\Controller.designer.cs">
-      <DependentUpon>Controller.cs</DependentUpon>
-    </Compile>
     <Compile Include="DataClasses\Country.cs" />
     <Compile Include="DataClasses\Country.designer.cs">
       <DependentUpon>Country.cs</DependentUpon>
@@ -68,17 +64,9 @@
     <Compile Include="DataClasses\Light.designer.cs">
       <DependentUpon>Light.cs</DependentUpon>
     </Compile>
-    <Compile Include="DataClasses\Listener.cs" />
-    <Compile Include="DataClasses\Listener.designer.cs">
-      <DependentUpon>Listener.cs</DependentUpon>
-    </Compile>
     <Compile Include="DataClasses\MCDevice.cs" />
     <Compile Include="DataClasses\MCDevice.designer.cs">
       <DependentUpon>MCDevice.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DataClasses\Observer.cs" />
-    <Compile Include="DataClasses\Observer.designer.cs">
-      <DependentUpon>Observer.cs</DependentUpon>
     </Compile>
     <Compile Include="DataClasses\Proficiency.cs" />
     <Compile Include="DataClasses\Proficiency.designer.cs">
@@ -103,10 +91,6 @@
     <Compile Include="DataClasses\Transmission.cs" />
     <Compile Include="DataClasses\Transmission.designer.cs">
       <DependentUpon>Transmission.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DataClasses\Understanding.cs" />
-    <Compile Include="DataClasses\Understanding.designer.cs">
-      <DependentUpon>Understanding.cs</DependentUpon>
     </Compile>
     <Compile Include="DataClasses\Word.cs" />
     <Compile Include="DataClasses\Word.designer.cs">

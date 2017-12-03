@@ -566,238 +566,6 @@ namespace MorseCodeHelper.Lib.SqlDataManagement
   
   
   
-        public int Insert(Controller controller)
-        {
-            SqlConnection conn = this.CreateSqlConnection();
-            try
-            {
-                this.InitializeConnection(conn);
-                SqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = String.Format(@"INSERT INTO [{0}].[Controller] (ControllerId, Name, Description, TelegraphId)
-                                    VALUES (@ControllerId, @Name, @Description, @TelegraphId)", this.Schema);
-
-                
-                  
-                if (ReferenceEquals(controller.ControllerId, null)) cmd.Parameters.AddWithValue("@ControllerId", DBNull.Value);
-                    
-                else cmd.Parameters.AddWithValue("@ControllerId", controller.ControllerId);
-                
-                  
-                if (ReferenceEquals(controller.Name, null)) cmd.Parameters.AddWithValue("@Name", DBNull.Value);
-                    
-                else cmd.Parameters.AddWithValue("@Name", controller.Name);
-                
-                  
-                if (ReferenceEquals(controller.Description, null)) cmd.Parameters.AddWithValue("@Description", DBNull.Value);
-                    
-                else cmd.Parameters.AddWithValue("@Description", controller.Description);
-                
-                  
-                if (ReferenceEquals(controller.TelegraphId, null)) cmd.Parameters.AddWithValue("@TelegraphId", DBNull.Value);
-                    
-                else cmd.Parameters.AddWithValue("@TelegraphId", controller.TelegraphId);
-                
-
-                int rowsAffected = cmd.ExecuteNonQuery();
-
-                return rowsAffected;
-            }
-            finally
-            {
-                conn.Close();
-            }
-        }
-        
-          /// <summary>
-        /// Returns a count of the numbers of rows affected by the Upsert.
-        /// </summary>
-        /// <param name="person"></param>
-        /// <param name="dataSource"></param>
-        /// <param name="dbName"></param>
-        /// <returns></returns>
-        public int Upsert(Controller controller)
-        {
-            SqlConnection conn = this.CreateSqlConnection();
-            try
-            {
-                this.InitializeConnection(conn);
-                SqlCommand cmd = conn.CreateCommand();
-                
-                // Check if this method exists, and call insert or udpate as appropriate
-                
-                
-                var id = controller.ControllerId;
-                cmd.CommandText = String.Format(@"SELECT CASE WHEN EXISTS (SELECT * FROM Controller WHERE ControllerId = '{0}') THEN 1 else 0 END", id);
-                
-                var rowExists = cmd.ExecuteScalar();
-
-                if (rowExists.SafeToString() == "1") return this.Update(controller);
-                else return this.Insert(controller);
-            }
-            finally
-            {
-                conn.Close();
-            }
-        }
-        
-        public List<T> GetAllControllers<T>()
-            where T : Controller, new()
-        {
-            return this.GetAllControllers<T>(String.Empty);
-        }
-
-        
-        public List<T> GetAllControllers<T>(String whereClause)
-            where T : Controller, new()
-        {
-            List<T> results = new List<T>();
-            SqlConnection conn = this.CreateSqlConnection();
-            try
-            {
-                this.InitializeConnection(conn);
-                SqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = String.Format(@"SELECT * FROM [{0}].[Controller]", this.Schema);
-                if (!String.IsNullOrEmpty(whereClause)) 
-                {
-                    cmd.CommandText = String.Format("{0} WHERE {1}", cmd.CommandText, whereClause);
-                }
-
-                SqlDataReader reader = cmd.ExecuteReader();
-                
-                int propertyIndex = -1;
-                while (reader.Read())
-                {
-                    T controller = new T();
-                    
-                    
-                      propertyIndex = reader.GetOrdinal("ControllerId");
-                      if (!reader.IsDBNull(propertyIndex)) //GUID
-                      {
-                          
-                          controller.ControllerId = reader.GetGuid(propertyIndex);
-                      }
-                   
-                      propertyIndex = reader.GetOrdinal("Name");
-                      if (!reader.IsDBNull(propertyIndex)) //TEXT
-                      {
-                          
-                          controller.Name = reader.GetString(propertyIndex);
-                      }
-                   
-                      propertyIndex = reader.GetOrdinal("Description");
-                      if (!reader.IsDBNull(propertyIndex)) //TEXT
-                      {
-                          
-                          controller.Description = reader.GetString(propertyIndex);
-                      }
-                   
-                      propertyIndex = reader.GetOrdinal("TelegraphId");
-                      if (!reader.IsDBNull(propertyIndex)) //GUID
-                      {
-                          
-                          controller.TelegraphId = reader.GetGuid(propertyIndex);
-                      }
-                   
-                    results.Add(controller);
-                }
-
-                return results;
-            }
-            finally
-            {
-                conn.Close();
-            }
-        }
-        
-        /// <summary>
-        /// Updates the specified Controller
-        /// </summary>
-        /// <returns></returns>
-        public int Update(Controller controller)
-        {
-            SqlConnection conn = this.CreateSqlConnection();
-            try
-            {
-                this.InitializeConnection(conn);
-                SqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = String.Format(@"UPDATE [{0}].[Controller] SET 
-                                    Name = @Name,Description = @Description,TelegraphId = @TelegraphId
-                                    WHERE ControllerId = @ControllerId", this.Schema);
-
-                 //GUID
-                
-                if (ReferenceEquals(controller.ControllerId, null)) cmd.Parameters.AddWithValue("@ControllerId", DBNull.Value);
-                    
-                else cmd.Parameters.AddWithValue("@ControllerId", controller.ControllerId);
-                 //TEXT
-                
-                if (ReferenceEquals(controller.Name, null)) cmd.Parameters.AddWithValue("@Name", DBNull.Value);
-                    
-                else cmd.Parameters.AddWithValue("@Name", controller.Name);
-                 //TEXT
-                
-                if (ReferenceEquals(controller.Description, null)) cmd.Parameters.AddWithValue("@Description", DBNull.Value);
-                    
-                else cmd.Parameters.AddWithValue("@Description", controller.Description);
-                 //GUID
-                
-                if (ReferenceEquals(controller.TelegraphId, null)) cmd.Parameters.AddWithValue("@TelegraphId", DBNull.Value);
-                    
-                else cmd.Parameters.AddWithValue("@TelegraphId", controller.TelegraphId);
-                
-
-                int rowsAffected = cmd.ExecuteNonQuery();
-
-                return rowsAffected;
-            }
-            finally
-            {
-                conn.Close();
-            }
-        }
-        
-                
-        /// <summary>
-        /// Deletes the specified Controller
-        /// </summary>
-        /// <returns></returns>
-        public int Delete(Controller controller)
-        {
-            SqlConnection conn = this.CreateSqlConnection();
-            try
-            {
-                this.InitializeConnection(conn);
-                SqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = String.Format(@"DELETE FROM [{0}].[Controller] 
-                                    WHERE ControllerId = @ControllerId", this.Schema);
-                                    
-                
-                if (ReferenceEquals(controller.ControllerId, null)) cmd.Parameters.AddWithValue("@ControllerId", DBNull.Value);
-                else cmd.Parameters.AddWithValue("@ControllerId", controller.ControllerId);
-                
-
-                int rowsAffected = cmd.ExecuteNonQuery();
-
-                return rowsAffected;
-            }
-            finally
-            {
-                conn.Close();
-            }
-        }
-
-          
-  
-        /// <summary>
-        /// Returns a count of the numbers of rows affected by the insert
-        /// </summary>
-        /// <param name="person"></param>
-        /// <param name="dataSource"></param>
-        /// <param name="dbName"></param>
-        /// <returns></returns>
-  
-  
-  
         public int Insert(Country country)
         {
             SqlConnection conn = this.CreateSqlConnection();
@@ -1709,470 +1477,6 @@ namespace MorseCodeHelper.Lib.SqlDataManagement
   
   
   
-        public int Insert(Listener listener)
-        {
-            SqlConnection conn = this.CreateSqlConnection();
-            try
-            {
-                this.InitializeConnection(conn);
-                SqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = String.Format(@"INSERT INTO [{0}].[Listener] (ListenerId, Name, Description, TelegraphId)
-                                    VALUES (@ListenerId, @Name, @Description, @TelegraphId)", this.Schema);
-
-                
-                  
-                if (ReferenceEquals(listener.ListenerId, null)) cmd.Parameters.AddWithValue("@ListenerId", DBNull.Value);
-                    
-                else cmd.Parameters.AddWithValue("@ListenerId", listener.ListenerId);
-                
-                  
-                if (ReferenceEquals(listener.Name, null)) cmd.Parameters.AddWithValue("@Name", DBNull.Value);
-                    
-                else cmd.Parameters.AddWithValue("@Name", listener.Name);
-                
-                  
-                if (ReferenceEquals(listener.Description, null)) cmd.Parameters.AddWithValue("@Description", DBNull.Value);
-                    
-                else cmd.Parameters.AddWithValue("@Description", listener.Description);
-                
-                  
-                if (ReferenceEquals(listener.TelegraphId, null)) cmd.Parameters.AddWithValue("@TelegraphId", DBNull.Value);
-                    
-                else cmd.Parameters.AddWithValue("@TelegraphId", listener.TelegraphId);
-                
-
-                int rowsAffected = cmd.ExecuteNonQuery();
-
-                return rowsAffected;
-            }
-            finally
-            {
-                conn.Close();
-            }
-        }
-        
-          /// <summary>
-        /// Returns a count of the numbers of rows affected by the Upsert.
-        /// </summary>
-        /// <param name="person"></param>
-        /// <param name="dataSource"></param>
-        /// <param name="dbName"></param>
-        /// <returns></returns>
-        public int Upsert(Listener listener)
-        {
-            SqlConnection conn = this.CreateSqlConnection();
-            try
-            {
-                this.InitializeConnection(conn);
-                SqlCommand cmd = conn.CreateCommand();
-                
-                // Check if this method exists, and call insert or udpate as appropriate
-                
-                
-                var id = listener.ListenerId;
-                cmd.CommandText = String.Format(@"SELECT CASE WHEN EXISTS (SELECT * FROM Listener WHERE ListenerId = '{0}') THEN 1 else 0 END", id);
-                
-                var rowExists = cmd.ExecuteScalar();
-
-                if (rowExists.SafeToString() == "1") return this.Update(listener);
-                else return this.Insert(listener);
-            }
-            finally
-            {
-                conn.Close();
-            }
-        }
-        
-        public List<T> GetAllListeners<T>()
-            where T : Listener, new()
-        {
-            return this.GetAllListeners<T>(String.Empty);
-        }
-
-        
-        public List<T> GetAllListeners<T>(String whereClause)
-            where T : Listener, new()
-        {
-            List<T> results = new List<T>();
-            SqlConnection conn = this.CreateSqlConnection();
-            try
-            {
-                this.InitializeConnection(conn);
-                SqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = String.Format(@"SELECT * FROM [{0}].[Listener]", this.Schema);
-                if (!String.IsNullOrEmpty(whereClause)) 
-                {
-                    cmd.CommandText = String.Format("{0} WHERE {1}", cmd.CommandText, whereClause);
-                }
-
-                SqlDataReader reader = cmd.ExecuteReader();
-                
-                int propertyIndex = -1;
-                while (reader.Read())
-                {
-                    T listener = new T();
-                    
-                    
-                      propertyIndex = reader.GetOrdinal("ListenerId");
-                      if (!reader.IsDBNull(propertyIndex)) //GUID
-                      {
-                          
-                          listener.ListenerId = reader.GetGuid(propertyIndex);
-                      }
-                   
-                      propertyIndex = reader.GetOrdinal("Name");
-                      if (!reader.IsDBNull(propertyIndex)) //TEXT
-                      {
-                          
-                          listener.Name = reader.GetString(propertyIndex);
-                      }
-                   
-                      propertyIndex = reader.GetOrdinal("Description");
-                      if (!reader.IsDBNull(propertyIndex)) //TEXT
-                      {
-                          
-                          listener.Description = reader.GetString(propertyIndex);
-                      }
-                   
-                      propertyIndex = reader.GetOrdinal("TelegraphId");
-                      if (!reader.IsDBNull(propertyIndex)) //GUID
-                      {
-                          
-                          listener.TelegraphId = reader.GetGuid(propertyIndex);
-                      }
-                   
-                    results.Add(listener);
-                }
-
-                return results;
-            }
-            finally
-            {
-                conn.Close();
-            }
-        }
-        
-        /// <summary>
-        /// Updates the specified Listener
-        /// </summary>
-        /// <returns></returns>
-        public int Update(Listener listener)
-        {
-            SqlConnection conn = this.CreateSqlConnection();
-            try
-            {
-                this.InitializeConnection(conn);
-                SqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = String.Format(@"UPDATE [{0}].[Listener] SET 
-                                    Name = @Name,Description = @Description,TelegraphId = @TelegraphId
-                                    WHERE ListenerId = @ListenerId", this.Schema);
-
-                 //GUID
-                
-                if (ReferenceEquals(listener.ListenerId, null)) cmd.Parameters.AddWithValue("@ListenerId", DBNull.Value);
-                    
-                else cmd.Parameters.AddWithValue("@ListenerId", listener.ListenerId);
-                 //TEXT
-                
-                if (ReferenceEquals(listener.Name, null)) cmd.Parameters.AddWithValue("@Name", DBNull.Value);
-                    
-                else cmd.Parameters.AddWithValue("@Name", listener.Name);
-                 //TEXT
-                
-                if (ReferenceEquals(listener.Description, null)) cmd.Parameters.AddWithValue("@Description", DBNull.Value);
-                    
-                else cmd.Parameters.AddWithValue("@Description", listener.Description);
-                 //GUID
-                
-                if (ReferenceEquals(listener.TelegraphId, null)) cmd.Parameters.AddWithValue("@TelegraphId", DBNull.Value);
-                    
-                else cmd.Parameters.AddWithValue("@TelegraphId", listener.TelegraphId);
-                
-
-                int rowsAffected = cmd.ExecuteNonQuery();
-
-                return rowsAffected;
-            }
-            finally
-            {
-                conn.Close();
-            }
-        }
-        
-                
-        /// <summary>
-        /// Deletes the specified Listener
-        /// </summary>
-        /// <returns></returns>
-        public int Delete(Listener listener)
-        {
-            SqlConnection conn = this.CreateSqlConnection();
-            try
-            {
-                this.InitializeConnection(conn);
-                SqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = String.Format(@"DELETE FROM [{0}].[Listener] 
-                                    WHERE ListenerId = @ListenerId", this.Schema);
-                                    
-                
-                if (ReferenceEquals(listener.ListenerId, null)) cmd.Parameters.AddWithValue("@ListenerId", DBNull.Value);
-                else cmd.Parameters.AddWithValue("@ListenerId", listener.ListenerId);
-                
-
-                int rowsAffected = cmd.ExecuteNonQuery();
-
-                return rowsAffected;
-            }
-            finally
-            {
-                conn.Close();
-            }
-        }
-
-          
-  
-        /// <summary>
-        /// Returns a count of the numbers of rows affected by the insert
-        /// </summary>
-        /// <param name="person"></param>
-        /// <param name="dataSource"></param>
-        /// <param name="dbName"></param>
-        /// <returns></returns>
-  
-  
-  
-        public int Insert(Observer observer)
-        {
-            SqlConnection conn = this.CreateSqlConnection();
-            try
-            {
-                this.InitializeConnection(conn);
-                SqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = String.Format(@"INSERT INTO [{0}].[Observer] (ObserverId, Name, Description, TelegraphId)
-                                    VALUES (@ObserverId, @Name, @Description, @TelegraphId)", this.Schema);
-
-                
-                  
-                if (ReferenceEquals(observer.ObserverId, null)) cmd.Parameters.AddWithValue("@ObserverId", DBNull.Value);
-                    
-                else cmd.Parameters.AddWithValue("@ObserverId", observer.ObserverId);
-                
-                  
-                if (ReferenceEquals(observer.Name, null)) cmd.Parameters.AddWithValue("@Name", DBNull.Value);
-                    
-                else cmd.Parameters.AddWithValue("@Name", observer.Name);
-                
-                  
-                if (ReferenceEquals(observer.Description, null)) cmd.Parameters.AddWithValue("@Description", DBNull.Value);
-                    
-                else cmd.Parameters.AddWithValue("@Description", observer.Description);
-                
-                  
-                if (ReferenceEquals(observer.TelegraphId, null)) cmd.Parameters.AddWithValue("@TelegraphId", DBNull.Value);
-                    
-                else cmd.Parameters.AddWithValue("@TelegraphId", observer.TelegraphId);
-                
-
-                int rowsAffected = cmd.ExecuteNonQuery();
-
-                return rowsAffected;
-            }
-            finally
-            {
-                conn.Close();
-            }
-        }
-        
-          /// <summary>
-        /// Returns a count of the numbers of rows affected by the Upsert.
-        /// </summary>
-        /// <param name="person"></param>
-        /// <param name="dataSource"></param>
-        /// <param name="dbName"></param>
-        /// <returns></returns>
-        public int Upsert(Observer observer)
-        {
-            SqlConnection conn = this.CreateSqlConnection();
-            try
-            {
-                this.InitializeConnection(conn);
-                SqlCommand cmd = conn.CreateCommand();
-                
-                // Check if this method exists, and call insert or udpate as appropriate
-                
-                
-                var id = observer.ObserverId;
-                cmd.CommandText = String.Format(@"SELECT CASE WHEN EXISTS (SELECT * FROM Observer WHERE ObserverId = '{0}') THEN 1 else 0 END", id);
-                
-                var rowExists = cmd.ExecuteScalar();
-
-                if (rowExists.SafeToString() == "1") return this.Update(observer);
-                else return this.Insert(observer);
-            }
-            finally
-            {
-                conn.Close();
-            }
-        }
-        
-        public List<T> GetAllObservers<T>()
-            where T : Observer, new()
-        {
-            return this.GetAllObservers<T>(String.Empty);
-        }
-
-        
-        public List<T> GetAllObservers<T>(String whereClause)
-            where T : Observer, new()
-        {
-            List<T> results = new List<T>();
-            SqlConnection conn = this.CreateSqlConnection();
-            try
-            {
-                this.InitializeConnection(conn);
-                SqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = String.Format(@"SELECT * FROM [{0}].[Observer]", this.Schema);
-                if (!String.IsNullOrEmpty(whereClause)) 
-                {
-                    cmd.CommandText = String.Format("{0} WHERE {1}", cmd.CommandText, whereClause);
-                }
-
-                SqlDataReader reader = cmd.ExecuteReader();
-                
-                int propertyIndex = -1;
-                while (reader.Read())
-                {
-                    T observer = new T();
-                    
-                    
-                      propertyIndex = reader.GetOrdinal("ObserverId");
-                      if (!reader.IsDBNull(propertyIndex)) //GUID
-                      {
-                          
-                          observer.ObserverId = reader.GetGuid(propertyIndex);
-                      }
-                   
-                      propertyIndex = reader.GetOrdinal("Name");
-                      if (!reader.IsDBNull(propertyIndex)) //TEXT
-                      {
-                          
-                          observer.Name = reader.GetString(propertyIndex);
-                      }
-                   
-                      propertyIndex = reader.GetOrdinal("Description");
-                      if (!reader.IsDBNull(propertyIndex)) //TEXT
-                      {
-                          
-                          observer.Description = reader.GetString(propertyIndex);
-                      }
-                   
-                      propertyIndex = reader.GetOrdinal("TelegraphId");
-                      if (!reader.IsDBNull(propertyIndex)) //GUID
-                      {
-                          
-                          observer.TelegraphId = reader.GetGuid(propertyIndex);
-                      }
-                   
-                    results.Add(observer);
-                }
-
-                return results;
-            }
-            finally
-            {
-                conn.Close();
-            }
-        }
-        
-        /// <summary>
-        /// Updates the specified Observer
-        /// </summary>
-        /// <returns></returns>
-        public int Update(Observer observer)
-        {
-            SqlConnection conn = this.CreateSqlConnection();
-            try
-            {
-                this.InitializeConnection(conn);
-                SqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = String.Format(@"UPDATE [{0}].[Observer] SET 
-                                    Name = @Name,Description = @Description,TelegraphId = @TelegraphId
-                                    WHERE ObserverId = @ObserverId", this.Schema);
-
-                 //GUID
-                
-                if (ReferenceEquals(observer.ObserverId, null)) cmd.Parameters.AddWithValue("@ObserverId", DBNull.Value);
-                    
-                else cmd.Parameters.AddWithValue("@ObserverId", observer.ObserverId);
-                 //TEXT
-                
-                if (ReferenceEquals(observer.Name, null)) cmd.Parameters.AddWithValue("@Name", DBNull.Value);
-                    
-                else cmd.Parameters.AddWithValue("@Name", observer.Name);
-                 //TEXT
-                
-                if (ReferenceEquals(observer.Description, null)) cmd.Parameters.AddWithValue("@Description", DBNull.Value);
-                    
-                else cmd.Parameters.AddWithValue("@Description", observer.Description);
-                 //GUID
-                
-                if (ReferenceEquals(observer.TelegraphId, null)) cmd.Parameters.AddWithValue("@TelegraphId", DBNull.Value);
-                    
-                else cmd.Parameters.AddWithValue("@TelegraphId", observer.TelegraphId);
-                
-
-                int rowsAffected = cmd.ExecuteNonQuery();
-
-                return rowsAffected;
-            }
-            finally
-            {
-                conn.Close();
-            }
-        }
-        
-                
-        /// <summary>
-        /// Deletes the specified Observer
-        /// </summary>
-        /// <returns></returns>
-        public int Delete(Observer observer)
-        {
-            SqlConnection conn = this.CreateSqlConnection();
-            try
-            {
-                this.InitializeConnection(conn);
-                SqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = String.Format(@"DELETE FROM [{0}].[Observer] 
-                                    WHERE ObserverId = @ObserverId", this.Schema);
-                                    
-                
-                if (ReferenceEquals(observer.ObserverId, null)) cmd.Parameters.AddWithValue("@ObserverId", DBNull.Value);
-                else cmd.Parameters.AddWithValue("@ObserverId", observer.ObserverId);
-                
-
-                int rowsAffected = cmd.ExecuteNonQuery();
-
-                return rowsAffected;
-            }
-            finally
-            {
-                conn.Close();
-            }
-        }
-
-          
-  
-        /// <summary>
-        /// Returns a count of the numbers of rows affected by the insert
-        /// </summary>
-        /// <param name="person"></param>
-        /// <param name="dataSource"></param>
-        /// <param name="dbName"></param>
-        /// <returns></returns>
-  
-  
-  
         public int Insert(TelegraphOperator telegraphOperator)
         {
             SqlConnection conn = this.CreateSqlConnection();
@@ -2412,8 +1716,8 @@ namespace MorseCodeHelper.Lib.SqlDataManagement
             {
                 this.InitializeConnection(conn);
                 SqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = String.Format(@"INSERT INTO [{0}].[Proficiency] (ProficiencyId, Name, Description, OperatorId)
-                                    VALUES (@ProficiencyId, @Name, @Description, @OperatorId)", this.Schema);
+                cmd.CommandText = String.Format(@"INSERT INTO [{0}].[Proficiency] (ProficiencyId, Name, Description, TelegraphOperatorId)
+                                    VALUES (@ProficiencyId, @Name, @Description, @TelegraphOperatorId)", this.Schema);
 
                 
                   
@@ -2432,9 +1736,9 @@ namespace MorseCodeHelper.Lib.SqlDataManagement
                 else cmd.Parameters.AddWithValue("@Description", proficiency.Description);
                 
                   
-                if (ReferenceEquals(proficiency.OperatorId, null)) cmd.Parameters.AddWithValue("@OperatorId", DBNull.Value);
+                if (ReferenceEquals(proficiency.TelegraphOperatorId, null)) cmd.Parameters.AddWithValue("@TelegraphOperatorId", DBNull.Value);
                     
-                else cmd.Parameters.AddWithValue("@OperatorId", proficiency.OperatorId);
+                else cmd.Parameters.AddWithValue("@TelegraphOperatorId", proficiency.TelegraphOperatorId);
                 
 
                 int rowsAffected = cmd.ExecuteNonQuery();
@@ -2530,11 +1834,11 @@ namespace MorseCodeHelper.Lib.SqlDataManagement
                           proficiency.Description = reader.GetString(propertyIndex);
                       }
                    
-                      propertyIndex = reader.GetOrdinal("OperatorId");
+                      propertyIndex = reader.GetOrdinal("TelegraphOperatorId");
                       if (!reader.IsDBNull(propertyIndex)) //GUID
                       {
                           
-                          proficiency.OperatorId = reader.GetGuid(propertyIndex);
+                          proficiency.TelegraphOperatorId = reader.GetGuid(propertyIndex);
                       }
                    
                     results.Add(proficiency);
@@ -2560,7 +1864,7 @@ namespace MorseCodeHelper.Lib.SqlDataManagement
                 this.InitializeConnection(conn);
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandText = String.Format(@"UPDATE [{0}].[Proficiency] SET 
-                                    Name = @Name,Description = @Description,OperatorId = @OperatorId
+                                    Name = @Name,Description = @Description,TelegraphOperatorId = @TelegraphOperatorId
                                     WHERE ProficiencyId = @ProficiencyId", this.Schema);
 
                  //GUID
@@ -2580,9 +1884,9 @@ namespace MorseCodeHelper.Lib.SqlDataManagement
                 else cmd.Parameters.AddWithValue("@Description", proficiency.Description);
                  //GUID
                 
-                if (ReferenceEquals(proficiency.OperatorId, null)) cmd.Parameters.AddWithValue("@OperatorId", DBNull.Value);
+                if (ReferenceEquals(proficiency.TelegraphOperatorId, null)) cmd.Parameters.AddWithValue("@TelegraphOperatorId", DBNull.Value);
                     
-                else cmd.Parameters.AddWithValue("@OperatorId", proficiency.OperatorId);
+                else cmd.Parameters.AddWithValue("@TelegraphOperatorId", proficiency.TelegraphOperatorId);
                 
 
                 int rowsAffected = cmd.ExecuteNonQuery();
@@ -3459,8 +2763,8 @@ namespace MorseCodeHelper.Lib.SqlDataManagement
             {
                 this.InitializeConnection(conn);
                 SqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = String.Format(@"INSERT INTO [{0}].[Telegraph] (TelegraphId, Name, Description, InputMessage, TelegraphStationId, CustomerId, TelegraphOperatorId)
-                                    VALUES (@TelegraphId, @Name, @Description, @InputMessage, @TelegraphStationId, @CustomerId, @TelegraphOperatorId)", this.Schema);
+                cmd.CommandText = String.Format(@"INSERT INTO [{0}].[Telegraph] (TelegraphId, Name, Description, InputMessage, CustomerId, TelegraphOperatorId)
+                                    VALUES (@TelegraphId, @Name, @Description, @InputMessage, @CustomerId, @TelegraphOperatorId)", this.Schema);
 
                 
                   
@@ -3482,11 +2786,6 @@ namespace MorseCodeHelper.Lib.SqlDataManagement
                 if (ReferenceEquals(telegraph.InputMessage, null)) cmd.Parameters.AddWithValue("@InputMessage", DBNull.Value);
                     
                 else cmd.Parameters.AddWithValue("@InputMessage", telegraph.InputMessage);
-                
-                  
-                if (ReferenceEquals(telegraph.TelegraphStationId, null)) cmd.Parameters.AddWithValue("@TelegraphStationId", DBNull.Value);
-                    
-                else cmd.Parameters.AddWithValue("@TelegraphStationId", telegraph.TelegraphStationId);
                 
                   
                 if (ReferenceEquals(telegraph.CustomerId, null)) cmd.Parameters.AddWithValue("@CustomerId", DBNull.Value);
@@ -3599,13 +2898,6 @@ namespace MorseCodeHelper.Lib.SqlDataManagement
                           telegraph.InputMessage = reader.GetString(propertyIndex);
                       }
                    
-                      propertyIndex = reader.GetOrdinal("TelegraphStationId");
-                      if (!reader.IsDBNull(propertyIndex)) //GUID
-                      {
-                          
-                          telegraph.TelegraphStationId = reader.GetGuid(propertyIndex);
-                      }
-                   
                       propertyIndex = reader.GetOrdinal("CustomerId");
                       if (!reader.IsDBNull(propertyIndex)) //GUID
                       {
@@ -3643,7 +2935,7 @@ namespace MorseCodeHelper.Lib.SqlDataManagement
                 this.InitializeConnection(conn);
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandText = String.Format(@"UPDATE [{0}].[Telegraph] SET 
-                                    Name = @Name,Description = @Description,InputMessage = @InputMessage,TelegraphStationId = @TelegraphStationId,CustomerId = @CustomerId,TelegraphOperatorId = @TelegraphOperatorId
+                                    Name = @Name,Description = @Description,InputMessage = @InputMessage,CustomerId = @CustomerId,TelegraphOperatorId = @TelegraphOperatorId
                                     WHERE TelegraphId = @TelegraphId", this.Schema);
 
                  //GUID
@@ -3666,11 +2958,6 @@ namespace MorseCodeHelper.Lib.SqlDataManagement
                 if (ReferenceEquals(telegraph.InputMessage, null)) cmd.Parameters.AddWithValue("@InputMessage", DBNull.Value);
                     
                 else cmd.Parameters.AddWithValue("@InputMessage", telegraph.InputMessage);
-                 //GUID
-                
-                if (ReferenceEquals(telegraph.TelegraphStationId, null)) cmd.Parameters.AddWithValue("@TelegraphStationId", DBNull.Value);
-                    
-                else cmd.Parameters.AddWithValue("@TelegraphStationId", telegraph.TelegraphStationId);
                  //GUID
                 
                 if (ReferenceEquals(telegraph.CustomerId, null)) cmd.Parameters.AddWithValue("@CustomerId", DBNull.Value);
@@ -3943,238 +3230,6 @@ namespace MorseCodeHelper.Lib.SqlDataManagement
                 
                 if (ReferenceEquals(transmission.TransmissionId, null)) cmd.Parameters.AddWithValue("@TransmissionId", DBNull.Value);
                 else cmd.Parameters.AddWithValue("@TransmissionId", transmission.TransmissionId);
-                
-
-                int rowsAffected = cmd.ExecuteNonQuery();
-
-                return rowsAffected;
-            }
-            finally
-            {
-                conn.Close();
-            }
-        }
-
-          
-  
-        /// <summary>
-        /// Returns a count of the numbers of rows affected by the insert
-        /// </summary>
-        /// <param name="person"></param>
-        /// <param name="dataSource"></param>
-        /// <param name="dbName"></param>
-        /// <returns></returns>
-  
-  
-  
-        public int Insert(Understanding understanding)
-        {
-            SqlConnection conn = this.CreateSqlConnection();
-            try
-            {
-                this.InitializeConnection(conn);
-                SqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = String.Format(@"INSERT INTO [{0}].[Understanding] (UnderstandingId, Name, Description, TransmissionId)
-                                    VALUES (@UnderstandingId, @Name, @Description, @TransmissionId)", this.Schema);
-
-                
-                  
-                if (ReferenceEquals(understanding.UnderstandingId, null)) cmd.Parameters.AddWithValue("@UnderstandingId", DBNull.Value);
-                    
-                else cmd.Parameters.AddWithValue("@UnderstandingId", understanding.UnderstandingId);
-                
-                  
-                if (ReferenceEquals(understanding.Name, null)) cmd.Parameters.AddWithValue("@Name", DBNull.Value);
-                    
-                else cmd.Parameters.AddWithValue("@Name", understanding.Name);
-                
-                  
-                if (ReferenceEquals(understanding.Description, null)) cmd.Parameters.AddWithValue("@Description", DBNull.Value);
-                    
-                else cmd.Parameters.AddWithValue("@Description", understanding.Description);
-                
-                  
-                if (ReferenceEquals(understanding.TransmissionId, null)) cmd.Parameters.AddWithValue("@TransmissionId", DBNull.Value);
-                    
-                else cmd.Parameters.AddWithValue("@TransmissionId", understanding.TransmissionId);
-                
-
-                int rowsAffected = cmd.ExecuteNonQuery();
-
-                return rowsAffected;
-            }
-            finally
-            {
-                conn.Close();
-            }
-        }
-        
-          /// <summary>
-        /// Returns a count of the numbers of rows affected by the Upsert.
-        /// </summary>
-        /// <param name="person"></param>
-        /// <param name="dataSource"></param>
-        /// <param name="dbName"></param>
-        /// <returns></returns>
-        public int Upsert(Understanding understanding)
-        {
-            SqlConnection conn = this.CreateSqlConnection();
-            try
-            {
-                this.InitializeConnection(conn);
-                SqlCommand cmd = conn.CreateCommand();
-                
-                // Check if this method exists, and call insert or udpate as appropriate
-                
-                
-                var id = understanding.UnderstandingId;
-                cmd.CommandText = String.Format(@"SELECT CASE WHEN EXISTS (SELECT * FROM Understanding WHERE UnderstandingId = '{0}') THEN 1 else 0 END", id);
-                
-                var rowExists = cmd.ExecuteScalar();
-
-                if (rowExists.SafeToString() == "1") return this.Update(understanding);
-                else return this.Insert(understanding);
-            }
-            finally
-            {
-                conn.Close();
-            }
-        }
-        
-        public List<T> GetAllUnderstandings<T>()
-            where T : Understanding, new()
-        {
-            return this.GetAllUnderstandings<T>(String.Empty);
-        }
-
-        
-        public List<T> GetAllUnderstandings<T>(String whereClause)
-            where T : Understanding, new()
-        {
-            List<T> results = new List<T>();
-            SqlConnection conn = this.CreateSqlConnection();
-            try
-            {
-                this.InitializeConnection(conn);
-                SqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = String.Format(@"SELECT * FROM [{0}].[Understanding]", this.Schema);
-                if (!String.IsNullOrEmpty(whereClause)) 
-                {
-                    cmd.CommandText = String.Format("{0} WHERE {1}", cmd.CommandText, whereClause);
-                }
-
-                SqlDataReader reader = cmd.ExecuteReader();
-                
-                int propertyIndex = -1;
-                while (reader.Read())
-                {
-                    T understanding = new T();
-                    
-                    
-                      propertyIndex = reader.GetOrdinal("UnderstandingId");
-                      if (!reader.IsDBNull(propertyIndex)) //GUID
-                      {
-                          
-                          understanding.UnderstandingId = reader.GetGuid(propertyIndex);
-                      }
-                   
-                      propertyIndex = reader.GetOrdinal("Name");
-                      if (!reader.IsDBNull(propertyIndex)) //TEXT
-                      {
-                          
-                          understanding.Name = reader.GetString(propertyIndex);
-                      }
-                   
-                      propertyIndex = reader.GetOrdinal("Description");
-                      if (!reader.IsDBNull(propertyIndex)) //TEXT
-                      {
-                          
-                          understanding.Description = reader.GetString(propertyIndex);
-                      }
-                   
-                      propertyIndex = reader.GetOrdinal("TransmissionId");
-                      if (!reader.IsDBNull(propertyIndex)) //GUID
-                      {
-                          
-                          understanding.TransmissionId = reader.GetGuid(propertyIndex);
-                      }
-                   
-                    results.Add(understanding);
-                }
-
-                return results;
-            }
-            finally
-            {
-                conn.Close();
-            }
-        }
-        
-        /// <summary>
-        /// Updates the specified Understanding
-        /// </summary>
-        /// <returns></returns>
-        public int Update(Understanding understanding)
-        {
-            SqlConnection conn = this.CreateSqlConnection();
-            try
-            {
-                this.InitializeConnection(conn);
-                SqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = String.Format(@"UPDATE [{0}].[Understanding] SET 
-                                    Name = @Name,Description = @Description,TransmissionId = @TransmissionId
-                                    WHERE UnderstandingId = @UnderstandingId", this.Schema);
-
-                 //GUID
-                
-                if (ReferenceEquals(understanding.UnderstandingId, null)) cmd.Parameters.AddWithValue("@UnderstandingId", DBNull.Value);
-                    
-                else cmd.Parameters.AddWithValue("@UnderstandingId", understanding.UnderstandingId);
-                 //TEXT
-                
-                if (ReferenceEquals(understanding.Name, null)) cmd.Parameters.AddWithValue("@Name", DBNull.Value);
-                    
-                else cmd.Parameters.AddWithValue("@Name", understanding.Name);
-                 //TEXT
-                
-                if (ReferenceEquals(understanding.Description, null)) cmd.Parameters.AddWithValue("@Description", DBNull.Value);
-                    
-                else cmd.Parameters.AddWithValue("@Description", understanding.Description);
-                 //GUID
-                
-                if (ReferenceEquals(understanding.TransmissionId, null)) cmd.Parameters.AddWithValue("@TransmissionId", DBNull.Value);
-                    
-                else cmd.Parameters.AddWithValue("@TransmissionId", understanding.TransmissionId);
-                
-
-                int rowsAffected = cmd.ExecuteNonQuery();
-
-                return rowsAffected;
-            }
-            finally
-            {
-                conn.Close();
-            }
-        }
-        
-                
-        /// <summary>
-        /// Deletes the specified Understanding
-        /// </summary>
-        /// <returns></returns>
-        public int Delete(Understanding understanding)
-        {
-            SqlConnection conn = this.CreateSqlConnection();
-            try
-            {
-                this.InitializeConnection(conn);
-                SqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = String.Format(@"DELETE FROM [{0}].[Understanding] 
-                                    WHERE UnderstandingId = @UnderstandingId", this.Schema);
-                                    
-                
-                if (ReferenceEquals(understanding.UnderstandingId, null)) cmd.Parameters.AddWithValue("@UnderstandingId", DBNull.Value);
-                else cmd.Parameters.AddWithValue("@UnderstandingId", understanding.UnderstandingId);
                 
 
                 int rowsAffected = cmd.ExecuteNonQuery();

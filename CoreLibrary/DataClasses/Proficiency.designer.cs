@@ -28,8 +28,8 @@ namespace MorseCodeHelper.Lib.DataClasses
         [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "Description")]
         public String Description { get; set; }
     
-        [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "OperatorId")]
-        public Nullable<Guid> OperatorId { get; set; }
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "TelegraphOperatorId")]
+        public Nullable<Guid> TelegraphOperatorId { get; set; }
     
 
         

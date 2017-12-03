@@ -19,8 +19,6 @@ namespace MorseCodeHelper.Lib.DataClasses
             
                 this.TelegraphOperators = new BindingList<TelegraphOperator>();
             
-                this.Telegraphs = new BindingList<Telegraph>();
-            
                 this.Customers = new BindingList<Customer>();
             
 
@@ -108,41 +106,6 @@ namespace MorseCodeHelper.Lib.DataClasses
                     .ForEach(feTelegraphOperator => this.TelegraphOperators.Add(feTelegraphOperator));
         }
         
-        [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "Telegraphs")]
-        public BindingList<Telegraph> Telegraphs { get; set; }
-            
-        /// <summary>
-        /// Check to see if there are any related Telegraphs, and load them if requested
-        /// </summary>
-        public static void CheckExpandTelegraphs(SqlDataManager sdm, IEnumerable<TelegraphStation> telegraphStations, string expandString)
-        {
-            var telegraphStationsWhere = CreateTelegraphStationWhere(telegraphStations);
-            expandString = expandString.SafeToString();
-
-            if (String.Equals(expandString, "all", StringComparison.OrdinalIgnoreCase) || expandString.IndexOf("telegraphs", StringComparison.OrdinalIgnoreCase) >= 0)
-            {
-                var childTelegraphs = sdm.GetAllTelegraphs<Telegraph>(telegraphStationsWhere);
-
-                telegraphStations.ToList()
-                        .ForEach(feTelegraphStation => feTelegraphStation.LoadTelegraphs(childTelegraphs));
-            }
-
-        }
-
-
-        
-
-        
-        /// <summary>
-        /// Find the related Telegraphs (from the list provided) and attach them locally to the Telegraphs list.
-        /// </summary>
-        public void LoadTelegraphs(IEnumerable<Telegraph> telegraphs)
-        {
-            telegraphs.Where(whereTelegraph => whereTelegraph.TelegraphStationId == this.TelegraphStationId)
-                    .ToList()
-                    .ForEach(feTelegraph => this.Telegraphs.Add(feTelegraph));
-        }
-        
         [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "Customers")]
         public BindingList<Customer> Customers { get; set; }
             
@@ -199,8 +162,6 @@ namespace MorseCodeHelper.Lib.DataClasses
             CheckExpandMCDevices(sdm, telegraphStations, expandString);
             
             CheckExpandTelegraphOperators(sdm, telegraphStations, expandString);
-            
-            CheckExpandTelegraphs(sdm, telegraphStations, expandString);
             
             CheckExpandCustomers(sdm, telegraphStations, expandString);
         }

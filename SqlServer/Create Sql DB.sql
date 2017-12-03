@@ -8,13 +8,10 @@
     
       -- TABLE: Alphabet
       -- TABLE: Character
-      -- TABLE: Controller
       -- TABLE: Country
       -- TABLE: MCDevice
       -- TABLE: Language
       -- TABLE: Light
-      -- TABLE: Listener
-      -- TABLE: Observer
       -- TABLE: TelegraphOperator
       -- TABLE: Proficiency
       -- TABLE: Repeater
@@ -22,7 +19,6 @@
       -- TABLE: Signal
       -- TABLE: Telegraph
       -- TABLE: Transmission
-      -- TABLE: Understanding
       -- TABLE: Word
       -- TABLE: TelegraphStation
       -- TABLE: Sentence
@@ -73,25 +69,6 @@
         CONSTRAINT [PK_Character] PRIMARY KEY CLUSTERED
           (
             [CharacterId] ASC
-          )
-        
-        ) ON [PRIMARY]
-        END
-        GO
-
-        -- TABLE: Controller
-        -- ****** Object:  Table [dbo].[Controller]   Script Date:  ******
-        IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Controller]') AND type in (N'U')) 
-        BEGIN
-        CREATE TABLE [dbo].[Controller] (
-          [ControllerId] UNIQUEIDENTIFIER NOT NULL,
-          [Name] NVARCHAR(100) NOT NULL,
-          [Description] NVARCHAR(100) NOT NULL,
-          [TelegraphId] UNIQUEIDENTIFIER NULL,
-        
-        CONSTRAINT [PK_Controller] PRIMARY KEY CLUSTERED
-          (
-            [ControllerId] ASC
           )
         
         ) ON [PRIMARY]
@@ -173,44 +150,6 @@
         END
         GO
 
-        -- TABLE: Listener
-        -- ****** Object:  Table [dbo].[Listener]   Script Date:  ******
-        IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Listener]') AND type in (N'U')) 
-        BEGIN
-        CREATE TABLE [dbo].[Listener] (
-          [ListenerId] UNIQUEIDENTIFIER NOT NULL,
-          [Name] NVARCHAR(100) NOT NULL,
-          [Description] NVARCHAR(100) NOT NULL,
-          [TelegraphId] UNIQUEIDENTIFIER NULL,
-        
-        CONSTRAINT [PK_Listener] PRIMARY KEY CLUSTERED
-          (
-            [ListenerId] ASC
-          )
-        
-        ) ON [PRIMARY]
-        END
-        GO
-
-        -- TABLE: Observer
-        -- ****** Object:  Table [dbo].[Observer]   Script Date:  ******
-        IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Observer]') AND type in (N'U')) 
-        BEGIN
-        CREATE TABLE [dbo].[Observer] (
-          [ObserverId] UNIQUEIDENTIFIER NOT NULL,
-          [Name] NVARCHAR(100) NOT NULL,
-          [Description] NVARCHAR(100) NOT NULL,
-          [TelegraphId] UNIQUEIDENTIFIER NULL,
-        
-        CONSTRAINT [PK_Observer] PRIMARY KEY CLUSTERED
-          (
-            [ObserverId] ASC
-          )
-        
-        ) ON [PRIMARY]
-        END
-        GO
-
         -- TABLE: TelegraphOperator
         -- ****** Object:  Table [dbo].[TelegraphOperator]   Script Date:  ******
         IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[TelegraphOperator]') AND type in (N'U')) 
@@ -238,7 +177,7 @@
           [ProficiencyId] UNIQUEIDENTIFIER NOT NULL,
           [Name] NVARCHAR(100) NOT NULL,
           [Description] NVARCHAR(100) NOT NULL,
-          [OperatorId] UNIQUEIDENTIFIER NULL,
+          [TelegraphOperatorId] UNIQUEIDENTIFIER NULL,
         
         CONSTRAINT [PK_Proficiency] PRIMARY KEY CLUSTERED
           (
@@ -322,7 +261,6 @@
           [Name] NVARCHAR(100) NOT NULL,
           [Description] NVARCHAR(100) NOT NULL,
           [InputMessage] NVARCHAR(100) NOT NULL,
-          [TelegraphStationId] UNIQUEIDENTIFIER NULL,
           [CustomerId] UNIQUEIDENTIFIER NULL,
           [TelegraphOperatorId] UNIQUEIDENTIFIER NULL,
         
@@ -348,25 +286,6 @@
         CONSTRAINT [PK_Transmission] PRIMARY KEY CLUSTERED
           (
             [TransmissionId] ASC
-          )
-        
-        ) ON [PRIMARY]
-        END
-        GO
-
-        -- TABLE: Understanding
-        -- ****** Object:  Table [dbo].[Understanding]   Script Date:  ******
-        IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Understanding]') AND type in (N'U')) 
-        BEGIN
-        CREATE TABLE [dbo].[Understanding] (
-          [UnderstandingId] UNIQUEIDENTIFIER NOT NULL,
-          [Name] NVARCHAR(100) NOT NULL,
-          [Description] NVARCHAR(100) NOT NULL,
-          [TransmissionId] UNIQUEIDENTIFIER NULL,
-        
-        CONSTRAINT [PK_Understanding] PRIMARY KEY CLUSTERED
-          (
-            [UnderstandingId] ASC
           )
         
         ) ON [PRIMARY]
@@ -487,25 +406,6 @@
             GO
           
 
-              -- ****** KEYS FOR Table [dbo].[Controller]
-          -- Primary Key
-          IF NOT EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'[dbo].[DF_Controller_ControllerId]') AND type = 'D')
-          BEGIN
-            ALTER TABLE [dbo].[Controller] ADD  CONSTRAINT [DF_Controller_ControllerId]  DEFAULT (newid()) FOR [ControllerId]
-          END
-          GO
-        
-          -- FK for TelegraphId :: 0 :: Controller :: Telegraph
-          IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_Controller_TelegraphIdTelegraph]') AND parent_object_id = OBJECT_ID(N'[dbo].[Controller]'))
-            ALTER TABLE [dbo].[Controller]  WITH CHECK ADD  CONSTRAINT [FK_Controller_TelegraphIdTelegraph] FOREIGN KEY([TelegraphId])
-            REFERENCES [dbo].[Telegraph] (TelegraphId)
-          GO
-
-          IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_Controller_TelegraphIdTelegraph]') AND parent_object_id = OBJECT_ID(N'[dbo].[Controller]'))
-            ALTER TABLE [dbo].[Controller] CHECK CONSTRAINT [FK_Controller_TelegraphIdTelegraph]
-            GO
-          
-
               -- ****** KEYS FOR Table [dbo].[Country]
           -- Primary Key
           IF NOT EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'[dbo].[DF_Country_CountryId]') AND type = 'D')
@@ -572,44 +472,6 @@
             GO
           
 
-              -- ****** KEYS FOR Table [dbo].[Listener]
-          -- Primary Key
-          IF NOT EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'[dbo].[DF_Listener_ListenerId]') AND type = 'D')
-          BEGIN
-            ALTER TABLE [dbo].[Listener] ADD  CONSTRAINT [DF_Listener_ListenerId]  DEFAULT (newid()) FOR [ListenerId]
-          END
-          GO
-        
-          -- FK for TelegraphId :: 0 :: Listener :: Telegraph
-          IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_Listener_TelegraphIdTelegraph]') AND parent_object_id = OBJECT_ID(N'[dbo].[Listener]'))
-            ALTER TABLE [dbo].[Listener]  WITH CHECK ADD  CONSTRAINT [FK_Listener_TelegraphIdTelegraph] FOREIGN KEY([TelegraphId])
-            REFERENCES [dbo].[Telegraph] (TelegraphId)
-          GO
-
-          IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_Listener_TelegraphIdTelegraph]') AND parent_object_id = OBJECT_ID(N'[dbo].[Listener]'))
-            ALTER TABLE [dbo].[Listener] CHECK CONSTRAINT [FK_Listener_TelegraphIdTelegraph]
-            GO
-          
-
-              -- ****** KEYS FOR Table [dbo].[Observer]
-          -- Primary Key
-          IF NOT EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'[dbo].[DF_Observer_ObserverId]') AND type = 'D')
-          BEGIN
-            ALTER TABLE [dbo].[Observer] ADD  CONSTRAINT [DF_Observer_ObserverId]  DEFAULT (newid()) FOR [ObserverId]
-          END
-          GO
-        
-          -- FK for TelegraphId :: 0 :: Observer :: Telegraph
-          IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_Observer_TelegraphIdTelegraph]') AND parent_object_id = OBJECT_ID(N'[dbo].[Observer]'))
-            ALTER TABLE [dbo].[Observer]  WITH CHECK ADD  CONSTRAINT [FK_Observer_TelegraphIdTelegraph] FOREIGN KEY([TelegraphId])
-            REFERENCES [dbo].[Telegraph] (TelegraphId)
-          GO
-
-          IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_Observer_TelegraphIdTelegraph]') AND parent_object_id = OBJECT_ID(N'[dbo].[Observer]'))
-            ALTER TABLE [dbo].[Observer] CHECK CONSTRAINT [FK_Observer_TelegraphIdTelegraph]
-            GO
-          
-
               -- ****** KEYS FOR Table [dbo].[TelegraphOperator]
           -- Primary Key
           IF NOT EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'[dbo].[DF_TelegraphOperator_TelegraphOperatorId]') AND type = 'D')
@@ -618,7 +480,7 @@
           END
           GO
         
-          -- FK for TelegraphStationId :: 1 :: TelegraphOperator :: TelegraphStation
+          -- FK for TelegraphStationId :: 2 :: TelegraphOperator :: TelegraphStation
           IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_TelegraphOperator_TelegraphStationIdTelegraphStation]') AND parent_object_id = OBJECT_ID(N'[dbo].[TelegraphOperator]'))
             ALTER TABLE [dbo].[TelegraphOperator]  WITH CHECK ADD  CONSTRAINT [FK_TelegraphOperator_TelegraphStationIdTelegraphStation] FOREIGN KEY([TelegraphStationId])
             REFERENCES [dbo].[TelegraphStation] (TelegraphStationId)
@@ -637,6 +499,16 @@
           END
           GO
         
+          -- FK for TelegraphOperatorId :: 0 :: Proficiency :: TelegraphOperator
+          IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_Proficiency_TelegraphOperatorIdTelegraphOperator]') AND parent_object_id = OBJECT_ID(N'[dbo].[Proficiency]'))
+            ALTER TABLE [dbo].[Proficiency]  WITH CHECK ADD  CONSTRAINT [FK_Proficiency_TelegraphOperatorIdTelegraphOperator] FOREIGN KEY([TelegraphOperatorId])
+            REFERENCES [dbo].[TelegraphOperator] (TelegraphOperatorId)
+          GO
+
+          IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_Proficiency_TelegraphOperatorIdTelegraphOperator]') AND parent_object_id = OBJECT_ID(N'[dbo].[Proficiency]'))
+            ALTER TABLE [dbo].[Proficiency] CHECK CONSTRAINT [FK_Proficiency_TelegraphOperatorIdTelegraphOperator]
+            GO
+          
 
               -- ****** KEYS FOR Table [dbo].[Repeater]
           -- Primary Key
@@ -703,17 +575,7 @@
           END
           GO
         
-          -- FK for TelegraphStationId :: 5 :: Telegraph :: TelegraphStation
-          IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_Telegraph_TelegraphStationIdTelegraphStation]') AND parent_object_id = OBJECT_ID(N'[dbo].[Telegraph]'))
-            ALTER TABLE [dbo].[Telegraph]  WITH CHECK ADD  CONSTRAINT [FK_Telegraph_TelegraphStationIdTelegraphStation] FOREIGN KEY([TelegraphStationId])
-            REFERENCES [dbo].[TelegraphStation] (TelegraphStationId)
-          GO
-
-          IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_Telegraph_TelegraphStationIdTelegraphStation]') AND parent_object_id = OBJECT_ID(N'[dbo].[Telegraph]'))
-            ALTER TABLE [dbo].[Telegraph] CHECK CONSTRAINT [FK_Telegraph_TelegraphStationIdTelegraphStation]
-            GO
-          
-          -- FK for CustomerId :: 5 :: Telegraph :: Customer
+          -- FK for CustomerId :: 2 :: Telegraph :: Customer
           IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_Telegraph_Customer]') AND parent_object_id = OBJECT_ID(N'[dbo].[Telegraph]'))
             ALTER TABLE [dbo].[Telegraph]  WITH CHECK ADD  CONSTRAINT [FK_Telegraph_Customer] FOREIGN KEY([CustomerId])
             REFERENCES [dbo].[Customer] (CustomerId)
@@ -723,14 +585,14 @@
             ALTER TABLE [dbo].[Telegraph] CHECK CONSTRAINT [FK_Telegraph_Customer]
             GO
           
-          -- FK for TelegraphOperatorId :: 5 :: Telegraph :: TelegraphOperator
-          IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_Telegraph_TelegraphOperator]') AND parent_object_id = OBJECT_ID(N'[dbo].[Telegraph]'))
-            ALTER TABLE [dbo].[Telegraph]  WITH CHECK ADD  CONSTRAINT [FK_Telegraph_TelegraphOperator] FOREIGN KEY([TelegraphOperatorId])
+          -- FK for TelegraphOperatorId :: 2 :: Telegraph :: TelegraphOperator
+          IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_Telegraph_TelegraphOperatorIdTelegraphOperator]') AND parent_object_id = OBJECT_ID(N'[dbo].[Telegraph]'))
+            ALTER TABLE [dbo].[Telegraph]  WITH CHECK ADD  CONSTRAINT [FK_Telegraph_TelegraphOperatorIdTelegraphOperator] FOREIGN KEY([TelegraphOperatorId])
             REFERENCES [dbo].[TelegraphOperator] (TelegraphOperatorId)
           GO
 
-          IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_Telegraph_TelegraphOperator]') AND parent_object_id = OBJECT_ID(N'[dbo].[Telegraph]'))
-            ALTER TABLE [dbo].[Telegraph] CHECK CONSTRAINT [FK_Telegraph_TelegraphOperator]
+          IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_Telegraph_TelegraphOperatorIdTelegraphOperator]') AND parent_object_id = OBJECT_ID(N'[dbo].[Telegraph]'))
+            ALTER TABLE [dbo].[Telegraph] CHECK CONSTRAINT [FK_Telegraph_TelegraphOperatorIdTelegraphOperator]
             GO
           
 
@@ -742,7 +604,7 @@
           END
           GO
         
-          -- FK for TelegraphId :: 1 :: Transmission :: Telegraph
+          -- FK for TelegraphId :: 0 :: Transmission :: Telegraph
           IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_Transmission_TelegraphIdTelegraph]') AND parent_object_id = OBJECT_ID(N'[dbo].[Transmission]'))
             ALTER TABLE [dbo].[Transmission]  WITH CHECK ADD  CONSTRAINT [FK_Transmission_TelegraphIdTelegraph] FOREIGN KEY([TelegraphId])
             REFERENCES [dbo].[Telegraph] (TelegraphId)
@@ -750,25 +612,6 @@
 
           IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_Transmission_TelegraphIdTelegraph]') AND parent_object_id = OBJECT_ID(N'[dbo].[Transmission]'))
             ALTER TABLE [dbo].[Transmission] CHECK CONSTRAINT [FK_Transmission_TelegraphIdTelegraph]
-            GO
-          
-
-              -- ****** KEYS FOR Table [dbo].[Understanding]
-          -- Primary Key
-          IF NOT EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'[dbo].[DF_Understanding_UnderstandingId]') AND type = 'D')
-          BEGIN
-            ALTER TABLE [dbo].[Understanding] ADD  CONSTRAINT [DF_Understanding_UnderstandingId]  DEFAULT (newid()) FOR [UnderstandingId]
-          END
-          GO
-        
-          -- FK for TransmissionId :: 0 :: Understanding :: Transmission
-          IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_Understanding_Transmission]') AND parent_object_id = OBJECT_ID(N'[dbo].[Understanding]'))
-            ALTER TABLE [dbo].[Understanding]  WITH CHECK ADD  CONSTRAINT [FK_Understanding_Transmission] FOREIGN KEY([TransmissionId])
-            REFERENCES [dbo].[Transmission] (TransmissionId)
-          GO
-
-          IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_Understanding_Transmission]') AND parent_object_id = OBJECT_ID(N'[dbo].[Understanding]'))
-            ALTER TABLE [dbo].[Understanding] CHECK CONSTRAINT [FK_Understanding_Transmission]
             GO
           
 

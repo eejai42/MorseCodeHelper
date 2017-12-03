@@ -15,6 +15,8 @@ namespace MorseCodeHelper.Lib.DataClasses
             
             this.TelegraphOperatorId = Guid.NewGuid();
             
+                this.Proficiencies = new BindingList<Proficiency>();
+            
                 this.Telegraphs = new BindingList<Telegraph>();
             
 
@@ -34,6 +36,41 @@ namespace MorseCodeHelper.Lib.DataClasses
         public Nullable<Guid> TelegraphStationId { get; set; }
     
 
+        
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "Proficiencies")]
+        public BindingList<Proficiency> Proficiencies { get; set; }
+            
+        /// <summary>
+        /// Check to see if there are any related Proficiencies, and load them if requested
+        /// </summary>
+        public static void CheckExpandProficiencies(SqlDataManager sdm, IEnumerable<TelegraphOperator> telegraphOperators, string expandString)
+        {
+            var telegraphOperatorsWhere = CreateTelegraphOperatorWhere(telegraphOperators);
+            expandString = expandString.SafeToString();
+
+            if (String.Equals(expandString, "all", StringComparison.OrdinalIgnoreCase) || expandString.IndexOf("proficiencies", StringComparison.OrdinalIgnoreCase) >= 0)
+            {
+                var childProficiencies = sdm.GetAllProficiencies<Proficiency>(telegraphOperatorsWhere);
+
+                telegraphOperators.ToList()
+                        .ForEach(feTelegraphOperator => feTelegraphOperator.LoadProficiencies(childProficiencies));
+            }
+
+        }
+
+
+        
+
+        
+        /// <summary>
+        /// Find the related Proficiencies (from the list provided) and attach them locally to the Proficiencies list.
+        /// </summary>
+        public void LoadProficiencies(IEnumerable<Proficiency> proficiencies)
+        {
+            proficiencies.Where(whereProficiency => whereProficiency.TelegraphOperatorId == this.TelegraphOperatorId)
+                    .ToList()
+                    .ForEach(feProficiency => this.Proficiencies.Add(feProficiency));
+        }
         
         [JsonProperty(DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate, PropertyName = "Telegraphs")]
         public BindingList<Telegraph> Telegraphs { get; set; }
@@ -87,6 +124,8 @@ namespace MorseCodeHelper.Lib.DataClasses
         public static void CheckExpand(SqlDataManager sdm, IEnumerable<TelegraphOperator> telegraphOperators, string expandString)
         {
             
+            
+            CheckExpandProficiencies(sdm, telegraphOperators, expandString);
             
             CheckExpandTelegraphs(sdm, telegraphOperators, expandString);
         }
