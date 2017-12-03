@@ -19,8 +19,16 @@
                     <RelativePath>
                         <xsl:text>README.md</xsl:text>
                     </RelativePath>
-                    <xsl:element name="FileContents" xml:space="preserve">
-                    # [Main SDK Documentation](https://eejai42.github.io/MorseCodeHelper/)
+                    <xsl:element name="FileContents" xml:space="preserve"># Morse Code SDK
+
+## Supported Alphabets
+
+[SDK Alphabets](morse-code.html)
+
+## Github Repo
+
+[Morse Code SDK](https://github.com/eejai42/MorseCodeHelper)
+
                     </xsl:element>
                     </FileSetFile>
                 <FileSetFile>
