@@ -11,4 +11,5 @@ over time.
 
 There are multiple "morse code alphabets" or dialects - they are described here.
 
-[Supported Alphabets](morse-code.html).
+## [Supported Alphabets](morse-code.html).
+## [Github Repo](https://github.com/eejai42/MorseCodeHelper).

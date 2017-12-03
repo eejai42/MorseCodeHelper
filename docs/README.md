@@ -1,8 +1,3 @@
-# Readme
 
-Markdown - Readme markdown
-
-
-[OtherLink](morse-code.html)
-
+                    # [Main SDK Documentation](https://eejai42.github.io/MorseCodeHelper/)
                     
