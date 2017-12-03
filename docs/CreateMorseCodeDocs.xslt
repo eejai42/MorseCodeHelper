@@ -19,7 +19,11 @@
                     <RelativePath>
                         <xsl:text>Readme.md</xsl:text>
                     </RelativePath>
-                    <xsl:element name="FileContents" xml:space="preserve">Markdown</xsl:element>
+                    <xsl:element name="FileContents" xml:space="preserve">Markdown
+                    
+                    
+                    [OtherLink](index.html)
+                    </xsl:element>
                     </FileSetFile>
                 <FileSetFile>
                     <RelativePath>
