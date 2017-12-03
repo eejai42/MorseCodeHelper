@@ -15,7 +15,7 @@
     <xsl:template match="/*">
         <FileSet>
             <FileSetFiles>
-                            <FileSetFile>
+               <FileSetFile>
                     <RelativePath>
                         <xsl:text>Readme.md</xsl:text>
                     </RelativePath>
@@ -23,7 +23,7 @@
                     </FileSetFile>
                 <FileSetFile>
                     <RelativePath>
-                        <xsl:text>index.html</xsl:text>
+                        <xsl:text>index2.html</xsl:text>
                     </RelativePath>
                     <xsl:element name="FileContents" xml:space="preserve"><html>
     <body>
