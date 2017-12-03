@@ -1,13 +1,794 @@
-<html style="font-size: 0.8em;" ng-app="" ng-controller="TodoCtrl"><head><title>Interactive Object Explorer</title><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous" /><script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.0.3/angular.min.js"></script><script type="text/javascript" src="app.js"></script><style>
-        .done-true {
-            text-decoration: line-through;
-            color: grey;
-        }
-    </style></head><body style="margin-bottom: 10em; padding: 1em;"><h1>Interactive Object Explorer</h1><div style="padding-bottom: 1em;"><a href="SinglePageDocs.html">Raw Single Page Docs</a> | <a ng-click="expandAll()">expand all</a> | <a ng-click="collapseAll()">collapse all</a></div><hr /><div><div><div ng-repeat="objectDef in objectDefs"><div ng-init="objectDef.$expanded = false">
-                    <h3 id="{{ objectDef.Name }}">{{ objectDef.Name }}
-                        <small><a ng-click="objectDef.$expanded = false" ng-show="objectDef.$expanded">-</a><a ng-click="objectDef.$expanded = true" ng-hide="objectDef.$expanded">+</a></small>
-                    </h3>
-                    <div ng-show="objectDef.$expanded"><div ng-show="objectDef.$parentObjects.length > 0">
-                            {{ objectDef.Name }} is "contained" by 
-                            <span ng-repeat="parentObject in objectDef.$parentObjects"><a ng-click="focusObject(parentObject)">{{ parentObject.Name }}</a><span ng-show="$index < objectDef.$parentObjects.length - 1">, </span></span></div><div><b>Properties</b></div><div><ol><li ng-hide="propertyDef.Relationships || propertyDef.IsPrimaryKey == 1" ng-repeat="propertyDef in objectDef.PropertyDefs.PropertyDef"><span style="min-width: 10em;">{{ propertyDef.DataType }} </span> :: {{ propertyDef.Name }}
-                                <span ng-show="propertyDef.IsCollection">[...]</span></li></ol></div><div ng-show="objectDef.$childObjects.length > 0"><div><b>Related Entities</b></div><div><ol><li ng-repeat="childObject in objectDef.$childObjects"><a ng-click="focusObject(childObject)">{{ childObject.Name }}<span ng-show="childObject.$isCollection">[...]</span></a></li></ol></div></div></div></div></div></div></div></body></html>
+<html><body><h1>Morse Code</h1><p>
+            Currently the Morse Code SDK includes representations for 3 morse alphabets.  They are 
+            similar to one another, but differ in some key ways.  Details of each alphabet is listed below.
+        </p><p><h2>Continental</h2><div></div><p>
+                    This alphabet has the following characters defined:
+                </p><table><tr><th>Character</th><th>Code</th><th>Details</th></tr><tr><td>0</td><td>=</td><td>
+                            <img src="images/LongDash.png" style="float: left" />                                
+                        </td></tr><tr><td>1</td><td>.--.</td><td>
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        </td></tr><tr><td>2</td><td>..-..</td><td>
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        </td></tr><tr><td>3</td><td>...-.</td><td>
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        </td></tr><tr><td>4</td><td>....-</td><td>
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        </td></tr><tr><td>5</td><td>---</td><td>
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        </td></tr><tr><td>6</td><td>......</td><td>
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        </td></tr><tr><td>7</td><td>--..</td><td>
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        </td></tr><tr><td>8</td><td>-....</td><td>
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        </td></tr><tr><td>9</td><td>-..-</td><td>
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        </td></tr><tr><td>A</td><td>.-</td><td>
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        </td></tr><tr><td>B</td><td>-...</td><td>
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        </td></tr><tr><td>C</td><td>-.-.</td><td>
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        </td></tr><tr><td>D</td><td>-..</td><td>
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        </td></tr><tr><td>E</td><td>.</td><td>
+                            <img src="images/Dot.png" style="float: left" />                                
+                        </td></tr><tr><td>F</td><td>..-.</td><td>
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        </td></tr><tr><td>G</td><td>--.</td><td>
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        </td></tr><tr><td>H</td><td>....</td><td>
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        </td></tr><tr><td>I</td><td>..</td><td>
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        </td></tr><tr><td>J</td><td>.---</td><td>
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        </td></tr><tr><td>K</td><td>-.-</td><td>
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        </td></tr><tr><td>L</td><td>.-..</td><td>
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        </td></tr><tr><td>M</td><td>--</td><td>
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        </td></tr><tr><td>N</td><td>-.</td><td>
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        </td></tr><tr><td>O</td><td>.-...</td><td>
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        </td></tr><tr><td>P</td><td>.....</td><td>
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        </td></tr><tr><td>Q</td><td>--.-</td><td>
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        </td></tr><tr><td>R</td><td>.-.</td><td>
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        </td></tr><tr><td>S</td><td>...</td><td>
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        </td></tr><tr><td>T</td><td>-</td><td>
+                            <img src="images/Dash.png" style="float: left" />                                
+                        </td></tr><tr><td>U</td><td>..-</td><td>
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        </td></tr><tr><td>V</td><td>...-</td><td>
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        </td></tr><tr><td>W</td><td>.--</td><td>
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        </td></tr><tr><td>X</td><td>..-...</td><td>
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        </td></tr><tr><td>Y</td><td>--...</td><td>
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        </td></tr><tr><td>Z</td><td>.--..</td><td>
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        </td></tr></table><h2>International</h2><div></div><p>
+                    This alphabet has the following characters defined:
+                </p><table><tr><th>Character</th><th>Code</th><th>Details</th></tr><tr><td>0</td><td>-----</td><td>
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        </td></tr><tr><td>1</td><td>.----</td><td>
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        </td></tr><tr><td>2</td><td>..---</td><td>
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        </td></tr><tr><td>3</td><td>...--</td><td>
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        </td></tr><tr><td>4</td><td>....-</td><td>
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        </td></tr><tr><td>5</td><td>.....</td><td>
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        </td></tr><tr><td>6</td><td>-....</td><td>
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        </td></tr><tr><td>7</td><td>--...</td><td>
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        </td></tr><tr><td>8</td><td>---..</td><td>
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        </td></tr><tr><td>9</td><td>----.</td><td>
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        </td></tr><tr><td>A</td><td>.-</td><td>
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        </td></tr><tr><td>B</td><td>-...</td><td>
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        </td></tr><tr><td>C</td><td>-.-.</td><td>
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        </td></tr><tr><td>D</td><td>-..</td><td>
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        </td></tr><tr><td>E</td><td>.</td><td>
+                            <img src="images/Dot.png" style="float: left" />                                
+                        </td></tr><tr><td>F</td><td>..-.</td><td>
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        </td></tr><tr><td>G</td><td>--.</td><td>
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        </td></tr><tr><td>H</td><td>....</td><td>
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        </td></tr><tr><td>I</td><td>..</td><td>
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        </td></tr><tr><td>J</td><td>.---</td><td>
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        </td></tr><tr><td>K</td><td>-.-</td><td>
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        </td></tr><tr><td>L</td><td>.-..</td><td>
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        </td></tr><tr><td>M</td><td>--</td><td>
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        </td></tr><tr><td>N</td><td>-.</td><td>
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        </td></tr><tr><td>O</td><td>---</td><td>
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        </td></tr><tr><td>P</td><td>.--.</td><td>
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        </td></tr><tr><td>Q</td><td>--.-</td><td>
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        </td></tr><tr><td>R</td><td>.-.</td><td>
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        </td></tr><tr><td>S</td><td>...</td><td>
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        </td></tr><tr><td>T</td><td>-</td><td>
+                            <img src="images/Dash.png" style="float: left" />                                
+                        </td></tr><tr><td>U</td><td>..-</td><td>
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        </td></tr><tr><td>V</td><td>...-</td><td>
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        </td></tr><tr><td>W</td><td>.--</td><td>
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        </td></tr><tr><td>X</td><td>-..-</td><td>
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        </td></tr><tr><td>Y</td><td>-.--</td><td>
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        </td></tr><tr><td>Z</td><td>--..</td><td>
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        </td></tr></table><h2>American</h2><div></div><p>
+                    This alphabet has the following characters defined:
+                </p><table><tr><th>Character</th><th>Code</th><th>Details</th></tr><tr><td>0</td><td>-----</td><td>
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        </td></tr><tr><td>1</td><td>.--.</td><td>
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        </td></tr><tr><td>2</td><td>..-..</td><td>
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        </td></tr><tr><td>3</td><td>...-.</td><td>
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        </td></tr><tr><td>4</td><td>....-</td><td>
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        </td></tr><tr><td>5</td><td>---</td><td>
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        </td></tr><tr><td>6</td><td>......</td><td>
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        </td></tr><tr><td>7</td><td>--..</td><td>
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        </td></tr><tr><td>8</td><td>-....</td><td>
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        </td></tr><tr><td>9</td><td>-..-</td><td>
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        </td></tr><tr><td>A</td><td>.-</td><td>
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        </td></tr><tr><td>B</td><td>-...</td><td>
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        </td></tr><tr><td>C</td><td>.. .</td><td>
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/WordGap.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        </td></tr><tr><td>D</td><td>-..</td><td>
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        </td></tr><tr><td>E</td><td>.</td><td>
+                            <img src="images/Dot.png" style="float: left" />                                
+                        </td></tr><tr><td>F</td><td>.-.</td><td>
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        </td></tr><tr><td>G</td><td>--.</td><td>
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        </td></tr><tr><td>H</td><td>....</td><td>
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        </td></tr><tr><td>I</td><td>..</td><td>
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        </td></tr><tr><td>J</td><td>-.-.</td><td>
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        </td></tr><tr><td>K</td><td>-.-</td><td>
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        </td></tr><tr><td>L</td><td>=</td><td>
+                            <img src="images/LongDash.png" style="float: left" />                                
+                        </td></tr><tr><td>M</td><td>--</td><td>
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        </td></tr><tr><td>N</td><td>-.</td><td>
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        </td></tr><tr><td>O</td><td>. .</td><td>
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/WordGap.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        </td></tr><tr><td>P</td><td>.....</td><td>
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        </td></tr><tr><td>Q</td><td>..-.</td><td>
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        </td></tr><tr><td>R</td><td>. ..</td><td>
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/WordGap.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        </td></tr><tr><td>S</td><td>...</td><td>
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        </td></tr><tr><td>T</td><td>-</td><td>
+                            <img src="images/Dash.png" style="float: left" />                                
+                        </td></tr><tr><td>U</td><td>..-</td><td>
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        </td></tr><tr><td>V</td><td>---.</td><td>
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        </td></tr><tr><td>W</td><td>.---</td><td>
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        </td></tr><tr><td>X</td><td>.-..</td><td>
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dash.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        </td></tr><tr><td>Y</td><td>.. ..</td><td>
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/WordGap.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        </td></tr><tr><td>Z</td><td>... .</td><td>
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        
+                            <img src="images/WordGap.png" style="float: left" />                                
+                        
+                            <img src="images/Dot.png" style="float: left" />                                
+                        </td></tr></table></p></body></html>

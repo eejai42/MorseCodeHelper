@@ -15,9 +15,15 @@
     <xsl:template match="/*">
         <FileSet>
             <FileSetFiles>
+                            <FileSetFile>
+                    <RelativePath>
+                        <xsl:text>Readme.md</xsl:text>
+                    </RelativePath>
+                    <xsl:element name="FileContents" xml:space="preserve">Markdown</xsl:element>
+                    </FileSetFile>
                 <FileSetFile>
                     <RelativePath>
-                        <xsl:text>MorseCode.html</xsl:text>
+                        <xsl:text>index.html</xsl:text>
                     </RelativePath>
                     <xsl:element name="FileContents" xml:space="preserve"><html>
     <body>
