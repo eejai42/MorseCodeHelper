@@ -17,17 +17,17 @@
             <FileSetFiles>
                <FileSetFile>
                     <RelativePath>
-                        <xsl:text>Readme.md</xsl:text>
+                        <xsl:text>README.md</xsl:text>
                     </RelativePath>
-                    <xsl:element name="FileContents" xml:space="preserve">Markdown
+                    <xsl:element name="FileContents" xml:space="preserve">Markdown  REadme markdown
                     
                     
-                    [OtherLink](index.html)
+                    [OtherLink](morse-code.html)
                     </xsl:element>
                     </FileSetFile>
                 <FileSetFile>
                     <RelativePath>
-                        <xsl:text>index.html</xsl:text>
+                        <xsl:text>morse-code.html</xsl:text>
                     </RelativePath>
                     <xsl:element name="FileContents" xml:space="preserve"><html>
     <body>
@@ -37,7 +37,7 @@
             similar to one another, but differ in some key ways.  Details of each alphabet is listed below.
         </p>
         <p>
-            <a href="https://github.com/eejai42/MorseCodeHelper">Github Repo</a>
+            <a href="https://github.com/eejai42/MorseCodeHelper">Github Repo</a> or the <a href="./">SDK Home Page</a>
         </p>
         <p>
             <xsl:for-each select="//Alphabets">
